@@ -1,0 +1,26 @@
+{
+  "Modern Minimalist": {
+    "style": "modern",
+    "facade": "wei\u00df verputzt",
+    "door": "schwarze Aluminium T\u00fcr mit Glas",
+    "windows": "gro\u00dfe bodentiefe Fenster",
+    "lighting": "klares Tageslicht",
+    "special": "flaches Dach, keine Dekoration"
+  },
+  "Klassisch Elegant": {
+    "style": "klassisch",
+    "facade": "cremefarbener Putz",
+    "door": "braune Holzt\u00fcr mit Schnitzereien",
+    "windows": "wei\u00dfe Sprossenfenster",
+    "lighting": "warmes Abendlicht",
+    "special": "Vordach, Blumenk\u00e4sten"
+  },
+  "Industrie Loft": {
+    "style": "industriell",
+    "facade": "roter Backstein",
+    "door": "stahlgraue Metallt\u00fcr",
+    "windows": "gro\u00dfe Eisenfenster",
+    "lighting": "dramatisches Seitenlicht",
+    "special": "sichtbare Rohre, Betonelemente"
+  }
+}
