@@ -1,2 +1,4 @@
 # RODIN-AI---ARCHITEKTUR-PROMPT-GENERATOR
 RODIN AI - ARCHITEKTUR PROMPT GENERATOR
+
+Man hats nicht leicht, aber leicht hats einen.
