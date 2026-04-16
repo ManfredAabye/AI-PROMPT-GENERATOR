@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk, scrolledtext, messagebox
+from tkinter import ttk, scrolledtext, messagebox, simpledialog
 import json
 import os
 
@@ -259,7 +259,7 @@ Stil: Fotorealistisch, saubere Linien, fokussiert auf Materialqualität."""
     
     def save_template(self):
         """Speichert die aktuellen Einstellungen als Vorlage"""
-        name = tk.simpledialog.askstring("Vorlage speichern", "Name der Vorlage:")
+        name = simpledialog.askstring("Vorlage speichern", "Name der Vorlage:")
         if not name:
             return
         

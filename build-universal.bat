@@ -11,3 +11,5 @@ echo Baue UniversalPromptManager.exe ...
 pyinstaller --onefile UniversalPromptManager.py
 echo Fertig! Die EXE befindet sich im dist-Ordner.
 
+:: todo: languages.json kopieren
+copy upmlanguages.json dist\upmlanguages.json
