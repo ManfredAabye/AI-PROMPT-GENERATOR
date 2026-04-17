@@ -5,4 +5,8 @@
 
 <img src="https://raw.githubusercontent.com/ManfredAabye/AI-PROMPT-GENERATOR/refs/heads/main/UniversalPromptManager.png" alt="Project Badge" width="450">
 
+KI Generator for: architecture, image_description, sourcecode, ai_art, marketing, nutrition, custom, specification, ux_ui, social_media, seo_content, businessplan, data_analysis, automation, email, presentations, documentation.
+
+English, German, French and Spanish
+
 Version 0.0.3 Alpha
