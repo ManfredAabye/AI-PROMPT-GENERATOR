@@ -1,0 +1,196 @@
+{
+  "category_name": {
+    "de": "Bildbeschreibung",
+    "en": "Image Description",
+    "fr": "Description d'image",
+    "es": "Descripcion de imagen"
+  },
+  "fields": [
+    {
+      "key": "subject",
+      "type": "entry",
+      "label": {
+        "de": "Hauptmotiv",
+        "en": "Main Subject",
+        "fr": "Sujet principal",
+        "es": "Motivo principal"
+      },
+      "default": {
+        "de": "Hausfassade",
+        "en": "House facade",
+        "fr": "Facade de maison",
+        "es": "Fachada de casa"
+      }
+    },
+    {
+      "key": "style",
+      "type": "combobox",
+      "label": {
+        "de": "Fotostil",
+        "en": "Photo Style",
+        "fr": "Style photo",
+        "es": "Estilo fotografico"
+      },
+      "options": {
+        "de": ["Portrait", "Landschaft", "Architektur", "Street", "Makro", "Produkt"],
+        "en": ["Portrait", "Landscape", "Architecture", "Street", "Macro", "Product"],
+        "fr": ["Portrait", "Paysage", "Architecture", "Rue", "Macro", "Produit"],
+        "es": ["Retrato", "Paisaje", "Arquitectura", "Calle", "Macro", "Producto"]
+      },
+      "default": {
+        "de": "Architektur",
+        "en": "Architecture",
+        "fr": "Architecture",
+        "es": "Arquitectura"
+      }
+    },
+    {
+      "key": "composition",
+      "type": "combobox",
+      "label": {
+        "de": "Bildkomposition",
+        "en": "Image Composition",
+        "fr": "Composition de l'image",
+        "es": "Composicion de imagen"
+      },
+      "options": {
+        "de": ["Rule of Thirds", "Symmetrisch", "Zentral", "Diagonale", "Fuehrende Linien"],
+        "en": ["Rule of Thirds", "Symmetrical", "Centered", "Diagonal", "Leading Lines"],
+        "fr": ["Regle des tiers", "Symetrique", "Centre", "Diagonale", "Lignes directrices"],
+        "es": ["Regla de tercios", "Simetrico", "Centrado", "Diagonal", "Lineas guia"]
+      },
+      "default": {
+        "de": "Rule of Thirds",
+        "en": "Rule of Thirds",
+        "fr": "Regle des tiers",
+        "es": "Regla de tercios"
+      }
+    },
+    {
+      "key": "lighting",
+      "type": "combobox",
+      "label": {
+        "de": "Lichtstimmung",
+        "en": "Lighting Mood",
+        "fr": "Ambiance lumineuse",
+        "es": "Ambiente de luz"
+      },
+      "options": {
+        "de": ["Weiches Licht", "Hartes Licht", "Goldene Stunde", "Blaue Stunde", "Dramatisch"],
+        "en": ["Soft Light", "Hard Light", "Golden Hour", "Blue Hour", "Dramatic"],
+        "fr": ["Lumiere douce", "Lumiere dure", "Heure doree", "Heure bleue", "Dramatique"],
+        "es": ["Luz suave", "Luz dura", "Hora dorada", "Hora azul", "Dramatico"]
+      },
+      "default": {
+        "de": "Goldene Stunde",
+        "en": "Golden Hour",
+        "fr": "Heure doree",
+        "es": "Hora dorada"
+      }
+    },
+    {
+      "key": "camera",
+      "type": "combobox",
+      "label": {
+        "de": "Kameraeinstellung",
+        "en": "Camera Setting",
+        "fr": "Reglage camera",
+        "es": "Configuracion de camara"
+      },
+      "options": {
+        "de": ["Weitwinkel", "Teleobjektiv", "Makro", "Fisheye", "50mm Prime"],
+        "en": ["Wide-angle", "Telephoto", "Macro", "Fisheye", "50mm Prime"],
+        "fr": ["Grand angle", "Teleobjectif", "Macro", "Fisheye", "50mm Prime"],
+        "es": ["Gran angular", "Teleobjetivo", "Macro", "Ojo de pez", "50mm Prime"]
+      },
+      "default": {
+        "de": "Weitwinkel",
+        "en": "Wide-angle",
+        "fr": "Grand angle",
+        "es": "Gran angular"
+      }
+    },
+    {
+      "key": "mood",
+      "type": "text",
+      "label": {
+        "de": "Stimmung/Atmosphaere",
+        "en": "Mood/Atmosphere",
+        "fr": "Ambiance/Atmosphere",
+        "es": "Ambiente/Atmosfera"
+      },
+      "default": {
+        "de": "Friedlich, einladend, modern",
+        "en": "Peaceful, inviting, modern",
+        "fr": "Paisible, accueillant, moderne",
+        "es": "Pacifico, acogedor, moderno"
+      }
+    },
+    {
+      "key": "details",
+      "type": "text",
+      "label": {
+        "de": "Bilddetails",
+        "en": "Image Details",
+        "fr": "Details d'image",
+        "es": "Detalles de imagen"
+      },
+      "default": {
+        "de": "Texturen sichtbar, natuerliche Schatten, realistische Farben",
+        "en": "Visible textures, natural shadows, realistic colors",
+        "fr": "Textures visibles, ombres naturelles, couleurs realistes",
+        "es": "Texturas visibles, sombras naturales, colores realistas"
+      }
+    }
+  ],
+  "prompts": {
+    "img_1": {
+      "de": "Bildbeschreibung fuer {subject}.",
+      "en": "Image description for {subject}.",
+      "fr": "Description d'image pour {subject}.",
+      "es": "Descripcion de imagen para {subject}."
+    },
+    "img_2": {
+      "de": "Fotostil: {style}-Fotografie.",
+      "en": "Photo style: {style} photography.",
+      "fr": "Style photo : photographie {style}.",
+      "es": "Estilo fotografico: fotografia {style}."
+    },
+    "img_3": {
+      "de": "Komposition: {composition}.",
+      "en": "Composition: {composition}.",
+      "fr": "Composition : {composition}.",
+      "es": "Composicion: {composition}."
+    },
+    "img_4": {
+      "de": "Licht: {lighting}.",
+      "en": "Light: {lighting}.",
+      "fr": "Lumiere : {lighting}.",
+      "es": "Luz: {lighting}."
+    },
+    "img_5": {
+      "de": "Kamera: {camera} Aufnahme.",
+      "en": "Camera: {camera} shot.",
+      "fr": "Camera : prise {camera}.",
+      "es": "Camara: toma {camera}."
+    },
+    "img_6": {
+      "de": "Stimmung: {mood}.",
+      "en": "Mood: {mood}.",
+      "fr": "Ambiance : {mood}.",
+      "es": "Ambiente: {mood}."
+    },
+    "img_7": {
+      "de": "Details: {details}.",
+      "en": "Details: {details}.",
+      "fr": "Details : {details}.",
+      "es": "Detalles: {details}."
+    },
+    "img_8": {
+      "de": "Technisch: Scharf fokussiert, ausgewogene Belichtung, natuerliche Farben.",
+      "en": "Technical: Sharp focus, balanced exposure, natural colors.",
+      "fr": "Technique : mise au point nette, exposition equilibree, couleurs naturelles.",
+      "es": "Tecnico: enfoque nitido, exposicion equilibrada, colores naturales."
+    }
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "category_name": {
+    "de": "Social Media",
+    "en": "Social Media",
+    "fr": "Social Media",
+    "es": "Social Media"
+  },
+  "fields": [
+    {
+      "key": "platform",
+      "type": "combobox",
+      "label": {
+        "de": "Plattform",
+        "en": "Platform",
+        "fr": "Plateforme",
+        "es": "Plataforma"
+      },
+      "options": {
+        "de": ["LinkedIn", "Twitter/X", "Instagram", "TikTok", "Facebook", "YouTube", "Bluesky", "Threads"],
+        "en": ["LinkedIn", "Twitter/X", "Instagram", "TikTok", "Facebook", "YouTube", "Bluesky", "Threads"],
+        "fr": ["LinkedIn", "Twitter/X", "Instagram", "TikTok", "Facebook", "YouTube", "Bluesky", "Threads"],
+        "es": ["LinkedIn", "Twitter/X", "Instagram", "TikTok", "Facebook", "YouTube", "Bluesky", "Threads"]
+      },
+      "default": {
+        "de": "LinkedIn",
+        "en": "LinkedIn",
+        "fr": "LinkedIn",
+        "es": "LinkedIn"
+      }
+    },
+    {
+      "key": "content_type",
+      "type": "combobox",
+      "label": {
+        "de": "Content-Typ",
+        "en": "Content Type",
+        "fr": "Type de contenu",
+        "es": "Tipo de contenido"
+      },
+      "options": {
+        "de": ["Artikel/Blog", "Tipps/How-to", "Unterhaeltung", "Nachricht/Update", "Frage/Diskussion", "Repost/Curation"],
+        "en": ["Article/Blog", "Tips/How-to", "Entertainment", "News/Update", "Question/Discussion", "Repost/Curation"],
+        "fr": ["Article/Blog", "Conseils/Comment faire", "Divertissement", "Actualite/Mise a jour", "Question/Discussion", "Repost/Curation"],
+        "es": ["Articulo/Blog", "Consejos/Como hacer", "Entretenimiento", "Noticia/Actualizacion", "Pregunta/Discusion", "Repost/Curacion"]
+      },
+      "default": {
+        "de": "Artikel/Blog",
+        "en": "Article/Blog",
+        "fr": "Article/Blog",
+        "es": "Articulo/Blog"
+      }
+    },
+    {
+      "key": "target_audience",
+      "type": "entry",
+      "label": {
+        "de": "Zielgruppe",
+        "en": "Target Audience",
+        "fr": "Public cible",
+        "es": "Publico objetivo"
+      },
+      "default": {
+        "de": "Professionelle Zielgruppe",
+        "en": "Professional audience",
+        "fr": "Public professionnel",
+        "es": "Publico profesional"
+      }
+    },
+    {
+      "key": "hook_angle",
+      "type": "entry",
+      "label": {
+        "de": "Hook/Anker",
+        "en": "Hook/Angle",
+        "fr": "Accroche/Angle",
+        "es": "Gancho/Angulo"
+      },
+      "default": {
+        "de": "Was macht diesen Post sehenswert?",
+        "en": "What makes this post worth viewing?",
+        "fr": "Qu'est-ce qui rend ce post interessant?",
+        "es": "Que hace que este post valga la pena ver?"
+      }
+    },
+    {
+      "key": "tone",
+      "type": "combobox",
+      "label": {
+        "de": "Tonfall",
+        "en": "Tone",
+        "fr": "Ton",
+        "es": "Tono"
+      },
+      "options": {
+        "de": ["Professionell", "Freundlich", "Ueberzeugend", "Inspirierend", "Locker/Casual", "Humorvoll"],
+        "en": ["Professional", "Friendly", "Persuasive", "Inspiring", "Casual", "Humorous"],
+        "fr": ["Professionnel", "Amical", "Convaincant", "Inspirant", "Decontracte", "Humoristique"],
+        "es": ["Profesional", "Amigable", "Persuasivo", "Inspirador", "Casual", "Humoristico"]
+      },
+      "default": {
+        "de": "Professionell",
+        "en": "Professional",
+        "fr": "Professionnel",
+        "es": "Profesional"
+      }
+    },
+    {
+      "key": "main_message",
+      "type": "text",
+      "label": {
+        "de": "Hauptbotschaft",
+        "en": "Main Message",
+        "fr": "Message principal",
+        "es": "Mensaje principal"
+      },
+      "default": {
+        "de": "Was ist der Kern-Punkt des Posts?",
+        "en": "What is the core point of the post?",
+        "fr": "Quel est le point principal du post?",
+        "es": "Cual es el punto principal del post?"
+      }
+    },
+    {
+      "key": "cta",
+      "type": "entry",
+      "label": {
+        "de": "Call-to-Action (CTA)",
+        "en": "Call-to-Action (CTA)",
+        "fr": "Appel a l'action (CTA)",
+        "es": "Llamada a la accion (CTA)"
+      },
+      "default": {
+        "de": "Kommentieren, Teilen, Link klicken, etc.",
+        "en": "Comment, Share, Click link, etc.",
+        "fr": "Commenter, Partager, Cliquer sur le lien",
+        "es": "Comentar, Compartir, Hacer clic en el enlace"
+      }
+    },
+    {
+      "key": "hashtags",
+      "type": "entry",
+      "label": {
+        "de": "Hashtags",
+        "en": "Hashtags",
+        "fr": "Hashtags",
+        "es": "Hashtags"
+      },
+      "default": {
+        "de": "#relevant #targeted #specific",
+        "en": "#relevant #targeted #specific",
+        "fr": "#pertinent #cible #specifique",
+        "es": "#relevante #dirigido #especifico"
+      }
+    },
+    {
+      "key": "posting_frequency",
+      "type": "combobox",
+      "label": {
+        "de": "Posting-Frequenz",
+        "en": "Posting Frequency",
+        "fr": "Frequence de publication",
+        "es": "Frecuencia de publicacion"
+      },
+      "options": {
+        "de": ["Taeglich", "3x pro Woche", "2x pro Woche", "1x pro Woche", "Nach Bedarf"],
+        "en": ["Daily", "3x per week", "2x per week", "Weekly", "As needed"],
+        "fr": ["Quotidiennement", "3x par semaine", "2x par semaine", "Hebdomadaire", "Au besoin"],
+        "es": ["Diariamente", "3x por semana", "2x por semana", "Semanalmente", "Segun sea necesario"]
+      },
+      "default": {
+        "de": "2x pro Woche",
+        "en": "2x per week",
+        "fr": "2x par semaine",
+        "es": "2x por semana"
+      }
+    }
+  ],
+  "prompts": {
+    "sm_1": {
+      "de": "Plattform: {platform}",
+      "en": "Platform: {platform}",
+      "fr": "Plateforme: {platform}",
+      "es": "Plataforma: {platform}"
+    },
+    "sm_2": {
+      "de": "Content-Typ: {content_type}",
+      "en": "Content Type: {content_type}",
+      "fr": "Type de contenu: {content_type}",
+      "es": "Tipo de contenido: {content_type}"
+    },
+    "sm_3": {
+      "de": "Zielgruppe: {target_audience}",
+      "en": "Target Audience: {target_audience}",
+      "fr": "Public cible: {target_audience}",
+      "es": "Publico objetivo: {target_audience}"
+    },
+    "sm_4": {
+      "de": "Hook/Anker: {hook_angle}",
+      "en": "Hook: {hook_angle}",
+      "fr": "Accroche: {hook_angle}",
+      "es": "Gancho: {hook_angle}"
+    },
+    "sm_5": {
+      "de": "Tonfall: {tone}",
+      "en": "Tone: {tone}",
+      "fr": "Ton: {tone}",
+      "es": "Tono: {tone}"
+    },
+    "sm_6": {
+      "de": "Hauptbotschaft: {main_message}",
+      "en": "Main Message: {main_message}",
+      "fr": "Message principal: {main_message}",
+      "es": "Mensaje principal: {main_message}"
+    },
+    "sm_7": {
+      "de": "Call-to-Action: {cta}",
+      "en": "Call-to-Action: {cta}",
+      "fr": "Appel a l'action: {cta}",
+      "es": "Llamada a la accion: {cta}"
+    },
+    "sm_8": {
+      "de": "Hashtags: {hashtags}",
+      "en": "Hashtags: {hashtags}",
+      "fr": "Hashtags: {hashtags}",
+      "es": "Hashtags: {hashtags}"
+    },
+    "sm_9": {
+      "de": "Posting-Frequenz: {posting_frequency}",
+      "en": "Posting Frequency: {posting_frequency}",
+      "fr": "Frequence de publication: {posting_frequency}",
+      "es": "Frecuencia de publicacion: {posting_frequency}"
+    }
+  }
+}

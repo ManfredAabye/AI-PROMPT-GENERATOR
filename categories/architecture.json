@@ -1,0 +1,174 @@
+{
+  "category_name": {
+    "de": "Architektur",
+    "en": "Architecture",
+    "fr": "Architecture",
+    "es": "Arquitectura"
+  },
+  "fields": [
+    {
+      "key": "style",
+      "type": "combobox",
+      "label": {
+        "de": "Architekturstil",
+        "en": "Architecture Style",
+        "fr": "Style architectural",
+        "es": "Estilo arquitectonico"
+      },
+      "options": {
+        "de": ["modern", "klassisch", "minimalistisch", "rustikal", "industriell", "viktorianisch"],
+        "en": ["modern", "classic", "minimalist", "rustic", "industrial", "victorian"],
+        "fr": ["moderne", "classique", "minimaliste", "rustique", "industriel", "victorien"],
+        "es": ["moderno", "clasico", "minimalista", "rustico", "industrial", "victoriano"]
+      },
+      "default": {
+        "de": "modern",
+        "en": "modern",
+        "fr": "moderne",
+        "es": "moderno"
+      }
+    },
+    {
+      "key": "material",
+      "type": "combobox",
+      "label": {
+        "de": "Fassadenmaterial",
+        "en": "Facade Material",
+        "fr": "Materiau de facade",
+        "es": "Material de fachada"
+      },
+      "options": {
+        "de": ["Putz", "Holz", "Backstein", "Stein", "Metall", "Glas"],
+        "en": ["Plaster", "Wood", "Brick", "Stone", "Metal", "Glass"],
+        "fr": ["Enduit", "Bois", "Brique", "Pierre", "Metal", "Verre"],
+        "es": ["Revoque", "Madera", "Ladrillo", "Piedra", "Metal", "Vidrio"]
+      },
+      "default": {
+        "de": "Putz",
+        "en": "Plaster",
+        "fr": "Enduit",
+        "es": "Revoque"
+      }
+    },
+    {
+      "key": "color",
+      "type": "entry",
+      "label": {
+        "de": "Hauptfarbe",
+        "en": "Main Color",
+        "fr": "Couleur principale",
+        "es": "Color principal"
+      },
+      "default": {
+        "de": "weiss",
+        "en": "white",
+        "fr": "blanc",
+        "es": "blanco"
+      }
+    },
+    {
+      "key": "lighting",
+      "type": "combobox",
+      "label": {
+        "de": "Beleuchtung",
+        "en": "Lighting",
+        "fr": "Eclairage",
+        "es": "Iluminacion"
+      },
+      "options": {
+        "de": ["Tageslicht", "Abendlicht", "Morgenlicht", "dramatisch", "Studio", "Nacht"],
+        "en": ["Daylight", "Evening light", "Morning light", "Dramatic", "Studio", "Night"],
+        "fr": ["Lumiere du jour", "Lumiere du soir", "Lumiere du matin", "Dramatique", "Studio", "Nuit"],
+        "es": ["Luz diurna", "Luz de tarde", "Luz de manana", "Dramatico", "Estudio", "Noche"]
+      },
+      "default": {
+        "de": "Tageslicht",
+        "en": "Daylight",
+        "fr": "Lumiere du jour",
+        "es": "Luz diurna"
+      }
+    },
+    {
+      "key": "details",
+      "type": "text",
+      "label": {
+        "de": "Details",
+        "en": "Details",
+        "fr": "Details",
+        "es": "Detalles"
+      },
+      "default": {
+        "de": "Vordach, Hausnummer, Briefkasten, Fensterlaeden",
+        "en": "Canopy, house number, mailbox, shutters",
+        "fr": "Auvent, numero de maison, boite aux lettres, volets",
+        "es": "Tejadillo, numero de casa, buzon, persianas"
+      }
+    },
+    {
+      "key": "quality",
+      "type": "combobox",
+      "label": {
+        "de": "Render-Qualitaet",
+        "en": "Render Quality",
+        "fr": "Qualite du rendu",
+        "es": "Calidad de render"
+      },
+      "options": {
+        "de": ["4K fotorealistisch", "8K ultra-realistisch", "Skizzen-Stil", "Aquarell", "Low-Poly"],
+        "en": ["4K photorealistic", "8K ultra-realistic", "Sketch style", "Watercolor", "Low-poly"],
+        "fr": ["4K photorealiste", "8K ultra-realiste", "Style croquis", "Aquarelle", "Low-poly"],
+        "es": ["4K fotorrealista", "8K ultra-realista", "Estilo boceto", "Acuarela", "Low-poly"]
+      },
+      "default": {
+        "de": "4K fotorealistisch",
+        "en": "4K photorealistic",
+        "fr": "4K photorealiste",
+        "es": "4K fotorrealista"
+      }
+    }
+  ],
+  "prompts": {
+    "arch_1": {
+      "de": "{quality} Architekturvisualisierung.",
+      "en": "{quality} architecture visualization.",
+      "fr": "Visualisation architecturale {quality}.",
+      "es": "Visualizacion arquitectonica {quality}."
+    },
+    "arch_2": {
+      "de": "Stil: {style}e Architektur.",
+      "en": "Style: {style} architecture.",
+      "fr": "Style : architecture {style}.",
+      "es": "Estilo: arquitectura {style}."
+    },
+    "arch_3": {
+      "de": "Materialien: {material} in {color}.",
+      "en": "Materials: {material} in {color}.",
+      "fr": "Materiaux : {material} en {color}.",
+      "es": "Materiales: {material} en {color}."
+    },
+    "arch_4": {
+      "de": "Beleuchtung: {lighting} mit natuerlichen Lichteffekten.",
+      "en": "Lighting: {lighting} with natural light effects.",
+      "fr": "Eclairage : {lighting} avec des effets lumineux naturels.",
+      "es": "Iluminacion: {lighting} con efectos de luz naturales."
+    },
+    "arch_5": {
+      "de": "Details: {details}.",
+      "en": "Details: {details}.",
+      "fr": "Details : {details}.",
+      "es": "Detalles: {details}."
+    },
+    "arch_6": {
+      "de": "Render: Fotorealistisch, saubere Linien, Fokus auf Materialqualitaet und Texturen.",
+      "en": "Render: Photorealistic, clean lines, focus on material quality and textures.",
+      "fr": "Rendu : photorealiste, lignes nettes, focus sur la qualite des materiaux et les textures.",
+      "es": "Render: Fotorrealista, lineas limpias, enfoque en calidad de materiales y texturas."
+    },
+    "arch_7": {
+      "de": "Aufloesung: 4K, professionelle Darstellung.",
+      "en": "Resolution: 4K, professional rendering.",
+      "fr": "Resolution : 4K, rendu professionnel.",
+      "es": "Resolucion: 4K, representacion profesional."
+    }
+  }
+}

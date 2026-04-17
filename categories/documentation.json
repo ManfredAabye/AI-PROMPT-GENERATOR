@@ -1,0 +1,212 @@
+{
+  "category_name": {
+    "de": "Dokumentation",
+    "en": "Documentation",
+    "fr": "Documentation",
+    "es": "Documentacion"
+  },
+  "fields": [
+    {
+      "key": "doc_type",
+      "type": "combobox",
+      "label": {
+        "de": "Dokumentations-Typ",
+        "en": "Documentation Type",
+        "fr": "Type de documentation",
+        "es": "Tipo de documentacion"
+      },
+      "options": {
+        "de": ["API-Dokumentation", "README", "Handbuch/Anleitung", "Release Notes", "Changelog", "Architektur-Doku", "Troubleshooting"],
+        "en": ["API Documentation", "README", "User Manual", "Release Notes", "Changelog", "Architecture Doc", "Troubleshooting"],
+        "fr": ["Documentation API", "README", "Manuel utilisateur", "Notes de version", "Journal des modifications", "Doc architecture", "Depannage"],
+        "es": ["Documentacion API", "README", "Manual de usuario", "Notas de la version", "Registro de cambios", "Doc de arquitectura", "Solucion de problemas"]
+      },
+      "default": {
+        "de": "API-Dokumentation",
+        "en": "API Documentation",
+        "fr": "Documentation API",
+        "es": "Documentacion API"
+      }
+    },
+    {
+      "key": "target_audience",
+      "type": "entry",
+      "label": {
+        "de": "Zielgruppe",
+        "en": "Target Audience",
+        "fr": "Public cible",
+        "es": "Publico objetivo"
+      },
+      "default": {
+        "de": "Entwickler, End-User, Administrator",
+        "en": "Developers, end-users, administrators",
+        "fr": "Developpeurs, utilisateurs finaux, administrateurs",
+        "es": "Desarrolladores, usuarios finales, administradores"
+      }
+    },
+    {
+      "key": "main_topics",
+      "type": "text",
+      "label": {
+        "de": "Hauptthemen / Kapitel",
+        "en": "Main Topics / Chapters",
+        "fr": "Sujets principaux / Chapitres",
+        "es": "Temas principales / Capitulos"
+      },
+      "default": {
+        "de": "Installation, Konfiguration, Usage, Troubleshooting",
+        "en": "Installation, Configuration, Usage, Troubleshooting",
+        "fr": "Installation, Configuration, Utilisation, Depannage",
+        "es": "Instalacion, Configuracion, Uso, Solucion de problemas"
+      }
+    },
+    {
+      "key": "code_examples",
+      "type": "combobox",
+      "label": {
+        "de": "Code-Beispiele / Snippets",
+        "en": "Code Examples / Snippets",
+        "fr": "Exemples de code / Extraits",
+        "es": "Ejemplos de codigo / Fragmentos"
+      },
+      "options": {
+        "de": ["Viele Beispiele", "Einige Beispiele", "Minimal", "Keine"],
+        "en": ["Lots of examples", "Some examples", "Minimal", "None"],
+        "fr": ["Beaucoup d'exemples", "Quelques exemples", "Minimal", "Aucun"],
+        "es": ["Muchos ejemplos", "Algunos ejemplos", "Minimo", "Ninguno"]
+      },
+      "default": {
+        "de": "Einige Beispiele",
+        "en": "Some examples",
+        "fr": "Quelques exemples",
+        "es": "Algunos ejemplos"
+      }
+    },
+    {
+      "key": "language_and_tone",
+      "type": "combobox",
+      "label": {
+        "de": "Sprache / Ton",
+        "en": "Language / Tone",
+        "fr": "Langue / Ton",
+        "es": "Idioma / Tono"
+      },
+      "options": {
+        "de": ["Formal/Technisch", "Freundlich/Erklaerend", "Pragnant/Direkt", "Conversational"],
+        "en": ["Formal/Technical", "Friendly/Explanatory", "Concise/Direct", "Conversational"],
+        "fr": ["Formel/Technique", "Amical/Explicatif", "Concis/Direct", "Conversationnel"],
+        "es": ["Formal/Tecnico", "Amigable/Explicativo", "Conciso/Directo", "Conversacional"]
+      },
+      "default": {
+        "de": "Formal/Technisch",
+        "en": "Formal/Technical",
+        "fr": "Formel/Technique",
+        "es": "Formal/Tecnico"
+      }
+    },
+    {
+      "key": "format",
+      "type": "combobox",
+      "label": {
+        "de": "Format / Ausgabemedium",
+        "en": "Format / Output Medium",
+        "fr": "Format / Moyen de sortie",
+        "es": "Formato / Medio de salida"
+      },
+      "options": {
+        "de": ["Markdown", "HTML", "PDF", "Wiki", "Confluence", "Notion"],
+        "en": ["Markdown", "HTML", "PDF", "Wiki", "Confluence", "Notion"],
+        "fr": ["Markdown", "HTML", "PDF", "Wiki", "Confluence", "Notion"],
+        "es": ["Markdown", "HTML", "PDF", "Wiki", "Confluence", "Notion"]
+      },
+      "default": {
+        "de": "Markdown",
+        "en": "Markdown",
+        "fr": "Markdown",
+        "es": "Markdown"
+      }
+    },
+    {
+      "key": "version_info",
+      "type": "entry",
+      "label": {
+        "de": "Versions-Info",
+        "en": "Version Info",
+        "fr": "Informations sur la version",
+        "es": "Informacion de version"
+      },
+      "default": {
+        "de": "Software Version, Letztes Update",
+        "en": "Software version, last updated",
+        "fr": "Version logicielle, derniere mise a jour",
+        "es": "Version de software, ultima actualizacion"
+      }
+    },
+    {
+      "key": "special_sections",
+      "type": "entry",
+      "label": {
+        "de": "Spezial-Abschnitte",
+        "en": "Special Sections",
+        "fr": "Sections speciales",
+        "es": "Secciones especiales"
+      },
+      "default": {
+        "de": "FAQ, Glossar, Links, Credits",
+        "en": "FAQ, Glossary, Links, Credits",
+        "fr": "FAQ, Glossaire, Liens, Credits",
+        "es": "FAQ, Glosario, Enlaces, Creditos"
+      }
+    }
+  ],
+  "prompts": {
+    "doc_1": {
+      "de": "Dokumentations-Typ: {doc_type}",
+      "en": "Documentation Type: {doc_type}",
+      "fr": "Type de documentation: {doc_type}",
+      "es": "Tipo de documentacion: {doc_type}"
+    },
+    "doc_2": {
+      "de": "Zielgruppe: {target_audience}",
+      "en": "Target Audience: {target_audience}",
+      "fr": "Public cible: {target_audience}",
+      "es": "Publico objetivo: {target_audience}"
+    },
+    "doc_3": {
+      "de": "Hauptthemen: {main_topics}",
+      "en": "Main Topics: {main_topics}",
+      "fr": "Sujets principaux: {main_topics}",
+      "es": "Temas principales: {main_topics}"
+    },
+    "doc_4": {
+      "de": "Code-Beispiele: {code_examples}",
+      "en": "Code Examples: {code_examples}",
+      "fr": "Exemples de code: {code_examples}",
+      "es": "Ejemplos de codigo: {code_examples}"
+    },
+    "doc_5": {
+      "de": "Sprache/Ton: {language_and_tone}",
+      "en": "Language/Tone: {language_and_tone}",
+      "fr": "Langue/Ton: {language_and_tone}",
+      "es": "Idioma/Tono: {language_and_tone}"
+    },
+    "doc_6": {
+      "de": "Format: {format}",
+      "en": "Format: {format}",
+      "fr": "Format: {format}",
+      "es": "Formato: {format}"
+    },
+    "doc_7": {
+      "de": "Versions-Info: {version_info}",
+      "en": "Version Info: {version_info}",
+      "fr": "Informations de version: {version_info}",
+      "es": "Informacion de version: {version_info}"
+    },
+    "doc_8": {
+      "de": "Spezial-Abschnitte: {special_sections}",
+      "en": "Special Sections: {special_sections}",
+      "fr": "Sections speciales: {special_sections}",
+      "es": "Secciones especiales: {special_sections}"
+    }
+  }
+}

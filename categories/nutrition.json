@@ -1,0 +1,360 @@
+{
+  "category_name": {
+    "de": "Ernaehrungsplan",
+    "en": "Nutrition Plan",
+    "fr": "Plan nutritionnel",
+    "es": "Plan nutricional"
+  },
+  "fields": [
+    {
+      "key": "days",
+      "type": "spinbox",
+      "label": {
+        "de": "Anzahl Tage",
+        "en": "Number of Days",
+        "fr": "Nombre de jours",
+        "es": "Numero de dias"
+      },
+      "default": {
+        "de": 7,
+        "en": 7,
+        "fr": 7,
+        "es": 7
+      },
+      "min": 1,
+      "max": 31
+    },
+    {
+      "key": "age",
+      "type": "spinbox",
+      "label": {
+        "de": "Alter (Jahre)",
+        "en": "Age (Years)",
+        "fr": "Age (annees)",
+        "es": "Edad (anos)"
+      },
+      "default": {
+        "de": 62,
+        "en": 62,
+        "fr": 62,
+        "es": 62
+      },
+      "min": 18,
+      "max": 99
+    },
+    {
+      "key": "weight",
+      "type": "spinbox",
+      "label": {
+        "de": "Gewicht (kg)",
+        "en": "Weight (kg)",
+        "fr": "Poids (kg)",
+        "es": "Peso (kg)"
+      },
+      "default": {
+        "de": 110,
+        "en": 110,
+        "fr": 110,
+        "es": 110
+      },
+      "min": 40,
+      "max": 250
+    },
+    {
+      "key": "gender",
+      "type": "combobox",
+      "label": {
+        "de": "Geschlecht",
+        "en": "Gender",
+        "fr": "Genre",
+        "es": "Genero"
+      },
+      "options": {
+        "de": ["maennlich", "weiblich", "divers"],
+        "en": ["male", "female", "diverse"],
+        "fr": ["homme", "femme", "divers"],
+        "es": ["masculino", "femenino", "diverso"]
+      },
+      "default": {
+        "de": "maennlich",
+        "en": "male",
+        "fr": "homme",
+        "es": "masculino"
+      }
+    },
+    {
+      "key": "goal",
+      "type": "combobox",
+      "label": {
+        "de": "Ernaehrungsziel",
+        "en": "Nutrition Goal",
+        "fr": "Objectif nutritionnel",
+        "es": "Objetivo nutricional"
+      },
+      "options": {
+        "de": ["Ausgewogen & gesund", "Gewichtsreduktion", "Muskelaufbau", "Gesundheitserhalt"],
+        "en": ["Balanced & healthy", "Weight loss", "Muscle gain", "Health maintenance"],
+        "fr": ["Equilibre et sain", "Perte de poids", "Prise de muscle", "Maintien de la sante"],
+        "es": ["Equilibrado y saludable", "Perdida de peso", "Aumento muscular", "Mantenimiento de salud"]
+      },
+      "default": {
+        "de": "Gewichtsreduktion",
+        "en": "Weight loss",
+        "fr": "Perte de poids",
+        "es": "Perdida de peso"
+      }
+    },
+    {
+      "key": "taste",
+      "type": "combobox",
+      "label": {
+        "de": "Geschmack",
+        "en": "Taste",
+        "fr": "Gout",
+        "es": "Sabor"
+      },
+      "options": {
+        "de": ["Abwechslungsreich", "Mediterran", "Vegetarisch", "Fleischbetont", "Asiatisch"],
+        "en": ["Varied", "Mediterranean", "Vegetarian", "Meat-focused", "Asian"],
+        "fr": ["Varie", "Mediterraneen", "Vegetarien", "Axee viande", "Asiatique"],
+        "es": ["Variado", "Mediterraneo", "Vegetariano", "Enfocado en carne", "Asiatico"]
+      },
+      "default": {
+        "de": "Abwechslungsreich",
+        "en": "Varied",
+        "fr": "Varie",
+        "es": "Variado"
+      }
+    },
+    {
+      "key": "appliances",
+      "type": "text",
+      "label": {
+        "de": "Kuechengeraete",
+        "en": "Kitchen Appliances",
+        "fr": "Appareils de cuisine",
+        "es": "Electrodomesticos"
+      },
+      "default": {
+        "de": "Heissluftfritteuse, Mikrowelle, Umluftherd",
+        "en": "Air fryer, microwave, convection oven",
+        "fr": "Friteuse a air, micro-ondes, four a convection",
+        "es": "Freidora de aire, microondas, horno de conveccion"
+      }
+    },
+    {
+      "key": "meal_prep",
+      "type": "checkbox",
+      "label": {
+        "de": "Meal Prep einplanen",
+        "en": "Plan Meal Prep",
+        "fr": "Planifier le meal prep",
+        "es": "Planificar meal prep"
+      },
+      "default": {
+        "de": true,
+        "en": true,
+        "fr": true,
+        "es": true
+      }
+    },
+    {
+      "key": "storage",
+      "type": "text",
+      "label": {
+        "de": "Lagerungsmoeglichkeiten",
+        "en": "Storage Options",
+        "fr": "Options de stockage",
+        "es": "Opciones de almacenamiento"
+      },
+      "default": {
+        "de": "ungekuehlt, Kuehlschrank, Gefriertruhe",
+        "en": "room temperature, refrigerator, freezer",
+        "fr": "temperature ambiante, refrigerateur, congelateur",
+        "es": "temperatura ambiente, refrigerador, congelador"
+      }
+    },
+    {
+      "key": "show_calories",
+      "type": "checkbox",
+      "label": {
+        "de": "Kalorienangaben",
+        "en": "Calorie Info",
+        "fr": "Infos calories",
+        "es": "Info calorias"
+      },
+      "default": {
+        "de": true,
+        "en": true,
+        "fr": true,
+        "es": true
+      }
+    },
+    {
+      "key": "show_tips",
+      "type": "checkbox",
+      "label": {
+        "de": "Gewichtsreduktions-Tipps",
+        "en": "Weight Loss Tips",
+        "fr": "Conseils perte de poids",
+        "es": "Consejos para perder peso"
+      },
+      "default": {
+        "de": true,
+        "en": true,
+        "fr": true,
+        "es": true
+      }
+    },
+    {
+      "key": "show_portions",
+      "type": "checkbox",
+      "label": {
+        "de": "Portionsgroessen-Hinweise",
+        "en": "Portion Size Notes",
+        "fr": "Conseils portions",
+        "es": "Notas de porciones"
+      },
+      "default": {
+        "de": true,
+        "en": true,
+        "fr": true,
+        "es": true
+      }
+    }
+  ],
+  "prompts": {
+    "intro": {
+      "de": "Erstelle einen detaillierten und praxisnahen Ernaehrungsplan fuer eine {gender}e Person mit folgenden Eigenschaften:",
+      "en": "Create a detailed and practical nutrition plan for a {gender} person with the following profile:",
+      "fr": "Cree un plan nutritionnel detaille et pratique pour une personne {gender} avec le profil suivant :",
+      "es": "Crea un plan nutricional detallado y practico para una persona {gender} con el siguiente perfil:"
+    },
+    "age": {
+      "de": "- Alter: {age} Jahre",
+      "en": "- Age: {age} years",
+      "fr": "- Age : {age} ans",
+      "es": "- Edad: {age} anos"
+    },
+    "weight": {
+      "de": "- Gewicht: {weight} kg",
+      "en": "- Weight: {weight} kg",
+      "fr": "- Poids : {weight} kg",
+      "es": "- Peso: {weight} kg"
+    },
+    "goal": {
+      "de": "- Ziel: {goal}",
+      "en": "- Goal: {goal}",
+      "fr": "- Objectif : {goal}",
+      "es": "- Objetivo: {goal}"
+    },
+    "taste": {
+      "de": "- Geschmack: {taste}, keine einseitige Kost",
+      "en": "- Taste: {taste}, varied meals only",
+      "fr": "- Gout : {taste}, alimentation variee uniquement",
+      "es": "- Sabor: {taste}, solo comidas variadas"
+    },
+    "requirements": {
+      "de": "Anforderungen an den Plan:",
+      "en": "Plan requirements:",
+      "fr": "Exigences du plan :",
+      "es": "Requisitos del plan:"
+    },
+    "r1": {
+      "de": "1. Erstelle einen {plan_label} mit Fruehstueck, Mittagessen und Abendessen sowie optionalen Snacks.",
+      "en": "1. Create a {plan_label} with breakfast, lunch, dinner and optional snacks.",
+      "fr": "1. Cree un {plan_label} avec petit-dejeuner, dejeuner, diner et collations optionnelles.",
+      "es": "1. Crea un {plan_label} con desayuno, almuerzo, cena y snacks opcionales."
+    },
+    "r2": {
+      "de": "2. Die Gerichte sollen einfach zuzubereiten sein und alltagstauglich bleiben.",
+      "en": "2. Meals should be simple to prepare and practical for daily life.",
+      "fr": "2. Les repas doivent etre simples a preparer et adaptes au quotidien.",
+      "es": "2. Las comidas deben ser faciles de preparar y practicas para el dia a dia."
+    },
+    "r3": {
+      "de": "3. Beruecksichtige folgende Haushaltsgeraete bei der Zubereitung:",
+      "en": "3. Consider the following kitchen appliances during preparation:",
+      "fr": "3. Tenez compte des appareils de cuisine suivants lors de la preparation :",
+      "es": "3. Considera los siguientes electrodomesticos en la preparacion:"
+    },
+    "mealprep": {
+      "de": "4. Integriere Gerichte, die sich gut vorbereiten und lagern lassen (Meal Prep), unter Beruecksichtigung von:\n   - Lagerungsmoeglichkeiten: {storage}",
+      "en": "4. Include meal-prep friendly dishes with storage guidance:\n   - Storage options: {storage}",
+      "fr": "4. Integrez des plats adaptes au meal prep avec consignes de stockage :\n   - Options de stockage : {storage}",
+      "es": "4. Incluye platos aptos para meal prep con guia de almacenamiento:\n   - Opciones de almacenamiento: {storage}"
+    },
+    "r5": {
+      "de": "5. Achte auf eine ausgewogene Naehrstoffverteilung (Eiweiss, gesunde Fette, komplexe Kohlenhydrate).",
+      "en": "5. Ensure balanced macronutrients (protein, healthy fats, complex carbs).",
+      "fr": "5. Assurez une repartition equilibree des macronutriments (proteines, bonnes graisses, glucides complexes).",
+      "es": "5. Asegura una distribucion equilibrada de macronutrientes (proteina, grasas saludables, carbohidratos complejos)."
+    },
+    "r6": {
+      "de": "6. Beruecksichtige altersgerechte Ernaehrung (z. B. gut verdaulich, naehrstoffreich, moderater Kalorienbedarf).",
+      "en": "6. Consider age-appropriate nutrition (easy digestion, nutrient density, moderate calories).",
+      "fr": "6. Prenez en compte une alimentation adaptee a l'age (digestion facile, densite nutritionnelle, calories moderees).",
+      "es": "6. Considera nutricion adecuada para la edad (facil digestion, densidad nutricional, calorias moderadas)."
+    },
+    "r7": {
+      "de": "7. Gib zu jedem Gericht eine kurze Zubereitungsbeschreibung.",
+      "en": "7. Add a short preparation description for each dish.",
+      "fr": "7. Ajoutez une breve description de preparation pour chaque plat.",
+      "es": "7. Agrega una breve descripcion de preparacion para cada plato."
+    },
+    "r8": {
+      "de": "8. Fuege am Ende eine uebersichtliche Einkaufsliste {shopping_period} hinzu.",
+      "en": "8. Add a clear shopping list {shopping_period} at the end.",
+      "fr": "8. Ajoutez une liste de courses claire {shopping_period} a la fin.",
+      "es": "8. Agrega una lista de compras clara {shopping_period} al final."
+    },
+    "optional": {
+      "de": "Optional:",
+      "en": "Optional:",
+      "fr": "Optionnel :",
+      "es": "Opcional:"
+    },
+    "opt_calories": {
+      "de": "- Kalorienangaben pro Tag",
+      "en": "- Daily calorie estimates",
+      "fr": "- Estimation calorique quotidienne",
+      "es": "- Estimacion diaria de calorias"
+    },
+    "opt_tips": {
+      "de": "- Tipps zur Gewichtsreduktion",
+      "en": "- Weight-loss tips",
+      "fr": "- Conseils de perte de poids",
+      "es": "- Consejos para perder peso"
+    },
+    "opt_portions": {
+      "de": "- Hinweise zur Portionsgroesse",
+      "en": "- Portion size guidance",
+      "fr": "- Conseils sur la taille des portions",
+      "es": "- Orientacion sobre tamano de porciones"
+    },
+    "plan_week": {
+      "de": "Wochenplan ({days} Tage)",
+      "en": "weekly plan ({days} days)",
+      "fr": "plan hebdomadaire ({days} jours)",
+      "es": "plan semanal ({days} dias)"
+    },
+    "plan_day": {
+      "de": "Tagesplan (1 Tag)",
+      "en": "daily plan (1 day)",
+      "fr": "plan quotidien (1 jour)",
+      "es": "plan diario (1 dia)"
+    },
+    "shopping_day": {
+      "de": "fuer den Tag",
+      "en": "for the day",
+      "fr": "pour la journee",
+      "es": "para el dia"
+    },
+    "shopping_days": {
+      "de": "fuer {days} Tage",
+      "en": "for {days} days",
+      "fr": "pour {days} jours",
+      "es": "para {days} dias"
+    }
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "category_name": {
+    "de": "E-Mail / Kommunikation",
+    "en": "Email / Communication",
+    "fr": "E-mail / Communication",
+    "es": "Email / Comunicacion"
+  },
+  "fields": [
+    {
+      "key": "email_type",
+      "type": "combobox",
+      "label": {
+        "de": "E-Mail Typ",
+        "en": "Email Type",
+        "fr": "Type d'e-mail",
+        "es": "Tipo de email"
+      },
+      "options": {
+        "de": ["Newsletter", "Transaktional", "Promotional", "Event", "Support", "Recruitment"],
+        "en": ["Newsletter", "Transactional", "Promotional", "Event", "Support", "Recruitment"],
+        "fr": ["Infolettre", "Transactionnel", "Promotionnel", "Evenement", "Support", "Recrutement"],
+        "es": ["Boletin", "Transaccional", "Promocional", "Evento", "Soporte", "Reclutamiento"]
+      },
+      "default": {
+        "de": "Newsletter",
+        "en": "Newsletter",
+        "fr": "Infolettre",
+        "es": "Boletin"
+      }
+    },
+    {
+      "key": "recipient",
+      "type": "entry",
+      "label": {
+        "de": "Empfaenger / Zielgruppe",
+        "en": "Recipient / Target Audience",
+        "fr": "Destinataire / Public cible",
+        "es": "Destinatario / Publico objetivo"
+      },
+      "default": {
+        "de": "Kunden, Partner, Interessenten",
+        "en": "Customers, partners, prospects",
+        "fr": "Clients, partenaires, prospects",
+        "es": "Clientes, socios, prospectos"
+      }
+    },
+    {
+      "key": "primary_goal",
+      "type": "combobox",
+      "label": {
+        "de": "Haupt-Ziel",
+        "en": "Primary Goal",
+        "fr": "Objectif principal",
+        "es": "Objetivo principal"
+      },
+      "options": {
+        "de": ["Engagement", "Konversion", "Retention", "Information", "Feedback", "Beziehung"],
+        "en": ["Engagement", "Conversion", "Retention", "Inform", "Feedback", "Relationship"],
+        "fr": ["Engagement", "Conversion", "Retention", "Information", "Retour", "Relation"],
+        "es": ["Engagement", "Conversion", "Retencion", "Informar", "Retroalimentacion", "Relacion"]
+      },
+      "default": {
+        "de": "Engagement",
+        "en": "Engagement",
+        "fr": "Engagement",
+        "es": "Engagement"
+      }
+    },
+    {
+      "key": "subject_line_strategy",
+      "type": "entry",
+      "label": {
+        "de": "Subject-Line Strategie",
+        "en": "Subject Line Strategy",
+        "fr": "Strategie de la ligne d'objet",
+        "es": "Estrategia de asunto"
+      },
+      "default": {
+        "de": "Benefit-driven, Curiosity, Urgency, Personal",
+        "en": "Benefit-driven, Curiosity, Urgency, Personal",
+        "fr": "Axe sur les avantages, Curiosite, Urgence, Personnel",
+        "es": "Orientado a beneficios, Curiosidad, Urgencia, Personal"
+      }
+    },
+    {
+      "key": "tone_and_voice",
+      "type": "combobox",
+      "label": {
+        "de": "Ton / Stimme",
+        "en": "Tone / Voice",
+        "fr": "Ton / Voix",
+        "es": "Tono / Voz"
+      },
+      "options": {
+        "de": ["Professionell", "Freundlich", "Inspirierend", "Ueberzeugend", "Locker/Casual"],
+        "en": ["Professional", "Friendly", "Inspiring", "Persuasive", "Casual"],
+        "fr": ["Professionnel", "Amical", "Inspirant", "Convaincant", "Decontracte"],
+        "es": ["Profesional", "Amigable", "Inspirador", "Persuasivo", "Casual"]
+      },
+      "default": {
+        "de": "Professionell",
+        "en": "Professional",
+        "fr": "Professionnel",
+        "es": "Profesional"
+      }
+    },
+    {
+      "key": "content_structure",
+      "type": "text",
+      "label": {
+        "de": "Content-Struktur",
+        "en": "Content Structure",
+        "fr": "Structure du contenu",
+        "es": "Estructura del contenido"
+      },
+      "default": {
+        "de": "Greeting, Hook, Body, CTA, Sign-off",
+        "en": "Greeting, Hook, Body, CTA, Sign-off",
+        "fr": "Salutation, Accroche, Corps, CTA, Signature",
+        "es": "Saludo, Gancho, Cuerpo, CTA, Firma"
+      }
+    },
+    {
+      "key": "cta_type",
+      "type": "entry",
+      "label": {
+        "de": "CTA (Call-to-Action)",
+        "en": "CTA (Call-to-Action)",
+        "fr": "CTA (Appel a l'action)",
+        "es": "CTA (Llamada a la accion)"
+      },
+      "default": {
+        "de": "Link klicken, Event registrieren, Download",
+        "en": "Click link, register event, download",
+        "fr": "Cliquer sur le lien, enregistrer, telecharger",
+        "es": "Hacer clic en enlace, registrarse, descargar"
+      }
+    },
+    {
+      "key": "length_preference",
+      "type": "combobox",
+      "label": {
+        "de": "Laenge Praeeferenz",
+        "en": "Length Preference",
+        "fr": "Preference de longueur",
+        "es": "Preferencia de longitud"
+      },
+      "options": {
+        "de": ["Sehr kurz (50-100 Woerter)", "Kurz (100-200)", "Mittel (200-400)", "Lang (400+)"],
+        "en": ["Very short (50-100 words)", "Short (100-200)", "Medium (200-400)", "Long (400+)"],
+        "fr": ["Tres court (50-100 mots)", "Court (100-200)", "Moyen (200-400)", "Long (400+)"],
+        "es": ["Muy corto (50-100 palabras)", "Corto (100-200)", "Medio (200-400)", "Largo (400+)"]
+      },
+      "default": {
+        "de": "Kurz (100-200)",
+        "en": "Short (100-200)",
+        "fr": "Court (100-200)",
+        "es": "Corto (100-200)"
+      }
+    }
+  ],
+  "prompts": {
+    "email_1": {
+      "de": "E-Mail Typ: {email_type}",
+      "en": "Email Type: {email_type}",
+      "fr": "Type d'e-mail: {email_type}",
+      "es": "Tipo de email: {email_type}"
+    },
+    "email_2": {
+      "de": "Empfaenger: {recipient}",
+      "en": "Recipient: {recipient}",
+      "fr": "Destinataire: {recipient}",
+      "es": "Destinatario: {recipient}"
+    },
+    "email_3": {
+      "de": "Haupt-Ziel: {primary_goal}",
+      "en": "Primary Goal: {primary_goal}",
+      "fr": "Objectif principal: {primary_goal}",
+      "es": "Objetivo principal: {primary_goal}"
+    },
+    "email_4": {
+      "de": "Subject-Line: {subject_line_strategy}",
+      "en": "Subject Line: {subject_line_strategy}",
+      "fr": "Ligne d'objet: {subject_line_strategy}",
+      "es": "Asunto: {subject_line_strategy}"
+    },
+    "email_5": {
+      "de": "Ton: {tone_and_voice}",
+      "en": "Tone: {tone_and_voice}",
+      "fr": "Ton: {tone_and_voice}",
+      "es": "Tono: {tone_and_voice}"
+    },
+    "email_6": {
+      "de": "Content-Struktur: {content_structure}",
+      "en": "Content Structure: {content_structure}",
+      "fr": "Structure du contenu: {content_structure}",
+      "es": "Estructura del contenido: {content_structure}"
+    },
+    "email_7": {
+      "de": "CTA: {cta_type}",
+      "en": "CTA: {cta_type}",
+      "fr": "CTA: {cta_type}",
+      "es": "CTA: {cta_type}"
+    },
+    "email_8": {
+      "de": "Laenge: {length_preference}",
+      "en": "Length: {length_preference}",
+      "fr": "Longueur: {length_preference}",
+      "es": "Longitud: {length_preference}"
+    }
+  }
+}

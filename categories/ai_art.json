@@ -1,0 +1,178 @@
+{
+  "category_name": {
+    "de": "KI-Kunst",
+    "en": "AI Art",
+    "fr": "Art IA",
+    "es": "Arte IA"
+  },
+  "fields": [
+    {
+      "key": "subject",
+      "type": "text",
+      "label": {
+        "de": "Motiv",
+        "en": "Subject",
+        "fr": "Sujet",
+        "es": "Motivo"
+      },
+      "default": {
+        "de": "Futuristisches Haus in einer Naturlandschaft",
+        "en": "Futuristic house in a natural landscape",
+        "fr": "Maison futuriste dans un paysage naturel",
+        "es": "Casa futurista en un paisaje natural"
+      }
+    },
+    {
+      "key": "style",
+      "type": "combobox",
+      "label": {
+        "de": "Kunststil",
+        "en": "Art Style",
+        "fr": "Style artistique",
+        "es": "Estilo artistico"
+      },
+      "options": {
+        "de": ["Fotorealistisch", "Oelmalerei", "Aquarell", "Pixel Art", "Cyberpunk", "Steampunk"],
+        "en": ["Photorealistic", "Oil Painting", "Watercolor", "Pixel Art", "Cyberpunk", "Steampunk"],
+        "fr": ["Photorealiste", "Peinture a l'huile", "Aquarelle", "Pixel Art", "Cyberpunk", "Steampunk"],
+        "es": ["Fotorrealista", "Pintura al oleo", "Acuarela", "Pixel Art", "Cyberpunk", "Steampunk"]
+      },
+      "default": {
+        "de": "Fotorealistisch",
+        "en": "Photorealistic",
+        "fr": "Photorealiste",
+        "es": "Fotorrealista"
+      }
+    },
+    {
+      "key": "artist",
+      "type": "entry",
+      "label": {
+        "de": "Kuenstler-Referenz",
+        "en": "Artist Reference",
+        "fr": "Reference artiste",
+        "es": "Referencia de artista"
+      },
+      "default": {
+        "de": "",
+        "en": "",
+        "fr": "",
+        "es": ""
+      }
+    },
+    {
+      "key": "colors",
+      "type": "text",
+      "label": {
+        "de": "Farbpalette",
+        "en": "Color Palette",
+        "fr": "Palette de couleurs",
+        "es": "Paleta de colores"
+      },
+      "default": {
+        "de": "Erdtoene mit akzentuierenden Blautoenen",
+        "en": "Earth tones with blue accents",
+        "fr": "Tons terre avec accents bleus",
+        "es": "Tonos tierra con acentos azules"
+      }
+    },
+    {
+      "key": "composition",
+      "type": "combobox",
+      "label": {
+        "de": "Komposition",
+        "en": "Composition",
+        "fr": "Composition",
+        "es": "Composicion"
+      },
+      "options": {
+        "de": ["Epische Weitwinkel", "Nahaufnahme", "Vogelperspektive", "Froschperspektive"],
+        "en": ["Epic wide angle", "Close-up", "Bird's-eye view", "Worm's-eye view"],
+        "fr": ["Grand angle epique", "Gros plan", "Vue plongeante", "Contre-plongee"],
+        "es": ["Gran angular epico", "Primer plano", "Vista de pajaro", "Contrapicado"]
+      },
+      "default": {
+        "de": "Epische Weitwinkel",
+        "en": "Epic wide angle",
+        "fr": "Grand angle epique",
+        "es": "Gran angular epico"
+      }
+    },
+    {
+      "key": "details",
+      "type": "combobox",
+      "label": {
+        "de": "Details Level",
+        "en": "Detail Level",
+        "fr": "Niveau de detail",
+        "es": "Nivel de detalle"
+      },
+      "options": {
+        "de": ["Hochdetailliert", "Mitteldetailliert", "Stilisiert", "Minimalistisch"],
+        "en": ["Highly detailed", "Medium detail", "Stylized", "Minimalist"],
+        "fr": ["Tres detaille", "Detail moyen", "Stylise", "Minimaliste"],
+        "es": ["Muy detallado", "Detalle medio", "Estilizado", "Minimalista"]
+      },
+      "default": {
+        "de": "Hochdetailliert",
+        "en": "Highly detailed",
+        "fr": "Tres detaille",
+        "es": "Muy detallado"
+      }
+    },
+    {
+      "key": "parameters",
+      "type": "text",
+      "label": {
+        "de": "Technische Parameter",
+        "en": "Technical Parameters",
+        "fr": "Parametres techniques",
+        "es": "Parametros tecnicos"
+      },
+      "default": {
+        "de": "--ar 16:9 --v 6.0 --style raw",
+        "en": "--ar 16:9 --v 6.0 --style raw",
+        "fr": "--ar 16:9 --v 6.0 --style raw",
+        "es": "--ar 16:9 --v 6.0 --style raw"
+      }
+    }
+  ],
+  "prompts": {
+    "art_subject_style": {
+      "de": "{subject}, {style}{artist_ref}.",
+      "en": "{subject}, {style}{artist_ref}.",
+      "fr": "{subject}, {style}{artist_ref}.",
+      "es": "{subject}, {style}{artist_ref}."
+    },
+    "art_artist_ref": {
+      "de": " im Stil von {artist}",
+      "en": " in the style of {artist}",
+      "fr": " dans le style de {artist}",
+      "es": " al estilo de {artist}"
+    },
+    "art_2": {
+      "de": "Farbpalette: {colors}.",
+      "en": "Color palette: {colors}.",
+      "fr": "Palette de couleurs : {colors}.",
+      "es": "Paleta de colores: {colors}."
+    },
+    "art_3": {
+      "de": "Komposition: {composition}.",
+      "en": "Composition: {composition}.",
+      "fr": "Composition : {composition}.",
+      "es": "Composicion: {composition}."
+    },
+    "art_4": {
+      "de": "Detailgrad: {details}.",
+      "en": "Detail level: {details}.",
+      "fr": "Niveau de detail : {details}.",
+      "es": "Nivel de detalle: {details}."
+    },
+    "art_5": {
+      "de": "Stil: {style}, atmosphaerisch, ausdrucksstark.",
+      "en": "Style: {style}, atmospheric, expressive.",
+      "fr": "Style : {style}, atmospherique, expressif.",
+      "es": "Estilo: {style}, atmosferico, expresivo."
+    }
+  }
+}

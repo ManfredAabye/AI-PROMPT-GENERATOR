@@ -1,0 +1,194 @@
+{
+  "category_name": {
+    "de": "Automatisierung / Workflow",
+    "en": "Automation / Workflow",
+    "fr": "Automatisation / Flux de travail",
+    "es": "Automatizacion / Flujo de trabajo"
+  },
+  "fields": [
+    {
+      "key": "process_name",
+      "type": "entry",
+      "label": {
+        "de": "Prozessname",
+        "en": "Process Name",
+        "fr": "Nom du processus",
+        "es": "Nombre del proceso"
+      },
+      "default": {
+        "de": "Mein Prozess",
+        "en": "My Process",
+        "fr": "Mon processus",
+        "es": "Mi proceso"
+      }
+    },
+    {
+      "key": "trigger",
+      "type": "entry",
+      "label": {
+        "de": "Trigger/Start-Bedingung",
+        "en": "Trigger/Start Condition",
+        "fr": "Declencheur/Condition de demarrage",
+        "es": "Disparador/Condicion de inicio"
+      },
+      "default": {
+        "de": "E-Mail erhielt, Zeit-Event, Datei-Upload",
+        "en": "Email received, time event, file upload",
+        "fr": "E-mail recu, evenement temporel, televersement",
+        "es": "Email recibido, evento de tiempo, carga de archivo"
+      }
+    },
+    {
+      "key": "input_data",
+      "type": "text",
+      "label": {
+        "de": "Eingabedaten",
+        "en": "Input Data",
+        "fr": "Donnees d'entree",
+        "es": "Datos de entrada"
+      },
+      "default": {
+        "de": "Was wird als Input erwartet?",
+        "en": "What is expected as input?",
+        "fr": "Quelles entrees sont attendues?",
+        "es": "Que se espera como entrada?"
+      }
+    },
+    {
+      "key": "processing_steps",
+      "type": "text",
+      "label": {
+        "de": "Verarbeitungsschritte",
+        "en": "Processing Steps",
+        "fr": "Etapes de traitement",
+        "es": "Pasos de procesamiento"
+      },
+      "default": {
+        "de": "1. Validierung, 2. Transformation, 3. Anreicherung",
+        "en": "1. Validation, 2. Transform, 3. Enrich",
+        "fr": "1. Validation, 2. Transformation, 3. Enrichissement",
+        "es": "1. Validacion, 2. Transformacion, 3. Enriquecimiento"
+      }
+    },
+    {
+      "key": "tools_and_apis",
+      "type": "entry",
+      "label": {
+        "de": "Tools / APIs / Services",
+        "en": "Tools / APIs / Services",
+        "fr": "Outils / APIs / Services",
+        "es": "Herramientas / APIs / Servicios"
+      },
+      "default": {
+        "de": "Zapier, Make, IFTTT, Custom APIs",
+        "en": "Zapier, Make, IFTTT, Custom APIs",
+        "fr": "Zapier, Make, IFTTT, APIs personnalisees",
+        "es": "Zapier, Make, IFTTT, APIs personalizadas"
+      }
+    },
+    {
+      "key": "output_action",
+      "type": "entry",
+      "label": {
+        "de": "Output / Aktion",
+        "en": "Output / Action",
+        "fr": "Sortie / Action",
+        "es": "Salida / Accion"
+      },
+      "default": {
+        "de": "E-Mail senden, Datei speichern, DB aktualisieren",
+        "en": "Send email, save file, update database",
+        "fr": "Envoyer e-mail, enregistrer fichier, mise a jour BD",
+        "es": "Enviar email, guardar archivo, actualizar BD"
+      }
+    },
+    {
+      "key": "error_handling",
+      "type": "combobox",
+      "label": {
+        "de": "Fehlerbehandlung",
+        "en": "Error Handling",
+        "fr": "Gestion des erreurs",
+        "es": "Manejo de errores"
+      },
+      "options": {
+        "de": ["Stoppe und benachrichtige", "Versuche erneut", "Log und continue", "Fallback-Aktion"],
+        "en": ["Stop and notify", "Retry", "Log and continue", "Fallback action"],
+        "fr": ["Arreter et notifier", "Reessayer", "Enregistrer et continuer", "Action de repli"],
+        "es": ["Detener y notificar", "Reintentar", "Registrar y continuar", "Accion de respaldo"]
+      },
+      "default": {
+        "de": "Stoppe und benachrichtige",
+        "en": "Stop and notify",
+        "fr": "Arreter et notifier",
+        "es": "Detener y notificar"
+      }
+    },
+    {
+      "key": "logging_and_monitoring",
+      "type": "entry",
+      "label": {
+        "de": "Logging / Monitoring",
+        "en": "Logging / Monitoring",
+        "fr": "Journalisation / Surveillance",
+        "es": "Registro / Monitoreo"
+      },
+      "default": {
+        "de": "Was sollte geloggt/ueberwacht werden?",
+        "en": "What should be logged/monitored?",
+        "fr": "Qu'est-ce qui doit etre enregistre/surveille?",
+        "es": "Que debe ser registrado/monitoreado?"
+      }
+    }
+  ],
+  "prompts": {
+    "auto_1": {
+      "de": "Prozess: {process_name}",
+      "en": "Process: {process_name}",
+      "fr": "Processus: {process_name}",
+      "es": "Proceso: {process_name}"
+    },
+    "auto_2": {
+      "de": "Trigger: {trigger}",
+      "en": "Trigger: {trigger}",
+      "fr": "Declencheur: {trigger}",
+      "es": "Disparador: {trigger}"
+    },
+    "auto_3": {
+      "de": "Eingabedaten: {input_data}",
+      "en": "Input Data: {input_data}",
+      "fr": "Donnees d'entree: {input_data}",
+      "es": "Datos de entrada: {input_data}"
+    },
+    "auto_4": {
+      "de": "Verarbeitungsschritte: {processing_steps}",
+      "en": "Processing Steps: {processing_steps}",
+      "fr": "Etapes de traitement: {processing_steps}",
+      "es": "Pasos de procesamiento: {processing_steps}"
+    },
+    "auto_5": {
+      "de": "Tools/APIs: {tools_and_apis}",
+      "en": "Tools/APIs: {tools_and_apis}",
+      "fr": "Outils/APIs: {tools_and_apis}",
+      "es": "Herramientas/APIs: {tools_and_apis}"
+    },
+    "auto_6": {
+      "de": "Output/Aktion: {output_action}",
+      "en": "Output/Action: {output_action}",
+      "fr": "Sortie/Action: {output_action}",
+      "es": "Salida/Accion: {output_action}"
+    },
+    "auto_7": {
+      "de": "Fehlerbehandlung: {error_handling}",
+      "en": "Error Handling: {error_handling}",
+      "fr": "Gestion des erreurs: {error_handling}",
+      "es": "Manejo de errores: {error_handling}"
+    },
+    "auto_8": {
+      "de": "Logging/Monitoring: {logging_and_monitoring}",
+      "en": "Logging/Monitoring: {logging_and_monitoring}",
+      "fr": "Journalisation/Surveillance: {logging_and_monitoring}",
+      "es": "Registro/Monitoreo: {logging_and_monitoring}"
+    }
+  }
+}

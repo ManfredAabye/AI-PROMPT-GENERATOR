@@ -1,0 +1,244 @@
+{
+  "category_name": {
+    "de": "Businessplan",
+    "en": "Business Plan",
+    "fr": "Plan d'affaires",
+    "es": "Plan de negocios"
+  },
+  "fields": [
+    {
+      "key": "business_idea",
+      "type": "entry",
+      "label": {
+        "de": "Geschaeftsidee/Name",
+        "en": "Business Idea/Name",
+        "fr": "Idee d'entreprise/Nom",
+        "es": "Idea de negocio/Nombre"
+      },
+      "default": {
+        "de": "Meine Geschaeftsidee",
+        "en": "My Business Idea",
+        "fr": "Mon idee d'entreprise",
+        "es": "Mi idea de negocio"
+      }
+    },
+    {
+      "key": "value_proposition",
+      "type": "text",
+      "label": {
+        "de": "Werteversprechen (Unique Selling Point)",
+        "en": "Value Proposition (USP)",
+        "fr": "Proposition de valeur (USP)",
+        "es": "Proposicion de valor (USP)"
+      },
+      "default": {
+        "de": "Was unterscheidet uns von der Konkurrenz?",
+        "en": "What sets us apart from competitors?",
+        "fr": "Qu'est-ce qui nous distingue des concurrents?",
+        "es": "Que nos distingue de la competencia?"
+      }
+    },
+    {
+      "key": "target_market",
+      "type": "text",
+      "label": {
+        "de": "Zielmarkt",
+        "en": "Target Market",
+        "fr": "Marche cible",
+        "es": "Mercado objetivo"
+      },
+      "default": {
+        "de": "Groesse, Segment, Geografie, Wachstum",
+        "en": "Size, Segment, Geography, Growth",
+        "fr": "Taille, Segment, Geographie, Croissance",
+        "es": "Tamano, Segmento, Geografia, Crecimiento"
+      }
+    },
+    {
+      "key": "revenue_model",
+      "type": "combobox",
+      "label": {
+        "de": "Revenue-Modell",
+        "en": "Revenue Model",
+        "fr": "Modele de revenus",
+        "es": "Modelo de ingresos"
+      },
+      "options": {
+        "de": ["Subscription/Abo", "One-Time Purchase", "Freemium", "Marketplace", "Advertising", "Licensing"],
+        "en": ["Subscription", "One-Time Purchase", "Freemium", "Marketplace", "Advertising", "Licensing"],
+        "fr": ["Abonnement", "Achat unique", "Freemium", "Marche", "Publicite", "Octroi de licence"],
+        "es": ["Suscripcion", "Compra unica", "Freemium", "Mercado", "Publicidad", "Licencia"]
+      },
+      "default": {
+        "de": "Subscription/Abo",
+        "en": "Subscription",
+        "fr": "Abonnement",
+        "es": "Suscripcion"
+      }
+    },
+    {
+      "key": "pricing_strategy",
+      "type": "entry",
+      "label": {
+        "de": "Preisstufen/Tiers",
+        "en": "Pricing Tiers",
+        "fr": "Niveaux de prix",
+        "es": "Niveles de precios"
+      },
+      "default": {
+        "de": "Basic / Professional / Enterprise",
+        "en": "Basic / Professional / Enterprise",
+        "fr": "Basique / Professionnel / Entreprise",
+        "es": "Basico / Profesional / Empresarial"
+      }
+    },
+    {
+      "key": "competitive_analysis",
+      "type": "text",
+      "label": {
+        "de": "Konkurrenzanalyse",
+        "en": "Competitive Analysis",
+        "fr": "Analyse concurrentielle",
+        "es": "Analisis competitivo"
+      },
+      "default": {
+        "de": "Direkte & indirekte Konkurrenten, Staerken, Schwaechen",
+        "en": "Direct & indirect competitors, strengths, weaknesses",
+        "fr": "Concurrents directs et indirects, points forts, points faibles",
+        "es": "Competidores directos e indirectos, fortalezas, debilidades"
+      }
+    },
+    {
+      "key": "funding_needs",
+      "type": "entry",
+      "label": {
+        "de": "Finanzierungsbedarf",
+        "en": "Funding Needs",
+        "fr": "Besoins de financement",
+        "es": "Necesidades de financiamiento"
+      },
+      "default": {
+        "de": "Hoehe, Zweck, Zeitrahmen",
+        "en": "Amount, Purpose, Timeline",
+        "fr": "Montant, But, Calendrier",
+        "es": "Monto, Proposito, Cronograma"
+      }
+    },
+    {
+      "key": "financial_projections",
+      "type": "combobox",
+      "label": {
+        "de": "Finanzielle Prognosen",
+        "en": "Financial Projections",
+        "fr": "Projections financieres",
+        "es": "Proyecciones financieras"
+      },
+      "options": {
+        "de": ["1-3 Jahre", "3-5 Jahre", "5-10 Jahre", "Break-even Analyse"],
+        "en": ["1-3 years", "3-5 years", "5-10 years", "Break-even Analysis"],
+        "fr": ["1-3 ans", "3-5 ans", "5-10 ans", "Analyse du seuil de rentabilite"],
+        "es": ["1-3 anos", "3-5 anos", "5-10 anos", "Analisis de equilibrio"]
+      },
+      "default": {
+        "de": "3-5 Jahre",
+        "en": "3-5 years",
+        "fr": "3-5 ans",
+        "es": "3-5 anos"
+      }
+    },
+    {
+      "key": "team",
+      "type": "text",
+      "label": {
+        "de": "Gruenderteam",
+        "en": "Founding Team",
+        "fr": "Equipe fondatrice",
+        "es": "Equipo fundador"
+      },
+      "default": {
+        "de": "Rollen, Erfahrung, Expertise",
+        "en": "Roles, Experience, Expertise",
+        "fr": "Roles, Experience, Expertise",
+        "es": "Funciones, Experiencia, Experiencia"
+      }
+    },
+    {
+      "key": "key_risks",
+      "type": "text",
+      "label": {
+        "de": "Schluesselrisiken",
+        "en": "Key Risks",
+        "fr": "Risques cles",
+        "es": "Riesgos clave"
+      },
+      "default": {
+        "de": "Marktrisiko, Technologierisiko, Teamrisiko, etc.",
+        "en": "Market risk, technology risk, team risk, etc.",
+        "fr": "Risque de marche, risque technologique, risque d'equipe, etc.",
+        "es": "Riesgo de mercado, riesgo tecnologico, riesgo de equipo, etc."
+      }
+    }
+  ],
+  "prompts": {
+    "bp_1": {
+      "de": "Geschaeftsidee: {business_idea}",
+      "en": "Business Idea: {business_idea}",
+      "fr": "Idee d'entreprise: {business_idea}",
+      "es": "Idea de negocio: {business_idea}"
+    },
+    "bp_2": {
+      "de": "Werteversprechen: {value_proposition}",
+      "en": "Value Proposition: {value_proposition}",
+      "fr": "Proposition de valeur: {value_proposition}",
+      "es": "Proposicion de valor: {value_proposition}"
+    },
+    "bp_3": {
+      "de": "Zielmarkt: {target_market}",
+      "en": "Target Market: {target_market}",
+      "fr": "Marche cible: {target_market}",
+      "es": "Mercado objetivo: {target_market}"
+    },
+    "bp_4": {
+      "de": "Revenue-Modell: {revenue_model}",
+      "en": "Revenue Model: {revenue_model}",
+      "fr": "Modele de revenus: {revenue_model}",
+      "es": "Modelo de ingresos: {revenue_model}"
+    },
+    "bp_5": {
+      "de": "Preisstufen: {pricing_strategy}",
+      "en": "Pricing Tiers: {pricing_strategy}",
+      "fr": "Niveaux de prix: {pricing_strategy}",
+      "es": "Niveles de precios: {pricing_strategy}"
+    },
+    "bp_6": {
+      "de": "Konkurrenzanalyse: {competitive_analysis}",
+      "en": "Competitive Analysis: {competitive_analysis}",
+      "fr": "Analyse concurrentielle: {competitive_analysis}",
+      "es": "Analisis competitivo: {competitive_analysis}"
+    },
+    "bp_7": {
+      "de": "Finanzierungsbedarf: {funding_needs}",
+      "en": "Funding Needs: {funding_needs}",
+      "fr": "Besoins de financement: {funding_needs}",
+      "es": "Necesidades de financiamiento: {funding_needs}"
+    },
+    "bp_8": {
+      "de": "Finanzielle Prognosen: {financial_projections}",
+      "en": "Financial Projections: {financial_projections}",
+      "fr": "Projections financieres: {financial_projections}",
+      "es": "Proyecciones financieras: {financial_projections}"
+    },
+    "bp_9": {
+      "de": "Gruenderteam: {team}",
+      "en": "Founding Team: {team}",
+      "fr": "Equipe fondatrice: {team}",
+      "es": "Equipo fundador: {team}"
+    },
+    "bp_10": {
+      "de": "Schluesselrisiken: {key_risks}",
+      "en": "Key Risks: {key_risks}",
+      "fr": "Risques cles: {key_risks}",
+      "es": "Riesgos clave: {key_risks}"
+    }
+  }
+}

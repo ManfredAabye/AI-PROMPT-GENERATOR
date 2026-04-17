@@ -8,8 +8,15 @@ if errorlevel 1 (
 	pip install pyinstaller
 )
 echo Baue UniversalPromptManager.exe ...
-pyinstaller --onefile UniversalPromptManager.py
+pyinstaller --onefile --icon=icon.ico --add-data "icon.png;." --add-data "icon.ico;." UniversalPromptManager.py
 echo Fertig! Die EXE befindet sich im dist-Ordner.
 
-:: todo: languages.json kopieren
+:: languages.json kopieren
 copy upmlanguages.json dist\upmlanguages.json
+
+:: Verzeichnis categories kopieren
+xcopy categories dist\categories /E /I /Y
+
+:: todo: icon.ico und icon.png kopieren
+copy icon.ico dist\icon.ico
+copy icon.png dist\icon.png

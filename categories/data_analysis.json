@@ -1,0 +1,200 @@
+{
+  "category_name": {
+    "de": "Datenanalyse / SQL",
+    "en": "Data Analysis / SQL",
+    "fr": "Analyse de donnees / SQL",
+    "es": "Analisis de datos / SQL"
+  },
+  "fields": [
+    {
+      "key": "data_source",
+      "type": "entry",
+      "label": {
+        "de": "Datenquelle",
+        "en": "Data Source",
+        "fr": "Source de donnees",
+        "es": "Fuente de datos"
+      },
+      "default": {
+        "de": "Datenbank, API, CSV, etc.",
+        "en": "Database, API, CSV, etc.",
+        "fr": "Base de donnees, API, CSV, etc.",
+        "es": "Base de datos, API, CSV, etc."
+      }
+    },
+    {
+      "key": "business_question",
+      "type": "text",
+      "label": {
+        "de": "Geschaeftsfrage",
+        "en": "Business Question",
+        "fr": "Question commerciale",
+        "es": "Pregunta comercial"
+      },
+      "default": {
+        "de": "Was moechte ich herausfinden?",
+        "en": "What do I want to find out?",
+        "fr": "Qu'est-ce que je veux decouvrir?",
+        "es": "Que quiero descubrir?"
+      }
+    },
+    {
+      "key": "kpis",
+      "type": "entry",
+      "label": {
+        "de": "KPIs / Metriken",
+        "en": "KPIs / Metrics",
+        "fr": "KPIs / Metriques",
+        "es": "KPIs / Metricas"
+      },
+      "default": {
+        "de": "COUNT, SUM, AVG, MAX, etc.",
+        "en": "COUNT, SUM, AVG, MAX, etc.",
+        "fr": "COUNT, SUM, AVG, MAX, etc.",
+        "es": "COUNT, SUM, AVG, MAX, etc."
+      }
+    },
+    {
+      "key": "filters",
+      "type": "entry",
+      "label": {
+        "de": "Filter/WHERE-Bedingungen",
+        "en": "Filters/WHERE Conditions",
+        "fr": "Filtres/Conditions WHERE",
+        "es": "Filtros/Condiciones WHERE"
+      },
+      "default": {
+        "de": "Zeitraum, Region, Kategorie, etc.",
+        "en": "Date range, region, category, etc.",
+        "fr": "Periode, region, categorie, etc.",
+        "es": "Periodo, region, categoria, etc."
+      }
+    },
+    {
+      "key": "grouping",
+      "type": "entry",
+      "label": {
+        "de": "Gruppierung / GROUP BY",
+        "en": "Grouping / GROUP BY",
+        "fr": "Groupement / GROUP BY",
+        "es": "Agrupacion / GROUP BY"
+      },
+      "default": {
+        "de": "Nach Datum, Kategorie, Region, etc.",
+        "en": "By date, category, region, etc.",
+        "fr": "Par date, categorie, region, etc.",
+        "es": "Por fecha, categoria, region, etc."
+      }
+    },
+    {
+      "key": "sql_dialect",
+      "type": "combobox",
+      "label": {
+        "de": "SQL-Dialekt",
+        "en": "SQL Dialect",
+        "fr": "Dialecte SQL",
+        "es": "Dialecto SQL"
+      },
+      "options": {
+        "de": ["MySQL", "PostgreSQL", "SQL Server", "SQLite", "BigQuery", "Snowflake"],
+        "en": ["MySQL", "PostgreSQL", "SQL Server", "SQLite", "BigQuery", "Snowflake"],
+        "fr": ["MySQL", "PostgreSQL", "SQL Server", "SQLite", "BigQuery", "Snowflake"],
+        "es": ["MySQL", "PostgreSQL", "SQL Server", "SQLite", "BigQuery", "Snowflake"]
+      },
+      "default": {
+        "de": "PostgreSQL",
+        "en": "PostgreSQL",
+        "fr": "PostgreSQL",
+        "es": "PostgreSQL"
+      }
+    },
+    {
+      "key": "output_format",
+      "type": "combobox",
+      "label": {
+        "de": "Output-Format",
+        "en": "Output Format",
+        "fr": "Format de sortie",
+        "es": "Formato de salida"
+      },
+      "options": {
+        "de": ["Tabelle", "JSON", "CSV", "Visualisierung", "Dashboard"],
+        "en": ["Table", "JSON", "CSV", "Visualization", "Dashboard"],
+        "fr": ["Tableau", "JSON", "CSV", "Visualisation", "Tableau de bord"],
+        "es": ["Tabla", "JSON", "CSV", "Visualizacion", "Panel"]
+      },
+      "default": {
+        "de": "Tabelle",
+        "en": "Table",
+        "fr": "Tableau",
+        "es": "Tabla"
+      }
+    },
+    {
+      "key": "performance_focus",
+      "type": "entry",
+      "label": {
+        "de": "Performance-Fokus",
+        "en": "Performance Focus",
+        "fr": "Accent sur les performances",
+        "es": "Enfasis en el rendimiento"
+      },
+      "default": {
+        "de": "Schnelligkeit, Skalierbarkeit, Lesbarkeit",
+        "en": "Speed, scalability, readability",
+        "fr": "Vitesse, scalabilite, lisibilite",
+        "es": "Velocidad, escalabilidad, legibilidad"
+      }
+    }
+  ],
+  "prompts": {
+    "sql_1": {
+      "de": "Datenquelle: {data_source}",
+      "en": "Data Source: {data_source}",
+      "fr": "Source de donnees: {data_source}",
+      "es": "Fuente de datos: {data_source}"
+    },
+    "sql_2": {
+      "de": "Geschaeftsfrage: {business_question}",
+      "en": "Business Question: {business_question}",
+      "fr": "Question commerciale: {business_question}",
+      "es": "Pregunta comercial: {business_question}"
+    },
+    "sql_3": {
+      "de": "KPIs/Metriken: {kpis}",
+      "en": "KPIs/Metrics: {kpis}",
+      "fr": "KPIs/Metriques: {kpis}",
+      "es": "KPIs/Metricas: {kpis}"
+    },
+    "sql_4": {
+      "de": "Filter: {filters}",
+      "en": "Filters: {filters}",
+      "fr": "Filtres: {filters}",
+      "es": "Filtros: {filters}"
+    },
+    "sql_5": {
+      "de": "Gruppierung: {grouping}",
+      "en": "Grouping: {grouping}",
+      "fr": "Groupement: {grouping}",
+      "es": "Agrupacion: {grouping}"
+    },
+    "sql_6": {
+      "de": "SQL-Dialekt: {sql_dialect}",
+      "en": "SQL Dialect: {sql_dialect}",
+      "fr": "Dialecte SQL: {sql_dialect}",
+      "es": "Dialecto SQL: {sql_dialect}"
+    },
+    "sql_7": {
+      "de": "Output-Format: {output_format}",
+      "en": "Output Format: {output_format}",
+      "fr": "Format de sortie: {output_format}",
+      "es": "Formato de salida: {output_format}"
+    },
+    "sql_8": {
+      "de": "Performance-Fokus: {performance_focus}",
+      "en": "Performance Focus: {performance_focus}",
+      "fr": "Accent sur les performances: {performance_focus}",
+      "es": "Enfasis en el rendimiento: {performance_focus}"
+    }
+  }
+}

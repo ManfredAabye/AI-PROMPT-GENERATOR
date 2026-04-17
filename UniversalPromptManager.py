@@ -6,43 +6,102 @@ import json
 import os
 import datetime
 
+
+def resource_path(relative_path):
+    """Liefert Ressourcenpfade für dev und PyInstaller onefile."""
+    base_path = getattr(__import__("sys"), "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base_path, relative_path)
+
 class UniversalPromptManager:
     def __init__(self, root):
         self.root = root
         self.root.title("Universal Prompt Manager")
-        self.root.geometry("1480x1280")
+        self.set_window_icon()
+        self.root.geometry("1580x1580")
 
         # Sprachsystem
         self.languages_file = "upmlanguages.json"
+        self.settings_file = "app_settings.json"
         self.languages = self.load_languages()
         self.current_language = "de"
         self.language_display_to_code = {}
+        self.settings = self.load_settings()
+        saved_language = self.settings.get("current_language")
+        if isinstance(saved_language, str) and saved_language in self.languages:
+            self.current_language = saved_language
 
         # Kategorie-Mapping: interner Schlüssel → Übersetzungs-Key
         self.category_key_map = {
             "Architektur": "cat_architecture",
+            "Automatisierung / Workflow": "cat_automation",
             "Bildbeschreibung": "cat_image_desc",
-            "Sourcecode": "cat_sourcecode",
+            "Businessplan": "cat_businessplan",
+            "Datenanalyse / SQL": "cat_data_analysis",
+            "Dokumentation": "cat_documentation",
+            "E-Mail / Kommunikation": "cat_email",
+            "Eigene Vorlage": "cat_custom",
+            "Ernährungsplan": "cat_nutrition",
             "KI-Kunst": "cat_ai_art",
             "Marketing": "cat_marketing",
-            "Ernährungsplan": "cat_nutrition",
-            "Eigene Vorlage": "cat_custom",
+            "Präsentationen / Pitch Deck": "cat_presentations",
+            "Produktanforderungen": "cat_specification",
+            "SEO / Blog / Content": "cat_seo_content",
+            "Social Media": "cat_social_media",
+            "Sourcecode": "cat_sourcecode",
+            "UX/UI Konzept": "cat_ux_ui",
         }
         self.category_display_to_internal = {}
         
         # Prompt-Kategorien
         self.categories = {
-            "Architektur": self.get_architecture_fields,
-            "Bildbeschreibung": self.get_image_description_fields,
-            "Sourcecode": self.get_sourcecode_fields,
-            "KI-Kunst": self.get_ai_art_fields,
-            "Marketing": self.get_marketing_fields,
-            "Ernährungsplan": self.get_nutrition_fields,
-            "Eigene Vorlage": self.get_custom_fields
+            "Architektur": "architecture",
+            "Automatisierung / Workflow": "automation",
+            "Bildbeschreibung": "image_description",
+            "Businessplan": "businessplan",
+            "Datenanalyse / SQL": "data_analysis",
+            "Dokumentation": "documentation",
+            "E-Mail / Kommunikation": "email",
+            "Eigene Vorlage": "custom",
+            "Ernährungsplan": "nutrition",
+            "KI-Kunst": "ai_art",
+            "Marketing": "marketing",
+            "Präsentationen / Pitch Deck": "presentations",
+            "Produktanforderungen": "specification",
+            "SEO / Blog / Content": "seo_content",
+            "Social Media": "social_media",
+            "Sourcecode": "sourcecode",
+            "UX/UI Konzept": "ux_ui",
         }
+
+        # Fallback auf bestehende Methoden, falls externe JSON-Datei fehlt
+        self.category_fallback_fields = {
+            "architecture": self.get_architecture_fields,
+            "image_description": self.get_image_description_fields,
+            "sourcecode": self.get_sourcecode_fields,
+            "ai_art": self.get_ai_art_fields,
+            "marketing": self.get_marketing_fields,
+            "nutrition": self.get_nutrition_fields,
+            "custom": self.get_custom_fields,
+            "specification": self.get_specification_fields,
+            "ux_ui": self.get_ux_ui_fields,
+            "social_media": self.get_social_media_fields,
+            "seo_content": self.get_seo_content_fields,
+            "businessplan": self.get_businessplan_fields,
+            "data_analysis": self.get_data_analysis_fields,
+            "automation": self.get_automation_fields,
+            "email": self.get_email_fields,
+            "presentations": self.get_presentations_fields,
+            "documentation": self.get_documentation_fields,
+        }
+
+        self.categories_dir = "categories"
+        self.category_cache = {}
         
         # Aktuelle Kategorie
         self.current_category = "Architektur"
+        saved_category = self.settings.get("current_category")
+        if isinstance(saved_category, str) and saved_category in self.categories:
+            self.current_category = saved_category
         
         # Template-System
         self.templates_file = "prompt_templates.json"
@@ -53,6 +112,24 @@ class UniversalPromptManager:
         
         # Erste Kategorie laden
         self.load_category_fields()
+
+    def set_window_icon(self):
+        """Setzt das Fenster-Icon mit PNG, Fallback auf ICO."""
+        try:
+            png_icon_path = resource_path("icon.png")
+            if os.path.exists(png_icon_path):
+                self.window_icon_image = tk.PhotoImage(file=png_icon_path)
+                self.root.iconphoto(True, self.window_icon_image)
+                return
+        except Exception:
+            pass
+
+        try:
+            ico_icon_path = resource_path("icon.ico")
+            if os.path.exists(ico_icon_path):
+                self.root.iconbitmap(ico_icon_path)
+        except Exception:
+            pass
     
     def load_templates(self):
         """Lädt gespeicherte Vorlagen"""
@@ -68,6 +145,88 @@ class UniversalPromptManager:
         """Speichert Vorlagen"""
         with open(self.templates_file, 'w', encoding='utf-8') as f:
             json.dump(self.templates, f, indent=2, ensure_ascii=False)
+
+    def load_settings(self):
+        """Lädt persistente Anwendungseinstellungen."""
+        if os.path.exists(self.settings_file):
+            try:
+                with open(self.settings_file, 'r', encoding='utf-8') as f:
+                    loaded = json.load(f)
+                    if isinstance(loaded, dict):
+                        return loaded
+            except Exception:
+                pass
+        return {}
+
+    def save_settings(self):
+        """Speichert persistente Anwendungseinstellungen."""
+        self.settings["current_language"] = self.current_language
+        self.settings["current_category"] = self.current_category
+        with open(self.settings_file, 'w', encoding='utf-8') as f:
+            json.dump(self.settings, f, indent=2, ensure_ascii=False)
+
+    def collect_current_field_values(self):
+        """Sammelt die aktuell eingegebenen Feldwerte der sichtbaren Kategorie."""
+        if not hasattr(self, "input_fields") or not self.input_fields:
+            return {}
+        return {
+            field_name: self.get_field_value(field_name)
+            for field_name in self.input_fields
+        }
+
+    def save_current_field_values(self):
+        """Speichert die aktuellen Feldwerte pro Kategorie in den Einstellungen."""
+        field_values = self.collect_current_field_values()
+        if not field_values:
+            return
+
+        stored_field_values = self.settings.setdefault("field_values", {})
+        stored_field_values[self.current_category] = field_values
+
+    def get_saved_field_values(self, category_name):
+        """Liefert gespeicherte Feldwerte für eine Kategorie."""
+        stored_field_values = self.settings.get("field_values", {})
+        if not isinstance(stored_field_values, dict):
+            return {}
+
+        saved_values = stored_field_values.get(category_name, {})
+        return saved_values if isinstance(saved_values, dict) else {}
+
+    def save_current_state(self):
+        """Speichert Kategorie, Sprache und aktuelle Feldwerte persistiert."""
+        self.save_current_field_values()
+        self.save_settings()
+
+    def on_app_close(self):
+        """Persistiert den letzten Zustand vor dem Schließen der Anwendung."""
+        self.save_current_state()
+        self.root.destroy()
+
+    def reset_saved_state(self):
+        """Setzt gespeicherte Sprache, Kategorie und Feldwerte auf Standard zurück."""
+        if not messagebox.askyesno(
+            self.tr("dialog_reset_title"),
+            self.tr("dialog_reset_prompt")
+        ):
+            return
+
+        self.settings = {}
+        if os.path.exists(self.settings_file):
+            try:
+                os.remove(self.settings_file)
+            except OSError:
+                with open(self.settings_file, 'w', encoding='utf-8') as f:
+                    json.dump({}, f, indent=2, ensure_ascii=False)
+
+        self.current_language = "de"
+        self.current_category = "Architektur"
+        self.refresh_language_options()
+        self.apply_ui_language()
+        self.load_category_fields()
+        self.update_template_list()
+        self.preview_text.delete('1.0', tk.END)
+        self.status_var.set(self.tr("status_state_reset"))
+        messagebox.showinfo(self.tr("msg_success_title"), self.tr("msg_state_reset_done"))
 
     def load_languages(self):
         """Lädt die Übersetzungen aus einer JSON-Datei."""
@@ -104,16 +263,31 @@ class UniversalPromptManager:
                 return text
         return text
 
+    def get_category_display_name(self, internal_key):
+        """Liefert den sichtbaren Kategorienamen aus category JSON mit Fallback auf upmlanguages."""
+        category_id = self.categories.get(internal_key)
+        if category_id:
+            definition = self.load_category_definition(category_id)
+            if isinstance(definition, dict):
+                category_name = self.resolve_localized_value(definition.get("category_name"))
+                if isinstance(category_name, str) and category_name.strip():
+                    return category_name
+
+        translation_key = self.category_key_map.get(internal_key)
+        if translation_key:
+            return self.tr(translation_key)
+        return internal_key
+
     def refresh_category_options(self):
         """Aktualisiert die Kategorieliste in der gewählten Sprache."""
         options = []
         self.category_display_to_internal.clear()
-        for internal_key, tr_key in self.category_key_map.items():
-            display_name = self.tr(tr_key)
+        for internal_key in self.categories:
+            display_name = self.get_category_display_name(internal_key)
             options.append(display_name)
             self.category_display_to_internal[display_name] = internal_key
         self.category_combo["values"] = options
-        current_display = self.tr(self.category_key_map.get(self.current_category, self.current_category))
+        current_display = self.get_category_display_name(self.current_category)
         self.category_var.set(current_display)
 
     def refresh_language_options(self):
@@ -150,6 +324,7 @@ class UniversalPromptManager:
         self.generate_button.config(text=self.tr("btn_generate"))
         self.copy_button.config(text=self.tr("btn_copy"))
         self.export_button.config(text=self.tr("btn_export"))
+        self.reset_state_button.config(text=self.tr("btn_reset_state"))
         self.history_button.config(text=self.tr("btn_history"))
 
         self.status_var.set(self.tr("status_ready"))
@@ -158,9 +333,12 @@ class UniversalPromptManager:
         """Wechselt die Sprache der Oberfläche."""
         selected_display = self.language_var.get()
         selected_code = self.language_display_to_code.get(selected_display, "de")
+        self.save_current_field_values()
         self.current_language = selected_code
+        self.save_settings()
         self.refresh_language_options()
         self.apply_ui_language()
+        self.load_category_fields()
     
     def setup_gui(self):
         """Baut die Haupt-GUI auf"""
@@ -205,6 +383,7 @@ class UniversalPromptManager:
         self.language_combo.pack(side='left')
         self.refresh_language_options()
         self.language_combo.bind('<<ComboboxSelected>>', self.on_language_change)
+        self.root.protocol("WM_DELETE_WINDOW", self.on_app_close)
         
         # Hauptbereich mit zwei Spalten
         content_frame = ttk.Frame(main_container)
@@ -251,6 +430,8 @@ class UniversalPromptManager:
         self.copy_button.pack(side='left', padx=5)
         self.export_button = ttk.Button(bottom_frame, text="💾 Exportieren", command=self.export_prompt, bootstyle=(INFO, OUTLINE))
         self.export_button.pack(side='left', padx=5)
+        self.reset_state_button = ttk.Button(bottom_frame, text="↺ Reset", command=self.reset_saved_state, bootstyle=(WARNING, OUTLINE))
+        self.reset_state_button.pack(side='right', padx=5)
         self.history_button = ttk.Button(bottom_frame, text="🕘 History", command=self.show_history, bootstyle=(SECONDARY, OUTLINE))
         self.history_button.pack(side='right', padx=5)
         
@@ -267,10 +448,12 @@ class UniversalPromptManager:
     def on_category_change(self, event=None):
         """Wechselt die Kategorie"""
         selected_display = self.category_var.get()
+        self.save_current_field_values()
         self.current_category = self.category_display_to_internal.get(selected_display, self.current_category)
+        self.save_settings()
         self.load_category_fields()
         self.update_template_list()
-        cat_display = self.tr(self.category_key_map.get(self.current_category, self.current_category))
+        cat_display = self.get_category_display_name(self.current_category)
         self.status_var.set(self.tr("status_category_changed", category=cat_display))
     
     def load_category_fields(self):
@@ -283,13 +466,26 @@ class UniversalPromptManager:
         self.field_vars.clear()
         
         # Neue Felder erstellen
-        fields_func = self.categories[self.current_category]
-        fields = fields_func()
+        category_id = self.categories.get(self.current_category, "custom")
+        fields = self.get_category_fields(category_id)
+        saved_values = self.get_saved_field_values(self.current_category)
+
+        for field_name, saved_value in saved_values.items():
+            if field_name in fields:
+                localized_saved_value = self.localize_saved_field_value(category_id, field_name, saved_value)
+                fields[field_name]["default"] = localized_saved_value
         
         row = 0
         for field_name, field_config in fields.items():
             # Label
-            label = ttk.Label(self.input_frame, text=self.tr(field_config["label"]) + ":")
+            label_text = field_config.get("label_text")
+            if not label_text:
+                label_value = field_config.get("label", "")
+                if isinstance(label_value, str) and label_value.startswith("field_"):
+                    label_text = self.tr(label_value)
+                else:
+                    label_text = str(label_value)
+            label = ttk.Label(self.input_frame, text=label_text + ":")
             label.grid(row=row, column=0, sticky='w', pady=5, padx=(0, 10))
             
             # Eingabefeld basierend auf Typ
@@ -318,14 +514,29 @@ class UniversalPromptManager:
                 continue
                 
             elif field_type == "checkbox":
-                var = tk.BooleanVar(value=field_config.get("default", False))
+                raw_default = field_config.get("default", False)
+                if isinstance(raw_default, str):
+                    checkbox_default = raw_default.strip().lower() in {"1", "true", "yes", "ja", "oui", "si", "sí"}
+                else:
+                    checkbox_default = bool(raw_default)
+                var = tk.BooleanVar(value=checkbox_default)
                 widget = ttk.Checkbutton(self.input_frame, variable=var)
                 
             elif field_type == "spinbox":
                 var = tk.StringVar(value=str(field_config.get("default", 1)))
+                min_value = field_config.get("min", 1)
+                max_value = field_config.get("max", 10)
+                try:
+                    min_float = float(min_value)
+                except (TypeError, ValueError):
+                    min_float = 1.0
+                try:
+                    max_float = float(max_value)
+                except (TypeError, ValueError):
+                    max_float = 10.0
                 widget = ttk.Spinbox(self.input_frame, textvariable=var, 
-                                    from_=field_config.get("min", 1), 
-                                    to=field_config.get("max", 10), width=10)
+                                    from_=min_float,
+                                    to=max_float, width=10)
             
             if widget is not None:
                 widget.grid(row=row, column=1, sticky='ew', pady=5)
@@ -334,6 +545,162 @@ class UniversalPromptManager:
                 self.field_vars[field_name] = var
             
             row += 1
+
+    def resolve_localized_value(self, value):
+        """Liefert einen sprachabhängigen Wert mit Fallback auf Deutsch."""
+        if not isinstance(value, dict):
+            return value
+
+        if self.current_language in value:
+            return value[self.current_language]
+        if "de" in value:
+            return value["de"]
+        if value:
+            return next(iter(value.values()))
+        return ""
+
+    def localize_saved_field_value(self, category_id, field_name, saved_value):
+        """Überführt gespeicherte lokalisierte Auswahl-/Defaultwerte in die aktuelle Sprache."""
+        if not isinstance(saved_value, str) or not saved_value:
+            return saved_value
+
+        definition = self.load_category_definition(category_id)
+        if not definition:
+            return saved_value
+
+        raw_fields = definition.get("fields", [])
+        field_definition = next(
+            (field for field in raw_fields if isinstance(field, dict) and field.get("key") == field_name),
+            None,
+        )
+        if not field_definition:
+            return saved_value
+
+        option_mapping = self.build_localized_option_mapping(field_definition.get("options"))
+        if saved_value in option_mapping:
+            return option_mapping[saved_value]
+
+        default_mapping = self.build_localized_scalar_mapping(field_definition.get("default"))
+        return default_mapping.get(saved_value, saved_value)
+
+    def build_localized_option_mapping(self, options):
+        """Erzeugt ein Mapping lokalisierter Optionswerte auf den Wert der aktuellen Sprache."""
+        if not isinstance(options, dict):
+            return {}
+
+        current_options = options.get(self.current_language)
+        if not isinstance(current_options, list):
+            current_options = options.get("de")
+        if not isinstance(current_options, list):
+            for values in options.values():
+                if isinstance(values, list):
+                    current_options = values
+                    break
+        if not isinstance(current_options, list):
+            return {}
+
+        mapping = {}
+        for values in options.values():
+            if not isinstance(values, list):
+                continue
+            for index, option_value in enumerate(values):
+                if index < len(current_options):
+                    mapping[option_value] = current_options[index]
+        return mapping
+
+    def build_localized_scalar_mapping(self, value):
+        """Erzeugt ein Mapping lokalisierter Einzelwerte auf den Wert der aktuellen Sprache."""
+        if not isinstance(value, dict):
+            return {}
+
+        target_value = self.resolve_localized_value(value)
+        return {
+            localized_value: target_value
+            for localized_value in value.values()
+            if isinstance(localized_value, str)
+        }
+
+    def load_category_definition(self, category_id):
+        """Lädt eine Kategorie-Definition aus JSON (mit einfachem Cache)."""
+        if category_id in self.category_cache:
+            return self.category_cache[category_id]
+
+        candidate_paths = [
+            os.path.join(self.categories_dir, f"{category_id}.json"),
+            os.path.join("UniversalPromptManager", self.categories_dir, f"{category_id}.json"),
+        ]
+
+        for path in candidate_paths:
+            if not os.path.exists(path):
+                continue
+            try:
+                with open(path, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                if isinstance(data, dict):
+                    self.category_cache[category_id] = data
+                    return data
+            except Exception:
+                continue
+
+        return None
+
+    def get_category_fields(self, category_id):
+        """Ermittelt Felder aus externer Kategorie-JSON, sonst Fallback-Methode."""
+        definition = self.load_category_definition(category_id)
+        if not definition:
+            fallback = self.category_fallback_fields.get(category_id)
+            return fallback() if fallback else {}
+
+        fields = {}
+        raw_fields = definition.get("fields", [])
+        for field in raw_fields:
+            if not isinstance(field, dict):
+                continue
+            field_key = field.get("key")
+            if not field_key:
+                continue
+
+            field_type = field.get("type", "entry")
+            label_text = self.resolve_localized_value(field.get("label", field_key))
+            default_value = self.resolve_localized_value(field.get("default", ""))
+
+            field_config = {
+                "type": field_type,
+                "label_text": str(label_text),
+                "default": default_value,
+            }
+
+            if field_type == "combobox":
+                options = self.resolve_localized_value(field.get("options", []))
+                field_config["options"] = options if isinstance(options, list) else []
+
+            if field_type == "spinbox":
+                field_config["min"] = field.get("min", 1)
+                field_config["max"] = field.get("max", 10)
+
+            fields[field_key] = field_config
+
+        return fields
+
+    def get_category_prompt_text(self, category_id, prompt_key, fallback_key, **kwargs):
+        """Liest Prompt-Text aus Kategorie-JSON mit Fallback auf Sprachdatei."""
+        text = None
+        definition = self.load_category_definition(category_id)
+        if isinstance(definition, dict):
+            prompts = definition.get("prompts", {})
+            if isinstance(prompts, dict) and prompt_key in prompts:
+                text = self.resolve_localized_value(prompts.get(prompt_key))
+
+        if text is None:
+            text = self.tr(fallback_key)
+
+        text_str = text if isinstance(text, str) else str(text)
+        if kwargs:
+            try:
+                return text_str.format(**kwargs)
+            except Exception:
+                return text_str
+        return text_str
     
     def get_field_value(self, field_name):
         """Holt den Wert eines Feldes"""
@@ -438,7 +805,11 @@ class UniversalPromptManager:
             "language": {
                 "label": "field_code_language",
                 "type": "combobox",
-                "options": ["Python", "JavaScript", "C#", "Java", "C++", "TypeScript", "Go", "Rust"],
+                "options": [
+                    "Bash", "C", "C#", "C++", "CSS", "Dart", "Go", "HTML",
+                    "Java", "JavaScript", "Kotlin", "MATLAB", "PHP", "Python",
+                    "R", "Ruby", "Rust", "SQL", "Swift", "TypeScript"
+                ],
                 "default": "Python"
             },
             "task": {
@@ -453,8 +824,58 @@ class UniversalPromptManager:
             },
             "framework": {
                 "label": "field_code_framework",
+                "type": "combobox",
+                "options": [
+                    "Kein spezielles Framework", "Standard Library",
+                    "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter",
+                    "Django", "Flask", "FastAPI",
+                    "React", "Vue", "Angular", "Next.js", "Nuxt",
+                    "Node.js", "Express", "NestJS",
+                    "Laravel", "Symfony", "CodeIgniter", "WordPress",
+                    "Spring Boot", "ASP.NET Core", "Ruby on Rails"
+                ],
+                "default": "Kein spezielles Framework"
+            },
+            "target_platform": {
+                "label": "field_code_target_platform",
+                "type": "combobox",
+                "options": ["Desktop", "Web", "Mobile", "CLI", "Backend/API", "Embedded"],
+                "default": "Desktop"
+            },
+            "output_structure": {
+                "label": "field_code_output_structure",
+                "type": "combobox",
+                "options": ["Single File", "Multi-File", "Clean Architecture", "Hexagonal"],
+                "default": "Multi-File"
+            },
+            "runtime_version": {
+                "label": "field_code_runtime_version",
                 "type": "entry",
-                "default": "Standard Library"
+                "default": "Aktuelle stabile Version"
+            },
+            "package_manager": {
+                "label": "field_code_package_manager",
+                "type": "combobox",
+                "options": ["Keiner", "pip", "poetry", "npm", "pnpm", "yarn", "composer", "cargo", "maven", "gradle"],
+                "default": "Keiner"
+            },
+            "database": {
+                "label": "field_code_database",
+                "type": "combobox",
+                "options": ["Keine", "SQLite", "PostgreSQL", "MySQL", "MariaDB", "MongoDB", "Redis"],
+                "default": "Keine"
+            },
+            "api_style": {
+                "label": "field_code_api_style",
+                "type": "combobox",
+                "options": ["Keine API", "REST", "GraphQL", "gRPC", "WebSocket"],
+                "default": "Keine API"
+            },
+            "ui_framework": {
+                "label": "field_code_ui_framework",
+                "type": "combobox",
+                "options": ["Keine UI", "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter"],
+                "default": "Tkinter + ttkbootstrap"
             },
             "complexity": {
                 "label": "field_code_complexity",
@@ -467,6 +888,47 @@ class UniversalPromptManager:
                 "type": "combobox",
                 "options": ["Funktional", "OOP", "Prozedural", "Deklarativ"],
                 "default": "Funktional"
+            },
+            "security_level": {
+                "label": "field_code_security_level",
+                "type": "combobox",
+                "options": ["Basis", "Standard", "Hoch", "OWASP-orientiert"],
+                "default": "Standard"
+            },
+            "multilang": {
+                "label": "field_code_multilang",
+                "type": "combobox",
+                "options": ["Nein", "Ja"],
+                "default": "Nein"
+            },
+            "target_languages": {
+                "label": "field_code_target_languages",
+                "type": "combobox",
+                "options": [
+                    "Deutsch",
+                    "Englisch",
+                    "Deutsch + Englisch",
+                    "Englisch + Deutsch + Französisch + Spanisch"
+                ],
+                "default": "Englisch + Deutsch + Französisch + Spanisch"
+            },
+            "test_depth": {
+                "label": "field_code_test_depth",
+                "type": "combobox",
+                "options": ["Keine", "Unit", "Unit + Integration", "Unit + Integration + E2E"],
+                "default": "Unit + Integration"
+            },
+            "documentation_level": {
+                "label": "field_code_documentation_level",
+                "type": "combobox",
+                "options": ["Minimal", "Standard", "Ausführlich", "Ausführlich + README + Beispiele"],
+                "default": "Standard"
+            },
+            "deployment_target": {
+                "label": "field_code_deployment_target",
+                "type": "combobox",
+                "options": ["Lokal", "Docker", "VPS", "Shared Hosting", "Serverless", "WordPress Plugin ZIP"],
+                "default": "Lokal"
             },
             "comments": {
                 "label": "field_code_comments",
@@ -649,6 +1111,46 @@ class UniversalPromptManager:
                 "default": "Geben Sie hier Ihren Prompt ein..."
             }
         }
+
+    def get_specification_fields(self):
+        """Felder für Produktanforderungen (Fallback)"""
+        return {}
+
+    def get_ux_ui_fields(self):
+        """Felder für UX/UI Konzept (Fallback)"""
+        return {}
+
+    def get_social_media_fields(self):
+        """Felder für Social Media (Fallback)"""
+        return {}
+
+    def get_seo_content_fields(self):
+        """Felder für SEO/Blog/Content (Fallback)"""
+        return {}
+
+    def get_businessplan_fields(self):
+        """Felder für Businessplan (Fallback)"""
+        return {}
+
+    def get_data_analysis_fields(self):
+        """Felder für Datenanalyse/SQL (Fallback)"""
+        return {}
+
+    def get_automation_fields(self):
+        """Felder für Automatisierung/Workflow (Fallback)"""
+        return {}
+
+    def get_email_fields(self):
+        """Felder für E-Mail/Kommunikation (Fallback)"""
+        return {}
+
+    def get_presentations_fields(self):
+        """Felder für Präsentationen/Pitch Deck (Fallback)"""
+        return {}
+
+    def get_documentation_fields(self):
+        """Felder für Dokumentation (Fallback)"""
+        return {}
     
     def generate_prompt(self):
         """Generiert den Prompt basierend auf der aktuellen Kategorie"""
@@ -669,16 +1171,44 @@ class UniversalPromptManager:
             prompt = self.generate_nutrition_prompt()
         elif category == "Eigene Vorlage":
             prompt = self.get_field_value("custom_prompt")
+        else:
+            # Generische Prompt-Generierung für neue Kategorien aus JSON
+            prompt = self.generate_category_prompt_from_json(category)
         
         # In Vorschau anzeigen
         self.preview_text.delete('1.0', tk.END)
         self.preview_text.insert('1.0', prompt)
         
         # Status aktualisieren
-        cat_display = self.tr(self.category_key_map.get(category, category))
+        cat_display = self.get_category_display_name(category)
         self.status_var.set(self.tr("status_prompt_generated", category=cat_display))
         
         return prompt
+    
+    def generate_category_prompt_from_json(self, category):
+        """Generiert Prompt generisch aus JSON-Definition für alle neuen Kategorien"""
+        category_id = self.categories.get(category, "custom")
+        definition = self.load_category_definition(category_id)
+        
+        if not definition or "prompts" not in definition:
+            return ""
+        
+        lines = []
+        prompts = definition.get("prompts", {})
+        
+        # Sammle alle Feldwerte
+        field_values = {field_name: self.get_field_value(field_name) 
+                        for field_name in self.input_fields}
+        
+        # Gehe durch alle Prompts und setze die Feldwerte ein
+        for prompt_key in sorted(prompts.keys()):
+            prompt_text = self.get_category_prompt_text(
+                category_id, prompt_key, prompt_key, **field_values
+            )
+            if prompt_text and prompt_text.strip():
+                lines.append(prompt_text)
+        
+        return "\n".join(lines)
     
     def generate_architecture_prompt(self):
         """Generiert Architektur-Prompt"""
@@ -690,13 +1220,13 @@ class UniversalPromptManager:
         quality = self.get_field_value("quality")
 
         lines = [
-            self.tr("prompt_arch_1", quality=quality),
-            self.tr("prompt_arch_2", style=style),
-            self.tr("prompt_arch_3", material=material, color=color),
-            self.tr("prompt_arch_4", lighting=lighting),
-            self.tr("prompt_arch_5", details=details),
-            self.tr("prompt_arch_6"),
-            self.tr("prompt_arch_7"),
+            self.get_category_prompt_text("architecture", "arch_1", "prompt_arch_1", quality=quality),
+            self.get_category_prompt_text("architecture", "arch_2", "prompt_arch_2", style=style),
+            self.get_category_prompt_text("architecture", "arch_3", "prompt_arch_3", material=material, color=color),
+            self.get_category_prompt_text("architecture", "arch_4", "prompt_arch_4", lighting=lighting),
+            self.get_category_prompt_text("architecture", "arch_5", "prompt_arch_5", details=details),
+            self.get_category_prompt_text("architecture", "arch_6", "prompt_arch_6"),
+            self.get_category_prompt_text("architecture", "arch_7", "prompt_arch_7"),
         ]
         return "\n".join(lines)
 
@@ -711,14 +1241,14 @@ class UniversalPromptManager:
         details = self.get_field_value("details")
 
         lines = [
-            self.tr("prompt_img_1", subject=subject),
-            self.tr("prompt_img_2", style=style),
-            self.tr("prompt_img_3", composition=composition),
-            self.tr("prompt_img_4", lighting=lighting),
-            self.tr("prompt_img_5", camera=camera),
-            self.tr("prompt_img_6", mood=mood),
-            self.tr("prompt_img_7", details=details),
-            self.tr("prompt_img_8"),
+            self.get_category_prompt_text("image_description", "img_1", "prompt_img_1", subject=subject),
+            self.get_category_prompt_text("image_description", "img_2", "prompt_img_2", style=style),
+            self.get_category_prompt_text("image_description", "img_3", "prompt_img_3", composition=composition),
+            self.get_category_prompt_text("image_description", "img_4", "prompt_img_4", lighting=lighting),
+            self.get_category_prompt_text("image_description", "img_5", "prompt_img_5", camera=camera),
+            self.get_category_prompt_text("image_description", "img_6", "prompt_img_6", mood=mood),
+            self.get_category_prompt_text("image_description", "img_7", "prompt_img_7", details=details),
+            self.get_category_prompt_text("image_description", "img_8", "prompt_img_8"),
         ]
         return "\n".join(lines)
 
@@ -728,19 +1258,51 @@ class UniversalPromptManager:
         task = self.get_field_value("task")
         requirements = self.get_field_value("requirements")
         framework = self.get_field_value("framework")
+        target_platform = self.get_field_value("target_platform")
+        output_structure = self.get_field_value("output_structure")
+        runtime_version = self.get_field_value("runtime_version")
+        package_manager = self.get_field_value("package_manager")
+        database = self.get_field_value("database")
+        api_style = self.get_field_value("api_style")
+        ui_framework = self.get_field_value("ui_framework")
         complexity = self.get_field_value("complexity")
         style = self.get_field_value("style")
-        comments = self.tr("prompt_code_comments") if self.get_field_value("comments") == "1" else ""
-        tests = self.tr("prompt_code_tests") if self.get_field_value("tests") == "1" else ""
+        security_level = self.get_field_value("security_level")
+        multilang = self.get_field_value("multilang")
+        target_languages = self.get_field_value("target_languages")
+        test_depth = self.get_field_value("test_depth")
+        documentation_level = self.get_field_value("documentation_level")
+        deployment_target = self.get_field_value("deployment_target")
+        comments = self.get_category_prompt_text("sourcecode", "code_comments", "prompt_code_comments") if self.get_field_value("comments") == "1" else ""
+        tests = self.get_category_prompt_text("sourcecode", "code_tests", "prompt_code_tests") if self.get_field_value("tests") == "1" else ""
+
+        is_multilang = str(multilang).strip().lower() in {"ja", "yes", "oui", "si", "sí", "1", "true"}
+        i18n_line = (
+            self.get_category_prompt_text("sourcecode", "code_multilang_yes", "prompt_code_multilang_yes", target_languages=target_languages)
+            if is_multilang
+            else self.get_category_prompt_text("sourcecode", "code_multilang_no", "prompt_code_multilang_no")
+        )
 
         lines = [
-            self.tr("prompt_code_1", complexity=complexity.lower(), language=language),
-            self.tr("prompt_code_2", task=task),
-            self.tr("prompt_code_3", requirements=requirements),
-            self.tr("prompt_code_4", framework=framework),
-            self.tr("prompt_code_5", style=style.lower(), comments=comments, tests=tests),
-            self.tr("prompt_code_6"),
-            self.tr("prompt_code_7"),
+            self.get_category_prompt_text("sourcecode", "code_1", "prompt_code_1", complexity=complexity.lower(), language=language),
+            self.get_category_prompt_text("sourcecode", "code_2", "prompt_code_2", task=task),
+            self.get_category_prompt_text("sourcecode", "code_3", "prompt_code_3", requirements=requirements),
+            self.get_category_prompt_text("sourcecode", "code_4", "prompt_code_4", framework=framework),
+            self.get_category_prompt_text("sourcecode", "code_platform", "prompt_code_platform", target_platform=target_platform),
+            self.get_category_prompt_text("sourcecode", "code_structure", "prompt_code_structure", output_structure=output_structure),
+            self.get_category_prompt_text("sourcecode", "code_runtime", "prompt_code_runtime", runtime_version=runtime_version),
+            self.get_category_prompt_text("sourcecode", "code_package_manager", "prompt_code_package_manager", package_manager=package_manager),
+            self.get_category_prompt_text("sourcecode", "code_database", "prompt_code_database", database=database),
+            self.get_category_prompt_text("sourcecode", "code_api_style", "prompt_code_api_style", api_style=api_style),
+            self.get_category_prompt_text("sourcecode", "code_ui", "prompt_code_ui", ui_framework=ui_framework),
+            self.get_category_prompt_text("sourcecode", "code_security", "prompt_code_security", security_level=security_level),
+            i18n_line,
+            self.get_category_prompt_text("sourcecode", "code_test_depth", "prompt_code_test_depth", test_depth=test_depth),
+            self.get_category_prompt_text("sourcecode", "code_documentation", "prompt_code_documentation", documentation_level=documentation_level),
+            self.get_category_prompt_text("sourcecode", "code_deployment", "prompt_code_deployment", deployment_target=deployment_target),
+            self.get_category_prompt_text("sourcecode", "code_5", "prompt_code_5", style=style.lower(), comments=comments, tests=tests),
+            self.get_category_prompt_text("sourcecode", "code_6", "prompt_code_6"),
+            self.get_category_prompt_text("sourcecode", "code_7", "prompt_code_7"),
         ]
         return "\n".join(lines)
 
@@ -754,14 +1316,14 @@ class UniversalPromptManager:
         details = self.get_field_value("details")
         parameters = self.get_field_value("parameters")
 
-        artist_ref = self.tr("prompt_art_artist_ref", artist=artist) if artist else ""
+        artist_ref = self.get_category_prompt_text("ai_art", "art_artist_ref", "prompt_art_artist_ref", artist=artist) if artist else ""
 
         lines = [
-            self.tr("prompt_art_subject_style", subject=subject, style=style.lower(), artist_ref=artist_ref),
-            self.tr("prompt_art_2", colors=colors),
-            self.tr("prompt_art_3", composition=composition),
-            self.tr("prompt_art_4", details=details),
-            self.tr("prompt_art_5", style=style.lower()),
+            self.get_category_prompt_text("ai_art", "art_subject_style", "prompt_art_subject_style", subject=subject, style=style.lower(), artist_ref=artist_ref),
+            self.get_category_prompt_text("ai_art", "art_2", "prompt_art_2", colors=colors),
+            self.get_category_prompt_text("ai_art", "art_3", "prompt_art_3", composition=composition),
+            self.get_category_prompt_text("ai_art", "art_4", "prompt_art_4", details=details),
+            self.get_category_prompt_text("ai_art", "art_5", "prompt_art_5", style=style.lower()),
             parameters,
         ]
         return "\n".join(lines)
@@ -777,14 +1339,14 @@ class UniversalPromptManager:
         cta = self.get_field_value("cta")
 
         lines = [
-            self.tr("prompt_mkt_1", product=product),
-            self.tr("prompt_mkt_2", audience=audience),
-            self.tr("prompt_mkt_3", goal=goal.lower()),
-            self.tr("prompt_mkt_4", tone=tone.lower()),
-            self.tr("prompt_mkt_5", platform=platform),
-            self.tr("prompt_mkt_6", keywords=keywords),
-            self.tr("prompt_mkt_7", cta=cta),
-            self.tr("prompt_mkt_8"),
+            self.get_category_prompt_text("marketing", "mkt_1", "prompt_mkt_1", product=product),
+            self.get_category_prompt_text("marketing", "mkt_2", "prompt_mkt_2", audience=audience),
+            self.get_category_prompt_text("marketing", "mkt_3", "prompt_mkt_3", goal=goal.lower()),
+            self.get_category_prompt_text("marketing", "mkt_4", "prompt_mkt_4", tone=tone.lower()),
+            self.get_category_prompt_text("marketing", "mkt_5", "prompt_mkt_5", platform=platform),
+            self.get_category_prompt_text("marketing", "mkt_6", "prompt_mkt_6", keywords=keywords),
+            self.get_category_prompt_text("marketing", "mkt_7", "prompt_mkt_7", cta=cta),
+            self.get_category_prompt_text("marketing", "mkt_8", "prompt_mkt_8"),
         ]
         return "\n".join(lines)
 
@@ -805,35 +1367,35 @@ class UniversalPromptManager:
 
         meal_prep_section = ""
         if meal_prep:
-            meal_prep_section = self.tr("nutrition_mealprep", storage=storage)
+            meal_prep_section = self.get_category_prompt_text("nutrition", "mealprep", "nutrition_mealprep", storage=storage)
 
         optional_parts = []
         if show_calories:
-            optional_parts.append(self.tr("nutrition_opt_calories"))
+            optional_parts.append(self.get_category_prompt_text("nutrition", "opt_calories", "nutrition_opt_calories"))
         if show_tips:
-            optional_parts.append(self.tr("nutrition_opt_tips"))
+            optional_parts.append(self.get_category_prompt_text("nutrition", "opt_tips", "nutrition_opt_tips"))
         if show_portions:
-            optional_parts.append(self.tr("nutrition_opt_portions"))
+            optional_parts.append(self.get_category_prompt_text("nutrition", "opt_portions", "nutrition_opt_portions"))
         optional_section = ""
         if optional_parts:
-            optional_section = "\n\n" + self.tr("nutrition_optional") + "\n" + "\n".join(optional_parts)
+            optional_section = "\n\n" + self.get_category_prompt_text("nutrition", "optional", "nutrition_optional") + "\n" + "\n".join(optional_parts)
 
-        plan_label = self.tr("nutrition_plan_week", days=days) if days != "1" else self.tr("nutrition_plan_day")
-        shopping_period = self.tr("nutrition_shopping_day") if days == "1" else self.tr("nutrition_shopping_days", days=days)
+        plan_label = self.get_category_prompt_text("nutrition", "plan_week", "nutrition_plan_week", days=days) if days != "1" else self.get_category_prompt_text("nutrition", "plan_day", "nutrition_plan_day")
+        shopping_period = self.get_category_prompt_text("nutrition", "shopping_day", "nutrition_shopping_day") if days == "1" else self.get_category_prompt_text("nutrition", "shopping_days", "nutrition_shopping_days", days=days)
 
         lines = [
-            self.tr("nutrition_intro", gender=gender),
+            self.get_category_prompt_text("nutrition", "intro", "nutrition_intro", gender=gender),
             "",
-            self.tr("nutrition_age", age=age),
-            self.tr("nutrition_weight", weight=weight),
-            self.tr("nutrition_goal", goal=goal),
-            self.tr("nutrition_taste", taste=taste),
+            self.get_category_prompt_text("nutrition", "age", "nutrition_age", age=age),
+            self.get_category_prompt_text("nutrition", "weight", "nutrition_weight", weight=weight),
+            self.get_category_prompt_text("nutrition", "goal", "nutrition_goal", goal=goal),
+            self.get_category_prompt_text("nutrition", "taste", "nutrition_taste", taste=taste),
             "",
-            self.tr("nutrition_requirements"),
+            self.get_category_prompt_text("nutrition", "requirements", "nutrition_requirements"),
             "",
-            self.tr("nutrition_r1", plan_label=plan_label),
-            self.tr("nutrition_r2"),
-            self.tr("nutrition_r3"),
+            self.get_category_prompt_text("nutrition", "r1", "nutrition_r1", plan_label=plan_label),
+            self.get_category_prompt_text("nutrition", "r2", "nutrition_r2"),
+            self.get_category_prompt_text("nutrition", "r3", "nutrition_r3"),
             f"   {appliances}",
         ]
 
@@ -841,10 +1403,10 @@ class UniversalPromptManager:
             lines.append(meal_prep_section)
 
         lines.extend([
-            self.tr("nutrition_r5"),
-            self.tr("nutrition_r6"),
-            self.tr("nutrition_r7"),
-            self.tr("nutrition_r8", shopping_period=shopping_period),
+            self.get_category_prompt_text("nutrition", "r5", "nutrition_r5"),
+            self.get_category_prompt_text("nutrition", "r6", "nutrition_r6"),
+            self.get_category_prompt_text("nutrition", "r7", "nutrition_r7"),
+            self.get_category_prompt_text("nutrition", "r8", "nutrition_r8", shopping_period=shopping_period),
         ])
 
         return "\n".join(lines) + optional_section
@@ -862,7 +1424,7 @@ class UniversalPromptManager:
         """Speichert aktuelle Einstellungen als Template"""
         template_name = simpledialog.askstring(
             self.tr("dialog_template_save_title"),
-            self.tr("dialog_template_save_prompt", category=self.tr(self.category_key_map.get(self.current_category, self.current_category)))
+            self.tr("dialog_template_save_prompt", category=self.get_category_display_name(self.current_category))
         )
         
         if not template_name:
@@ -893,17 +1455,20 @@ class UniversalPromptManager:
         template_data = self.templates.get(self.current_category, {}).get(template_name)
         if not template_data:
             return
+
+        category_id = self.categories.get(self.current_category, "custom")
         
         # Felder mit Template-Daten füllen
         for field_name, value in template_data.items():
             if field_name in self.input_fields:
                 field_info = self.input_fields[field_name]
+                localized_value = self.localize_saved_field_value(category_id, field_name, value)
                 
                 if field_info["type"] == "text":
                     field_info["widget"].delete('1.0', tk.END)
-                    field_info["widget"].insert('1.0', value)
+                    field_info["widget"].insert('1.0', localized_value)
                 elif field_name in self.field_vars:
-                    self.field_vars[field_name].set(value)
+                    self.field_vars[field_name].set(localized_value)
         
         self.status_var.set(self.tr("status_template_loaded", name=template_name))
     

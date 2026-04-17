@@ -1,0 +1,188 @@
+{
+  "category_name": {
+    "de": "Produktanforderungen",
+    "en": "Product Specification",
+    "fr": "Specification produit",
+    "es": "Especificacion de producto"
+  },
+  "fields": [
+    {
+      "key": "product_name",
+      "type": "entry",
+      "label": {
+        "de": "Produkt/Feature Name",
+        "en": "Product/Feature Name",
+        "fr": "Nom du produit/feature",
+        "es": "Nombre del producto/feature"
+      },
+      "default": {
+        "de": "Neues Feature",
+        "en": "New Feature",
+        "fr": "Nouvelle feature",
+        "es": "Nueva feature"
+      }
+    },
+    {
+      "key": "description",
+      "type": "text",
+      "label": {
+        "de": "Kurzbeschreibung",
+        "en": "Brief Description",
+        "fr": "Breve description",
+        "es": "Breve descripcion"
+      },
+      "default": {
+        "de": "Was soll das Produkt/Feature tun?",
+        "en": "What should the product/feature do?",
+        "fr": "Que doit faire le produit/feature?",
+        "es": "Que debe hacer el producto/feature?"
+      }
+    },
+    {
+      "key": "user_persona",
+      "type": "entry",
+      "label": {
+        "de": "Benutzer/Persona",
+        "en": "User/Persona",
+        "fr": "Utilisateur/Persona",
+        "es": "Usuario/Persona"
+      },
+      "default": {
+        "de": "Beispiel-Nutzer",
+        "en": "Example User",
+        "fr": "Utilisateur exemple",
+        "es": "Usuario ejemplo"
+      }
+    },
+    {
+      "key": "must_haves",
+      "type": "text",
+      "label": {
+        "de": "Muss-Anforderungen (Must-Have)",
+        "en": "Must-Have Requirements",
+        "fr": "Exigences obligatoires",
+        "es": "Requisitos obligatorios"
+      },
+      "default": {
+        "de": "Funktionen die auf keinen Fall fehlen duerfen",
+        "en": "Features that are absolutely essential",
+        "fr": "Fonctionnalites indispensables",
+        "es": "Funcionalidades indispensables"
+      }
+    },
+    {
+      "key": "nice_to_have",
+      "type": "text",
+      "label": {
+        "de": "Kann-Anforderungen (Nice-to-Have)",
+        "en": "Nice-to-Have Requirements",
+        "fr": "Exigences optionnelles",
+        "es": "Requisitos opcionales"
+      },
+      "default": {
+        "de": "Zusaetzliche Features die den Wert erhoehen",
+        "en": "Additional features that add value",
+        "fr": "Fonctionnalites supplementaires utiles",
+        "es": "Funcionalidades adicionales utiles"
+      }
+    },
+    {
+      "key": "acceptance_criteria",
+      "type": "text",
+      "label": {
+        "de": "Akzeptanzkriterien",
+        "en": "Acceptance Criteria",
+        "fr": "Criteres d'acceptation",
+        "es": "Criterios de aceptacion"
+      },
+      "default": {
+        "de": "Wie erkenne ich, dass es fertig ist?",
+        "en": "How do I know it's done?",
+        "fr": "Comment savoir que c'est fini?",
+        "es": "Como se que esta hecho?"
+      }
+    },
+    {
+      "key": "dependencies",
+      "type": "entry",
+      "label": {
+        "de": "Abhaengigkeiten",
+        "en": "Dependencies",
+        "fr": "Dependances",
+        "es": "Dependencias"
+      },
+      "default": {
+        "de": "Andere Features/Services die noetig sind",
+        "en": "Other features/services required",
+        "fr": "Autres features/services requis",
+        "es": "Otras features/servicios requeridos"
+      }
+    },
+    {
+      "key": "constraints",
+      "type": "entry",
+      "label": {
+        "de": "Einschraenkungen/Limits",
+        "en": "Constraints/Limits",
+        "fr": "Contraintes/Limites",
+        "es": "Restricciones/Limites"
+      },
+      "default": {
+        "de": "Budget, Zeit, technische Limits",
+        "en": "Budget, timeline, technical limits",
+        "fr": "Budget, calendrier, limites techniques",
+        "es": "Presupuesto, cronograma, limites tecnicos"
+      }
+    }
+  ],
+  "prompts": {
+    "spec_1": {
+      "de": "Feature: {product_name}",
+      "en": "Feature: {product_name}",
+      "fr": "Feature: {product_name}",
+      "es": "Feature: {product_name}"
+    },
+    "spec_2": {
+      "de": "Beschreibung: {description}",
+      "en": "Description: {description}",
+      "fr": "Description: {description}",
+      "es": "Descripcion: {description}"
+    },
+    "spec_3": {
+      "de": "Zielgruppe: {user_persona}",
+      "en": "Target User: {user_persona}",
+      "fr": "Utilisateur cible: {user_persona}",
+      "es": "Usuario objetivo: {user_persona}"
+    },
+    "spec_4": {
+      "de": "Muss-Anforderungen: {must_haves}",
+      "en": "Must-Haves: {must_haves}",
+      "fr": "Exigences obligatoires: {must_haves}",
+      "es": "Requisitos obligatorios: {must_haves}"
+    },
+    "spec_5": {
+      "de": "Kann-Anforderungen: {nice_to_have}",
+      "en": "Nice-to-Haves: {nice_to_have}",
+      "fr": "Exigences optionnelles: {nice_to_have}",
+      "es": "Requisitos opcionales: {nice_to_have}"
+    },
+    "spec_6": {
+      "de": "Akzeptanzkriterien: {acceptance_criteria}",
+      "en": "Acceptance Criteria: {acceptance_criteria}",
+      "fr": "Criteres d'acceptation: {acceptance_criteria}",
+      "es": "Criterios de aceptacion: {acceptance_criteria}"
+    },
+    "spec_7": {
+      "de": "Abhaengigkeiten: {dependencies}",
+      "en": "Dependencies: {dependencies}",
+      "fr": "Dependances: {dependencies}",
+      "es": "Dependencias: {dependencies}"
+    },
+    "spec_8": {
+      "de": "Einschraenkungen: {constraints}",
+      "en": "Constraints: {constraints}",
+      "fr": "Contraintes: {constraints}",
+      "es": "Restricciones: {constraints}"
+    }
+  }
+}

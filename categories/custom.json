@@ -1,0 +1,27 @@
+{
+  "category_name": {
+    "de": "Eigene Vorlage",
+    "en": "Custom Template",
+    "fr": "Modele personnalise",
+    "es": "Plantilla personalizada"
+  },
+  "fields": [
+    {
+      "key": "custom_prompt",
+      "type": "text",
+      "label": {
+        "de": "Eigener Prompt",
+        "en": "Custom Prompt",
+        "fr": "Prompt personnalise",
+        "es": "Prompt personalizado"
+      },
+      "default": {
+        "de": "Geben Sie hier Ihren Prompt ein...",
+        "en": "Enter your prompt here...",
+        "fr": "Saisissez votre prompt ici...",
+        "es": "Introduzca su prompt aqui..."
+      }
+    }
+  ],
+  "prompts": {}
+}

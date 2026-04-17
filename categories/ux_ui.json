@@ -1,0 +1,228 @@
+{
+  "category_name": {
+    "de": "UX/UI Konzept",
+    "en": "UX/UI Concept",
+    "fr": "Concept UX/UI",
+    "es": "Concepto UX/UI"
+  },
+  "fields": [
+    {
+      "key": "project_name",
+      "type": "entry",
+      "label": {
+        "de": "Projektname",
+        "en": "Project Name",
+        "fr": "Nom du projet",
+        "es": "Nombre del proyecto"
+      },
+      "default": {
+        "de": "Neues UI-Projekt",
+        "en": "New UI Project",
+        "fr": "Nouveau projet UI",
+        "es": "Nuevo proyecto UI"
+      }
+    },
+    {
+      "key": "target_users",
+      "type": "entry",
+      "label": {
+        "de": "Zielgruppe/Nutzer",
+        "en": "Target Users",
+        "fr": "Utilisateurs cibles",
+        "es": "Usuarios objetivo"
+      },
+      "default": {
+        "de": "Professionelle Nutzer",
+        "en": "Professional users",
+        "fr": "Utilisateurs professionnels",
+        "es": "Usuarios profesionales"
+      }
+    },
+    {
+      "key": "key_flows",
+      "type": "text",
+      "label": {
+        "de": "Wichtigste Nutzerflüsse",
+        "en": "Key User Flows",
+        "fr": "Flux utilisateur cles",
+        "es": "Flujos de usuario clave"
+      },
+      "default": {
+        "de": "Primäre Nutzungspfade (z.B. Login > Dashboard > Action)",
+        "en": "Primary user paths (e.g. Login > Dashboard > Action)",
+        "fr": "Chemins utilisateur primaires",
+        "es": "Caminos principales del usuario"
+      }
+    },
+    {
+      "key": "page_structure",
+      "type": "text",
+      "label": {
+        "de": "Seitenstruktur/Layout",
+        "en": "Page Structure/Layout",
+        "fr": "Structure/Mise en page",
+        "es": "Estructura/Diseno de pagina"
+      },
+      "default": {
+        "de": "Header, Sidebar, Main Content, Footer, etc.",
+        "en": "Header, Sidebar, Main Content, Footer, etc.",
+        "fr": "En-tete, Barre laterale, Contenu principal, Pied de page",
+        "es": "Encabezado, Barra lateral, Contenido principal, Pie de pagina"
+      }
+    },
+    {
+      "key": "design_style",
+      "type": "combobox",
+      "label": {
+        "de": "Designstil",
+        "en": "Design Style",
+        "fr": "Style de conception",
+        "es": "Estilo de diseno"
+      },
+      "options": {
+        "de": ["Minimalistisch", "Modern/Clean", "Colorful/Playful", "Dark Mode", "Corporate/Professional"],
+        "en": ["Minimalist", "Modern/Clean", "Colorful/Playful", "Dark Mode", "Corporate/Professional"],
+        "fr": ["Minimaliste", "Moderne/Propre", "Colore/Ludique", "Mode sombre", "Professionnel"],
+        "es": ["Minimalista", "Moderno/Limpio", "Colorido/Ludico", "Modo oscuro", "Profesional"]
+      },
+      "default": {
+        "de": "Modern/Clean",
+        "en": "Modern/Clean",
+        "fr": "Moderne/Propre",
+        "es": "Moderno/Limpio"
+      }
+    },
+    {
+      "key": "key_components",
+      "type": "text",
+      "label": {
+        "de": "Wichtigste Komponenten",
+        "en": "Key Components",
+        "fr": "Composants cles",
+        "es": "Componentes clave"
+      },
+      "default": {
+        "de": "Buttons, Forms, Cards, Lists, Modals, etc.",
+        "en": "Buttons, Forms, Cards, Lists, Modals, etc.",
+        "fr": "Boutons, Formulaires, Cartes, Listes, Modales",
+        "es": "Botones, Formularios, Tarjetas, Listas, Modales"
+      }
+    },
+    {
+      "key": "accessibility",
+      "type": "combobox",
+      "label": {
+        "de": "Barrierefreiheit (A11y)",
+        "en": "Accessibility (A11y)",
+        "fr": "Accessibilite",
+        "es": "Accesibilidad"
+      },
+      "options": {
+        "de": ["WCAG 2.0 Level A", "WCAG 2.0 Level AA", "WCAG 2.0 Level AAA", "Basic"],
+        "en": ["WCAG 2.0 Level A", "WCAG 2.0 Level AA", "WCAG 2.0 Level AAA", "Basic"],
+        "fr": ["WCAG 2.0 Niveau A", "WCAG 2.0 Niveau AA", "WCAG 2.0 Niveau AAA", "Basique"],
+        "es": ["WCAG 2.0 Nivel A", "WCAG 2.0 Nivel AA", "WCAG 2.0 Nivel AAA", "Basico"]
+      },
+      "default": {
+        "de": "WCAG 2.0 Level AA",
+        "en": "WCAG 2.0 Level AA",
+        "fr": "WCAG 2.0 Niveau AA",
+        "es": "WCAG 2.0 Nivel AA"
+      }
+    },
+    {
+      "key": "responsive_breakpoints",
+      "type": "entry",
+      "label": {
+        "de": "Responsive Breakpoints",
+        "en": "Responsive Breakpoints",
+        "fr": "Points de rupture",
+        "es": "Puntos de ruptura"
+      },
+      "default": {
+        "de": "Mobile, Tablet, Desktop",
+        "en": "Mobile, Tablet, Desktop",
+        "fr": "Mobile, Tablette, Bureau",
+        "es": "Movil, Tableta, Escritorio"
+      }
+    },
+    {
+      "key": "microcopy_tone",
+      "type": "combobox",
+      "label": {
+        "de": "Mikrokopie/Tonfall",
+        "en": "Microcopy/Tone",
+        "fr": "Microtexte/Ton",
+        "es": "Microtexto/Tono"
+      },
+      "options": {
+        "de": ["Freundlich", "Professionell", "Spielerisch", "Supportiv"],
+        "en": ["Friendly", "Professional", "Playful", "Supportive"],
+        "fr": ["Amical", "Professionnel", "Ludique", "Solidaire"],
+        "es": ["Amigable", "Profesional", "Ludico", "Solidario"]
+      },
+      "default": {
+        "de": "Freundlich",
+        "en": "Friendly",
+        "fr": "Amical",
+        "es": "Amigable"
+      }
+    }
+  ],
+  "prompts": {
+    "ux_1": {
+      "de": "Projekt: {project_name}",
+      "en": "Project: {project_name}",
+      "fr": "Projet: {project_name}",
+      "es": "Proyecto: {project_name}"
+    },
+    "ux_2": {
+      "de": "Zielgruppe: {target_users}",
+      "en": "Target Users: {target_users}",
+      "fr": "Utilisateurs cibles: {target_users}",
+      "es": "Usuarios objetivo: {target_users}"
+    },
+    "ux_3": {
+      "de": "Wichtigste Nutzerflüsse: {key_flows}",
+      "en": "Key User Flows: {key_flows}",
+      "fr": "Flux utilisateur cles: {key_flows}",
+      "es": "Flujos de usuario clave: {key_flows}"
+    },
+    "ux_4": {
+      "de": "Seitenstruktur: {page_structure}",
+      "en": "Page Structure: {page_structure}",
+      "fr": "Structure des pages: {page_structure}",
+      "es": "Estructura de paginas: {page_structure}"
+    },
+    "ux_5": {
+      "de": "Designstil: {design_style}",
+      "en": "Design Style: {design_style}",
+      "fr": "Style de conception: {design_style}",
+      "es": "Estilo de diseno: {design_style}"
+    },
+    "ux_6": {
+      "de": "Wichtigste Komponenten: {key_components}",
+      "en": "Key Components: {key_components}",
+      "fr": "Composants cles: {key_components}",
+      "es": "Componentes clave: {key_components}"
+    },
+    "ux_7": {
+      "de": "Barrierefreiheit: {accessibility}",
+      "en": "Accessibility: {accessibility}",
+      "fr": "Accessibilite: {accessibility}",
+      "es": "Accesibilidad: {accessibility}"
+    },
+    "ux_8": {
+      "de": "Responsive Breakpoints: {responsive_breakpoints}",
+      "en": "Responsive Breakpoints: {responsive_breakpoints}",
+      "fr": "Points de rupture: {responsive_breakpoints}",
+      "es": "Puntos de ruptura: {responsive_breakpoints}"
+    },
+    "ux_9": {
+      "de": "Mikrokopie/Tonfall: {microcopy_tone}",
+      "en": "Microcopy/Tone: {microcopy_tone}",
+      "fr": "Microtexte/Ton: {microcopy_tone}",
+      "es": "Microtexto/Tono: {microcopy_tone}"
+    }
+  }
+}

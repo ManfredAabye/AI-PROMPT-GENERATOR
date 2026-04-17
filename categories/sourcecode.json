@@ -1,0 +1,576 @@
+{
+  "category_name": {
+    "de": "Sourcecode",
+    "en": "Source Code",
+    "fr": "Code source",
+    "es": "Codigo fuente"
+  },
+  "fields": [
+    {
+      "key": "language",
+      "type": "combobox",
+      "label": {
+        "de": "Programmiersprache",
+        "en": "Programming Language",
+        "fr": "Langage de programmation",
+        "es": "Lenguaje de programacion"
+      },
+      "options": {
+        "de": ["Bash", "C", "C#", "C++", "CSS", "Dart", "Go", "HTML", "Java", "JavaScript", "Kotlin", "MATLAB", "PHP", "Python", "R", "Ruby", "Rust", "SQL", "Swift", "TypeScript"],
+        "en": ["Bash", "C", "C#", "C++", "CSS", "Dart", "Go", "HTML", "Java", "JavaScript", "Kotlin", "MATLAB", "PHP", "Python", "R", "Ruby", "Rust", "SQL", "Swift", "TypeScript"],
+        "fr": ["Bash", "C", "C#", "C++", "CSS", "Dart", "Go", "HTML", "Java", "JavaScript", "Kotlin", "MATLAB", "PHP", "Python", "R", "Ruby", "Rust", "SQL", "Swift", "TypeScript"],
+        "es": ["Bash", "C", "C#", "C++", "CSS", "Dart", "Go", "HTML", "Java", "JavaScript", "Kotlin", "MATLAB", "PHP", "Python", "R", "Ruby", "Rust", "SQL", "Swift", "TypeScript"]
+      },
+      "default": {
+        "de": "Python",
+        "en": "Python",
+        "fr": "Python",
+        "es": "Python"
+      }
+    },
+    {
+      "key": "task",
+      "type": "text",
+      "label": {
+        "de": "Aufgabe",
+        "en": "Task",
+        "fr": "Tache",
+        "es": "Tarea"
+      },
+      "default": {
+        "de": "Eine Funktion zum Sortieren von Listen",
+        "en": "A function for sorting lists",
+        "fr": "Une fonction pour trier des listes",
+        "es": "Una funcion para ordenar listas"
+      }
+    },
+    {
+      "key": "requirements",
+      "type": "text",
+      "label": {
+        "de": "Anforderungen",
+        "en": "Requirements",
+        "fr": "Exigences",
+        "es": "Requisitos"
+      },
+      "default": {
+        "de": "Effizient, gut lesbar, mit Fehlerbehandlung",
+        "en": "Efficient, readable, with error handling",
+        "fr": "Efficace, lisible, avec gestion des erreurs",
+        "es": "Eficiente, legible, con manejo de errores"
+      }
+    },
+    {
+      "key": "framework",
+      "type": "combobox",
+      "label": {
+        "de": "Framework",
+        "en": "Framework",
+        "fr": "Framework",
+        "es": "Framework"
+      },
+      "options": {
+        "de": ["Kein spezielles Framework", "Standard Library", "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter", "Django", "Flask", "FastAPI", "React", "Vue", "Angular", "Next.js", "Nuxt", "Node.js", "Express", "NestJS", "Laravel", "Symfony", "CodeIgniter", "WordPress", "Spring Boot", "ASP.NET Core", "Ruby on Rails"],
+        "en": ["No specific framework", "Standard Library", "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter", "Django", "Flask", "FastAPI", "React", "Vue", "Angular", "Next.js", "Nuxt", "Node.js", "Express", "NestJS", "Laravel", "Symfony", "CodeIgniter", "WordPress", "Spring Boot", "ASP.NET Core", "Ruby on Rails"],
+        "fr": ["Aucun framework specifique", "Standard Library", "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter", "Django", "Flask", "FastAPI", "React", "Vue", "Angular", "Next.js", "Nuxt", "Node.js", "Express", "NestJS", "Laravel", "Symfony", "CodeIgniter", "WordPress", "Spring Boot", "ASP.NET Core", "Ruby on Rails"],
+        "es": ["Sin framework especifico", "Standard Library", "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter", "Django", "Flask", "FastAPI", "React", "Vue", "Angular", "Next.js", "Nuxt", "Node.js", "Express", "NestJS", "Laravel", "Symfony", "CodeIgniter", "WordPress", "Spring Boot", "ASP.NET Core", "Ruby on Rails"]
+      },
+      "default": {
+        "de": "Kein spezielles Framework",
+        "en": "No specific framework",
+        "fr": "Aucun framework specifique",
+        "es": "Sin framework especifico"
+      }
+    },
+    {
+      "key": "target_platform",
+      "type": "combobox",
+      "label": {
+        "de": "Zielplattform",
+        "en": "Target Platform",
+        "fr": "Plateforme cible",
+        "es": "Plataforma objetivo"
+      },
+      "options": {
+        "de": ["Desktop", "Web", "Mobile", "CLI", "Backend/API", "Embedded"],
+        "en": ["Desktop", "Web", "Mobile", "CLI", "Backend/API", "Embedded"],
+        "fr": ["Desktop", "Web", "Mobile", "CLI", "Backend/API", "Embedded"],
+        "es": ["Desktop", "Web", "Mobile", "CLI", "Backend/API", "Embedded"]
+      },
+      "default": {
+        "de": "Desktop",
+        "en": "Desktop",
+        "fr": "Desktop",
+        "es": "Desktop"
+      }
+    },
+    {
+      "key": "output_structure",
+      "type": "combobox",
+      "label": {
+        "de": "Output-Struktur",
+        "en": "Output Structure",
+        "fr": "Structure de sortie",
+        "es": "Estructura de salida"
+      },
+      "options": {
+        "de": ["Single File", "Multi-File", "Clean Architecture", "Hexagonal"],
+        "en": ["Single File", "Multi-File", "Clean Architecture", "Hexagonal"],
+        "fr": ["Single File", "Multi-File", "Clean Architecture", "Hexagonal"],
+        "es": ["Single File", "Multi-File", "Clean Architecture", "Hexagonal"]
+      },
+      "default": {
+        "de": "Multi-File",
+        "en": "Multi-File",
+        "fr": "Multi-File",
+        "es": "Multi-File"
+      }
+    },
+    {
+      "key": "runtime_version",
+      "type": "entry",
+      "label": {
+        "de": "Laufzeit/Version",
+        "en": "Runtime/Version",
+        "fr": "Runtime/Version",
+        "es": "Runtime/Version"
+      },
+      "default": {
+        "de": "Aktuelle stabile Version",
+        "en": "Current stable version",
+        "fr": "Version stable actuelle",
+        "es": "Version estable actual"
+      }
+    },
+    {
+      "key": "package_manager",
+      "type": "combobox",
+      "label": {
+        "de": "Paketmanager",
+        "en": "Package Manager",
+        "fr": "Gestionnaire de paquets",
+        "es": "Gestor de paquetes"
+      },
+      "options": {
+        "de": ["Keiner", "pip", "poetry", "npm", "pnpm", "yarn", "composer", "cargo", "maven", "gradle"],
+        "en": ["None", "pip", "poetry", "npm", "pnpm", "yarn", "composer", "cargo", "maven", "gradle"],
+        "fr": ["Aucun", "pip", "poetry", "npm", "pnpm", "yarn", "composer", "cargo", "maven", "gradle"],
+        "es": ["Ninguno", "pip", "poetry", "npm", "pnpm", "yarn", "composer", "cargo", "maven", "gradle"]
+      },
+      "default": {
+        "de": "Keiner",
+        "en": "None",
+        "fr": "Aucun",
+        "es": "Ninguno"
+      }
+    },
+    {
+      "key": "database",
+      "type": "combobox",
+      "label": {
+        "de": "Datenbank",
+        "en": "Database",
+        "fr": "Base de donnees",
+        "es": "Base de datos"
+      },
+      "options": {
+        "de": ["Keine", "SQLite", "PostgreSQL", "MySQL", "MariaDB", "MongoDB", "Redis"],
+        "en": ["None", "SQLite", "PostgreSQL", "MySQL", "MariaDB", "MongoDB", "Redis"],
+        "fr": ["Aucune", "SQLite", "PostgreSQL", "MySQL", "MariaDB", "MongoDB", "Redis"],
+        "es": ["Ninguna", "SQLite", "PostgreSQL", "MySQL", "MariaDB", "MongoDB", "Redis"]
+      },
+      "default": {
+        "de": "Keine",
+        "en": "None",
+        "fr": "Aucune",
+        "es": "Ninguna"
+      }
+    },
+    {
+      "key": "api_style",
+      "type": "combobox",
+      "label": {
+        "de": "API-Stil",
+        "en": "API Style",
+        "fr": "Style d'API",
+        "es": "Estilo de API"
+      },
+      "options": {
+        "de": ["Keine API", "REST", "GraphQL", "gRPC", "WebSocket"],
+        "en": ["No API", "REST", "GraphQL", "gRPC", "WebSocket"],
+        "fr": ["Aucune API", "REST", "GraphQL", "gRPC", "WebSocket"],
+        "es": ["Sin API", "REST", "GraphQL", "gRPC", "WebSocket"]
+      },
+      "default": {
+        "de": "Keine API",
+        "en": "No API",
+        "fr": "Aucune API",
+        "es": "Sin API"
+      }
+    },
+    {
+      "key": "ui_framework",
+      "type": "combobox",
+      "label": {
+        "de": "Benutzeroberflaeche",
+        "en": "User Interface",
+        "fr": "Interface utilisateur",
+        "es": "Interfaz de usuario"
+      },
+      "options": {
+        "de": ["Keine UI", "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter"],
+        "en": ["No UI", "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter"],
+        "fr": ["Pas d'UI", "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter"],
+        "es": ["Sin UI", "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter"]
+      },
+      "default": {
+        "de": "Tkinter + ttkbootstrap",
+        "en": "Tkinter + ttkbootstrap",
+        "fr": "Tkinter + ttkbootstrap",
+        "es": "Tkinter + ttkbootstrap"
+      }
+    },
+    {
+      "key": "complexity",
+      "type": "combobox",
+      "label": {
+        "de": "Komplexitaet",
+        "en": "Complexity",
+        "fr": "Complexite",
+        "es": "Complejidad"
+      },
+      "options": {
+        "de": ["Einfach", "Mittel", "Komplex", "Produktions-ready"],
+        "en": ["Simple", "Medium", "Complex", "Production-ready"],
+        "fr": ["Simple", "Moyen", "Complexe", "Pret pour la production"],
+        "es": ["Simple", "Medio", "Complejo", "Listo para produccion"]
+      },
+      "default": {
+        "de": "Mittel",
+        "en": "Medium",
+        "fr": "Moyen",
+        "es": "Medio"
+      }
+    },
+    {
+      "key": "style",
+      "type": "combobox",
+      "label": {
+        "de": "Code-Stil",
+        "en": "Code Style",
+        "fr": "Style de code",
+        "es": "Estilo de codigo"
+      },
+      "options": {
+        "de": ["Funktional", "OOP", "Prozedural", "Deklarativ"],
+        "en": ["Functional", "OOP", "Procedural", "Declarative"],
+        "fr": ["Fonctionnel", "POO", "Procedural", "Declaratif"],
+        "es": ["Funcional", "POO", "Procedimental", "Declarativo"]
+      },
+      "default": {
+        "de": "Funktional",
+        "en": "Functional",
+        "fr": "Fonctionnel",
+        "es": "Funcional"
+      }
+    },
+    {
+      "key": "security_level",
+      "type": "combobox",
+      "label": {
+        "de": "Sicherheitsniveau",
+        "en": "Security Level",
+        "fr": "Niveau de securite",
+        "es": "Nivel de seguridad"
+      },
+      "options": {
+        "de": ["Basis", "Standard", "Hoch", "OWASP-orientiert"],
+        "en": ["Basic", "Standard", "High", "OWASP-oriented"],
+        "fr": ["Basique", "Standard", "Eleve", "Oriente OWASP"],
+        "es": ["Basico", "Estandar", "Alto", "Orientado a OWASP"]
+      },
+      "default": {
+        "de": "Standard",
+        "en": "Standard",
+        "fr": "Standard",
+        "es": "Estandar"
+      }
+    },
+    {
+      "key": "multilang",
+      "type": "combobox",
+      "label": {
+        "de": "Mehrsprachigkeit",
+        "en": "Multilingual",
+        "fr": "Multilingue",
+        "es": "Multilingue"
+      },
+      "options": {
+        "de": ["Nein", "Ja"],
+        "en": ["No", "Yes"],
+        "fr": ["Non", "Oui"],
+        "es": ["No", "Si"]
+      },
+      "default": {
+        "de": "Nein",
+        "en": "No",
+        "fr": "Non",
+        "es": "No"
+      }
+    },
+    {
+      "key": "target_languages",
+      "type": "combobox",
+      "label": {
+        "de": "Zielsprachen",
+        "en": "Target Languages",
+        "fr": "Langues cibles",
+        "es": "Idiomas objetivo"
+      },
+      "options": {
+        "de": ["Deutsch", "Englisch", "Deutsch + Englisch", "Englisch + Deutsch + Franzoesisch + Spanisch"],
+        "en": ["German", "English", "German + English", "English + German + French + Spanish"],
+        "fr": ["Allemand", "Anglais", "Allemand + Anglais", "Anglais + Allemand + Francais + Espagnol"],
+        "es": ["Aleman", "Ingles", "Aleman + Ingles", "Ingles + Aleman + Frances + Espanol"]
+      },
+      "default": {
+        "de": "Englisch + Deutsch + Franzoesisch + Spanisch",
+        "en": "English + German + French + Spanish",
+        "fr": "Anglais + Allemand + Francais + Espagnol",
+        "es": "Ingles + Aleman + Frances + Espanol"
+      }
+    },
+    {
+      "key": "test_depth",
+      "type": "combobox",
+      "label": {
+        "de": "Testtiefe",
+        "en": "Test Depth",
+        "fr": "Niveau de tests",
+        "es": "Nivel de pruebas"
+      },
+      "options": {
+        "de": ["Keine", "Unit", "Unit + Integration", "Unit + Integration + E2E"],
+        "en": ["None", "Unit", "Unit + Integration", "Unit + Integration + E2E"],
+        "fr": ["Aucun", "Unit", "Unit + Integration", "Unit + Integration + E2E"],
+        "es": ["Ninguna", "Unit", "Unit + Integration", "Unit + Integration + E2E"]
+      },
+      "default": {
+        "de": "Unit + Integration",
+        "en": "Unit + Integration",
+        "fr": "Unit + Integration",
+        "es": "Unit + Integration"
+      }
+    },
+    {
+      "key": "documentation_level",
+      "type": "combobox",
+      "label": {
+        "de": "Dokumentation",
+        "en": "Documentation",
+        "fr": "Documentation",
+        "es": "Documentacion"
+      },
+      "options": {
+        "de": ["Minimal", "Standard", "Ausfuehrlich", "Ausfuehrlich + README + Beispiele"],
+        "en": ["Minimal", "Standard", "Detailed", "Detailed + README + Examples"],
+        "fr": ["Minimal", "Standard", "Detaille", "Detaille + README + Exemples"],
+        "es": ["Minima", "Estandar", "Detallada", "Detallada + README + Ejemplos"]
+      },
+      "default": {
+        "de": "Standard",
+        "en": "Standard",
+        "fr": "Standard",
+        "es": "Estandar"
+      }
+    },
+    {
+      "key": "deployment_target",
+      "type": "combobox",
+      "label": {
+        "de": "Deployment-Ziel",
+        "en": "Deployment Target",
+        "fr": "Cible de deploiement",
+        "es": "Objetivo de despliegue"
+      },
+      "options": {
+        "de": ["Lokal", "Docker", "VPS", "Shared Hosting", "Serverless", "WordPress Plugin ZIP"],
+        "en": ["Local", "Docker", "VPS", "Shared Hosting", "Serverless", "WordPress Plugin ZIP"],
+        "fr": ["Local", "Docker", "VPS", "Hebergement partage", "Serverless", "WordPress Plugin ZIP"],
+        "es": ["Local", "Docker", "VPS", "Hosting compartido", "Serverless", "WordPress Plugin ZIP"]
+      },
+      "default": {
+        "de": "Lokal",
+        "en": "Local",
+        "fr": "Local",
+        "es": "Local"
+      }
+    },
+    {
+      "key": "comments",
+      "type": "checkbox",
+      "label": {
+        "de": "Kommentare",
+        "en": "Comments",
+        "fr": "Commentaires",
+        "es": "Comentarios"
+      },
+      "default": {
+        "de": true,
+        "en": true,
+        "fr": true,
+        "es": true
+      }
+    },
+    {
+      "key": "tests",
+      "type": "checkbox",
+      "label": {
+        "de": "Tests inkludieren",
+        "en": "Include Tests",
+        "fr": "Inclure les tests",
+        "es": "Incluir tests"
+      },
+      "default": {
+        "de": true,
+        "en": true,
+        "fr": true,
+        "es": true
+      }
+    }
+  ],
+  "prompts": {
+    "code_1": {
+      "de": "Erstelle {complexity} {language} Code.",
+      "en": "Create {complexity} {language} code.",
+      "fr": "Cree du code {language} {complexity}.",
+      "es": "Crea codigo {language} {complexity}."
+    },
+    "code_2": {
+      "de": "Aufgabe: {task}.",
+      "en": "Task: {task}.",
+      "fr": "Tache : {task}.",
+      "es": "Tarea: {task}."
+    },
+    "code_3": {
+      "de": "Anforderungen: {requirements}.",
+      "en": "Requirements: {requirements}.",
+      "fr": "Exigences : {requirements}.",
+      "es": "Requisitos: {requirements}."
+    },
+    "code_4": {
+      "de": "Framework: {framework}.",
+      "en": "Framework: {framework}.",
+      "fr": "Framework : {framework}.",
+      "es": "Framework: {framework}."
+    },
+    "code_platform": {
+      "de": "Zielplattform: {target_platform}.",
+      "en": "Target platform: {target_platform}.",
+      "fr": "Plateforme cible : {target_platform}.",
+      "es": "Plataforma objetivo: {target_platform}."
+    },
+    "code_structure": {
+      "de": "Output-Struktur: {output_structure}.",
+      "en": "Output structure: {output_structure}.",
+      "fr": "Structure de sortie : {output_structure}.",
+      "es": "Estructura de salida: {output_structure}."
+    },
+    "code_runtime": {
+      "de": "Laufzeit/Version: {runtime_version}.",
+      "en": "Runtime/version: {runtime_version}.",
+      "fr": "Runtime/version : {runtime_version}.",
+      "es": "Runtime/version: {runtime_version}."
+    },
+    "code_package_manager": {
+      "de": "Paketmanager: {package_manager}.",
+      "en": "Package manager: {package_manager}.",
+      "fr": "Gestionnaire de paquets : {package_manager}.",
+      "es": "Gestor de paquetes: {package_manager}."
+    },
+    "code_database": {
+      "de": "Datenbank: {database}.",
+      "en": "Database: {database}.",
+      "fr": "Base de donnees : {database}.",
+      "es": "Base de datos: {database}."
+    },
+    "code_api_style": {
+      "de": "API-Stil: {api_style}.",
+      "en": "API style: {api_style}.",
+      "fr": "Style d'API : {api_style}.",
+      "es": "Estilo de API: {api_style}."
+    },
+    "code_ui": {
+      "de": "Benutzeroberflaeche: {ui_framework}.",
+      "en": "User interface: {ui_framework}.",
+      "fr": "Interface utilisateur : {ui_framework}.",
+      "es": "Interfaz de usuario: {ui_framework}."
+    },
+    "code_security": {
+      "de": "Sicherheitsniveau: {security_level}.",
+      "en": "Security level: {security_level}.",
+      "fr": "Niveau de securite : {security_level}.",
+      "es": "Nivel de seguridad: {security_level}."
+    },
+    "code_multilang_yes": {
+      "de": "Mehrsprachigkeit: Aktiviert ({target_languages}). Nutze ein i18n-System mit separaten Sprachdateien und Laufzeit-Sprachwechsel.",
+      "en": "Multilingual support: Enabled ({target_languages}). Use an i18n system with separate language files and runtime language switching.",
+      "fr": "Prise en charge multilingue : activee ({target_languages}). Utilise un systeme i18n avec des fichiers separes et changement de langue a l'execution.",
+      "es": "Soporte multilingue: Activado ({target_languages}). Usa un sistema i18n con archivos separados y cambio de idioma en ejecucion."
+    },
+    "code_multilang_no": {
+      "de": "Mehrsprachigkeit: Nicht erforderlich.",
+      "en": "Multilingual support: Not required.",
+      "fr": "Prise en charge multilingue : non requise.",
+      "es": "Soporte multilingue: No requerido."
+    },
+    "code_test_depth": {
+      "de": "Testtiefe: {test_depth}.",
+      "en": "Test depth: {test_depth}.",
+      "fr": "Niveau de tests : {test_depth}.",
+      "es": "Nivel de pruebas: {test_depth}."
+    },
+    "code_documentation": {
+      "de": "Dokumentation: {documentation_level}.",
+      "en": "Documentation: {documentation_level}.",
+      "fr": "Documentation : {documentation_level}.",
+      "es": "Documentacion: {documentation_level}."
+    },
+    "code_deployment": {
+      "de": "Deployment-Ziel: {deployment_target}.",
+      "en": "Deployment target: {deployment_target}.",
+      "fr": "Cible de deploiement : {deployment_target}.",
+      "es": "Objetivo de despliegue: {deployment_target}."
+    },
+    "code_5": {
+      "de": "Programmierstil: {style} {comments} {tests}.",
+      "en": "Programming style: {style} {comments} {tests}.",
+      "fr": "Style de programmation : {style} {comments} {tests}.",
+      "es": "Estilo de programacion: {style} {comments} {tests}."
+    },
+    "code_6": {
+      "de": "Ausgabe: Vollstaendiger, ausfuehrbarer Code mit Erklaerung.",
+      "en": "Output: Complete, executable code with explanation.",
+      "fr": "Sortie : code complet, executable, avec explication.",
+      "es": "Salida: codigo completo y ejecutable con explicacion."
+    },
+    "code_7": {
+      "de": "Best Practices: Clean Code, effiziente Algorithmen, gute Fehlerbehandlung.",
+      "en": "Best practices: Clean code, efficient algorithms, solid error handling.",
+      "fr": "Bonnes pratiques : clean code, algorithmes efficaces, bonne gestion des erreurs.",
+      "es": "Buenas practicas: clean code, algoritmos eficientes y buen manejo de errores."
+    },
+    "code_comments": {
+      "de": "inklusive ausfuehrlicher Kommentare",
+      "en": "including detailed comments",
+      "fr": "avec des commentaires detailles",
+      "es": "incluyendo comentarios detallados"
+    },
+    "code_tests": {
+      "de": "mit Unit-Tests",
+      "en": "with unit tests",
+      "fr": "avec des tests unitaires",
+      "es": "con pruebas unitarias"
+    }
+  }
+}

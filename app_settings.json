@@ -1,0 +1,187 @@
+{
+  "field_values": {
+    "Architektur": {
+      "style": "modern",
+      "material": "Putz",
+      "color": "weiss",
+      "lighting": "Tageslicht",
+      "details": "Vordach, Hausnummer, Briefkasten, Fensterlaeden",
+      "quality": "4K fotorealistisch"
+    },
+    "Bildbeschreibung": {
+      "subject": "Facade de maison",
+      "style": "Architecture",
+      "composition": "Regle des tiers",
+      "lighting": "Heure doree",
+      "camera": "Grand angle",
+      "mood": "Paisible, accueillant, moderne",
+      "details": "Textures visibles, ombres naturelles, couleurs realistes"
+    },
+    "Sourcecode": {
+      "language": "Python",
+      "task": "Eine Funktion zum Sortieren von Listen",
+      "requirements": "Effizient, gut lesbar, mit Fehlerbehandlung",
+      "framework": "Kein spezielles Framework",
+      "target_platform": "Desktop",
+      "output_structure": "Multi-File",
+      "runtime_version": "Aktuelle stabile Version",
+      "package_manager": "Keiner",
+      "database": "Keine",
+      "api_style": "Keine API",
+      "ui_framework": "Tkinter + ttkbootstrap",
+      "complexity": "Mittel",
+      "style": "Funktional",
+      "security_level": "Standard",
+      "multilang": "Nein",
+      "target_languages": "Englisch + Deutsch + Franzoesisch + Spanisch",
+      "test_depth": "Unit + Integration",
+      "documentation_level": "Standard",
+      "deployment_target": "Lokal",
+      "comments": true,
+      "tests": true
+    },
+    "KI-Kunst": {
+      "subject": "Futuristisches Haus in einer Naturlandschaft",
+      "style": "Fotorealistisch",
+      "artist": "",
+      "colors": "Erdtoene mit akzentuierenden Blautoenen",
+      "composition": "Epische Weitwinkel",
+      "details": "Hochdetailliert",
+      "parameters": "--ar 16:9 --v 6.0 --style raw"
+    },
+    "Marketing": {
+      "product": "Logiciel d'architecture",
+      "audience": "Architectes et maitres d'ouvrage",
+      "goal": "Ventes",
+      "tone": "Professionnel",
+      "platform": "Site web",
+      "keywords": "moderne, efficace, convivial, innovant",
+      "cta": "Essayez-le gratuitement maintenant !"
+    },
+    "Ernährungsplan": {
+      "days": "7",
+      "age": "62",
+      "weight": "110",
+      "gender": "maennlich",
+      "goal": "Gewichtsreduktion",
+      "taste": "Abwechslungsreich",
+      "appliances": "Heissluftfritteuse, Mikrowelle, Umluftherd",
+      "meal_prep": true,
+      "storage": "ungekuehlt, Kuehlschrank, Gefriertruhe",
+      "show_calories": true,
+      "show_tips": true,
+      "show_portions": true
+    },
+    "Eigene Vorlage": {
+      "custom_prompt": "Geben Sie hier Ihren Prompt ein..."
+    },
+    "Produktanforderungen": {
+      "product_name": "Neues Feature",
+      "description": "Was soll das Produkt/Feature tun?",
+      "user_persona": "Beispiel-Nutzer",
+      "must_haves": "Funktionen die auf keinen Fall fehlen duerfen",
+      "nice_to_have": "Zusaetzliche Features die den Wert erhoehen",
+      "acceptance_criteria": "Wie erkenne ich, dass es fertig ist?",
+      "dependencies": "Andere Features/Services die noetig sind",
+      "constraints": "Budget, Zeit, technische Limits"
+    },
+    "UX/UI Konzept": {
+      "project_name": "Neues UI-Projekt",
+      "target_users": "Professionelle Nutzer",
+      "key_flows": "Primäre Nutzungspfade (z.B. Login > Dashboard > Action)",
+      "page_structure": "Header, Sidebar, Main Content, Footer, etc.",
+      "design_style": "Modern/Clean",
+      "key_components": "Buttons, Forms, Cards, Lists, Modals, etc.",
+      "accessibility": "WCAG 2.0 Level AA",
+      "responsive_breakpoints": "Mobile, Tablet, Desktop",
+      "microcopy_tone": "Freundlich"
+    },
+    "Social Media": {
+      "platform": "LinkedIn",
+      "content_type": "Artikel/Blog",
+      "target_audience": "Professionelle Zielgruppe",
+      "hook_angle": "Was macht diesen Post sehenswert?",
+      "tone": "Professionell",
+      "main_message": "Was ist der Kern-Punkt des Posts?",
+      "cta": "Kommentieren, Teilen, Link klicken, etc.",
+      "hashtags": "#relevant #targeted #specific",
+      "posting_frequency": "2x pro Woche"
+    },
+    "SEO / Blog / Content": {
+      "topic": "Mein Thema",
+      "keywords": "Hauptkeyword, Longtail Keywords, Synonyme",
+      "search_intent": "Informativ (Learn)",
+      "target_audience": "Anfaenger, Profis, Experten?",
+      "article_structure": "Intro, Hauptkapitel 1-3, FAQ, Conclusion, CTA",
+      "word_count": "1000-2000",
+      "tone": "Lehrreich",
+      "faq_items": "Haeuufige Fragen zum Thema",
+      "internal_links": "5-8 Links",
+      "cta": "Newsletter, Guide, Demo, Kontakt"
+    },
+    "Businessplan": {
+      "business_idea": "Meine Geschaeftsidee",
+      "value_proposition": "Was unterscheidet uns von der Konkurrenz?",
+      "target_market": "Groesse, Segment, Geografie, Wachstum",
+      "revenue_model": "Subscription/Abo",
+      "pricing_strategy": "Basic / Professional / Enterprise",
+      "competitive_analysis": "Direkte & indirekte Konkurrenten, Staerken, Schwaechen",
+      "funding_needs": "Hoehe, Zweck, Zeitrahmen",
+      "financial_projections": "3-5 Jahre",
+      "team": "Rollen, Erfahrung, Expertise",
+      "key_risks": "Marktrisiko, Technologierisiko, Teamrisiko, etc."
+    },
+    "Datenanalyse / SQL": {
+      "data_source": "Datenbank, API, CSV, etc.",
+      "business_question": "Was moechte ich herausfinden?",
+      "kpis": "COUNT, SUM, AVG, MAX, etc.",
+      "filters": "Zeitraum, Region, Kategorie, etc.",
+      "grouping": "Nach Datum, Kategorie, Region, etc.",
+      "sql_dialect": "PostgreSQL",
+      "output_format": "Tabelle",
+      "performance_focus": "Schnelligkeit, Skalierbarkeit, Lesbarkeit"
+    },
+    "Automatisierung / Workflow": {
+      "process_name": "Mein Prozess",
+      "trigger": "E-Mail erhielt, Zeit-Event, Datei-Upload",
+      "input_data": "Was wird als Input erwartet?",
+      "processing_steps": "1. Validierung, 2. Transformation, 3. Anreicherung",
+      "tools_and_apis": "Zapier, Make, IFTTT, Custom APIs",
+      "output_action": "E-Mail senden, Datei speichern, DB aktualisieren",
+      "error_handling": "Stoppe und benachrichtige",
+      "logging_and_monitoring": "Was sollte geloggt/ueberwacht werden?"
+    },
+    "E-Mail / Kommunikation": {
+      "email_type": "Newsletter",
+      "recipient": "Kunden, Partner, Interessenten",
+      "primary_goal": "Engagement",
+      "subject_line_strategy": "Benefit-driven, Curiosity, Urgency, Personal",
+      "tone_and_voice": "Professionell",
+      "content_structure": "Greeting, Hook, Body, CTA, Sign-off",
+      "cta_type": "Link klicken, Event registrieren, Download",
+      "length_preference": "Kurz (100-200)"
+    },
+    "Präsentationen / Pitch Deck": {
+      "presentation_type": "Product Demo",
+      "audience": "Investoren, Kunden, Team",
+      "core_message": "Was ist die zentrale Aussage?",
+      "slide_structure": "1. Title, 2. Problem, 3. Solution, 4. Market, 5. Team, 6. Financials, 7. CTA",
+      "key_datapoints": "Zahlen, Statistiken, Beweise",
+      "storytelling_approach": "Problem-Solution",
+      "design_style": "Modern/Clean",
+      "duration": "10 Minuten"
+    },
+    "Dokumentation": {
+      "doc_type": "README",
+      "target_audience": "Entwickler, End-User, Administrator",
+      "main_topics": "Installation, Konfiguration, Usage, Troubleshooting",
+      "code_examples": "Einige Beispiele",
+      "language_and_tone": "Formal/Technisch",
+      "format": "Markdown",
+      "version_info": "Software Version, Letztes Update",
+      "special_sections": "FAQ, Glossar, Links, Credits"
+    }
+  },
+  "current_language": "de",
+  "current_category": "Architektur"
+}

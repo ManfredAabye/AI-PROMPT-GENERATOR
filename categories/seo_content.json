@@ -1,0 +1,256 @@
+{
+  "category_name": {
+    "de": "SEO / Blog / Content",
+    "en": "SEO / Blog / Content",
+    "fr": "SEO / Blog / Contenu",
+    "es": "SEO / Blog / Contenido"
+  },
+  "fields": [
+    {
+      "key": "topic",
+      "type": "entry",
+      "label": {
+        "de": "Thema/Topic",
+        "en": "Topic",
+        "fr": "Sujet/Theme",
+        "es": "Tema"
+      },
+      "default": {
+        "de": "Mein Thema",
+        "en": "My Topic",
+        "fr": "Mon sujet",
+        "es": "Mi tema"
+      }
+    },
+    {
+      "key": "keywords",
+      "type": "text",
+      "label": {
+        "de": "Ziel-Keywords",
+        "en": "Target Keywords",
+        "fr": "Mots-cles cibles",
+        "es": "Palabras clave objetivo"
+      },
+      "default": {
+        "de": "Hauptkeyword, Longtail Keywords, Synonyme",
+        "en": "Primary keyword, longtail keywords, synonyms",
+        "fr": "Mot-cle principal, mots-cles longue traine, synonymes",
+        "es": "Palabra clave principal, palabras clave de cola larga, sinonimos"
+      }
+    },
+    {
+      "key": "search_intent",
+      "type": "combobox",
+      "label": {
+        "de": "Suchintention (Intent)",
+        "en": "Search Intent",
+        "fr": "Intention de recherche",
+        "es": "Intencion de busqueda"
+      },
+      "options": {
+        "de": ["Informativ (Learn)", "Navigational (Go)", "Transactional (Do)", "Commercial (Compare)"],
+        "en": ["Informational (Learn)", "Navigational (Go)", "Transactional (Do)", "Commercial (Compare)"],
+        "fr": ["Informatif (Apprendre)", "Navigationnel (Aller)", "Transactionnel (Faire)", "Commercial (Comparer)"],
+        "es": ["Informativo (Aprender)", "Navegacional (Ir)", "Transaccional (Hacer)", "Comercial (Comparar)"]
+      },
+      "default": {
+        "de": "Informativ (Learn)",
+        "en": "Informational (Learn)",
+        "fr": "Informatif (Apprendre)",
+        "es": "Informativo (Aprender)"
+      }
+    },
+    {
+      "key": "target_audience",
+      "type": "entry",
+      "label": {
+        "de": "Zielgruppe",
+        "en": "Target Audience",
+        "fr": "Public cible",
+        "es": "Publico objetivo"
+      },
+      "default": {
+        "de": "Anfaenger, Profis, Experten?",
+        "en": "Beginners, Professionals, Experts?",
+        "fr": "Debutants, Professionnels, Experts?",
+        "es": "Principiantes, Profesionales, Expertos?"
+      }
+    },
+    {
+      "key": "article_structure",
+      "type": "text",
+      "label": {
+        "de": "Artikel-Struktur",
+        "en": "Article Structure",
+        "fr": "Structure de l'article",
+        "es": "Estructura del articulo"
+      },
+      "default": {
+        "de": "Intro, Hauptkapitel 1-3, FAQ, Conclusion, CTA",
+        "en": "Intro, Main chapters 1-3, FAQ, Conclusion, CTA",
+        "fr": "Introduction, Chapitres principaux 1-3, FAQ, Conclusion, CTA",
+        "es": "Introduccion, Capitulos principales 1-3, FAQ, Conclusion, CTA"
+      }
+    },
+    {
+      "key": "word_count",
+      "type": "combobox",
+      "label": {
+        "de": "Zielwort-Anzahl",
+        "en": "Target Word Count",
+        "fr": "Nombre de mots cible",
+        "es": "Cantidad de palabras objetivo"
+      },
+      "options": {
+        "de": ["500-1000", "1000-2000", "2000-3000", "3000+", "Kurz & pragnant (300-500)"],
+        "en": ["500-1000", "1000-2000", "2000-3000", "3000+", "Short & snappy (300-500)"],
+        "fr": ["500-1000", "1000-2000", "2000-3000", "3000+", "Court & percutant (300-500)"],
+        "es": ["500-1000", "1000-2000", "2000-3000", "3000+", "Corto y directo (300-500)"]
+      },
+      "default": {
+        "de": "1000-2000",
+        "en": "1000-2000",
+        "fr": "1000-2000",
+        "es": "1000-2000"
+      }
+    },
+    {
+      "key": "tone",
+      "type": "combobox",
+      "label": {
+        "de": "Tonfall",
+        "en": "Tone",
+        "fr": "Ton",
+        "es": "Tono"
+      },
+      "options": {
+        "de": ["Professionell", "Lehrreich", "Freundlich", "Inspirierend", "Locker/Casual"],
+        "en": ["Professional", "Educational", "Friendly", "Inspiring", "Casual"],
+        "fr": ["Professionnel", "Educatif", "Amical", "Inspirant", "Decontracte"],
+        "es": ["Profesional", "Educativo", "Amigable", "Inspirador", "Casual"]
+      },
+      "default": {
+        "de": "Lehrreich",
+        "en": "Educational",
+        "fr": "Educatif",
+        "es": "Educativo"
+      }
+    },
+    {
+      "key": "faq_items",
+      "type": "entry",
+      "label": {
+        "de": "FAQ-Fragen",
+        "en": "FAQ Questions",
+        "fr": "Questions FAQ",
+        "es": "Preguntas FAQ"
+      },
+      "default": {
+        "de": "Haeuufige Fragen zum Thema",
+        "en": "Common questions about the topic",
+        "fr": "Questions frequentes sur le sujet",
+        "es": "Preguntas frecuentes sobre el tema"
+      }
+    },
+    {
+      "key": "internal_links",
+      "type": "combobox",
+      "label": {
+        "de": "Interne Links",
+        "en": "Internal Links",
+        "fr": "Liens internes",
+        "es": "Enlaces internos"
+      },
+      "options": {
+        "de": ["3-5 Links", "5-8 Links", "8-12 Links", "Nach Bedarf"],
+        "en": ["3-5 links", "5-8 links", "8-12 links", "As needed"],
+        "fr": ["3-5 liens", "5-8 liens", "8-12 liens", "Au besoin"],
+        "es": ["3-5 enlaces", "5-8 enlaces", "8-12 enlaces", "Segun sea necesario"]
+      },
+      "default": {
+        "de": "5-8 Links",
+        "en": "5-8 links",
+        "fr": "5-8 liens",
+        "es": "5-8 enlaces"
+      }
+    },
+    {
+      "key": "cta",
+      "type": "entry",
+      "label": {
+        "de": "Call-to-Action",
+        "en": "Call-to-Action",
+        "fr": "Appel a l'action",
+        "es": "Llamada a la accion"
+      },
+      "default": {
+        "de": "Newsletter, Guide, Demo, Kontakt",
+        "en": "Newsletter, Guide, Demo, Contact",
+        "fr": "Infolettre, Guide, Demo, Contact",
+        "es": "Boletin, Guia, Demo, Contacto"
+      }
+    }
+  ],
+  "prompts": {
+    "seo_1": {
+      "de": "Thema: {topic}",
+      "en": "Topic: {topic}",
+      "fr": "Sujet: {topic}",
+      "es": "Tema: {topic}"
+    },
+    "seo_2": {
+      "de": "Ziel-Keywords: {keywords}",
+      "en": "Target Keywords: {keywords}",
+      "fr": "Mots-cles cibles: {keywords}",
+      "es": "Palabras clave objetivo: {keywords}"
+    },
+    "seo_3": {
+      "de": "Suchintention: {search_intent}",
+      "en": "Search Intent: {search_intent}",
+      "fr": "Intention de recherche: {search_intent}",
+      "es": "Intencion de busqueda: {search_intent}"
+    },
+    "seo_4": {
+      "de": "Zielgruppe: {target_audience}",
+      "en": "Target Audience: {target_audience}",
+      "fr": "Public cible: {target_audience}",
+      "es": "Publico objetivo: {target_audience}"
+    },
+    "seo_5": {
+      "de": "Artikel-Struktur: {article_structure}",
+      "en": "Article Structure: {article_structure}",
+      "fr": "Structure de l'article: {article_structure}",
+      "es": "Estructura del articulo: {article_structure}"
+    },
+    "seo_6": {
+      "de": "Wort-Anzahl: {word_count}",
+      "en": "Word Count: {word_count}",
+      "fr": "Nombre de mots: {word_count}",
+      "es": "Cantidad de palabras: {word_count}"
+    },
+    "seo_7": {
+      "de": "Tonfall: {tone}",
+      "en": "Tone: {tone}",
+      "fr": "Ton: {tone}",
+      "es": "Tono: {tone}"
+    },
+    "seo_8": {
+      "de": "FAQ-Fragen: {faq_items}",
+      "en": "FAQ Questions: {faq_items}",
+      "fr": "Questions FAQ: {faq_items}",
+      "es": "Preguntas FAQ: {faq_items}"
+    },
+    "seo_9": {
+      "de": "Interne Links: {internal_links}",
+      "en": "Internal Links: {internal_links}",
+      "fr": "Liens internes: {internal_links}",
+      "es": "Enlaces internos: {internal_links}"
+    },
+    "seo_10": {
+      "de": "Call-to-Action: {cta}",
+      "en": "Call-to-Action: {cta}",
+      "fr": "Appel a l'action: {cta}",
+      "es": "Llamada a la accion: {cta}"
+    }
+  }
+}

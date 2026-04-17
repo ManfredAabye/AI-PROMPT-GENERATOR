@@ -1,0 +1,190 @@
+{
+  "category_name": {
+    "de": "Marketing",
+    "en": "Marketing",
+    "fr": "Marketing",
+    "es": "Marketing"
+  },
+  "fields": [
+    {
+      "key": "product",
+      "type": "entry",
+      "label": {
+        "de": "Produkt/Service",
+        "en": "Product/Service",
+        "fr": "Produit/Service",
+        "es": "Producto/Servicio"
+      },
+      "default": {
+        "de": "Architektur-Software",
+        "en": "Architecture software",
+        "fr": "Logiciel d'architecture",
+        "es": "Software de arquitectura"
+      }
+    },
+    {
+      "key": "audience",
+      "type": "entry",
+      "label": {
+        "de": "Zielgruppe",
+        "en": "Target Audience",
+        "fr": "Public cible",
+        "es": "Publico objetivo"
+      },
+      "default": {
+        "de": "Architekten und Bauherren",
+        "en": "Architects and builders",
+        "fr": "Architectes et maitres d'ouvrage",
+        "es": "Arquitectos y constructores"
+      }
+    },
+    {
+      "key": "goal",
+      "type": "combobox",
+      "label": {
+        "de": "Ziel",
+        "en": "Goal",
+        "fr": "Objectif",
+        "es": "Objetivo"
+      },
+      "options": {
+        "de": ["Verkauf", "Lead-Generierung", "Brand Awareness", "Education"],
+        "en": ["Sales", "Lead Generation", "Brand Awareness", "Education"],
+        "fr": ["Ventes", "Generation de leads", "Notoriete", "Education"],
+        "es": ["Ventas", "Generacion de leads", "Reconocimiento de marca", "Educacion"]
+      },
+      "default": {
+        "de": "Verkauf",
+        "en": "Sales",
+        "fr": "Ventes",
+        "es": "Ventas"
+      }
+    },
+    {
+      "key": "tone",
+      "type": "combobox",
+      "label": {
+        "de": "Tonfall",
+        "en": "Tone",
+        "fr": "Ton",
+        "es": "Tono"
+      },
+      "options": {
+        "de": ["Professionell", "Freundlich", "Ueberzeugend", "Dringlich", "Inspirierend"],
+        "en": ["Professional", "Friendly", "Persuasive", "Urgent", "Inspiring"],
+        "fr": ["Professionnel", "Amical", "Convaincant", "Urgent", "Inspirant"],
+        "es": ["Profesional", "Amigable", "Persuasivo", "Urgente", "Inspirador"]
+      },
+      "default": {
+        "de": "Professionell",
+        "en": "Professional",
+        "fr": "Professionnel",
+        "es": "Profesional"
+      }
+    },
+    {
+      "key": "platform",
+      "type": "combobox",
+      "label": {
+        "de": "Plattform",
+        "en": "Platform",
+        "fr": "Plateforme",
+        "es": "Plataforma"
+      },
+      "options": {
+        "de": ["Website", "Social Media", "E-Mail", "Werbung", "Blog"],
+        "en": ["Website", "Social Media", "Email", "Ads", "Blog"],
+        "fr": ["Site web", "Reseaux sociaux", "E-mail", "Publicite", "Blog"],
+        "es": ["Sitio web", "Redes sociales", "Correo", "Publicidad", "Blog"]
+      },
+      "default": {
+        "de": "Website",
+        "en": "Website",
+        "fr": "Site web",
+        "es": "Sitio web"
+      }
+    },
+    {
+      "key": "keywords",
+      "type": "text",
+      "label": {
+        "de": "Keywords",
+        "en": "Keywords",
+        "fr": "Mots-cles",
+        "es": "Palabras clave"
+      },
+      "default": {
+        "de": "modern, effizient, benutzerfreundlich, innovativ",
+        "en": "modern, efficient, user-friendly, innovative",
+        "fr": "moderne, efficace, convivial, innovant",
+        "es": "moderno, eficiente, facil de usar, innovador"
+      }
+    },
+    {
+      "key": "cta",
+      "type": "entry",
+      "label": {
+        "de": "Call-to-Action",
+        "en": "Call-to-Action",
+        "fr": "Call-to-Action",
+        "es": "Llamado a la accion"
+      },
+      "default": {
+        "de": "Jetzt kostenlos testen!",
+        "en": "Try it for free now!",
+        "fr": "Essayez-le gratuitement maintenant !",
+        "es": "Pruebalo gratis ahora!"
+      }
+    }
+  ],
+  "prompts": {
+    "mkt_1": {
+      "de": "Marketing-Text fuer {product}.",
+      "en": "Marketing text for {product}.",
+      "fr": "Texte marketing pour {product}.",
+      "es": "Texto de marketing para {product}."
+    },
+    "mkt_2": {
+      "de": "Zielgruppe: {audience}.",
+      "en": "Target audience: {audience}.",
+      "fr": "Public cible : {audience}.",
+      "es": "Publico objetivo: {audience}."
+    },
+    "mkt_3": {
+      "de": "Ziel: {goal}.",
+      "en": "Goal: {goal}.",
+      "fr": "Objectif : {goal}.",
+      "es": "Objetivo: {goal}."
+    },
+    "mkt_4": {
+      "de": "Tonfall: {tone}.",
+      "en": "Tone: {tone}.",
+      "fr": "Ton : {tone}.",
+      "es": "Tono: {tone}."
+    },
+    "mkt_5": {
+      "de": "Plattform: {platform}.",
+      "en": "Platform: {platform}.",
+      "fr": "Plateforme : {platform}.",
+      "es": "Plataforma: {platform}."
+    },
+    "mkt_6": {
+      "de": "Keywords: {keywords}.",
+      "en": "Keywords: {keywords}.",
+      "fr": "Mots-cles : {keywords}.",
+      "es": "Palabras clave: {keywords}."
+    },
+    "mkt_7": {
+      "de": "Call-to-Action: {cta}.",
+      "en": "Call-to-Action: {cta}.",
+      "fr": "Call-to-Action : {cta}.",
+      "es": "Llamado a la accion: {cta}."
+    },
+    "mkt_8": {
+      "de": "Stil: Ueberzeugend, klar, handlungsorientiert, mit Mehrwert fuer den Kunden.",
+      "en": "Style: Persuasive, clear, action-oriented, and value-driven for the customer.",
+      "fr": "Style : convaincant, clair, oriente action et riche en valeur pour le client.",
+      "es": "Estilo: Persuasivo, claro, orientado a la accion y con valor para el cliente."
+    }
+  }
+}

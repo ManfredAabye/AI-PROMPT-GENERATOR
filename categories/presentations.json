@@ -1,0 +1,212 @@
+{
+  "category_name": {
+    "de": "Praesentationen / Pitch Deck",
+    "en": "Presentations / Pitch Deck",
+    "fr": "Presentations / Pitch Deck",
+    "es": "Presentaciones / Pitch Deck"
+  },
+  "fields": [
+    {
+      "key": "presentation_type",
+      "type": "combobox",
+      "label": {
+        "de": "Praesentation Typ",
+        "en": "Presentation Type",
+        "fr": "Type de presentation",
+        "es": "Tipo de presentacion"
+      },
+      "options": {
+        "de": ["Investor Pitch", "Sales Pitch", "Internal Presentation", "Conference Talk", "Product Demo", "Training"],
+        "en": ["Investor Pitch", "Sales Pitch", "Internal Presentation", "Conference Talk", "Product Demo", "Training"],
+        "fr": ["Pitch investisseur", "Pitch de vente", "Presentation interne", "Conference", "Demo produit", "Formation"],
+        "es": ["Pitch de inversor", "Pitch de venta", "Presentacion interna", "Conferencia", "Demo de producto", "Capacitacion"]
+      },
+      "default": {
+        "de": "Investor Pitch",
+        "en": "Investor Pitch",
+        "fr": "Pitch investisseur",
+        "es": "Pitch de inversor"
+      }
+    },
+    {
+      "key": "audience",
+      "type": "entry",
+      "label": {
+        "de": "Publikum / Zielgruppe",
+        "en": "Audience / Target Group",
+        "fr": "Audience / Groupe cible",
+        "es": "Audiencia / Grupo objetivo"
+      },
+      "default": {
+        "de": "Investoren, Kunden, Team",
+        "en": "Investors, customers, team",
+        "fr": "Investisseurs, clients, equipe",
+        "es": "Inversores, clientes, equipo"
+      }
+    },
+    {
+      "key": "core_message",
+      "type": "text",
+      "label": {
+        "de": "Kernbotschaft (1-Satz)",
+        "en": "Core Message (1-sentence)",
+        "fr": "Message principal (1 phrase)",
+        "es": "Mensaje principal (1 oracion)"
+      },
+      "default": {
+        "de": "Was ist die zentrale Aussage?",
+        "en": "What is the central message?",
+        "fr": "Quel est le message central?",
+        "es": "Cual es el mensaje central?"
+      }
+    },
+    {
+      "key": "slide_structure",
+      "type": "text",
+      "label": {
+        "de": "Folien-Struktur",
+        "en": "Slide Structure",
+        "fr": "Structure des diapositives",
+        "es": "Estructura de diapositivas"
+      },
+      "default": {
+        "de": "1. Title, 2. Problem, 3. Solution, 4. Market, 5. Team, 6. Financials, 7. CTA",
+        "en": "1. Title, 2. Problem, 3. Solution, 4. Market, 5. Team, 6. Financials, 7. CTA",
+        "fr": "1. Titre, 2. Probleme, 3. Solution, 4. Marche, 5. Equipe, 6. Finances, 7. CTA",
+        "es": "1. Titulo, 2. Problema, 3. Solucion, 4. Mercado, 5. Equipo, 6. Finanzas, 7. CTA"
+      }
+    },
+    {
+      "key": "key_datapoints",
+      "type": "entry",
+      "label": {
+        "de": "Wichtigste Datenpunkte",
+        "en": "Key Datapoints",
+        "fr": "Points de donnees cles",
+        "es": "Puntos de datos clave"
+      },
+      "default": {
+        "de": "Zahlen, Statistiken, Beweise",
+        "en": "Numbers, statistics, proof points",
+        "fr": "Chiffres, statistiques, preuves",
+        "es": "Numeros, estadisticas, puntos de prueba"
+      }
+    },
+    {
+      "key": "storytelling_approach",
+      "type": "combobox",
+      "label": {
+        "de": "Storytelling Ansatz",
+        "en": "Storytelling Approach",
+        "fr": "Approche narrative",
+        "es": "Enfoque narrativo"
+      },
+      "options": {
+        "de": ["Problem-Solution", "Hero's Journey", "Case Study", "Vision-First", "Data-Driven"],
+        "en": ["Problem-Solution", "Hero's Journey", "Case Study", "Vision-First", "Data-Driven"],
+        "fr": ["Probleme-Solution", "Voyage du heros", "Etude de cas", "Vision d'abord", "Base de donnees"],
+        "es": ["Problema-Solucion", "Viaje del heroe", "Caso de estudio", "Vision primero", "Basado en datos"]
+      },
+      "default": {
+        "de": "Problem-Solution",
+        "en": "Problem-Solution",
+        "fr": "Probleme-Solution",
+        "es": "Problema-Solucion"
+      }
+    },
+    {
+      "key": "design_style",
+      "type": "combobox",
+      "label": {
+        "de": "Design-Stil",
+        "en": "Design Style",
+        "fr": "Style de conception",
+        "es": "Estilo de diseno"
+      },
+      "options": {
+        "de": ["Minimal", "Bold/Colorful", "Modern/Clean", "Corporate", "Creative/Artistic"],
+        "en": ["Minimal", "Bold/Colorful", "Modern/Clean", "Corporate", "Creative/Artistic"],
+        "fr": ["Minimaliste", "Audacieux/Colore", "Moderne/Propre", "Entreprise", "Creatif/Artistique"],
+        "es": ["Minimalista", "Audaz/Colorido", "Moderno/Limpio", "Corporativo", "Creativo/Artistico"]
+      },
+      "default": {
+        "de": "Modern/Clean",
+        "en": "Modern/Clean",
+        "fr": "Moderne/Propre",
+        "es": "Moderno/Limpio"
+      }
+    },
+    {
+      "key": "duration",
+      "type": "combobox",
+      "label": {
+        "de": "Dauer",
+        "en": "Duration",
+        "fr": "Duree",
+        "es": "Duracion"
+      },
+      "options": {
+        "de": ["3 Minuten (Elevator Pitch)", "10 Minuten", "15-20 Minuten", "30+ Minuten"],
+        "en": ["3 minutes (Elevator Pitch)", "10 minutes", "15-20 minutes", "30+ minutes"],
+        "fr": ["3 minutes (Pitch ascenseur)", "10 minutes", "15-20 minutes", "30+ minutes"],
+        "es": ["3 minutos (Elevator Pitch)", "10 minutos", "15-20 minutos", "30+ minutos"]
+      },
+      "default": {
+        "de": "10 Minuten",
+        "en": "10 minutes",
+        "fr": "10 minutes",
+        "es": "10 minutos"
+      }
+    }
+  ],
+  "prompts": {
+    "pres_1": {
+      "de": "Praesentations-Typ: {presentation_type}",
+      "en": "Presentation Type: {presentation_type}",
+      "fr": "Type de presentation: {presentation_type}",
+      "es": "Tipo de presentacion: {presentation_type}"
+    },
+    "pres_2": {
+      "de": "Publikum: {audience}",
+      "en": "Audience: {audience}",
+      "fr": "Audience: {audience}",
+      "es": "Audiencia: {audience}"
+    },
+    "pres_3": {
+      "de": "Kernbotschaft: {core_message}",
+      "en": "Core Message: {core_message}",
+      "fr": "Message principal: {core_message}",
+      "es": "Mensaje principal: {core_message}"
+    },
+    "pres_4": {
+      "de": "Folien-Struktur: {slide_structure}",
+      "en": "Slide Structure: {slide_structure}",
+      "fr": "Structure des diapositives: {slide_structure}",
+      "es": "Estructura de diapositivas: {slide_structure}"
+    },
+    "pres_5": {
+      "de": "Wichtigste Datenpunkte: {key_datapoints}",
+      "en": "Key Datapoints: {key_datapoints}",
+      "fr": "Points de donnees cles: {key_datapoints}",
+      "es": "Puntos de datos clave: {key_datapoints}"
+    },
+    "pres_6": {
+      "de": "Storytelling: {storytelling_approach}",
+      "en": "Storytelling: {storytelling_approach}",
+      "fr": "Approche narrative: {storytelling_approach}",
+      "es": "Enfoque narrativo: {storytelling_approach}"
+    },
+    "pres_7": {
+      "de": "Design-Stil: {design_style}",
+      "en": "Design Style: {design_style}",
+      "fr": "Style de conception: {design_style}",
+      "es": "Estilo de diseno: {design_style}"
+    },
+    "pres_8": {
+      "de": "Dauer: {duration}",
+      "en": "Duration: {duration}",
+      "fr": "Duree: {duration}",
+      "es": "Duracion: {duration}"
+    }
+  }
+}
