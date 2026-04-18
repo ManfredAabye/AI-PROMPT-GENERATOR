@@ -141,6 +141,76 @@
         "fr": "Textures visibles, ombres naturelles, couleurs realistes",
         "es": "Texturas visibles, sombras naturales, colores realistas"
       }
+    },
+    {
+      "key": "aspect_ratio",
+      "type": "combobox",
+      "label": {
+        "de": "Seitenverhaeltnis",
+        "en": "Aspect Ratio",
+        "fr": "Ratio d'image",
+        "es": "Relacion de aspecto"
+      },
+      "options": {
+        "de": ["1:1", "4:5", "16:9", "3:2", "9:16"],
+        "en": ["1:1", "4:5", "16:9", "3:2", "9:16"],
+        "fr": ["1:1", "4:5", "16:9", "3:2", "9:16"],
+        "es": ["1:1", "4:5", "16:9", "3:2", "9:16"]
+      },
+      "default": {
+        "de": "16:9",
+        "en": "16:9",
+        "fr": "16:9",
+        "es": "16:9"
+      }
+    },
+    {
+      "key": "subject_context",
+      "type": "text",
+      "label": {
+        "de": "Kontext / Szene",
+        "en": "Context / Scene",
+        "fr": "Contexte / Scene",
+        "es": "Contexto / Escena"
+      },
+      "default": {
+        "de": "Wo befindet sich das Motiv und was passiert in der Szene?",
+        "en": "Where is the subject and what is happening in the scene?",
+        "fr": "Ou se trouve le sujet et que se passe-t-il dans la scene ?",
+        "es": "Donde se encuentra el sujeto y que ocurre en la escena?"
+      }
+    },
+    {
+      "key": "usage_purpose",
+      "type": "entry",
+      "label": {
+        "de": "Verwendungszweck",
+        "en": "Usage Purpose",
+        "fr": "Usage prevu",
+        "es": "Uso previsto"
+      },
+      "default": {
+        "de": "Website, Produktseite, Social Media, Portfolio oder Praesentation",
+        "en": "Website, product page, social media, portfolio or presentation",
+        "fr": "Site web, fiche produit, reseaux sociaux, portfolio ou presentation",
+        "es": "Sitio web, pagina de producto, redes sociales, portfolio o presentacion"
+      }
+    },
+    {
+      "key": "negative_details",
+      "type": "entry",
+      "label": {
+        "de": "Zu vermeiden",
+        "en": "Avoid",
+        "fr": "A eviter",
+        "es": "Evitar"
+      },
+      "default": {
+        "de": "Keine Unschaerfe, keine Ueberbelichtung, keine stoerenden Objekte",
+        "en": "No blur, no overexposure, no distracting objects",
+        "fr": "Pas de flou, pas de surexposition, pas d'objets distrayants",
+        "es": "Sin desenfoque, sin sobreexposicion, sin objetos distractores"
+      }
     }
   ],
   "prompts": {
@@ -191,6 +261,30 @@
       "en": "Technical: Sharp focus, balanced exposure, natural colors.",
       "fr": "Technique : mise au point nette, exposition equilibree, couleurs naturelles.",
       "es": "Tecnico: enfoque nitido, exposicion equilibrada, colores naturales."
+    },
+    "img_9": {
+      "de": "Seitenverhaeltnis: {aspect_ratio}.",
+      "en": "Aspect ratio: {aspect_ratio}.",
+      "fr": "Ratio d'image : {aspect_ratio}.",
+      "es": "Relacion de aspecto: {aspect_ratio}."
+    },
+    "img_10": {
+      "de": "Kontext / Szene: {subject_context}.",
+      "en": "Context / scene: {subject_context}.",
+      "fr": "Contexte / scene : {subject_context}.",
+      "es": "Contexto / escena: {subject_context}."
+    },
+    "img_11": {
+      "de": "Verwendungszweck: {usage_purpose}.",
+      "en": "Usage purpose: {usage_purpose}.",
+      "fr": "Usage prevu : {usage_purpose}.",
+      "es": "Uso previsto: {usage_purpose}."
+    },
+    "img_12": {
+      "de": "Zu vermeiden: {negative_details}.",
+      "en": "Avoid: {negative_details}.",
+      "fr": "A eviter : {negative_details}.",
+      "es": "Evitar: {negative_details}."
     }
   }
 }

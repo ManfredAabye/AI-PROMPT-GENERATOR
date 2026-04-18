@@ -145,6 +145,76 @@
         "fr": "Vitesse, scalabilite, lisibilite",
         "es": "Velocidad, escalabilidad, legibilidad"
       }
+    },
+    {
+      "key": "schema_context",
+      "type": "text",
+      "label": {
+        "de": "Schema / Tabellenkontext",
+        "en": "Schema / Table Context",
+        "fr": "Schema / Contexte des tables",
+        "es": "Esquema / Contexto de tablas"
+      },
+      "default": {
+        "de": "Relevante Tabellen, Spalten und Datentypen",
+        "en": "Relevant tables, columns and data types",
+        "fr": "Tables, colonnes et types de donnees pertinents",
+        "es": "Tablas, columnas y tipos de datos relevantes"
+      }
+    },
+    {
+      "key": "table_relationships",
+      "type": "text",
+      "label": {
+        "de": "Joins / Beziehungen",
+        "en": "Joins / Relationships",
+        "fr": "Joins / Relations",
+        "es": "Joins / Relaciones"
+      },
+      "default": {
+        "de": "Wie haengen die Tabellen zusammen? Primaries, Foreign Keys, Join-Wege",
+        "en": "How are the tables related? Primary keys, foreign keys, join paths",
+        "fr": "Comment les tables sont-elles reliees ? Cles primaires, etrangeres, chemins de jointure",
+        "es": "Como se relacionan las tablas? Claves primarias, foraneas y rutas de join"
+      }
+    },
+    {
+      "key": "time_granularity",
+      "type": "combobox",
+      "label": {
+        "de": "Zeitliche Granularitaet",
+        "en": "Time Granularity",
+        "fr": "Granularite temporelle",
+        "es": "Granularidad temporal"
+      },
+      "options": {
+        "de": ["Keine", "Stunde", "Tag", "Woche", "Monat", "Quartal", "Jahr"],
+        "en": ["None", "Hour", "Day", "Week", "Month", "Quarter", "Year"],
+        "fr": ["Aucune", "Heure", "Jour", "Semaine", "Mois", "Trimestre", "Annee"],
+        "es": ["Ninguna", "Hora", "Dia", "Semana", "Mes", "Trimestre", "Ano"]
+      },
+      "default": {
+        "de": "Monat",
+        "en": "Month",
+        "fr": "Mois",
+        "es": "Mes"
+      }
+    },
+    {
+      "key": "expected_insights",
+      "type": "text",
+      "label": {
+        "de": "Gewuenschte Insights",
+        "en": "Expected Insights",
+        "fr": "Insights attendus",
+        "es": "Insights esperados"
+      },
+      "default": {
+        "de": "Trends, Ausreisser, Ursachen, Handlungsempfehlungen",
+        "en": "Trends, outliers, root causes, recommended actions",
+        "fr": "Tendances, valeurs aberrantes, causes racines, actions recommandees",
+        "es": "Tendencias, valores atipicos, causas raiz y acciones recomendadas"
+      }
     }
   ],
   "prompts": {
@@ -195,6 +265,30 @@
       "en": "Performance Focus: {performance_focus}",
       "fr": "Accent sur les performances: {performance_focus}",
       "es": "Enfasis en el rendimiento: {performance_focus}"
+    },
+    "sql_9": {
+      "de": "Schema / Tabellenkontext: {schema_context}",
+      "en": "Schema / Table Context: {schema_context}",
+      "fr": "Schema / Contexte des tables: {schema_context}",
+      "es": "Esquema / Contexto de tablas: {schema_context}"
+    },
+    "sql_10": {
+      "de": "Joins / Beziehungen: {table_relationships}",
+      "en": "Joins / Relationships: {table_relationships}",
+      "fr": "Joins / Relations: {table_relationships}",
+      "es": "Joins / Relaciones: {table_relationships}"
+    },
+    "sql_11": {
+      "de": "Zeitliche Granularitaet: {time_granularity}",
+      "en": "Time Granularity: {time_granularity}",
+      "fr": "Granularite temporelle: {time_granularity}",
+      "es": "Granularidad temporal: {time_granularity}"
+    },
+    "sql_12": {
+      "de": "Gewuenschte Insights: {expected_insights}",
+      "en": "Expected Insights: {expected_insights}",
+      "fr": "Insights attendus: {expected_insights}",
+      "es": "Insights esperados: {expected_insights}"
     }
   }
 }

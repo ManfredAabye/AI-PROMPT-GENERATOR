@@ -221,6 +221,84 @@
         "fr": true,
         "es": true
       }
+    },
+    {
+      "key": "activity_level",
+      "type": "combobox",
+      "label": {
+        "de": "Aktivitaetsniveau",
+        "en": "Activity Level",
+        "fr": "Niveau d'activite",
+        "es": "Nivel de actividad"
+      },
+      "options": {
+        "de": ["Niedrig", "Leicht aktiv", "Mittel", "Hoch aktiv"],
+        "en": ["Low", "Lightly active", "Moderate", "Highly active"],
+        "fr": ["Faible", "Legerement actif", "Modere", "Tres actif"],
+        "es": ["Bajo", "Ligeramente activo", "Moderado", "Muy activo"]
+      },
+      "default": {
+        "de": "Leicht aktiv",
+        "en": "Lightly active",
+        "fr": "Legerement actif",
+        "es": "Ligeramente activo"
+      }
+    },
+    {
+      "key": "dietary_restrictions",
+      "type": "text",
+      "label": {
+        "de": "Unvertraeglichkeiten / Regeln",
+        "en": "Dietary Restrictions / Rules",
+        "fr": "Restrictions / Regles alimentaires",
+        "es": "Restricciones / Reglas alimentarias"
+      },
+      "default": {
+        "de": "Keine oder z. B. laktosefrei, glutenfrei, vegetarisch, wenig Zucker",
+        "en": "None or e.g. lactose-free, gluten-free, vegetarian, low sugar",
+        "fr": "Aucune ou par ex. sans lactose, sans gluten, vegetarien, peu de sucre",
+        "es": "Ninguna o por ejemplo sin lactosa, sin gluten, vegetariano, bajo azucar"
+      }
+    },
+    {
+      "key": "budget_level",
+      "type": "combobox",
+      "label": {
+        "de": "Budget",
+        "en": "Budget",
+        "fr": "Budget",
+        "es": "Presupuesto"
+      },
+      "options": {
+        "de": ["Guenstig", "Mittel", "Flexibel"],
+        "en": ["Budget-friendly", "Moderate", "Flexible"],
+        "fr": ["Economique", "Modere", "Flexible"],
+        "es": ["Economico", "Moderado", "Flexible"]
+      },
+      "default": {
+        "de": "Mittel",
+        "en": "Moderate",
+        "fr": "Modere",
+        "es": "Moderado"
+      }
+    },
+    {
+      "key": "meals_per_day",
+      "type": "spinbox",
+      "label": {
+        "de": "Mahlzeiten pro Tag",
+        "en": "Meals per Day",
+        "fr": "Repas par jour",
+        "es": "Comidas por dia"
+      },
+      "default": {
+        "de": 3,
+        "en": 3,
+        "fr": 3,
+        "es": 3
+      },
+      "min": 2,
+      "max": 6
     }
   ],
   "prompts": {
@@ -242,11 +320,23 @@
       "fr": "- Poids : {weight} kg",
       "es": "- Peso: {weight} kg"
     },
+    "activity": {
+      "de": "- Aktivitaetsniveau: {activity_level}",
+      "en": "- Activity level: {activity_level}",
+      "fr": "- Niveau d'activite : {activity_level}",
+      "es": "- Nivel de actividad: {activity_level}"
+    },
     "goal": {
       "de": "- Ziel: {goal}",
       "en": "- Goal: {goal}",
       "fr": "- Objectif : {goal}",
       "es": "- Objetivo: {goal}"
+    },
+    "restrictions": {
+      "de": "- Unvertraeglichkeiten / Regeln: {dietary_restrictions}",
+      "en": "- Dietary restrictions / rules: {dietary_restrictions}",
+      "fr": "- Restrictions / regles alimentaires : {dietary_restrictions}",
+      "es": "- Restricciones / reglas alimentarias: {dietary_restrictions}"
     },
     "taste": {
       "de": "- Geschmack: {taste}, keine einseitige Kost",
@@ -278,35 +368,41 @@
       "fr": "3. Tenez compte des appareils de cuisine suivants lors de la preparation :",
       "es": "3. Considera los siguientes electrodomesticos en la preparacion:"
     },
+    "r4": {
+      "de": "4. Plane {meals_per_day} Mahlzeiten pro Tag innerhalb eines {budget_level}en Budgets.",
+      "en": "4. Plan {meals_per_day} meals per day within a {budget_level} budget.",
+      "fr": "4. Planifiez {meals_per_day} repas par jour dans un budget {budget_level}.",
+      "es": "4. Planifica {meals_per_day} comidas por dia dentro de un presupuesto {budget_level}."
+    },
     "mealprep": {
-      "de": "4. Integriere Gerichte, die sich gut vorbereiten und lagern lassen (Meal Prep), unter Beruecksichtigung von:\n   - Lagerungsmoeglichkeiten: {storage}",
-      "en": "4. Include meal-prep friendly dishes with storage guidance:\n   - Storage options: {storage}",
-      "fr": "4. Integrez des plats adaptes au meal prep avec consignes de stockage :\n   - Options de stockage : {storage}",
-      "es": "4. Incluye platos aptos para meal prep con guia de almacenamiento:\n   - Opciones de almacenamiento: {storage}"
+      "de": "5. Integriere Gerichte, die sich gut vorbereiten und lagern lassen (Meal Prep), unter Beruecksichtigung von:\n   - Lagerungsmoeglichkeiten: {storage}",
+      "en": "5. Include meal-prep friendly dishes with storage guidance:\n   - Storage options: {storage}",
+      "fr": "5. Integrez des plats adaptes au meal prep avec consignes de stockage :\n   - Options de stockage : {storage}",
+      "es": "5. Incluye platos aptos para meal prep con guia de almacenamiento:\n   - Opciones de almacenamiento: {storage}"
     },
     "r5": {
-      "de": "5. Achte auf eine ausgewogene Naehrstoffverteilung (Eiweiss, gesunde Fette, komplexe Kohlenhydrate).",
-      "en": "5. Ensure balanced macronutrients (protein, healthy fats, complex carbs).",
-      "fr": "5. Assurez une repartition equilibree des macronutriments (proteines, bonnes graisses, glucides complexes).",
-      "es": "5. Asegura una distribucion equilibrada de macronutrientes (proteina, grasas saludables, carbohidratos complejos)."
+      "de": "6. Achte auf eine ausgewogene Naehrstoffverteilung (Eiweiss, gesunde Fette, komplexe Kohlenhydrate).",
+      "en": "6. Ensure balanced macronutrients (protein, healthy fats, complex carbs).",
+      "fr": "6. Assurez une repartition equilibree des macronutriments (proteines, bonnes graisses, glucides complexes).",
+      "es": "6. Asegura una distribucion equilibrada de macronutrientes (proteina, grasas saludables, carbohidratos complejos)."
     },
     "r6": {
-      "de": "6. Beruecksichtige altersgerechte Ernaehrung (z. B. gut verdaulich, naehrstoffreich, moderater Kalorienbedarf).",
-      "en": "6. Consider age-appropriate nutrition (easy digestion, nutrient density, moderate calories).",
-      "fr": "6. Prenez en compte une alimentation adaptee a l'age (digestion facile, densite nutritionnelle, calories moderees).",
-      "es": "6. Considera nutricion adecuada para la edad (facil digestion, densidad nutricional, calorias moderadas)."
+      "de": "7. Beruecksichtige altersgerechte Ernaehrung (z. B. gut verdaulich, naehrstoffreich, moderater Kalorienbedarf).",
+      "en": "7. Consider age-appropriate nutrition (easy digestion, nutrient density, moderate calories).",
+      "fr": "7. Prenez en compte une alimentation adaptee a l'age (digestion facile, densite nutritionnelle, calories moderees).",
+      "es": "7. Considera nutricion adecuada para la edad (facil digestion, densidad nutricional, calorias moderadas)."
     },
     "r7": {
-      "de": "7. Gib zu jedem Gericht eine kurze Zubereitungsbeschreibung.",
-      "en": "7. Add a short preparation description for each dish.",
-      "fr": "7. Ajoutez une breve description de preparation pour chaque plat.",
-      "es": "7. Agrega una breve descripcion de preparacion para cada plato."
+      "de": "8. Gib zu jedem Gericht eine kurze Zubereitungsbeschreibung.",
+      "en": "8. Add a short preparation description for each dish.",
+      "fr": "8. Ajoutez une breve description de preparation pour chaque plat.",
+      "es": "8. Agrega una breve descripcion de preparacion para cada plato."
     },
     "r8": {
-      "de": "8. Fuege am Ende eine uebersichtliche Einkaufsliste {shopping_period} hinzu.",
-      "en": "8. Add a clear shopping list {shopping_period} at the end.",
-      "fr": "8. Ajoutez une liste de courses claire {shopping_period} a la fin.",
-      "es": "8. Agrega una lista de compras clara {shopping_period} al final."
+      "de": "9. Fuege am Ende eine uebersichtliche Einkaufsliste {shopping_period} hinzu.",
+      "en": "9. Add a clear shopping list {shopping_period} at the end.",
+      "fr": "9. Ajoutez une liste de courses claire {shopping_period} a la fin.",
+      "es": "9. Agrega una lista de compras clara {shopping_period} al final."
     },
     "optional": {
       "de": "Optional:",

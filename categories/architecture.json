@@ -125,6 +125,76 @@
         "fr": "4K photorealiste",
         "es": "4K fotorrealista"
       }
+    },
+    {
+      "key": "building_type",
+      "type": "entry",
+      "label": {
+        "de": "Gebaeudetyp",
+        "en": "Building Type",
+        "fr": "Type de batiment",
+        "es": "Tipo de edificio"
+      },
+      "default": {
+        "de": "Einfamilienhaus, Villa, Stadthaus oder Mehrfamilienhaus",
+        "en": "Single-family home, villa, townhouse or apartment building",
+        "fr": "Maison individuelle, villa, maison de ville ou immeuble",
+        "es": "Casa unifamiliar, villa, casa urbana o edificio residencial"
+      }
+    },
+    {
+      "key": "environment_context",
+      "type": "text",
+      "label": {
+        "de": "Umgebung / Kontext",
+        "en": "Environment / Context",
+        "fr": "Environnement / Contexte",
+        "es": "Entorno / Contexto"
+      },
+      "default": {
+        "de": "Stadt, Vorort, Hanglage, Waldnaehe, Wasserlage oder Nachbarschaft",
+        "en": "City, suburb, hillside, forest edge, waterfront or neighborhood context",
+        "fr": "Ville, banlieue, terrain en pente, lisiere de foret, bord de l'eau ou voisinage",
+        "es": "Ciudad, suburbio, ladera, bosque, costa o contexto del vecindario"
+      }
+    },
+    {
+      "key": "camera_perspective",
+      "type": "combobox",
+      "label": {
+        "de": "Kameraperspektive",
+        "en": "Camera Perspective",
+        "fr": "Perspective camera",
+        "es": "Perspectiva de camara"
+      },
+      "options": {
+        "de": ["Frontansicht", "Dreiviertelansicht", "Vogelperspektive", "Strassenansicht", "Nahaufnahme Eingang"],
+        "en": ["Front view", "Three-quarter view", "Bird's-eye view", "Street view", "Entrance close-up"],
+        "fr": ["Vue de face", "Vue trois-quarts", "Vue plongeante", "Vue rue", "Gros plan entree"],
+        "es": ["Vista frontal", "Vista tres cuartos", "Vista aerea", "Vista de calle", "Primer plano de entrada"]
+      },
+      "default": {
+        "de": "Dreiviertelansicht",
+        "en": "Three-quarter view",
+        "fr": "Vue trois-quarts",
+        "es": "Vista tres cuartos"
+      }
+    },
+    {
+      "key": "landscaping",
+      "type": "entry",
+      "label": {
+        "de": "Aussenbereich / Landscaping",
+        "en": "Landscaping",
+        "fr": "Amenagement exterieur",
+        "es": "Paisajismo"
+      },
+      "default": {
+        "de": "Garten, Einfahrt, Wege, Bepflanzung, Zaun oder Pool",
+        "en": "Garden, driveway, paths, planting, fence or pool",
+        "fr": "Jardin, allee, chemins, plantations, cloture ou piscine",
+        "es": "Jardin, entrada, senderos, plantacion, valla o piscina"
+      }
     }
   ],
   "prompts": {
@@ -169,6 +239,30 @@
       "en": "Resolution: 4K, professional rendering.",
       "fr": "Resolution : 4K, rendu professionnel.",
       "es": "Resolucion: 4K, representacion profesional."
+    },
+    "arch_8": {
+      "de": "Gebaeudetyp: {building_type}.",
+      "en": "Building type: {building_type}.",
+      "fr": "Type de batiment : {building_type}.",
+      "es": "Tipo de edificio: {building_type}."
+    },
+    "arch_9": {
+      "de": "Umgebung: {environment_context}.",
+      "en": "Environment: {environment_context}.",
+      "fr": "Environnement : {environment_context}.",
+      "es": "Entorno: {environment_context}."
+    },
+    "arch_10": {
+      "de": "Perspektive: {camera_perspective}.",
+      "en": "Perspective: {camera_perspective}.",
+      "fr": "Perspective : {camera_perspective}.",
+      "es": "Perspectiva: {camera_perspective}."
+    },
+    "arch_11": {
+      "de": "Aussenbereich: {landscaping}.",
+      "en": "Landscaping: {landscaping}.",
+      "fr": "Amenagement exterieur : {landscaping}.",
+      "es": "Paisajismo: {landscaping}."
     }
   }
 }

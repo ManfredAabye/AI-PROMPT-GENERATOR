@@ -133,6 +133,76 @@
         "fr": "Budget, calendrier, limites techniques",
         "es": "Presupuesto, cronograma, limites tecnicos"
       }
+    },
+    {
+      "key": "business_goal",
+      "type": "entry",
+      "label": {
+        "de": "Business-Ziel",
+        "en": "Business Goal",
+        "fr": "Objectif business",
+        "es": "Objetivo de negocio"
+      },
+      "default": {
+        "de": "Welches messbare Geschaeftsziel soll das Feature unterstuetzen?",
+        "en": "Which measurable business goal should the feature support?",
+        "fr": "Quel objectif business mesurable la fonctionnalite doit-elle soutenir ?",
+        "es": "Que objetivo de negocio medible debe apoyar la funcionalidad?"
+      }
+    },
+    {
+      "key": "success_metrics",
+      "type": "text",
+      "label": {
+        "de": "Erfolgsmetriken",
+        "en": "Success Metrics",
+        "fr": "Metriques de succes",
+        "es": "Metricas de exito"
+      },
+      "default": {
+        "de": "Adoption, Conversion, Bearbeitungszeit, Zufriedenheit, Fehlerquote",
+        "en": "Adoption, conversion, processing time, satisfaction, error rate",
+        "fr": "Adoption, conversion, temps de traitement, satisfaction, taux d'erreur",
+        "es": "Adopcion, conversion, tiempo de proceso, satisfaccion, tasa de error"
+      }
+    },
+    {
+      "key": "non_goals",
+      "type": "text",
+      "label": {
+        "de": "Nicht-Ziele",
+        "en": "Non-Goals",
+        "fr": "Non-objectifs",
+        "es": "No objetivos"
+      },
+      "default": {
+        "de": "Was gehoert explizit nicht in diese Umsetzung?",
+        "en": "What is explicitly out of scope for this implementation?",
+        "fr": "Qu'est-ce qui est explicitement hors du perimetre de cette implementation ?",
+        "es": "Que queda explicitamente fuera del alcance de esta implementacion?"
+      }
+    },
+    {
+      "key": "release_priority",
+      "type": "combobox",
+      "label": {
+        "de": "Release-Prioritaet",
+        "en": "Release Priority",
+        "fr": "Priorite de livraison",
+        "es": "Prioridad de lanzamiento"
+      },
+      "options": {
+        "de": ["Sofort", "Naechster Sprint", "Mittelfristig", "Backlog"],
+        "en": ["Immediate", "Next sprint", "Mid-term", "Backlog"],
+        "fr": ["Immediate", "Prochain sprint", "Moyen terme", "Backlog"],
+        "es": ["Inmediata", "Proximo sprint", "Medio plazo", "Backlog"]
+      },
+      "default": {
+        "de": "Naechster Sprint",
+        "en": "Next sprint",
+        "fr": "Prochain sprint",
+        "es": "Proximo sprint"
+      }
     }
   ],
   "prompts": {
@@ -183,6 +253,30 @@
       "en": "Constraints: {constraints}",
       "fr": "Contraintes: {constraints}",
       "es": "Restricciones: {constraints}"
+    },
+    "spec_9": {
+      "de": "Business-Ziel: {business_goal}",
+      "en": "Business Goal: {business_goal}",
+      "fr": "Objectif business: {business_goal}",
+      "es": "Objetivo de negocio: {business_goal}"
+    },
+    "spec_10": {
+      "de": "Erfolgsmetriken: {success_metrics}",
+      "en": "Success Metrics: {success_metrics}",
+      "fr": "Metriques de succes: {success_metrics}",
+      "es": "Metricas de exito: {success_metrics}"
+    },
+    "spec_11": {
+      "de": "Nicht-Ziele: {non_goals}",
+      "en": "Non-Goals: {non_goals}",
+      "fr": "Non-objectifs: {non_goals}",
+      "es": "No objetivos: {non_goals}"
+    },
+    "spec_12": {
+      "de": "Release-Prioritaet: {release_priority}",
+      "en": "Release Priority: {release_priority}",
+      "fr": "Priorite de livraison: {release_priority}",
+      "es": "Prioridad de lanzamiento: {release_priority}"
     }
   }
 }

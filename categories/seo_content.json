@@ -189,6 +189,76 @@
         "fr": "Infolettre, Guide, Demo, Contact",
         "es": "Boletin, Guia, Demo, Contacto"
       }
+    },
+    {
+      "key": "content_format",
+      "type": "combobox",
+      "label": {
+        "de": "Content-Format",
+        "en": "Content Format",
+        "fr": "Format de contenu",
+        "es": "Formato de contenido"
+      },
+      "options": {
+        "de": ["Blogartikel", "Landingpage", "Kategorie-Seite", "Vergleichsartikel", "How-to Guide", "Pillar Page"],
+        "en": ["Blog article", "Landing page", "Category page", "Comparison article", "How-to guide", "Pillar page"],
+        "fr": ["Article de blog", "Landing page", "Page categorie", "Article comparatif", "Guide pratique", "Pillar page"],
+        "es": ["Articulo de blog", "Landing page", "Pagina de categoria", "Articulo comparativo", "Guia practica", "Pillar page"]
+      },
+      "default": {
+        "de": "Blogartikel",
+        "en": "Blog article",
+        "fr": "Article de blog",
+        "es": "Articulo de blog"
+      }
+    },
+    {
+      "key": "search_engine_focus",
+      "type": "entry",
+      "label": {
+        "de": "SEO-Fokus",
+        "en": "SEO Focus",
+        "fr": "Focus SEO",
+        "es": "Enfoque SEO"
+      },
+      "default": {
+        "de": "Google SEO, Snippet-Optimierung, EEAT, Featured Snippets",
+        "en": "Google SEO, snippet optimization, EEAT, featured snippets",
+        "fr": "SEO Google, optimisation des snippets, EEAT, featured snippets",
+        "es": "SEO para Google, optimizacion de snippets, EEAT, featured snippets"
+      }
+    },
+    {
+      "key": "competitor_context",
+      "type": "text",
+      "label": {
+        "de": "Wettbewerber-Kontext",
+        "en": "Competitor Context",
+        "fr": "Contexte concurrentiel",
+        "es": "Contexto competitivo"
+      },
+      "default": {
+        "de": "Welche Seiten ranken bereits und wie soll sich der Inhalt differenzieren?",
+        "en": "Which pages already rank and how should the content differentiate?",
+        "fr": "Quelles pages sont deja classees et comment le contenu doit-il se differencier ?",
+        "es": "Que paginas ya posicionan y como debe diferenciarse el contenido?"
+      }
+    },
+    {
+      "key": "internal_link_targets",
+      "type": "entry",
+      "label": {
+        "de": "Interne Link-Ziele",
+        "en": "Internal Link Targets",
+        "fr": "Cibles de liens internes",
+        "es": "Objetivos de enlaces internos"
+      },
+      "default": {
+        "de": "Welche Kategorien, Produkte oder Guides sollen intern verlinkt werden?",
+        "en": "Which categories, products or guides should be linked internally?",
+        "fr": "Quelles categories, produits ou guides doivent etre lies en interne ?",
+        "es": "Que categorias, productos o guias deben enlazarse internamente?"
+      }
     }
   ],
   "prompts": {
@@ -251,6 +321,30 @@
       "en": "Call-to-Action: {cta}",
       "fr": "Appel a l'action: {cta}",
       "es": "Llamada a la accion: {cta}"
+    },
+    "seo_11": {
+      "de": "Content-Format: {content_format}",
+      "en": "Content Format: {content_format}",
+      "fr": "Format de contenu: {content_format}",
+      "es": "Formato de contenido: {content_format}"
+    },
+    "seo_12": {
+      "de": "SEO-Fokus: {search_engine_focus}",
+      "en": "SEO Focus: {search_engine_focus}",
+      "fr": "Focus SEO: {search_engine_focus}",
+      "es": "Enfoque SEO: {search_engine_focus}"
+    },
+    "seo_13": {
+      "de": "Wettbewerber-Kontext: {competitor_context}",
+      "en": "Competitor Context: {competitor_context}",
+      "fr": "Contexte concurrentiel: {competitor_context}",
+      "es": "Contexto competitivo: {competitor_context}"
+    },
+    "seo_14": {
+      "de": "Interne Link-Ziele: {internal_link_targets}",
+      "en": "Internal Link Targets: {internal_link_targets}",
+      "fr": "Cibles de liens internes: {internal_link_targets}",
+      "es": "Objetivos de enlaces internos: {internal_link_targets}"
     }
   }
 }

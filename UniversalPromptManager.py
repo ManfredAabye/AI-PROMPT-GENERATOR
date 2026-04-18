@@ -17,7 +17,7 @@ class UniversalPromptManager:
         self.root = root
         self.root.title("Universal Prompt Manager")
         self.set_window_icon()
-        self.root.geometry("1580x1580")
+        self.default_window_geometry = "1580x1580"
 
         # Sprachsystem
         self.languages_file = "upmlanguages.json"
@@ -26,6 +26,7 @@ class UniversalPromptManager:
         self.current_language = "de"
         self.language_display_to_code = {}
         self.settings = self.load_settings()
+        self.apply_saved_window_geometry()
         saved_language = self.settings.get("current_language")
         if isinstance(saved_language, str) and saved_language in self.languages:
             self.current_language = saved_language
@@ -162,8 +163,32 @@ class UniversalPromptManager:
         """Speichert persistente Anwendungseinstellungen."""
         self.settings["current_language"] = self.current_language
         self.settings["current_category"] = self.current_category
+        self.settings["window_geometry"] = self.get_current_window_geometry()
         with open(self.settings_file, 'w', encoding='utf-8') as f:
             json.dump(self.settings, f, indent=2, ensure_ascii=False)
+
+    def get_current_window_geometry(self):
+        """Liefert die aktuelle Fenstergeometrie fuer die Persistenz."""
+        try:
+            self.root.update_idletasks()
+            width = self.root.winfo_width()
+            height = self.root.winfo_height()
+            x_pos = self.root.winfo_x()
+            y_pos = self.root.winfo_y()
+            if width > 1 and height > 1:
+                return f"{width}x{height}+{x_pos}+{y_pos}"
+        except tk.TclError:
+            pass
+        return self.default_window_geometry
+
+    def apply_saved_window_geometry(self):
+        """Wendet die gespeicherte Fenstergeometrie mit Fallback auf Standard an."""
+        saved_geometry = self.settings.get("window_geometry", self.default_window_geometry)
+        geometry = saved_geometry if isinstance(saved_geometry, str) and saved_geometry.strip() else self.default_window_geometry
+        try:
+            self.root.geometry(geometry)
+        except tk.TclError:
+            self.root.geometry(self.default_window_geometry)
 
     def collect_current_field_values(self):
         """Sammelt die aktuell eingegebenen Feldwerte der sichtbaren Kategorie."""
@@ -220,6 +245,7 @@ class UniversalPromptManager:
 
         self.current_language = "de"
         self.current_category = "Architektur"
+        self.root.geometry(self.default_window_geometry)
         self.refresh_language_options()
         self.apply_ui_language()
         self.load_category_fields()
@@ -320,6 +346,7 @@ class UniversalPromptManager:
         self.optimize_button.config(text=self.tr("btn_optimize"))
         self.shorten_button.config(text=self.tr("btn_shorten"))
         self.expand_button.config(text=self.tr("btn_expand"))
+        self.quick_copy_button.config(text=self.tr("btn_copy"))
 
         self.generate_button.config(text=self.tr("btn_generate"))
         self.copy_button.config(text=self.tr("btn_copy"))
@@ -419,6 +446,8 @@ class UniversalPromptManager:
         self.shorten_button.pack(side='left', padx=2)
         self.expand_button = ttk.Button(optimize_frame, text="📝 Erweitern", command=self.expand_prompt, bootstyle=(SECONDARY, OUTLINE))
         self.expand_button.pack(side='left', padx=2)
+        self.quick_copy_button = ttk.Button(optimize_frame, text="📋 Kopieren", command=self.copy_to_clipboard, bootstyle=(SUCCESS, OUTLINE))
+        self.quick_copy_button.pack(side='left', padx=2)
         
         # Untere Leiste: Aktions-Buttons
         bottom_frame = ttk.Frame(main_container)
@@ -1170,7 +1199,7 @@ class UniversalPromptManager:
         elif category == "Ernährungsplan":
             prompt = self.generate_nutrition_prompt()
         elif category == "Eigene Vorlage":
-            prompt = self.get_field_value("custom_prompt")
+            prompt = self.generate_category_prompt_from_json(category)
         else:
             # Generische Prompt-Generierung für neue Kategorien aus JSON
             prompt = self.generate_category_prompt_from_json(category)
@@ -1199,9 +1228,15 @@ class UniversalPromptManager:
         # Sammle alle Feldwerte
         field_values = {field_name: self.get_field_value(field_name) 
                         for field_name in self.input_fields}
+
+        def prompt_sort_key(prompt_key):
+            prefix, separator, suffix = prompt_key.rpartition("_")
+            if separator and suffix.isdigit():
+                return (prefix, int(suffix), prompt_key)
+            return (prompt_key, -1, prompt_key)
         
         # Gehe durch alle Prompts und setze die Feldwerte ein
-        for prompt_key in sorted(prompts.keys()):
+        for prompt_key in sorted(prompts.keys(), key=prompt_sort_key):
             prompt_text = self.get_category_prompt_text(
                 category_id, prompt_key, prompt_key, **field_values
             )
@@ -1218,6 +1253,10 @@ class UniversalPromptManager:
         lighting = self.get_field_value("lighting")
         details = self.get_field_value("details")
         quality = self.get_field_value("quality")
+        building_type = self.get_field_value("building_type")
+        environment_context = self.get_field_value("environment_context")
+        camera_perspective = self.get_field_value("camera_perspective")
+        landscaping = self.get_field_value("landscaping")
 
         lines = [
             self.get_category_prompt_text("architecture", "arch_1", "prompt_arch_1", quality=quality),
@@ -1227,6 +1266,10 @@ class UniversalPromptManager:
             self.get_category_prompt_text("architecture", "arch_5", "prompt_arch_5", details=details),
             self.get_category_prompt_text("architecture", "arch_6", "prompt_arch_6"),
             self.get_category_prompt_text("architecture", "arch_7", "prompt_arch_7"),
+            self.get_category_prompt_text("architecture", "arch_8", "prompt_arch_8", building_type=building_type),
+            self.get_category_prompt_text("architecture", "arch_9", "prompt_arch_9", environment_context=environment_context),
+            self.get_category_prompt_text("architecture", "arch_10", "prompt_arch_10", camera_perspective=camera_perspective),
+            self.get_category_prompt_text("architecture", "arch_11", "prompt_arch_11", landscaping=landscaping),
         ]
         return "\n".join(lines)
 
@@ -1239,6 +1282,10 @@ class UniversalPromptManager:
         camera = self.get_field_value("camera")
         mood = self.get_field_value("mood")
         details = self.get_field_value("details")
+        aspect_ratio = self.get_field_value("aspect_ratio")
+        subject_context = self.get_field_value("subject_context")
+        usage_purpose = self.get_field_value("usage_purpose")
+        negative_details = self.get_field_value("negative_details")
 
         lines = [
             self.get_category_prompt_text("image_description", "img_1", "prompt_img_1", subject=subject),
@@ -1249,6 +1296,10 @@ class UniversalPromptManager:
             self.get_category_prompt_text("image_description", "img_6", "prompt_img_6", mood=mood),
             self.get_category_prompt_text("image_description", "img_7", "prompt_img_7", details=details),
             self.get_category_prompt_text("image_description", "img_8", "prompt_img_8"),
+            self.get_category_prompt_text("image_description", "img_9", "prompt_img_9", aspect_ratio=aspect_ratio),
+            self.get_category_prompt_text("image_description", "img_10", "prompt_img_10", subject_context=subject_context),
+            self.get_category_prompt_text("image_description", "img_11", "prompt_img_11", usage_purpose=usage_purpose),
+            self.get_category_prompt_text("image_description", "img_12", "prompt_img_12", negative_details=negative_details),
         ]
         return "\n".join(lines)
 
@@ -1273,6 +1324,10 @@ class UniversalPromptManager:
         test_depth = self.get_field_value("test_depth")
         documentation_level = self.get_field_value("documentation_level")
         deployment_target = self.get_field_value("deployment_target")
+        error_handling_strategy = self.get_field_value("error_handling_strategy")
+        auth_requirements = self.get_field_value("auth_requirements")
+        observability = self.get_field_value("observability")
+        performance_constraints = self.get_field_value("performance_constraints")
         comments = self.get_category_prompt_text("sourcecode", "code_comments", "prompt_code_comments") if self.get_field_value("comments") == "1" else ""
         tests = self.get_category_prompt_text("sourcecode", "code_tests", "prompt_code_tests") if self.get_field_value("tests") == "1" else ""
 
@@ -1300,6 +1355,10 @@ class UniversalPromptManager:
             self.get_category_prompt_text("sourcecode", "code_test_depth", "prompt_code_test_depth", test_depth=test_depth),
             self.get_category_prompt_text("sourcecode", "code_documentation", "prompt_code_documentation", documentation_level=documentation_level),
             self.get_category_prompt_text("sourcecode", "code_deployment", "prompt_code_deployment", deployment_target=deployment_target),
+            self.get_category_prompt_text("sourcecode", "code_error_handling", "prompt_code_error_handling", error_handling_strategy=error_handling_strategy),
+            self.get_category_prompt_text("sourcecode", "code_auth", "prompt_code_auth", auth_requirements=auth_requirements),
+            self.get_category_prompt_text("sourcecode", "code_observability", "prompt_code_observability", observability=observability),
+            self.get_category_prompt_text("sourcecode", "code_performance", "prompt_code_performance", performance_constraints=performance_constraints),
             self.get_category_prompt_text("sourcecode", "code_5", "prompt_code_5", style=style.lower(), comments=comments, tests=tests),
             self.get_category_prompt_text("sourcecode", "code_6", "prompt_code_6"),
             self.get_category_prompt_text("sourcecode", "code_7", "prompt_code_7"),
@@ -1315,6 +1374,10 @@ class UniversalPromptManager:
         composition = self.get_field_value("composition")
         details = self.get_field_value("details")
         parameters = self.get_field_value("parameters")
+        lighting = self.get_field_value("lighting")
+        medium = self.get_field_value("medium")
+        aspect_ratio = self.get_field_value("aspect_ratio")
+        negative_prompt = self.get_field_value("negative_prompt")
 
         artist_ref = self.get_category_prompt_text("ai_art", "art_artist_ref", "prompt_art_artist_ref", artist=artist) if artist else ""
 
@@ -1324,6 +1387,10 @@ class UniversalPromptManager:
             self.get_category_prompt_text("ai_art", "art_3", "prompt_art_3", composition=composition),
             self.get_category_prompt_text("ai_art", "art_4", "prompt_art_4", details=details),
             self.get_category_prompt_text("ai_art", "art_5", "prompt_art_5", style=style.lower()),
+            self.get_category_prompt_text("ai_art", "art_6", "prompt_art_6", lighting=lighting),
+            self.get_category_prompt_text("ai_art", "art_7", "prompt_art_7", medium=medium),
+            self.get_category_prompt_text("ai_art", "art_8", "prompt_art_8", aspect_ratio=aspect_ratio),
+            self.get_category_prompt_text("ai_art", "art_9", "prompt_art_9", negative_prompt=negative_prompt),
             parameters,
         ]
         return "\n".join(lines)
@@ -1337,6 +1404,10 @@ class UniversalPromptManager:
         platform = self.get_field_value("platform")
         keywords = self.get_field_value("keywords")
         cta = self.get_field_value("cta")
+        unique_value = self.get_field_value("unique_value")
+        offer_details = self.get_field_value("offer_details")
+        proof_points = self.get_field_value("proof_points")
+        funnel_stage = self.get_field_value("funnel_stage")
 
         lines = [
             self.get_category_prompt_text("marketing", "mkt_1", "prompt_mkt_1", product=product),
@@ -1347,6 +1418,10 @@ class UniversalPromptManager:
             self.get_category_prompt_text("marketing", "mkt_6", "prompt_mkt_6", keywords=keywords),
             self.get_category_prompt_text("marketing", "mkt_7", "prompt_mkt_7", cta=cta),
             self.get_category_prompt_text("marketing", "mkt_8", "prompt_mkt_8"),
+            self.get_category_prompt_text("marketing", "mkt_9", "prompt_mkt_9", unique_value=unique_value),
+            self.get_category_prompt_text("marketing", "mkt_10", "prompt_mkt_10", offer_details=offer_details),
+            self.get_category_prompt_text("marketing", "mkt_11", "prompt_mkt_11", proof_points=proof_points),
+            self.get_category_prompt_text("marketing", "mkt_12", "prompt_mkt_12", funnel_stage=funnel_stage),
         ]
         return "\n".join(lines)
 
@@ -1358,6 +1433,10 @@ class UniversalPromptManager:
         gender = self.get_field_value("gender")
         goal = self.get_field_value("goal")
         taste = self.get_field_value("taste")
+        activity_level = self.get_field_value("activity_level")
+        dietary_restrictions = self.get_field_value("dietary_restrictions")
+        budget_level = self.get_field_value("budget_level")
+        meals_per_day = self.get_field_value("meals_per_day")
         appliances = self.get_field_value("appliances")
         meal_prep = self.get_field_value("meal_prep") == "1"
         storage = self.get_field_value("storage")
@@ -1388,7 +1467,9 @@ class UniversalPromptManager:
             "",
             self.get_category_prompt_text("nutrition", "age", "nutrition_age", age=age),
             self.get_category_prompt_text("nutrition", "weight", "nutrition_weight", weight=weight),
+            self.get_category_prompt_text("nutrition", "activity", "nutrition_activity", activity_level=activity_level),
             self.get_category_prompt_text("nutrition", "goal", "nutrition_goal", goal=goal),
+            self.get_category_prompt_text("nutrition", "restrictions", "nutrition_restrictions", dietary_restrictions=dietary_restrictions),
             self.get_category_prompt_text("nutrition", "taste", "nutrition_taste", taste=taste),
             "",
             self.get_category_prompt_text("nutrition", "requirements", "nutrition_requirements"),
@@ -1397,6 +1478,7 @@ class UniversalPromptManager:
             self.get_category_prompt_text("nutrition", "r2", "nutrition_r2"),
             self.get_category_prompt_text("nutrition", "r3", "nutrition_r3"),
             f"   {appliances}",
+            self.get_category_prompt_text("nutrition", "r4", "nutrition_r4", meals_per_day=meals_per_day, budget_level=budget_level),
         ]
 
         if meal_prep_section:

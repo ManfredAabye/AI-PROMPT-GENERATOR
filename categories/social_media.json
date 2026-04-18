@@ -173,6 +173,76 @@
         "fr": "2x par semaine",
         "es": "2x por semana"
       }
+    },
+    {
+      "key": "campaign_goal",
+      "type": "combobox",
+      "label": {
+        "de": "Kampagnenziel",
+        "en": "Campaign Goal",
+        "fr": "Objectif de campagne",
+        "es": "Objetivo de campana"
+      },
+      "options": {
+        "de": ["Reichweite", "Engagement", "Leads", "Traffic", "Community-Aufbau", "Conversions"],
+        "en": ["Reach", "Engagement", "Leads", "Traffic", "Community building", "Conversions"],
+        "fr": ["Portee", "Engagement", "Leads", "Trafic", "Construction de communaute", "Conversions"],
+        "es": ["Alcance", "Engagement", "Leads", "Trafico", "Construccion de comunidad", "Conversiones"]
+      },
+      "default": {
+        "de": "Engagement",
+        "en": "Engagement",
+        "fr": "Engagement",
+        "es": "Engagement"
+      }
+    },
+    {
+      "key": "visual_asset_notes",
+      "type": "text",
+      "label": {
+        "de": "Visual / Asset-Hinweise",
+        "en": "Visual / Asset Notes",
+        "fr": "Notes visuelles / assets",
+        "es": "Notas visuales / assets"
+      },
+      "default": {
+        "de": "Bild, Karussell, Reel, Grafikstil, Text-Overlay, B-Roll, Untertitel",
+        "en": "Image, carousel, reel, visual style, text overlay, B-roll, captions",
+        "fr": "Image, carrousel, reel, style visuel, texte superpose, B-roll, sous-titres",
+        "es": "Imagen, carrusel, reel, estilo visual, texto superpuesto, B-roll, subtitulos"
+      }
+    },
+    {
+      "key": "platform_constraints",
+      "type": "entry",
+      "label": {
+        "de": "Plattform-Vorgaben",
+        "en": "Platform Constraints",
+        "fr": "Contraintes de plateforme",
+        "es": "Restricciones de plataforma"
+      },
+      "default": {
+        "de": "Zeichenlimit, Hook in den ersten Sekunden, Hashtag-Logik, Formatvorgaben",
+        "en": "Character limits, first-second hook, hashtag logic, format requirements",
+        "fr": "Limite de caracteres, hook des premieres secondes, logique hashtags, contraintes de format",
+        "es": "Limites de caracteres, hook en los primeros segundos, logica de hashtags, requisitos de formato"
+      }
+    },
+    {
+      "key": "success_metric",
+      "type": "entry",
+      "label": {
+        "de": "Wichtige Kennzahl",
+        "en": "Primary Success Metric",
+        "fr": "Metrique principale",
+        "es": "Metrica principal"
+      },
+      "default": {
+        "de": "Impressions, Saves, Shares, Kommentare, CTR oder Leads",
+        "en": "Impressions, saves, shares, comments, CTR or leads",
+        "fr": "Impressions, sauvegardes, partages, commentaires, CTR ou leads",
+        "es": "Impresiones, guardados, compartidos, comentarios, CTR o leads"
+      }
     }
   ],
   "prompts": {
@@ -229,6 +299,30 @@
       "en": "Posting Frequency: {posting_frequency}",
       "fr": "Frequence de publication: {posting_frequency}",
       "es": "Frecuencia de publicacion: {posting_frequency}"
+    },
+    "sm_10": {
+      "de": "Kampagnenziel: {campaign_goal}",
+      "en": "Campaign Goal: {campaign_goal}",
+      "fr": "Objectif de campagne: {campaign_goal}",
+      "es": "Objetivo de campana: {campaign_goal}"
+    },
+    "sm_11": {
+      "de": "Visual / Asset-Hinweise: {visual_asset_notes}",
+      "en": "Visual / Asset Notes: {visual_asset_notes}",
+      "fr": "Notes visuelles / assets: {visual_asset_notes}",
+      "es": "Notas visuales / assets: {visual_asset_notes}"
+    },
+    "sm_12": {
+      "de": "Plattform-Vorgaben: {platform_constraints}",
+      "en": "Platform Constraints: {platform_constraints}",
+      "fr": "Contraintes de plateforme: {platform_constraints}",
+      "es": "Restricciones de plataforma: {platform_constraints}"
+    },
+    "sm_13": {
+      "de": "Wichtige Kennzahl: {success_metric}",
+      "en": "Primary Success Metric: {success_metric}",
+      "fr": "Metrique principale: {success_metric}",
+      "es": "Metrica principal: {success_metric}"
     }
   }
 }

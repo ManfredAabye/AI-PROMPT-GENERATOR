@@ -139,6 +139,76 @@
         "fr": "Qu'est-ce qui doit etre enregistre/surveille?",
         "es": "Que debe ser registrado/monitoreado?"
       }
+    },
+    {
+      "key": "workflow_goal",
+      "type": "entry",
+      "label": {
+        "de": "Ziel des Workflows",
+        "en": "Workflow Goal",
+        "fr": "Objectif du workflow",
+        "es": "Objetivo del flujo"
+      },
+      "default": {
+        "de": "Was soll am Ende effizienter, schneller oder sicherer sein?",
+        "en": "What should become more efficient, faster or safer?",
+        "fr": "Qu'est-ce qui doit devenir plus efficace, plus rapide ou plus sur ?",
+        "es": "Que debe ser mas eficiente, rapido o seguro al final?"
+      }
+    },
+    {
+      "key": "execution_frequency",
+      "type": "combobox",
+      "label": {
+        "de": "Ausfuehrungsfrequenz",
+        "en": "Execution Frequency",
+        "fr": "Frequence d'execution",
+        "es": "Frecuencia de ejecucion"
+      },
+      "options": {
+        "de": ["Echtzeit", "Mehrmals pro Stunde", "Taeglich", "Woechentlich", "Monatlich", "On-Demand"],
+        "en": ["Real-time", "Multiple times per hour", "Daily", "Weekly", "Monthly", "On-demand"],
+        "fr": ["Temps reel", "Plusieurs fois par heure", "Quotidien", "Hebdomadaire", "Mensuel", "A la demande"],
+        "es": ["Tiempo real", "Varias veces por hora", "Diario", "Semanal", "Mensual", "Bajo demanda"]
+      },
+      "default": {
+        "de": "Taeglich",
+        "en": "Daily",
+        "fr": "Quotidien",
+        "es": "Diario"
+      }
+    },
+    {
+      "key": "approvals_and_handoffs",
+      "type": "text",
+      "label": {
+        "de": "Freigaben / Uebergaben",
+        "en": "Approvals / Handoffs",
+        "fr": "Approbations / Passages de relais",
+        "es": "Aprobaciones / Transferencias"
+      },
+      "default": {
+        "de": "Welche manuellen Pruefungen, Eskalationen oder Team-Uebergaben gibt es?",
+        "en": "Which manual reviews, escalations or team handoffs are needed?",
+        "fr": "Quelles validations manuelles, escalades ou transmissions d'equipe sont necessaires ?",
+        "es": "Que revisiones manuales, escalaciones o transferencias de equipo se necesitan?"
+      }
+    },
+    {
+      "key": "success_metrics",
+      "type": "entry",
+      "label": {
+        "de": "Erfolgsmetriken",
+        "en": "Success Metrics",
+        "fr": "Metriques de succes",
+        "es": "Metricas de exito"
+      },
+      "default": {
+        "de": "Zeitersparnis, Fehlerquote, SLA, Durchlaufzeit",
+        "en": "Time saved, error rate, SLA, cycle time",
+        "fr": "Temps gagne, taux d'erreur, SLA, temps de cycle",
+        "es": "Tiempo ahorrado, tasa de error, SLA, tiempo de ciclo"
+      }
     }
   ],
   "prompts": {
@@ -189,6 +259,30 @@
       "en": "Logging/Monitoring: {logging_and_monitoring}",
       "fr": "Journalisation/Surveillance: {logging_and_monitoring}",
       "es": "Registro/Monitoreo: {logging_and_monitoring}"
+    },
+    "auto_9": {
+      "de": "Ziel des Workflows: {workflow_goal}",
+      "en": "Workflow Goal: {workflow_goal}",
+      "fr": "Objectif du workflow: {workflow_goal}",
+      "es": "Objetivo del flujo: {workflow_goal}"
+    },
+    "auto_10": {
+      "de": "Ausfuehrungsfrequenz: {execution_frequency}",
+      "en": "Execution Frequency: {execution_frequency}",
+      "fr": "Frequence d'execution: {execution_frequency}",
+      "es": "Frecuencia de ejecucion: {execution_frequency}"
+    },
+    "auto_11": {
+      "de": "Freigaben / Uebergaben: {approvals_and_handoffs}",
+      "en": "Approvals / Handoffs: {approvals_and_handoffs}",
+      "fr": "Approbations / Passages de relais: {approvals_and_handoffs}",
+      "es": "Aprobaciones / Transferencias: {approvals_and_handoffs}"
+    },
+    "auto_12": {
+      "de": "Erfolgsmetriken: {success_metrics}",
+      "en": "Success Metrics: {success_metrics}",
+      "fr": "Metriques de succes: {success_metrics}",
+      "es": "Metricas de exito: {success_metrics}"
     }
   }
 }

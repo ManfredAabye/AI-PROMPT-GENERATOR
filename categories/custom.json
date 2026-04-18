@@ -21,7 +21,114 @@
         "fr": "Saisissez votre prompt ici...",
         "es": "Introduzca su prompt aqui..."
       }
+    },
+    {
+      "key": "desired_output_format",
+      "type": "combobox",
+      "label": {
+        "de": "Gewuenschtes Output-Format",
+        "en": "Desired Output Format",
+        "fr": "Format de sortie souhaite",
+        "es": "Formato de salida deseado"
+      },
+      "options": {
+        "de": ["Freitext", "Stichpunkte", "Tabelle", "Markdown", "JSON"],
+        "en": ["Free text", "Bullet points", "Table", "Markdown", "JSON"],
+        "fr": ["Texte libre", "Puces", "Tableau", "Markdown", "JSON"],
+        "es": ["Texto libre", "Vinetas", "Tabla", "Markdown", "JSON"]
+      },
+      "default": {
+        "de": "Freitext",
+        "en": "Free text",
+        "fr": "Texte libre",
+        "es": "Texto libre"
+      }
+    },
+    {
+      "key": "tone",
+      "type": "combobox",
+      "label": {
+        "de": "Tonfall",
+        "en": "Tone",
+        "fr": "Ton",
+        "es": "Tono"
+      },
+      "options": {
+        "de": ["Neutral", "Professionell", "Freundlich", "Direkt", "Kreativ"],
+        "en": ["Neutral", "Professional", "Friendly", "Direct", "Creative"],
+        "fr": ["Neutre", "Professionnel", "Amical", "Direct", "Creatif"],
+        "es": ["Neutral", "Profesional", "Amigable", "Directo", "Creativo"]
+      },
+      "default": {
+        "de": "Neutral",
+        "en": "Neutral",
+        "fr": "Neutre",
+        "es": "Neutral"
+      }
+    },
+    {
+      "key": "must_include",
+      "type": "text",
+      "label": {
+        "de": "Muss enthalten",
+        "en": "Must Include",
+        "fr": "Doit inclure",
+        "es": "Debe incluir"
+      },
+      "default": {
+        "de": "Pflichtinhalte, Stichpunkte, Begriffe oder Daten",
+        "en": "Required content, bullet points, terms or data",
+        "fr": "Contenu obligatoire, puces, termes ou donnees",
+        "es": "Contenido obligatorio, puntos, terminos o datos"
+      }
+    },
+    {
+      "key": "constraints",
+      "type": "text",
+      "label": {
+        "de": "Grenzen / Vorgaben",
+        "en": "Constraints / Requirements",
+        "fr": "Contraintes / Exigences",
+        "es": "Restricciones / Requisitos"
+      },
+      "default": {
+        "de": "Laenge, Stil, verbotene Inhalte, Perspektive oder Formatvorgaben",
+        "en": "Length, style, forbidden content, perspective or formatting rules",
+        "fr": "Longueur, style, contenu interdit, perspective ou regles de format",
+        "es": "Longitud, estilo, contenido prohibido, perspectiva o reglas de formato"
+      }
     }
   ],
-  "prompts": {}
+  "prompts": {
+    "custom_1": {
+      "de": "{custom_prompt}",
+      "en": "{custom_prompt}",
+      "fr": "{custom_prompt}",
+      "es": "{custom_prompt}"
+    },
+    "custom_2": {
+      "de": "Gewuenschtes Output-Format: {desired_output_format}",
+      "en": "Desired output format: {desired_output_format}",
+      "fr": "Format de sortie souhaite : {desired_output_format}",
+      "es": "Formato de salida deseado: {desired_output_format}"
+    },
+    "custom_3": {
+      "de": "Tonfall: {tone}",
+      "en": "Tone: {tone}",
+      "fr": "Ton : {tone}",
+      "es": "Tono: {tone}"
+    },
+    "custom_4": {
+      "de": "Muss enthalten: {must_include}",
+      "en": "Must include: {must_include}",
+      "fr": "Doit inclure : {must_include}",
+      "es": "Debe incluir: {must_include}"
+    },
+    "custom_5": {
+      "de": "Grenzen / Vorgaben: {constraints}",
+      "en": "Constraints / requirements: {constraints}",
+      "fr": "Contraintes / exigences : {constraints}",
+      "es": "Restricciones / requisitos: {constraints}"
+    }
+  }
 }

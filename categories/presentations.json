@@ -157,6 +157,76 @@
         "fr": "10 minutes",
         "es": "10 minutos"
       }
+    },
+    {
+      "key": "desired_outcome",
+      "type": "entry",
+      "label": {
+        "de": "Gewuenschtes Ergebnis",
+        "en": "Desired Outcome",
+        "fr": "Resultat souhaite",
+        "es": "Resultado deseado"
+      },
+      "default": {
+        "de": "Was soll das Publikum nach der Praesentation tun oder entscheiden?",
+        "en": "What should the audience do or decide after the presentation?",
+        "fr": "Que doit faire ou decider le public apres la presentation ?",
+        "es": "Que debe hacer o decidir la audiencia despues de la presentacion?"
+      }
+    },
+    {
+      "key": "objections_questions",
+      "type": "text",
+      "label": {
+        "de": "Moegliche Rueckfragen / Einwaende",
+        "en": "Likely Questions / Objections",
+        "fr": "Questions / objections probables",
+        "es": "Preguntas / objeciones probables"
+      },
+      "default": {
+        "de": "Welche kritischen Fragen oder Zweifel sind wahrscheinlich?",
+        "en": "Which critical questions or doubts are likely to come up?",
+        "fr": "Quelles questions critiques ou quels doutes risquent d'apparaitre ?",
+        "es": "Que preguntas criticas o dudas probablemente apareceran?"
+      }
+    },
+    {
+      "key": "speaker_notes_style",
+      "type": "combobox",
+      "label": {
+        "de": "Speaker Notes",
+        "en": "Speaker Notes",
+        "fr": "Notes du presentateur",
+        "es": "Notas del presentador"
+      },
+      "options": {
+        "de": ["Keine", "Kurz", "Detailliert", "Detailliert + Ueberleitungen"],
+        "en": ["None", "Short", "Detailed", "Detailed + transitions"],
+        "fr": ["Aucune", "Courtes", "Detaillees", "Detaillees + transitions"],
+        "es": ["Ninguna", "Cortas", "Detalladas", "Detalladas + transiciones"]
+      },
+      "default": {
+        "de": "Detailliert",
+        "en": "Detailed",
+        "fr": "Detaillees",
+        "es": "Detalladas"
+      }
+    },
+    {
+      "key": "closing_ask",
+      "type": "entry",
+      "label": {
+        "de": "Abschluss / Ask",
+        "en": "Closing Ask",
+        "fr": "Conclusion / Ask",
+        "es": "Cierre / Ask"
+      },
+      "default": {
+        "de": "Meeting, Budgetfreigabe, Pilot, Investment oder naechster Termin",
+        "en": "Meeting, budget approval, pilot, investment or next step",
+        "fr": "Rendez-vous, budget, pilote, investissement ou prochaine etape",
+        "es": "Reunion, aprobacion de presupuesto, piloto, inversion o siguiente paso"
+      }
     }
   ],
   "prompts": {
@@ -207,6 +277,30 @@
       "en": "Duration: {duration}",
       "fr": "Duree: {duration}",
       "es": "Duracion: {duration}"
+    },
+    "pres_9": {
+      "de": "Gewuenschtes Ergebnis: {desired_outcome}",
+      "en": "Desired Outcome: {desired_outcome}",
+      "fr": "Resultat souhaite: {desired_outcome}",
+      "es": "Resultado deseado: {desired_outcome}"
+    },
+    "pres_10": {
+      "de": "Moegliche Rueckfragen / Einwaende: {objections_questions}",
+      "en": "Likely Questions / Objections: {objections_questions}",
+      "fr": "Questions / objections probables: {objections_questions}",
+      "es": "Preguntas / objeciones probables: {objections_questions}"
+    },
+    "pres_11": {
+      "de": "Speaker Notes: {speaker_notes_style}",
+      "en": "Speaker Notes: {speaker_notes_style}",
+      "fr": "Notes du presentateur: {speaker_notes_style}",
+      "es": "Notas del presentador: {speaker_notes_style}"
+    },
+    "pres_12": {
+      "de": "Abschluss / Ask: {closing_ask}",
+      "en": "Closing Ask: {closing_ask}",
+      "fr": "Conclusion / Ask: {closing_ask}",
+      "es": "Cierre / Ask: {closing_ask}"
     }
   }
 }

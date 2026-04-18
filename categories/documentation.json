@@ -157,6 +157,76 @@
         "fr": "FAQ, Glossaire, Liens, Credits",
         "es": "FAQ, Glosario, Enlaces, Creditos"
       }
+    },
+    {
+      "key": "prerequisites",
+      "type": "entry",
+      "label": {
+        "de": "Voraussetzungen",
+        "en": "Prerequisites",
+        "fr": "Prerequis",
+        "es": "Prerequisitos"
+      },
+      "default": {
+        "de": "Kenntnisse, Zugriffe, Tools oder Installationen vorab",
+        "en": "Required knowledge, access, tools or installations",
+        "fr": "Connaissances, acces, outils ou installations requis",
+        "es": "Conocimientos, accesos, herramientas o instalaciones requeridas"
+      }
+    },
+    {
+      "key": "information_depth",
+      "type": "combobox",
+      "label": {
+        "de": "Detailtiefe",
+        "en": "Information Depth",
+        "fr": "Niveau de detail",
+        "es": "Nivel de detalle"
+      },
+      "options": {
+        "de": ["Kurzueberblick", "Standard", "Detailliert", "Schritt-fuer-Schritt + Hintergruende"],
+        "en": ["Quick overview", "Standard", "Detailed", "Step-by-step + background"],
+        "fr": ["Vue d'ensemble rapide", "Standard", "Detaille", "Pas a pas + contexte"],
+        "es": ["Resumen rapido", "Estandar", "Detallado", "Paso a paso + contexto"]
+      },
+      "default": {
+        "de": "Detailliert",
+        "en": "Detailed",
+        "fr": "Detaille",
+        "es": "Detallado"
+      }
+    },
+    {
+      "key": "example_inputs_outputs",
+      "type": "text",
+      "label": {
+        "de": "Beispiel-Inputs / Outputs",
+        "en": "Example Inputs / Outputs",
+        "fr": "Exemples d'entrees / sorties",
+        "es": "Ejemplos de entradas / salidas"
+      },
+      "default": {
+        "de": "Welche Beispielaufrufe, Beispielantworten oder Screenshots sollen enthalten sein?",
+        "en": "Which example calls, responses or screenshots should be included?",
+        "fr": "Quels appels, reponses ou captures d'ecran d'exemple doivent etre inclus ?",
+        "es": "Que llamadas, respuestas o capturas de ejemplo deben incluirse?"
+      }
+    },
+    {
+      "key": "maintenance_owner",
+      "type": "entry",
+      "label": {
+        "de": "Pflege / Verantwortlich",
+        "en": "Maintenance Owner",
+        "fr": "Responsable de maintenance",
+        "es": "Responsable de mantenimiento"
+      },
+      "default": {
+        "de": "Team, Rolle oder Person, die die Doku aktuell haelt",
+        "en": "Team, role or person responsible for keeping docs current",
+        "fr": "Equipe, role ou personne chargee de tenir la documentation a jour",
+        "es": "Equipo, rol o persona responsable de mantener la documentacion actualizada"
+      }
     }
   ],
   "prompts": {
@@ -207,6 +277,30 @@
       "en": "Special Sections: {special_sections}",
       "fr": "Sections speciales: {special_sections}",
       "es": "Secciones especiales: {special_sections}"
+    },
+    "doc_9": {
+      "de": "Voraussetzungen: {prerequisites}",
+      "en": "Prerequisites: {prerequisites}",
+      "fr": "Prerequis: {prerequisites}",
+      "es": "Prerequisitos: {prerequisites}"
+    },
+    "doc_10": {
+      "de": "Detailtiefe: {information_depth}",
+      "en": "Information Depth: {information_depth}",
+      "fr": "Niveau de detail: {information_depth}",
+      "es": "Nivel de detalle: {information_depth}"
+    },
+    "doc_11": {
+      "de": "Beispiel-Inputs / Outputs: {example_inputs_outputs}",
+      "en": "Example Inputs / Outputs: {example_inputs_outputs}",
+      "fr": "Exemples d'entrees / sorties: {example_inputs_outputs}",
+      "es": "Ejemplos de entradas / salidas: {example_inputs_outputs}"
+    },
+    "doc_12": {
+      "de": "Pflege / Verantwortlich: {maintenance_owner}",
+      "en": "Maintenance Owner: {maintenance_owner}",
+      "fr": "Responsable de maintenance: {maintenance_owner}",
+      "es": "Responsable de mantenimiento: {maintenance_owner}"
     }
   }
 }

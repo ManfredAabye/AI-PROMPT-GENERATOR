@@ -167,6 +167,70 @@
         "fr": "Amical",
         "es": "Amigable"
       }
+    },
+    {
+      "key": "business_goal",
+      "type": "entry",
+      "label": {
+        "de": "Business-Ziel",
+        "en": "Business Goal",
+        "fr": "Objectif business",
+        "es": "Objetivo de negocio"
+      },
+      "default": {
+        "de": "Welche Kennzahl oder welches Ergebnis soll das UX/UI verbessern?",
+        "en": "Which metric or outcome should the UX/UI improve?",
+        "fr": "Quelle metrique ou quel resultat l'UX/UI doit-il ameliorer ?",
+        "es": "Que metrica o resultado debe mejorar el UX/UI?"
+      }
+    },
+    {
+      "key": "device_context",
+      "type": "entry",
+      "label": {
+        "de": "Geraete- / Nutzungskontext",
+        "en": "Device / Usage Context",
+        "fr": "Contexte d'usage / appareils",
+        "es": "Contexto de uso / dispositivos"
+      },
+      "default": {
+        "de": "Unterwegs, Office, Touchscreen, Desktop-Monitor, schlechte Verbindung etc.",
+        "en": "On the go, office, touchscreen, desktop monitor, poor connection, etc.",
+        "fr": "En deplacement, bureau, ecran tactile, moniteur desktop, mauvaise connexion, etc.",
+        "es": "En movimiento, oficina, pantalla tactil, monitor desktop, mala conexion, etc."
+      }
+    },
+    {
+      "key": "content_hierarchy",
+      "type": "text",
+      "label": {
+        "de": "Content-Hierarchie",
+        "en": "Content Hierarchy",
+        "fr": "Hierarchie du contenu",
+        "es": "Jerarquia del contenido"
+      },
+      "default": {
+        "de": "Was ist primaer, sekundaer und optional sichtbar?",
+        "en": "What should be primary, secondary and optional in the interface?",
+        "fr": "Que doit etre primaire, secondaire et optionnel dans l'interface ?",
+        "es": "Que debe ser primario, secundario y opcional en la interfaz?"
+      }
+    },
+    {
+      "key": "ux_risks",
+      "type": "text",
+      "label": {
+        "de": "UX-Risiken",
+        "en": "UX Risks",
+        "fr": "Risques UX",
+        "es": "Riesgos UX"
+      },
+      "default": {
+        "de": "Verwirrung, Abbruchpunkte, Accessibility-Probleme, Ueberladung oder schlechte Auffindbarkeit",
+        "en": "Confusion, drop-off points, accessibility issues, overload or poor discoverability",
+        "fr": "Confusion, points d'abandon, problemes d'accessibilite, surcharge ou faible trouvabilite",
+        "es": "Confusion, puntos de abandono, problemas de accesibilidad, sobrecarga o baja encontrabilidad"
+      }
     }
   ],
   "prompts": {
@@ -223,6 +287,30 @@
       "en": "Microcopy/Tone: {microcopy_tone}",
       "fr": "Microtexte/Ton: {microcopy_tone}",
       "es": "Microtexto/Tono: {microcopy_tone}"
+    },
+    "ux_10": {
+      "de": "Business-Ziel: {business_goal}",
+      "en": "Business Goal: {business_goal}",
+      "fr": "Objectif business: {business_goal}",
+      "es": "Objetivo de negocio: {business_goal}"
+    },
+    "ux_11": {
+      "de": "Geraete- / Nutzungskontext: {device_context}",
+      "en": "Device / Usage Context: {device_context}",
+      "fr": "Contexte d'usage / appareils: {device_context}",
+      "es": "Contexto de uso / dispositivos: {device_context}"
+    },
+    "ux_12": {
+      "de": "Content-Hierarchie: {content_hierarchy}",
+      "en": "Content Hierarchy: {content_hierarchy}",
+      "fr": "Hierarchie du contenu: {content_hierarchy}",
+      "es": "Jerarquia del contenido: {content_hierarchy}"
+    },
+    "ux_13": {
+      "de": "UX-Risiken: {ux_risks}",
+      "en": "UX Risks: {ux_risks}",
+      "fr": "Risques UX: {ux_risks}",
+      "es": "Riesgos UX: {ux_risks}"
     }
   }
 }

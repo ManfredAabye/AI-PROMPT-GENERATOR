@@ -177,6 +177,70 @@
         "fr": "Risque de marche, risque technologique, risque d'equipe, etc.",
         "es": "Riesgo de mercado, riesgo tecnologico, riesgo de equipo, etc."
       }
+    },
+    {
+      "key": "go_to_market",
+      "type": "text",
+      "label": {
+        "de": "Go-to-Market",
+        "en": "Go-to-Market",
+        "fr": "Go-to-Market",
+        "es": "Go-to-Market"
+      },
+      "default": {
+        "de": "Kanaele, Vertrieb, Partnerschaften und erste Zielsegmente",
+        "en": "Channels, sales motion, partnerships and initial target segments",
+        "fr": "Canaux, vente, partenariats et segments cibles initiaux",
+        "es": "Canales, ventas, alianzas y segmentos objetivo iniciales"
+      }
+    },
+    {
+      "key": "unit_economics",
+      "type": "entry",
+      "label": {
+        "de": "Unit Economics",
+        "en": "Unit Economics",
+        "fr": "Unit Economics",
+        "es": "Unit Economics"
+      },
+      "default": {
+        "de": "CAC, LTV, Marge, Payback Period oder Annahmen dazu",
+        "en": "CAC, LTV, margin, payback period or assumptions",
+        "fr": "CAC, LTV, marge, payback period ou hypotheses",
+        "es": "CAC, LTV, margen, payback period o supuestos"
+      }
+    },
+    {
+      "key": "milestones",
+      "type": "text",
+      "label": {
+        "de": "Meilensteine",
+        "en": "Milestones",
+        "fr": "Jalons",
+        "es": "Hitos"
+      },
+      "default": {
+        "de": "Die wichtigsten Ziele fuer die naechsten 6, 12 und 24 Monate",
+        "en": "Key goals for the next 6, 12 and 24 months",
+        "fr": "Principaux objectifs pour les 6, 12 et 24 prochains mois",
+        "es": "Objetivos clave para los proximos 6, 12 y 24 meses"
+      }
+    },
+    {
+      "key": "growth_strategy",
+      "type": "entry",
+      "label": {
+        "de": "Wachstumsstrategie",
+        "en": "Growth Strategy",
+        "fr": "Strategie de croissance",
+        "es": "Estrategia de crecimiento"
+      },
+      "default": {
+        "de": "Expansion, Upsell, Internationalisierung, neue Segmente oder Plattformeffekte",
+        "en": "Expansion, upsell, internationalization, new segments or platform effects",
+        "fr": "Expansion, upsell, internationalisation, nouveaux segments ou effets de plateforme",
+        "es": "Expansion, upsell, internacionalizacion, nuevos segmentos o efectos de plataforma"
+      }
     }
   ],
   "prompts": {
@@ -239,6 +303,30 @@
       "en": "Key Risks: {key_risks}",
       "fr": "Risques cles: {key_risks}",
       "es": "Riesgos clave: {key_risks}"
+    },
+    "bp_11": {
+      "de": "Go-to-Market: {go_to_market}",
+      "en": "Go-to-Market: {go_to_market}",
+      "fr": "Go-to-Market: {go_to_market}",
+      "es": "Go-to-Market: {go_to_market}"
+    },
+    "bp_12": {
+      "de": "Unit Economics: {unit_economics}",
+      "en": "Unit Economics: {unit_economics}",
+      "fr": "Unit Economics: {unit_economics}",
+      "es": "Unit Economics: {unit_economics}"
+    },
+    "bp_13": {
+      "de": "Meilensteine: {milestones}",
+      "en": "Milestones: {milestones}",
+      "fr": "Jalons: {milestones}",
+      "es": "Hitos: {milestones}"
+    },
+    "bp_14": {
+      "de": "Wachstumsstrategie: {growth_strategy}",
+      "en": "Growth Strategy: {growth_strategy}",
+      "fr": "Strategie de croissance: {growth_strategy}",
+      "es": "Estrategia de crecimiento: {growth_strategy}"
     }
   }
 }

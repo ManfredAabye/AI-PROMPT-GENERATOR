@@ -437,6 +437,70 @@
         "fr": true,
         "es": true
       }
+    },
+    {
+      "key": "error_handling_strategy",
+      "type": "entry",
+      "label": {
+        "de": "Fehlerbehandlung",
+        "en": "Error Handling Strategy",
+        "fr": "Strategie de gestion des erreurs",
+        "es": "Estrategia de manejo de errores"
+      },
+      "default": {
+        "de": "Klare Exceptions, Validierung, aussagekraeftige Fehlermeldungen",
+        "en": "Clear exceptions, validation, meaningful error messages",
+        "fr": "Exceptions claires, validation, messages d'erreur explicites",
+        "es": "Excepciones claras, validacion y mensajes de error utiles"
+      }
+    },
+    {
+      "key": "auth_requirements",
+      "type": "entry",
+      "label": {
+        "de": "Auth / Berechtigungen",
+        "en": "Auth / Permissions",
+        "fr": "Auth / Permissions",
+        "es": "Auth / Permisos"
+      },
+      "default": {
+        "de": "Falls noetig: Rollen, Login, API-Keys oder keine Authentifizierung",
+        "en": "If needed: roles, login, API keys or no authentication",
+        "fr": "Si necessaire : roles, connexion, cles API ou aucune authentification",
+        "es": "Si aplica: roles, inicio de sesion, claves API o sin autenticacion"
+      }
+    },
+    {
+      "key": "observability",
+      "type": "entry",
+      "label": {
+        "de": "Logging / Observability",
+        "en": "Logging / Observability",
+        "fr": "Logging / Observabilite",
+        "es": "Logging / Observabilidad"
+      },
+      "default": {
+        "de": "Logging, Metriken, Tracing oder Debug-Ausgaben falls sinnvoll",
+        "en": "Logging, metrics, tracing or debug output where appropriate",
+        "fr": "Journalisation, metriques, tracing ou sorties de debug si pertinent",
+        "es": "Logging, metricas, tracing o salidas de depuracion cuando tenga sentido"
+      }
+    },
+    {
+      "key": "performance_constraints",
+      "type": "entry",
+      "label": {
+        "de": "Performance-Vorgaben",
+        "en": "Performance Constraints",
+        "fr": "Contraintes de performance",
+        "es": "Restricciones de rendimiento"
+      },
+      "default": {
+        "de": "Antwortzeit, Speicherverbrauch, Skalierung oder keine besonderen Vorgaben",
+        "en": "Response time, memory use, scaling or no special constraints",
+        "fr": "Temps de reponse, memoire, scalabilite ou aucune contrainte particuliere",
+        "es": "Tiempo de respuesta, memoria, escalado o sin restricciones especiales"
+      }
     }
   ],
   "prompts": {
@@ -571,6 +635,30 @@
       "en": "with unit tests",
       "fr": "avec des tests unitaires",
       "es": "con pruebas unitarias"
+    },
+    "code_error_handling": {
+      "de": "Fehlerbehandlung: {error_handling_strategy}.",
+      "en": "Error handling: {error_handling_strategy}.",
+      "fr": "Gestion des erreurs : {error_handling_strategy}.",
+      "es": "Manejo de errores: {error_handling_strategy}."
+    },
+    "code_auth": {
+      "de": "Auth / Berechtigungen: {auth_requirements}.",
+      "en": "Auth / permissions: {auth_requirements}.",
+      "fr": "Auth / permissions : {auth_requirements}.",
+      "es": "Auth / permisos: {auth_requirements}."
+    },
+    "code_observability": {
+      "de": "Logging / Observability: {observability}.",
+      "en": "Logging / observability: {observability}.",
+      "fr": "Logging / observabilite : {observability}.",
+      "es": "Logging / observabilidad: {observability}."
+    },
+    "code_performance": {
+      "de": "Performance-Vorgaben: {performance_constraints}.",
+      "en": "Performance constraints: {performance_constraints}.",
+      "fr": "Contraintes de performance : {performance_constraints}.",
+      "es": "Restricciones de rendimiento: {performance_constraints}."
     }
   }
 }

@@ -157,6 +157,70 @@
         "fr": "Court (100-200)",
         "es": "Corto (100-200)"
       }
+    },
+    {
+      "key": "sender_context",
+      "type": "entry",
+      "label": {
+        "de": "Absender / Kontext",
+        "en": "Sender / Context",
+        "fr": "Expediteur / Contexte",
+        "es": "Remitente / Contexto"
+      },
+      "default": {
+        "de": "Wer sendet die E-Mail und in welcher Beziehung steht er zum Empfaenger?",
+        "en": "Who is sending the email and what is their relationship to the recipient?",
+        "fr": "Qui envoie l'e-mail et quelle est sa relation avec le destinataire ?",
+        "es": "Quien envia el correo y cual es su relacion con el destinatario?"
+      }
+    },
+    {
+      "key": "personalization",
+      "type": "entry",
+      "label": {
+        "de": "Personalisierung",
+        "en": "Personalization",
+        "fr": "Personnalisation",
+        "es": "Personalizacion"
+      },
+      "default": {
+        "de": "Name, Firma, Branche, letzter Kontakt oder Verhalten",
+        "en": "Name, company, industry, last contact or behavior",
+        "fr": "Nom, entreprise, secteur, dernier contact ou comportement",
+        "es": "Nombre, empresa, sector, ultimo contacto o comportamiento"
+      }
+    },
+    {
+      "key": "objections_and_concerns",
+      "type": "text",
+      "label": {
+        "de": "Einwaende / Bedenken",
+        "en": "Objections / Concerns",
+        "fr": "Objections / Preoccupations",
+        "es": "Objeciones / Inquietudes"
+      },
+      "default": {
+        "de": "Welche typischen Einwaende sollen proaktiv entkraeftet werden?",
+        "en": "Which typical objections should be addressed proactively?",
+        "fr": "Quelles objections typiques faut-il traiter de maniere proactive ?",
+        "es": "Que objeciones tipicas deben abordarse de forma proactiva?"
+      }
+    },
+    {
+      "key": "compliance_constraints",
+      "type": "entry",
+      "label": {
+        "de": "Compliance / Einschränkungen",
+        "en": "Compliance / Constraints",
+        "fr": "Conformite / Contraintes",
+        "es": "Cumplimiento / Restricciones"
+      },
+      "default": {
+        "de": "Opt-out, rechtliche Hinweise, Tonalitaetsgrenzen, keine Versprechen ohne Beleg",
+        "en": "Opt-out, legal notes, tone constraints, no unsupported claims",
+        "fr": "Desinscription, mentions legales, contraintes de ton, pas d'affirmations sans preuve",
+        "es": "Opt-out, notas legales, restricciones de tono, sin afirmaciones sin respaldo"
+      }
     }
   ],
   "prompts": {
@@ -207,6 +271,30 @@
       "en": "Length: {length_preference}",
       "fr": "Longueur: {length_preference}",
       "es": "Longitud: {length_preference}"
+    },
+    "email_9": {
+      "de": "Absender / Kontext: {sender_context}",
+      "en": "Sender / Context: {sender_context}",
+      "fr": "Expediteur / Contexte: {sender_context}",
+      "es": "Remitente / Contexto: {sender_context}"
+    },
+    "email_10": {
+      "de": "Personalisierung: {personalization}",
+      "en": "Personalization: {personalization}",
+      "fr": "Personnalisation: {personalization}",
+      "es": "Personalizacion: {personalization}"
+    },
+    "email_11": {
+      "de": "Einwaende / Bedenken: {objections_and_concerns}",
+      "en": "Objections / Concerns: {objections_and_concerns}",
+      "fr": "Objections / Preoccupations: {objections_and_concerns}",
+      "es": "Objeciones / Inquietudes: {objections_and_concerns}"
+    },
+    "email_12": {
+      "de": "Compliance / Einschraenkungen: {compliance_constraints}",
+      "en": "Compliance / Constraints: {compliance_constraints}",
+      "fr": "Conformite / Contraintes: {compliance_constraints}",
+      "es": "Cumplimiento / Restricciones: {compliance_constraints}"
     }
   }
 }

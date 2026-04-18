@@ -135,6 +135,82 @@
         "fr": "--ar 16:9 --v 6.0 --style raw",
         "es": "--ar 16:9 --v 6.0 --style raw"
       }
+    },
+    {
+      "key": "lighting",
+      "type": "combobox",
+      "label": {
+        "de": "Lichtstimmung",
+        "en": "Lighting",
+        "fr": "Eclairage",
+        "es": "Iluminacion"
+      },
+      "options": {
+        "de": ["Weiches Studiolicht", "Goldene Stunde", "Dramatisch", "Nachtlicht", "Neon"],
+        "en": ["Soft studio light", "Golden hour", "Dramatic", "Night lighting", "Neon"],
+        "fr": ["Lumiere douce studio", "Heure doree", "Dramatique", "Lumiere nocturne", "Neon"],
+        "es": ["Luz suave de estudio", "Hora dorada", "Dramatico", "Luz nocturna", "Neon"]
+      },
+      "default": {
+        "de": "Dramatisch",
+        "en": "Dramatic",
+        "fr": "Dramatique",
+        "es": "Dramatico"
+      }
+    },
+    {
+      "key": "medium",
+      "type": "combobox",
+      "label": {
+        "de": "Medium",
+        "en": "Medium",
+        "fr": "Medium",
+        "es": "Medio"
+      },
+      "options": {
+        "de": ["Digital Painting", "3D Render", "Illustration", "Collage", "Concept Art"],
+        "en": ["Digital painting", "3D render", "Illustration", "Collage", "Concept art"],
+        "fr": ["Peinture numerique", "Rendu 3D", "Illustration", "Collage", "Concept art"],
+        "es": ["Pintura digital", "Render 3D", "Ilustracion", "Collage", "Concept art"]
+      },
+      "default": {
+        "de": "Concept Art",
+        "en": "Concept art",
+        "fr": "Concept art",
+        "es": "Concept art"
+      }
+    },
+    {
+      "key": "aspect_ratio",
+      "type": "entry",
+      "label": {
+        "de": "Seitenverhaeltnis",
+        "en": "Aspect Ratio",
+        "fr": "Ratio d'image",
+        "es": "Relacion de aspecto"
+      },
+      "default": {
+        "de": "16:9",
+        "en": "16:9",
+        "fr": "16:9",
+        "es": "16:9"
+      }
+    },
+    {
+      "key": "negative_prompt",
+      "type": "text",
+      "label": {
+        "de": "Negative Prompt",
+        "en": "Negative Prompt",
+        "fr": "Prompt negatif",
+        "es": "Prompt negativo"
+      },
+      "default": {
+        "de": "Keine Artefakte, keine deformierten Elemente, kein Text im Bild",
+        "en": "No artifacts, no deformed elements, no text in image",
+        "fr": "Pas d'artefacts, pas d'elements deformes, pas de texte dans l'image",
+        "es": "Sin artefactos, sin elementos deformados, sin texto en la imagen"
+      }
     }
   ],
   "prompts": {
@@ -173,6 +249,30 @@
       "en": "Style: {style}, atmospheric, expressive.",
       "fr": "Style : {style}, atmospherique, expressif.",
       "es": "Estilo: {style}, atmosferico, expresivo."
+    },
+    "art_6": {
+      "de": "Lichtstimmung: {lighting}.",
+      "en": "Lighting: {lighting}.",
+      "fr": "Eclairage : {lighting}.",
+      "es": "Iluminacion: {lighting}."
+    },
+    "art_7": {
+      "de": "Medium: {medium}.",
+      "en": "Medium: {medium}.",
+      "fr": "Medium : {medium}.",
+      "es": "Medio: {medium}."
+    },
+    "art_8": {
+      "de": "Seitenverhaeltnis: {aspect_ratio}.",
+      "en": "Aspect ratio: {aspect_ratio}.",
+      "fr": "Ratio d'image : {aspect_ratio}.",
+      "es": "Relacion de aspecto: {aspect_ratio}."
+    },
+    "art_9": {
+      "de": "Negative Prompt: {negative_prompt}.",
+      "en": "Negative prompt: {negative_prompt}.",
+      "fr": "Prompt negatif : {negative_prompt}.",
+      "es": "Prompt negativo: {negative_prompt}."
     }
   }
 }

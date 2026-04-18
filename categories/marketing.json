@@ -135,6 +135,76 @@
         "fr": "Essayez-le gratuitement maintenant !",
         "es": "Pruebalo gratis ahora!"
       }
+    },
+    {
+      "key": "unique_value",
+      "type": "text",
+      "label": {
+        "de": "Unique Value Proposition",
+        "en": "Unique Value Proposition",
+        "fr": "Proposition de valeur unique",
+        "es": "Propuesta de valor unica"
+      },
+      "default": {
+        "de": "Was macht das Angebot klar besser oder anders als Alternativen?",
+        "en": "What makes the offer clearly better or different than alternatives?",
+        "fr": "Qu'est-ce qui rend l'offre clairement meilleure ou differente des alternatives ?",
+        "es": "Que hace que la oferta sea claramente mejor o diferente a las alternativas?"
+      }
+    },
+    {
+      "key": "offer_details",
+      "type": "entry",
+      "label": {
+        "de": "Angebot / Incentive",
+        "en": "Offer / Incentive",
+        "fr": "Offre / Incentive",
+        "es": "Oferta / Incentivo"
+      },
+      "default": {
+        "de": "Rabatt, Demo, kostenloser Test, Beratung oder Lead Magnet",
+        "en": "Discount, demo, free trial, consultation or lead magnet",
+        "fr": "Reduction, demo, essai gratuit, conseil ou lead magnet",
+        "es": "Descuento, demo, prueba gratuita, asesoria o lead magnet"
+      }
+    },
+    {
+      "key": "proof_points",
+      "type": "text",
+      "label": {
+        "de": "Belege / Proof Points",
+        "en": "Proof Points",
+        "fr": "Preuves / Proof points",
+        "es": "Pruebas / Proof points"
+      },
+      "default": {
+        "de": "Kundenstimmen, Zahlen, Case Study, Zertifizierungen, Benchmarks",
+        "en": "Testimonials, numbers, case studies, certifications, benchmarks",
+        "fr": "Temoignages, chiffres, cas d'usage, certifications, benchmarks",
+        "es": "Testimonios, cifras, casos de uso, certificaciones y benchmarks"
+      }
+    },
+    {
+      "key": "funnel_stage",
+      "type": "combobox",
+      "label": {
+        "de": "Funnel-Stufe",
+        "en": "Funnel Stage",
+        "fr": "Etape du funnel",
+        "es": "Etapa del funnel"
+      },
+      "options": {
+        "de": ["Awareness", "Consideration", "Conversion", "Retention", "Reactivation"],
+        "en": ["Awareness", "Consideration", "Conversion", "Retention", "Reactivation"],
+        "fr": ["Awareness", "Consideration", "Conversion", "Retention", "Reactivation"],
+        "es": ["Awareness", "Consideration", "Conversion", "Retention", "Reactivation"]
+      },
+      "default": {
+        "de": "Consideration",
+        "en": "Consideration",
+        "fr": "Consideration",
+        "es": "Consideration"
+      }
     }
   ],
   "prompts": {
@@ -185,6 +255,30 @@
       "en": "Style: Persuasive, clear, action-oriented, and value-driven for the customer.",
       "fr": "Style : convaincant, clair, oriente action et riche en valeur pour le client.",
       "es": "Estilo: Persuasivo, claro, orientado a la accion y con valor para el cliente."
+    },
+    "mkt_9": {
+      "de": "Unique Value Proposition: {unique_value}.",
+      "en": "Unique value proposition: {unique_value}.",
+      "fr": "Proposition de valeur unique : {unique_value}.",
+      "es": "Propuesta de valor unica: {unique_value}."
+    },
+    "mkt_10": {
+      "de": "Angebot / Incentive: {offer_details}.",
+      "en": "Offer / incentive: {offer_details}.",
+      "fr": "Offre / incentive : {offer_details}.",
+      "es": "Oferta / incentivo: {offer_details}."
+    },
+    "mkt_11": {
+      "de": "Belege / Proof Points: {proof_points}.",
+      "en": "Proof points: {proof_points}.",
+      "fr": "Preuves / proof points : {proof_points}.",
+      "es": "Pruebas / proof points: {proof_points}."
+    },
+    "mkt_12": {
+      "de": "Funnel-Stufe: {funnel_stage}.",
+      "en": "Funnel stage: {funnel_stage}.",
+      "fr": "Etape du funnel : {funnel_stage}.",
+      "es": "Etapa del funnel: {funnel_stage}."
     }
   }
 }
