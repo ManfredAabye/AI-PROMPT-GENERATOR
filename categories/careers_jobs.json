@@ -1,0 +1,98 @@
+{
+  "category_name": {
+    "de": "Karriere und Stellenangebote",
+    "en": "Careers and Job Offers"
+  },
+  "fields": [
+    {
+      "key": "position",
+      "type": "entry",
+      "label": {
+        "de": "Position",
+        "en": "Position"
+      },
+      "default": {
+        "de": "Jobtitel oder Bereich",
+        "en": "Job title or area"
+      }
+    },
+    {
+      "key": "request_type",
+      "type": "combobox",
+      "label": {
+        "de": "Anfragetyp",
+        "en": "Request Type"
+      },
+      "options": {
+        "de": ["Stelleninfo", "Bewerbungsstatus", "Anforderungsprofil", "Interviewprozess", "Arbeitgeberfragen"],
+        "en": ["Job info", "Application status", "Requirements profile", "Interview process", "Employer questions"]
+      },
+      "default": {
+        "de": "Stelleninfo",
+        "en": "Job info"
+      }
+    },
+    {
+      "key": "candidate_context",
+      "type": "text",
+      "label": {
+        "de": "Kontext",
+        "en": "Context"
+      },
+      "default": {
+        "de": "Bewerberprofil, Erfahrung, Motivation",
+        "en": "Candidate profile, experience, motivation"
+      }
+    },
+    {
+      "key": "tone",
+      "type": "combobox",
+      "label": {
+        "de": "Ton",
+        "en": "Tone"
+      },
+      "options": {
+        "de": ["Professionell", "Freundlich", "Neutral"],
+        "en": ["Professional", "Friendly", "Neutral"]
+      },
+      "default": {
+        "de": "Professionell",
+        "en": "Professional"
+      }
+    },
+    {
+      "key": "desired_outcome",
+      "type": "entry",
+      "label": {
+        "de": "Gewuenschtes Ergebnis",
+        "en": "Desired Outcome"
+      },
+      "default": {
+        "de": "Klare Antwort inklusive naechster Schritte",
+        "en": "Clear answer including next steps"
+      }
+    }
+  ],
+  "prompts": {
+    "car_1": {
+      "de": "Erstelle eine Antwort fuer Karriere/Stellenangebote.",
+      "en": "Create a response for careers/job offers."
+    },
+    "car_2": {
+      "de": "Position: {position}. Typ: {request_type}.",
+      "en": "Position: {position}. Type: {request_type}."
+    },
+    "car_3": {
+      "de": "Kontext: {candidate_context}.",
+      "en": "Context: {candidate_context}."
+    },
+    "car_4": {
+      "de": "Ton: {tone}. Ziel: {desired_outcome}.",
+      "en": "Tone: {tone}. Goal: {desired_outcome}."
+    },
+    "car_5": {
+      "de": "Formuliere transparent, diskriminierungsfrei und prozesssicher.",
+      "en": "Write transparently, non-discriminatory, and process-safe."
+    }
+  }
+}

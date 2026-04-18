@@ -11,4 +11,4 @@ UniversalPromptManager is intended as a helpful tool for beginners.
 
 English, German, French and Spanish
 
-Version 0.0.4 Alpha
+Version 0.0.3 Alpha

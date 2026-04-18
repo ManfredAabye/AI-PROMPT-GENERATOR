@@ -1,0 +1,102 @@
+{
+  "category_name": {
+    "de": "Bestellungsanfragen",
+    "en": "Order Inquiries"
+  },
+  "fields": [
+    {
+      "key": "order_reference",
+      "type": "entry",
+      "label": {
+        "de": "Bestellreferenz",
+        "en": "Order Reference"
+      },
+      "default": {
+        "de": "Bestellnummer oder Kunden-ID",
+        "en": "Order number or customer ID"
+      }
+    },
+    {
+      "key": "request_type",
+      "type": "combobox",
+      "label": {
+        "de": "Anfragetyp",
+        "en": "Request Type"
+      },
+      "options": {
+        "de": ["Status", "Aenderung", "Stornierung", "Verzoegerung", "Fehlende Position"],
+        "en": ["Status", "Change", "Cancellation", "Delay", "Missing item"]
+      },
+      "default": {
+        "de": "Status",
+        "en": "Status"
+      }
+    },
+    {
+      "key": "customer_message",
+      "type": "text",
+      "label": {
+        "de": "Kundenanliegen",
+        "en": "Customer Request"
+      },
+      "default": {
+        "de": "Kurze Beschreibung der Anfrage",
+        "en": "Short request description"
+      }
+    },
+    {
+      "key": "priority",
+      "type": "combobox",
+      "label": {
+        "de": "Prioritaet",
+        "en": "Priority"
+      },
+      "options": {
+        "de": ["Niedrig", "Mittel", "Hoch"],
+        "en": ["Low", "Medium", "High"]
+      },
+      "default": {
+        "de": "Mittel",
+        "en": "Medium"
+      }
+    },
+    {
+      "key": "desired_outcome",
+      "type": "entry",
+      "label": {
+        "de": "Gewuenschtes Ergebnis",
+        "en": "Desired Outcome"
+      },
+      "default": {
+        "de": "Schnelle Klaerung und naechste Schritte",
+        "en": "Fast clarification and next steps"
+      }
+    }
+  ],
+  "prompts": {
+    "ord_1": {
+      "de": "Bearbeite eine Bestellungsanfrage.",
+      "en": "Handle an order inquiry."
+    },
+    "ord_2": {
+      "de": "Referenz: {order_reference}.",
+      "en": "Reference: {order_reference}."
+    },
+    "ord_3": {
+      "de": "Typ: {request_type}.",
+      "en": "Type: {request_type}."
+    },
+    "ord_4": {
+      "de": "Anliegen: {customer_message}.",
+      "en": "Request: {customer_message}."
+    },
+    "ord_5": {
+      "de": "Prioritaet: {priority}. Ziel: {desired_outcome}.",
+      "en": "Priority: {priority}. Goal: {desired_outcome}."
+    },
+    "ord_6": {
+      "de": "Erzeuge eine klare Antwort mit Status, benoetigten Daten und verbindlichem naechsten Schritt.",
+      "en": "Generate a clear response with status, required data, and a committed next step."
+    }
+  }
+}

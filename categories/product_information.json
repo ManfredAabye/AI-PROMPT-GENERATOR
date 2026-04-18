@@ -1,0 +1,102 @@
+{
+  "category_name": {
+    "de": "Produktinformationen",
+    "en": "Product Information"
+  },
+  "fields": [
+    {
+      "key": "product_name",
+      "type": "entry",
+      "label": {
+        "de": "Produktname",
+        "en": "Product Name"
+      },
+      "default": {
+        "de": "Produkt oder Tarifname",
+        "en": "Product or plan name"
+      }
+    },
+    {
+      "key": "information_scope",
+      "type": "combobox",
+      "label": {
+        "de": "Informationsbereich",
+        "en": "Information Scope"
+      },
+      "options": {
+        "de": ["Funktionen", "Preise", "Technische Daten", "Kompatibilitaet", "Verfuegbarkeit"],
+        "en": ["Features", "Pricing", "Technical specs", "Compatibility", "Availability"]
+      },
+      "default": {
+        "de": "Funktionen",
+        "en": "Features"
+      }
+    },
+    {
+      "key": "target_audience",
+      "type": "entry",
+      "label": {
+        "de": "Zielgruppe",
+        "en": "Target Audience"
+      },
+      "default": {
+        "de": "Privatkunden oder Geschaeftskunden",
+        "en": "Consumers or business customers"
+      }
+    },
+    {
+      "key": "required_depth",
+      "type": "combobox",
+      "label": {
+        "de": "Detailtiefe",
+        "en": "Detail Level"
+      },
+      "options": {
+        "de": ["Kurz", "Standard", "Detailliert"],
+        "en": ["Short", "Standard", "Detailed"]
+      },
+      "default": {
+        "de": "Standard",
+        "en": "Standard"
+      }
+    },
+    {
+      "key": "constraints",
+      "type": "entry",
+      "label": {
+        "de": "Vorgaben",
+        "en": "Constraints"
+      },
+      "default": {
+        "de": "Ton, Laenge, verbotene Aussagen",
+        "en": "Tone, length, forbidden claims"
+      }
+    }
+  ],
+  "prompts": {
+    "pi_1": {
+      "de": "Erstelle eine Produktauskunft fuer {product_name}.",
+      "en": "Create product information for {product_name}."
+    },
+    "pi_2": {
+      "de": "Fokus: {information_scope}.",
+      "en": "Focus: {information_scope}."
+    },
+    "pi_3": {
+      "de": "Zielgruppe: {target_audience}.",
+      "en": "Target audience: {target_audience}."
+    },
+    "pi_4": {
+      "de": "Detailtiefe: {required_depth}.",
+      "en": "Detail level: {required_depth}."
+    },
+    "pi_5": {
+      "de": "Rahmenbedingungen: {constraints}.",
+      "en": "Constraints: {constraints}."
+    },
+    "pi_6": {
+      "de": "Formuliere klar, sachlich und verkaufsneutral mit belastbaren Aussagen.",
+      "en": "Write clearly, fact-based, and sales-neutral with verifiable statements."
+    }
+  }
+}

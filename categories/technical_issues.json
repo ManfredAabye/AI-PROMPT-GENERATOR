@@ -1,0 +1,102 @@
+{
+  "category_name": {
+    "de": "Technische Probleme",
+    "en": "Technical Issues"
+  },
+  "fields": [
+    {
+      "key": "issue_type",
+      "type": "combobox",
+      "label": {
+        "de": "Problemtyp",
+        "en": "Issue Type"
+      },
+      "options": {
+        "de": ["Login-Fehler", "Leistungsproblem", "Funktionsfehler", "Schnittstellenfehler", "Installationsproblem"],
+        "en": ["Login error", "Performance issue", "Feature bug", "Integration issue", "Installation issue"]
+      },
+      "default": {
+        "de": "Funktionsfehler",
+        "en": "Feature bug"
+      }
+    },
+    {
+      "key": "system_context",
+      "type": "entry",
+      "label": {
+        "de": "System/Umgebung",
+        "en": "System/Environment"
+      },
+      "default": {
+        "de": "Web-App, Browser, Betriebssystem",
+        "en": "Web app, browser, operating system"
+      }
+    },
+    {
+      "key": "error_description",
+      "type": "text",
+      "label": {
+        "de": "Fehlerbeschreibung",
+        "en": "Error Description"
+      },
+      "default": {
+        "de": "Was wurde erwartet und was ist stattdessen passiert?",
+        "en": "What was expected and what happened instead?"
+      }
+    },
+    {
+      "key": "priority",
+      "type": "combobox",
+      "label": {
+        "de": "Prioritaet",
+        "en": "Priority"
+      },
+      "options": {
+        "de": ["Niedrig", "Mittel", "Hoch", "Kritisch"],
+        "en": ["Low", "Medium", "High", "Critical"]
+      },
+      "default": {
+        "de": "Hoch",
+        "en": "High"
+      }
+    },
+    {
+      "key": "desired_outcome",
+      "type": "text",
+      "label": {
+        "de": "Gewuenschtes Ergebnis",
+        "en": "Desired Outcome"
+      },
+      "default": {
+        "de": "Stabile Loesung inkl. reproduzierbarer Schritte",
+        "en": "Stable fix including reproducible steps"
+      }
+    }
+  ],
+  "prompts": {
+    "tech_1": {
+      "de": "Analysiere ein technisches Problem vom Typ {issue_type}.",
+      "en": "Analyze a technical issue of type {issue_type}."
+    },
+    "tech_2": {
+      "de": "Systemkontext: {system_context}.",
+      "en": "System context: {system_context}."
+    },
+    "tech_3": {
+      "de": "Fehlerbild: {error_description}.",
+      "en": "Failure description: {error_description}."
+    },
+    "tech_4": {
+      "de": "Prioritaet: {priority}.",
+      "en": "Priority: {priority}."
+    },
+    "tech_5": {
+      "de": "Ziel: {desired_outcome}.",
+      "en": "Goal: {desired_outcome}."
+    },
+    "tech_6": {
+      "de": "Liefere Ursachenhypothesen, konkrete Loesungsschritte und einen kurzen Verifizierungsplan.",
+      "en": "Provide root-cause hypotheses, concrete remediation steps, and a short verification plan."
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "category_name": {
+    "de": "Lieferungsanfragen",
+    "en": "Delivery Inquiries"
+  },
+  "fields": [
+    {
+      "key": "order_reference",
+      "type": "entry",
+      "label": {
+        "de": "Bestellreferenz",
+        "en": "Order Reference"
+      },
+      "default": {
+        "de": "Bestellnummer",
+        "en": "Order number"
+      }
+    },
+    {
+      "key": "delivery_topic",
+      "type": "combobox",
+      "label": {
+        "de": "Lieferthema",
+        "en": "Delivery Topic"
+      },
+      "options": {
+        "de": ["Sendungsstatus", "Verspaetung", "Zustellproblem", "Adresskorrektur", "Teillieferung"],
+        "en": ["Shipment status", "Delay", "Delivery issue", "Address correction", "Partial delivery"]
+      },
+      "default": {
+        "de": "Sendungsstatus",
+        "en": "Shipment status"
+      }
+    },
+    {
+      "key": "tracking_info",
+      "type": "entry",
+      "label": {
+        "de": "Tracking-Info",
+        "en": "Tracking Info"
+      },
+      "default": {
+        "de": "Paketdienst und Sendungsnummer",
+        "en": "Carrier and tracking number"
+      }
+    },
+    {
+      "key": "customer_message",
+      "type": "text",
+      "label": {
+        "de": "Kundenanliegen",
+        "en": "Customer Message"
+      },
+      "default": {
+        "de": "Zeitpunkt, Problem und Erwartung",
+        "en": "Timing, issue, and expectation"
+      }
+    },
+    {
+      "key": "desired_outcome",
+      "type": "entry",
+      "label": {
+        "de": "Gewuenschtes Ergebnis",
+        "en": "Desired Outcome"
+      },
+      "default": {
+        "de": "Verbindliches Lieferupdate und naechster Schritt",
+        "en": "Reliable delivery update and next step"
+      }
+    }
+  ],
+  "prompts": {
+    "del_1": {
+      "de": "Bearbeite eine Lieferungsanfrage zu {delivery_topic}.",
+      "en": "Handle a delivery inquiry for {delivery_topic}."
+    },
+    "del_2": {
+      "de": "Bestellung: {order_reference}. Tracking: {tracking_info}.",
+      "en": "Order: {order_reference}. Tracking: {tracking_info}."
+    },
+    "del_3": {
+      "de": "Anliegen: {customer_message}.",
+      "en": "Message: {customer_message}."
+    },
+    "del_4": {
+      "de": "Ziel: {desired_outcome}.",
+      "en": "Goal: {desired_outcome}."
+    },
+    "del_5": {
+      "de": "Erstelle eine proaktive Antwort mit Status, Ursache, ETA und Eskalationsoption.",
+      "en": "Create a proactive response with status, cause, ETA, and escalation option."
+    }
+  }
+}

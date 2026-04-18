@@ -1,0 +1,98 @@
+{
+  "category_name": {
+    "de": "Account und Login",
+    "en": "Account and Login"
+  },
+  "fields": [
+    {
+      "key": "request_type",
+      "type": "combobox",
+      "label": {
+        "de": "Anfragetyp",
+        "en": "Request Type"
+      },
+      "options": {
+        "de": ["Passwort vergessen", "2FA Problem", "Account gesperrt", "Profilupdate", "Zugriffsrechte"],
+        "en": ["Forgot password", "2FA issue", "Account locked", "Profile update", "Access rights"]
+      },
+      "default": {
+        "de": "Passwort vergessen",
+        "en": "Forgot password"
+      }
+    },
+    {
+      "key": "identity_context",
+      "type": "entry",
+      "label": {
+        "de": "Identitaetskontext",
+        "en": "Identity Context"
+      },
+      "default": {
+        "de": "Konto-E-Mail oder Benutzerkennung",
+        "en": "Account email or user identifier"
+      }
+    },
+    {
+      "key": "issue_description",
+      "type": "text",
+      "label": {
+        "de": "Problembeschreibung",
+        "en": "Issue Description"
+      },
+      "default": {
+        "de": "Seit wann, Fehlermeldung, bereits versucht",
+        "en": "Since when, error message, attempted steps"
+      }
+    },
+    {
+      "key": "security_level",
+      "type": "combobox",
+      "label": {
+        "de": "Sicherheitsstufe",
+        "en": "Security Level"
+      },
+      "options": {
+        "de": ["Standard", "Erhoeht", "Kritisch"],
+        "en": ["Standard", "Elevated", "Critical"]
+      },
+      "default": {
+        "de": "Erhoeht",
+        "en": "Elevated"
+      }
+    },
+    {
+      "key": "desired_outcome",
+      "type": "entry",
+      "label": {
+        "de": "Gewuenschtes Ergebnis",
+        "en": "Desired Outcome"
+      },
+      "default": {
+        "de": "Sichere Wiederherstellung mit minimalen Reibungsverlusten",
+        "en": "Secure recovery with minimal friction"
+      }
+    }
+  ],
+  "prompts": {
+    "acc_1": {
+      "de": "Bearbeite eine Account/Login-Anfrage ({request_type}).",
+      "en": "Handle an account/login request ({request_type})."
+    },
+    "acc_2": {
+      "de": "Identitaetskontext: {identity_context}.",
+      "en": "Identity context: {identity_context}."
+    },
+    "acc_3": {
+      "de": "Problem: {issue_description}.",
+      "en": "Issue: {issue_description}."
+    },
+    "acc_4": {
+      "de": "Sicherheitsstufe: {security_level}. Ziel: {desired_outcome}.",
+      "en": "Security level: {security_level}. Goal: {desired_outcome}."
+    },
+    "acc_5": {
+      "de": "Antworte mit verifizierten Schritten ohne sensible Daten preiszugeben.",
+      "en": "Respond with verified steps without exposing sensitive data."
+    }
+  }
+}

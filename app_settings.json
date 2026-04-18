@@ -45,9 +45,72 @@
       "tone": "Neutral",
       "must_include": "Pflichtinhalte, Stichpunkte, Begriffe oder Daten",
       "constraints": "Laenge, Stil, verbotene Inhalte, Perspektive oder Formatvorgaben"
+    },
+    "Allgemeine/Sonstige Anfragen": {
+      "request_summary": "Anliegen in einem Satz",
+      "context": "Relevante Fakten, Beteiligte, bisheriger Verlauf",
+      "priority": "Mittel",
+      "owner_hint": "Support, Vertrieb, Technik, Finance oder HR",
+      "desired_outcome": "Klarer Antwortentwurf mit naechster Aktion"
+    },
+    "Technische Probleme": {
+      "issue_type": "Funktionsfehler",
+      "system_context": "Web-App, Browser, Betriebssystem",
+      "error_description": "Was wurde erwartet und was ist stattdessen passiert?",
+      "priority": "Hoch",
+      "desired_outcome": "Stabile Loesung inkl. reproduzierbarer Schritte"
+    },
+    "Feedback und Vorschlaege": {
+      "feedback_type": "Verbesserungsidee",
+      "subject_area": "Produkt, Prozess oder Support",
+      "feedback_text": "Konkret mit Beispiel und Beobachtung",
+      "business_impact": "Effizienz, Zufriedenheit, Conversion oder Kosten",
+      "desired_outcome": "Konkrete Massnahmen mit Priorisierung"
+    },
+    "Bestellungsanfragen": {
+      "order_reference": "Bestellnummer oder Kunden-ID",
+      "request_type": "Status",
+      "customer_message": "Kurze Beschreibung der Anfrage",
+      "priority": "Mittel",
+      "desired_outcome": "Schnelle Klaerung und naechste Schritte"
+    },
+    "Ruecksendungen und Umtausch": {
+      "order_reference": "Bestellnummer",
+      "request_type": "Ruecksendung",
+      "item_details": "Produkt, Menge, Zustand, Fehlerbild",
+      "policy_context": "Frist, Gewaehrleistung, Ausschluesse",
+      "desired_outcome": "Schnelle Abwicklung inkl. Label und Timeline"
+    },
+    "Zahlungsanfragen": {
+      "payment_topic": "Fehlgeschlagen",
+      "reference": "Rechnungs- oder Transaktionsnummer",
+      "amount_currency": "z. B. 129.99 EUR",
+      "customer_message": "Sachverhalt und Beobachtung",
+      "desired_outcome": "Klaerung mit transparenter Zahlungsstatus-Info"
+    },
+    "Lieferungsanfragen": {
+      "order_reference": "Bestellnummer",
+      "delivery_topic": "Sendungsstatus",
+      "tracking_info": "Paketdienst und Sendungsnummer",
+      "customer_message": "Zeitpunkt, Problem und Erwartung",
+      "desired_outcome": "Verbindliches Lieferupdate und naechster Schritt"
+    },
+    "Garantie und Reparaturen": {
+      "product_reference": "Produktname, Seriennummer, Kaufdatum",
+      "case_type": "Garantiepruefung",
+      "defect_description": "Symptome, seit wann, bereits getestete Schritte",
+      "policy_context": "Laufzeit, Ausschluesse, Nachweispflicht",
+      "desired_outcome": "Verbindlicher Prozess inkl. Zeitraum und Kosteninfo"
+    },
+    "Datenschutz und Sicherheit": {
+      "request_type": "Datenauskunft",
+      "data_scope": "Welche Daten/Prozesse sind betroffen?",
+      "incident_details": "Zeitpunkt, Quelle, Auswirkungen, Nachweise",
+      "regulatory_context": "DSGVO, interne Richtlinien, Fristen",
+      "desired_outcome": "Rechtssichere und nachvollziehbare Antwort"
     }
   },
   "current_language": "de",
-  "current_category": "Eigene Vorlage",
+  "current_category": "Datenschutz und Sicherheit",
   "window_geometry": "1580x1865+176+176"
 }

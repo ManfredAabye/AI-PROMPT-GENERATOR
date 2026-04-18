@@ -1,0 +1,98 @@
+{
+  "category_name": {
+    "de": "Feedback und Vorschlaege",
+    "en": "Feedback and Suggestions"
+  },
+  "fields": [
+    {
+      "key": "feedback_type",
+      "type": "combobox",
+      "label": {
+        "de": "Feedbacktyp",
+        "en": "Feedback Type"
+      },
+      "options": {
+        "de": ["Lob", "Kritik", "Funktionswunsch", "Usability", "Verbesserungsidee"],
+        "en": ["Praise", "Criticism", "Feature request", "Usability", "Improvement idea"]
+      },
+      "default": {
+        "de": "Verbesserungsidee",
+        "en": "Improvement idea"
+      }
+    },
+    {
+      "key": "subject_area",
+      "type": "entry",
+      "label": {
+        "de": "Betroffener Bereich",
+        "en": "Affected Area"
+      },
+      "default": {
+        "de": "Produkt, Prozess oder Support",
+        "en": "Product, process, or support"
+      }
+    },
+    {
+      "key": "feedback_text",
+      "type": "text",
+      "label": {
+        "de": "Feedbackinhalt",
+        "en": "Feedback Content"
+      },
+      "default": {
+        "de": "Konkret mit Beispiel und Beobachtung",
+        "en": "Specific with example and observation"
+      }
+    },
+    {
+      "key": "business_impact",
+      "type": "entry",
+      "label": {
+        "de": "Geschaeftlicher Impact",
+        "en": "Business Impact"
+      },
+      "default": {
+        "de": "Effizienz, Zufriedenheit, Conversion oder Kosten",
+        "en": "Efficiency, satisfaction, conversion, or cost"
+      }
+    },
+    {
+      "key": "desired_outcome",
+      "type": "text",
+      "label": {
+        "de": "Gewuenschte Aenderung",
+        "en": "Desired Change"
+      },
+      "default": {
+        "de": "Konkrete Massnahmen mit Priorisierung",
+        "en": "Concrete actions with prioritization"
+      }
+    }
+  ],
+  "prompts": {
+    "fb_1": {
+      "de": "Bewerte folgendes Feedback vom Typ {feedback_type}.",
+      "en": "Evaluate the following feedback of type {feedback_type}."
+    },
+    "fb_2": {
+      "de": "Bereich: {subject_area}.",
+      "en": "Area: {subject_area}."
+    },
+    "fb_3": {
+      "de": "Inhalt: {feedback_text}.",
+      "en": "Content: {feedback_text}."
+    },
+    "fb_4": {
+      "de": "Business-Impact: {business_impact}.",
+      "en": "Business impact: {business_impact}."
+    },
+    "fb_5": {
+      "de": "Gewuenschtes Ergebnis: {desired_outcome}.",
+      "en": "Desired outcome: {desired_outcome}."
+    },
+    "fb_6": {
+      "de": "Erstelle eine priorisierte Umsetzungs- und Kommunikationsstrategie.",
+      "en": "Create a prioritized implementation and communication strategy."
+    }
+  }
+}

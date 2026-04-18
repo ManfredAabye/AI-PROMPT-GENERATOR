@@ -1,0 +1,98 @@
+{
+  "category_name": {
+    "de": "Ruecksendungen und Umtausch",
+    "en": "Returns and Exchanges"
+  },
+  "fields": [
+    {
+      "key": "order_reference",
+      "type": "entry",
+      "label": {
+        "de": "Bestellreferenz",
+        "en": "Order Reference"
+      },
+      "default": {
+        "de": "Bestellnummer",
+        "en": "Order number"
+      }
+    },
+    {
+      "key": "request_type",
+      "type": "combobox",
+      "label": {
+        "de": "Vorgang",
+        "en": "Process"
+      },
+      "options": {
+        "de": ["Ruecksendung", "Umtausch", "Defekt", "Falschlieferung", "Widerruf"],
+        "en": ["Return", "Exchange", "Defect", "Wrong delivery", "Withdrawal"]
+      },
+      "default": {
+        "de": "Ruecksendung",
+        "en": "Return"
+      }
+    },
+    {
+      "key": "item_details",
+      "type": "text",
+      "label": {
+        "de": "Artikeldetails",
+        "en": "Item Details"
+      },
+      "default": {
+        "de": "Produkt, Menge, Zustand, Fehlerbild",
+        "en": "Product, quantity, condition, defect"
+      }
+    },
+    {
+      "key": "policy_context",
+      "type": "entry",
+      "label": {
+        "de": "Richtlinienkontext",
+        "en": "Policy Context"
+      },
+      "default": {
+        "de": "Frist, Gewaehrleistung, Ausschluesse",
+        "en": "Deadline, warranty, exclusions"
+      }
+    },
+    {
+      "key": "desired_outcome",
+      "type": "entry",
+      "label": {
+        "de": "Gewuenschtes Ergebnis",
+        "en": "Desired Outcome"
+      },
+      "default": {
+        "de": "Schnelle Abwicklung inkl. Label und Timeline",
+        "en": "Fast processing incl. label and timeline"
+      }
+    }
+  ],
+  "prompts": {
+    "ret_1": {
+      "de": "Bearbeite eine Anfrage zu Ruecksendung/Umtausch.",
+      "en": "Handle a return/exchange request."
+    },
+    "ret_2": {
+      "de": "Bestellung: {order_reference}. Vorgang: {request_type}.",
+      "en": "Order: {order_reference}. Process: {request_type}."
+    },
+    "ret_3": {
+      "de": "Artikeldetails: {item_details}.",
+      "en": "Item details: {item_details}."
+    },
+    "ret_4": {
+      "de": "Richtlinie: {policy_context}.",
+      "en": "Policy context: {policy_context}."
+    },
+    "ret_5": {
+      "de": "Ziel: {desired_outcome}.",
+      "en": "Goal: {desired_outcome}."
+    },
+    "ret_6": {
+      "de": "Antworte regelkonform und kundenfreundlich mit klaren Schritten und Fristen.",
+      "en": "Respond policy-compliant and customer-friendly with clear steps and timelines."
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "category_name": {
+    "de": "Allgemeine/Sonstige Anfragen",
+    "en": "General/Other Inquiries"
+  },
+  "fields": [
+    {
+      "key": "request_summary",
+      "type": "entry",
+      "label": {
+        "de": "Kurzbeschreibung",
+        "en": "Summary"
+      },
+      "default": {
+        "de": "Anliegen in einem Satz",
+        "en": "Request in one sentence"
+      }
+    },
+    {
+      "key": "context",
+      "type": "text",
+      "label": {
+        "de": "Kontext",
+        "en": "Context"
+      },
+      "default": {
+        "de": "Relevante Fakten, Beteiligte, bisheriger Verlauf",
+        "en": "Relevant facts, participants, previous flow"
+      }
+    },
+    {
+      "key": "priority",
+      "type": "combobox",
+      "label": {
+        "de": "Prioritaet",
+        "en": "Priority"
+      },
+      "options": {
+        "de": ["Niedrig", "Mittel", "Hoch"],
+        "en": ["Low", "Medium", "High"]
+      },
+      "default": {
+        "de": "Mittel",
+        "en": "Medium"
+      }
+    },
+    {
+      "key": "owner_hint",
+      "type": "entry",
+      "label": {
+        "de": "Zustaendigkeit",
+        "en": "Ownership Hint"
+      },
+      "default": {
+        "de": "Support, Vertrieb, Technik, Finance oder HR",
+        "en": "Support, Sales, Engineering, Finance, or HR"
+      }
+    },
+    {
+      "key": "desired_outcome",
+      "type": "entry",
+      "label": {
+        "de": "Gewuenschtes Ergebnis",
+        "en": "Desired Outcome"
+      },
+      "default": {
+        "de": "Klarer Antwortentwurf mit naechster Aktion",
+        "en": "Clear response draft with next action"
+      }
+    }
+  ],
+  "prompts": {
+    "gen_1": {
+      "de": "Bearbeite eine allgemeine Anfrage.",
+      "en": "Handle a general inquiry."
+    },
+    "gen_2": {
+      "de": "Kurzbeschreibung: {request_summary}.",
+      "en": "Summary: {request_summary}."
+    },
+    "gen_3": {
+      "de": "Kontext: {context}.",
+      "en": "Context: {context}."
+    },
+    "gen_4": {
+      "de": "Prioritaet: {priority}. Zustaendigkeit: {owner_hint}.",
+      "en": "Priority: {priority}. Ownership: {owner_hint}."
+    },
+    "gen_5": {
+      "de": "Ziel: {desired_outcome}.",
+      "en": "Goal: {desired_outcome}."
+    },
+    "gen_6": {
+      "de": "Erstelle eine praezise Antwort mit Risikohinweis und klaren naechsten Schritten.",
+      "en": "Create a precise response with risk note and clear next steps."
+    }
+  }
+}

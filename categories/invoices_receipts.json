@@ -1,0 +1,94 @@
+{
+  "category_name": {
+    "de": "Rechnungen und Belege",
+    "en": "Invoices and Receipts"
+  },
+  "fields": [
+    {
+      "key": "document_type",
+      "type": "combobox",
+      "label": {
+        "de": "Dokumenttyp",
+        "en": "Document Type"
+      },
+      "options": {
+        "de": ["Rechnung", "Gutschrift", "Kassenbeleg", "Steuerbeleg", "Zahlungsbeleg"],
+        "en": ["Invoice", "Credit note", "Receipt", "Tax document", "Payment proof"]
+      },
+      "default": {
+        "de": "Rechnung",
+        "en": "Invoice"
+      }
+    },
+    {
+      "key": "reference",
+      "type": "entry",
+      "label": {
+        "de": "Referenz",
+        "en": "Reference"
+      },
+      "default": {
+        "de": "Rechnungsnummer oder Zeitraum",
+        "en": "Invoice number or period"
+      }
+    },
+    {
+      "key": "customer_context",
+      "type": "text",
+      "label": {
+        "de": "Kontext",
+        "en": "Context"
+      },
+      "default": {
+        "de": "Unternehmen, Anschrift, Steuerdaten",
+        "en": "Company, address, tax data"
+      }
+    },
+    {
+      "key": "issue",
+      "type": "entry",
+      "label": {
+        "de": "Anliegen",
+        "en": "Issue"
+      },
+      "default": {
+        "de": "Fehlender Beleg, Korrektur, Duplikat",
+        "en": "Missing document, correction, duplicate"
+      }
+    },
+    {
+      "key": "desired_outcome",
+      "type": "entry",
+      "label": {
+        "de": "Gewuenschtes Ergebnis",
+        "en": "Desired Outcome"
+      },
+      "default": {
+        "de": "Korrekte und nachweisbare Dokumentbereitstellung",
+        "en": "Correct and traceable document delivery"
+      }
+    }
+  ],
+  "prompts": {
+    "inv_1": {
+      "de": "Bearbeite eine Anfrage zu Rechnungen/Belegen.",
+      "en": "Handle an invoice/receipt request."
+    },
+    "inv_2": {
+      "de": "Dokumenttyp: {document_type}. Referenz: {reference}.",
+      "en": "Document type: {document_type}. Reference: {reference}."
+    },
+    "inv_3": {
+      "de": "Kontext: {customer_context}. Anliegen: {issue}.",
+      "en": "Context: {customer_context}. Issue: {issue}."
+    },
+    "inv_4": {
+      "de": "Ziel: {desired_outcome}.",
+      "en": "Goal: {desired_outcome}."
+    },
+    "inv_5": {
+      "de": "Formuliere steuerlich sauber und prozesskonform mit klarer Bearbeitungszeit.",
+      "en": "Write tax-safe and process-compliant with clear processing time."
+    }
+  }
+}

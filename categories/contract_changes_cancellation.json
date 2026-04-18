@@ -1,0 +1,98 @@
+{
+  "category_name": {
+    "de": "Vertragsaenderung und Kuendigung",
+    "en": "Contract Changes and Cancellation"
+  },
+  "fields": [
+    {
+      "key": "request_type",
+      "type": "combobox",
+      "label": {
+        "de": "Anfragetyp",
+        "en": "Request Type"
+      },
+      "options": {
+        "de": ["Tarifwechsel", "Leistungsanpassung", "Laufzeitfrage", "Ordentliche Kuendigung", "Sonderkuendigung"],
+        "en": ["Plan change", "Service adjustment", "Term question", "Regular cancellation", "Special cancellation"]
+      },
+      "default": {
+        "de": "Tarifwechsel",
+        "en": "Plan change"
+      }
+    },
+    {
+      "key": "contract_reference",
+      "type": "entry",
+      "label": {
+        "de": "Vertragsreferenz",
+        "en": "Contract Reference"
+      },
+      "default": {
+        "de": "Vertragsnummer oder Kunden-ID",
+        "en": "Contract number or customer ID"
+      }
+    },
+    {
+      "key": "current_situation",
+      "type": "text",
+      "label": {
+        "de": "Ausgangssituation",
+        "en": "Current Situation"
+      },
+      "default": {
+        "de": "Aktueller Tarif, Laufzeit, relevante Klauseln",
+        "en": "Current plan, term, relevant clauses"
+      }
+    },
+    {
+      "key": "policy_context",
+      "type": "entry",
+      "label": {
+        "de": "Regelwerk",
+        "en": "Policy Context"
+      },
+      "default": {
+        "de": "Fristen, Formvorschriften, Moegliche Optionen",
+        "en": "Deadlines, formal requirements, possible options"
+      }
+    },
+    {
+      "key": "desired_outcome",
+      "type": "entry",
+      "label": {
+        "de": "Gewuenschtes Ergebnis",
+        "en": "Desired Outcome"
+      },
+      "default": {
+        "de": "Rechtssichere Antwort mit klaren Handlungsoptionen",
+        "en": "Legally robust answer with clear action options"
+      }
+    }
+  ],
+  "prompts": {
+    "con_1": {
+      "de": "Bearbeite eine Anfrage zu Vertragsaenderung/Kuendigung ({request_type}).",
+      "en": "Handle a contract change/cancellation request ({request_type})."
+    },
+    "con_2": {
+      "de": "Vertragsreferenz: {contract_reference}.",
+      "en": "Contract reference: {contract_reference}."
+    },
+    "con_3": {
+      "de": "Ausgangssituation: {current_situation}.",
+      "en": "Current situation: {current_situation}."
+    },
+    "con_4": {
+      "de": "Regelwerk: {policy_context}.",
+      "en": "Policy context: {policy_context}."
+    },
+    "con_5": {
+      "de": "Ziel: {desired_outcome}.",
+      "en": "Goal: {desired_outcome}."
+    },
+    "con_6": {
+      "de": "Liefere eine juristisch vorsichtige und kundenorientierte Antwort inkl. naechster Frist.",
+      "en": "Provide a legally cautious and customer-oriented response including next deadline."
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "category_name": {
+    "de": "Veranstaltungen und Webinare",
+    "en": "Events and Webinars"
+  },
+  "fields": [
+    {
+      "key": "event_type",
+      "type": "combobox",
+      "label": {
+        "de": "Veranstaltungstyp",
+        "en": "Event Type"
+      },
+      "options": {
+        "de": ["Webinar", "Workshop", "Konferenz", "Live-Demo", "Meetup"],
+        "en": ["Webinar", "Workshop", "Conference", "Live demo", "Meetup"]
+      },
+      "default": {
+        "de": "Webinar",
+        "en": "Webinar"
+      }
+    },
+    {
+      "key": "topic",
+      "type": "entry",
+      "label": {
+        "de": "Thema",
+        "en": "Topic"
+      },
+      "default": {
+        "de": "Kerninhalt und Nutzenversprechen",
+        "en": "Core content and value proposition"
+      }
+    },
+    {
+      "key": "audience",
+      "type": "entry",
+      "label": {
+        "de": "Zielgruppe",
+        "en": "Audience"
+      },
+      "default": {
+        "de": "Rolle, Branche, Erfahrungsniveau",
+        "en": "Role, industry, experience level"
+      }
+    },
+    {
+      "key": "event_context",
+      "type": "text",
+      "label": {
+        "de": "Rahmen",
+        "en": "Context"
+      },
+      "default": {
+        "de": "Datum, Dauer, Kanal, Speaker, Q&A",
+        "en": "Date, duration, channel, speaker, Q&A"
+      }
+    },
+    {
+      "key": "desired_outcome",
+      "type": "entry",
+      "label": {
+        "de": "Gewuenschtes Ergebnis",
+        "en": "Desired Outcome"
+      },
+      "default": {
+        "de": "Anmeldeimpuls und klare Event-Kommunikation",
+        "en": "Registration intent and clear event communication"
+      }
+    }
+  ],
+  "prompts": {
+    "evt_1": {
+      "de": "Erstelle Kommunikation fuer {event_type}.",
+      "en": "Create communication for {event_type}."
+    },
+    "evt_2": {
+      "de": "Thema: {topic}. Zielgruppe: {audience}.",
+      "en": "Topic: {topic}. Audience: {audience}."
+    },
+    "evt_3": {
+      "de": "Rahmen: {event_context}.",
+      "en": "Context: {event_context}."
+    },
+    "evt_4": {
+      "de": "Ziel: {desired_outcome}.",
+      "en": "Goal: {desired_outcome}."
+    },
+    "evt_5": {
+      "de": "Liefere eine strukturierte Ankuendigung mit Agenda, Nutzen und CTA.",
+      "en": "Provide a structured announcement with agenda, value, and CTA."
+    }
+  }
+}

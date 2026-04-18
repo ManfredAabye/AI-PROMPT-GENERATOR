@@ -1,0 +1,98 @@
+{
+  "category_name": {
+    "de": "Garantie und Reparaturen",
+    "en": "Warranty and Repairs"
+  },
+  "fields": [
+    {
+      "key": "product_reference",
+      "type": "entry",
+      "label": {
+        "de": "Produktreferenz",
+        "en": "Product Reference"
+      },
+      "default": {
+        "de": "Produktname, Seriennummer, Kaufdatum",
+        "en": "Product name, serial number, purchase date"
+      }
+    },
+    {
+      "key": "case_type",
+      "type": "combobox",
+      "label": {
+        "de": "Falltyp",
+        "en": "Case Type"
+      },
+      "options": {
+        "de": ["Garantiepruefung", "Reparaturauftrag", "Austausch", "Kostenvoranschlag"],
+        "en": ["Warranty check", "Repair order", "Replacement", "Cost estimate"]
+      },
+      "default": {
+        "de": "Garantiepruefung",
+        "en": "Warranty check"
+      }
+    },
+    {
+      "key": "defect_description",
+      "type": "text",
+      "label": {
+        "de": "Fehlerbeschreibung",
+        "en": "Defect Description"
+      },
+      "default": {
+        "de": "Symptome, seit wann, bereits getestete Schritte",
+        "en": "Symptoms, since when, already tested steps"
+      }
+    },
+    {
+      "key": "policy_context",
+      "type": "entry",
+      "label": {
+        "de": "Garantiebedingungen",
+        "en": "Warranty Terms"
+      },
+      "default": {
+        "de": "Laufzeit, Ausschluesse, Nachweispflicht",
+        "en": "Term, exclusions, proof requirements"
+      }
+    },
+    {
+      "key": "desired_outcome",
+      "type": "entry",
+      "label": {
+        "de": "Gewuenschtes Ergebnis",
+        "en": "Desired Outcome"
+      },
+      "default": {
+        "de": "Verbindlicher Prozess inkl. Zeitraum und Kosteninfo",
+        "en": "Clear process incl. timeline and cost transparency"
+      }
+    }
+  ],
+  "prompts": {
+    "war_1": {
+      "de": "Bearbeite einen Fall zu Garantie/Reparatur.",
+      "en": "Handle a warranty/repair case."
+    },
+    "war_2": {
+      "de": "Produktreferenz: {product_reference}. Falltyp: {case_type}.",
+      "en": "Product reference: {product_reference}. Case type: {case_type}."
+    },
+    "war_3": {
+      "de": "Fehlerbild: {defect_description}.",
+      "en": "Defect: {defect_description}."
+    },
+    "war_4": {
+      "de": "Bedingungen: {policy_context}.",
+      "en": "Terms: {policy_context}."
+    },
+    "war_5": {
+      "de": "Ziel: {desired_outcome}.",
+      "en": "Goal: {desired_outcome}."
+    },
+    "war_6": {
+      "de": "Antworte rechtssicher, serviceorientiert und mit klarer Verantwortlichkeit.",
+      "en": "Respond legally safe, service-oriented, and with clear ownership."
+    }
+  }
+}

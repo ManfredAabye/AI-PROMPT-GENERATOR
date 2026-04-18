@@ -1,0 +1,94 @@
+{
+  "category_name": {
+    "de": "Presse und Medienanfragen",
+    "en": "Press and Media Inquiries"
+  },
+  "fields": [
+    {
+      "key": "media_type",
+      "type": "combobox",
+      "label": {
+        "de": "Medium",
+        "en": "Media Type"
+      },
+      "options": {
+        "de": ["Print", "Online", "TV", "Podcast", "Fachpresse"],
+        "en": ["Print", "Online", "TV", "Podcast", "Trade press"]
+      },
+      "default": {
+        "de": "Online",
+        "en": "Online"
+      }
+    },
+    {
+      "key": "topic",
+      "type": "entry",
+      "label": {
+        "de": "Thema",
+        "en": "Topic"
+      },
+      "default": {
+        "de": "Kernaussage oder Anlass",
+        "en": "Core message or occasion"
+      }
+    },
+    {
+      "key": "deadline",
+      "type": "entry",
+      "label": {
+        "de": "Deadline",
+        "en": "Deadline"
+      },
+      "default": {
+        "de": "Datum/Uhrzeit und Zeitzone",
+        "en": "Date/time and timezone"
+      }
+    },
+    {
+      "key": "facts",
+      "type": "text",
+      "label": {
+        "de": "Faktenbasis",
+        "en": "Fact Base"
+      },
+      "default": {
+        "de": "Verifizierbare Daten, Quellen, Freigabestatus",
+        "en": "Verifiable data, sources, approval status"
+      }
+    },
+    {
+      "key": "desired_outcome",
+      "type": "entry",
+      "label": {
+        "de": "Gewuenschtes Ergebnis",
+        "en": "Desired Outcome"
+      },
+      "default": {
+        "de": "Verbindliches, zitierfaehiges Statement",
+        "en": "Reliable, quotable statement"
+      }
+    }
+  ],
+  "prompts": {
+    "pr_1": {
+      "de": "Erstelle eine Antwort auf eine Presse-/Medienanfrage.",
+      "en": "Create a response to a press/media inquiry."
+    },
+    "pr_2": {
+      "de": "Medium: {media_type}. Thema: {topic}.",
+      "en": "Media: {media_type}. Topic: {topic}."
+    },
+    "pr_3": {
+      "de": "Deadline: {deadline}. Fakten: {facts}.",
+      "en": "Deadline: {deadline}. Facts: {facts}."
+    },
+    "pr_4": {
+      "de": "Ziel: {desired_outcome}.",
+      "en": "Goal: {desired_outcome}."
+    },
+    "pr_5": {
+      "de": "Schreibe praezise, rechtlich unkritisch und zitierbar.",
+      "en": "Write precise, legally safe, and quotable."
+    }
+  }
+}

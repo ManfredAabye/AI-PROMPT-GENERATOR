@@ -1,0 +1,98 @@
+{
+  "category_name": {
+    "de": "Datenschutz und Sicherheit",
+    "en": "Privacy and Security"
+  },
+  "fields": [
+    {
+      "key": "request_type",
+      "type": "combobox",
+      "label": {
+        "de": "Anfragetyp",
+        "en": "Request Type"
+      },
+      "options": {
+        "de": ["Datenauskunft", "Datenloeschung", "Sicherheitsvorfall", "Berechtigung", "Einwilligung"],
+        "en": ["Data access", "Data deletion", "Security incident", "Authorization", "Consent"]
+      },
+      "default": {
+        "de": "Datenauskunft",
+        "en": "Data access"
+      }
+    },
+    {
+      "key": "data_scope",
+      "type": "entry",
+      "label": {
+        "de": "Datenumfang",
+        "en": "Data Scope"
+      },
+      "default": {
+        "de": "Welche Daten/Prozesse sind betroffen?",
+        "en": "Which data/processes are affected?"
+      }
+    },
+    {
+      "key": "incident_details",
+      "type": "text",
+      "label": {
+        "de": "Sachverhalt",
+        "en": "Case Details"
+      },
+      "default": {
+        "de": "Zeitpunkt, Quelle, Auswirkungen, Nachweise",
+        "en": "Time, source, impact, evidence"
+      }
+    },
+    {
+      "key": "regulatory_context",
+      "type": "entry",
+      "label": {
+        "de": "Regulatorischer Kontext",
+        "en": "Regulatory Context"
+      },
+      "default": {
+        "de": "DSGVO, interne Richtlinien, Fristen",
+        "en": "GDPR, internal policies, deadlines"
+      }
+    },
+    {
+      "key": "desired_outcome",
+      "type": "entry",
+      "label": {
+        "de": "Gewuenschtes Ergebnis",
+        "en": "Desired Outcome"
+      },
+      "default": {
+        "de": "Rechtssichere und nachvollziehbare Antwort",
+        "en": "Legally robust and traceable response"
+      }
+    }
+  ],
+  "prompts": {
+    "ps_1": {
+      "de": "Bearbeite eine Anfrage zu Datenschutz/Sicherheit ({request_type}).",
+      "en": "Handle a privacy/security request ({request_type})."
+    },
+    "ps_2": {
+      "de": "Datenumfang: {data_scope}.",
+      "en": "Data scope: {data_scope}."
+    },
+    "ps_3": {
+      "de": "Sachverhalt: {incident_details}.",
+      "en": "Case details: {incident_details}."
+    },
+    "ps_4": {
+      "de": "Kontext: {regulatory_context}.",
+      "en": "Context: {regulatory_context}."
+    },
+    "ps_5": {
+      "de": "Ziel: {desired_outcome}.",
+      "en": "Goal: {desired_outcome}."
+    },
+    "ps_6": {
+      "de": "Liefere eine datensparsame, compliance-konforme Antwort mit konkretem Massnahmenplan.",
+      "en": "Provide a data-minimizing, compliance-aligned response with concrete action plan."
+    }
+  }
+}

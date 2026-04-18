@@ -1,0 +1,94 @@
+{
+  "category_name": {
+    "de": "Zahlungsanfragen",
+    "en": "Payment Inquiries"
+  },
+  "fields": [
+    {
+      "key": "payment_topic",
+      "type": "combobox",
+      "label": {
+        "de": "Zahlungsthema",
+        "en": "Payment Topic"
+      },
+      "options": {
+        "de": ["Fehlgeschlagen", "Doppelt belastet", "Rueckerstattung", "Mahnstatus", "Zahlart"],
+        "en": ["Failed", "Double charge", "Refund", "Dunning status", "Payment method"]
+      },
+      "default": {
+        "de": "Fehlgeschlagen",
+        "en": "Failed"
+      }
+    },
+    {
+      "key": "reference",
+      "type": "entry",
+      "label": {
+        "de": "Referenz",
+        "en": "Reference"
+      },
+      "default": {
+        "de": "Rechnungs- oder Transaktionsnummer",
+        "en": "Invoice or transaction number"
+      }
+    },
+    {
+      "key": "amount_currency",
+      "type": "entry",
+      "label": {
+        "de": "Betrag/Waehrung",
+        "en": "Amount/Currency"
+      },
+      "default": {
+        "de": "z. B. 129.99 EUR",
+        "en": "e.g. 129.99 EUR"
+      }
+    },
+    {
+      "key": "customer_message",
+      "type": "text",
+      "label": {
+        "de": "Kundenanliegen",
+        "en": "Customer Message"
+      },
+      "default": {
+        "de": "Sachverhalt und Beobachtung",
+        "en": "Case details and observations"
+      }
+    },
+    {
+      "key": "desired_outcome",
+      "type": "entry",
+      "label": {
+        "de": "Gewuenschtes Ergebnis",
+        "en": "Desired Outcome"
+      },
+      "default": {
+        "de": "Klaerung mit transparenter Zahlungsstatus-Info",
+        "en": "Clarification with transparent payment status"
+      }
+    }
+  ],
+  "prompts": {
+    "pay_1": {
+      "de": "Bearbeite eine Zahlungsanfrage zum Thema {payment_topic}.",
+      "en": "Handle a payment inquiry about {payment_topic}."
+    },
+    "pay_2": {
+      "de": "Referenz: {reference}, Betrag: {amount_currency}.",
+      "en": "Reference: {reference}, amount: {amount_currency}."
+    },
+    "pay_3": {
+      "de": "Anliegen: {customer_message}.",
+      "en": "Message: {customer_message}."
+    },
+    "pay_4": {
+      "de": "Ziel: {desired_outcome}.",
+      "en": "Goal: {desired_outcome}."
+    },
+    "pay_5": {
+      "de": "Erstelle eine sichere, datensparsame Antwort mit klarer Eskalationslogik.",
+      "en": "Create a secure, privacy-minimal response with clear escalation logic."
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "category_name": {
+    "de": "Partnerschaften und Kooperationen",
+    "en": "Partnerships and Cooperations"
+  },
+  "fields": [
+    {
+      "key": "partner_type",
+      "type": "combobox",
+      "label": {
+        "de": "Partnertyp",
+        "en": "Partner Type"
+      },
+      "options": {
+        "de": ["Technologie", "Vertrieb", "Content", "Forschung", "Affiliate"],
+        "en": ["Technology", "Sales", "Content", "Research", "Affiliate"]
+      },
+      "default": {
+        "de": "Technologie",
+        "en": "Technology"
+      }
+    },
+    {
+      "key": "partner_profile",
+      "type": "text",
+      "label": {
+        "de": "Partnerprofil",
+        "en": "Partner Profile"
+      },
+      "default": {
+        "de": "Unternehmen, Reichweite, Kompetenzen",
+        "en": "Company, reach, competencies"
+      }
+    },
+    {
+      "key": "cooperation_goal",
+      "type": "entry",
+      "label": {
+        "de": "Kooperationsziel",
+        "en": "Cooperation Goal"
+      },
+      "default": {
+        "de": "Wachstum, Produktintegration oder Marktzugang",
+        "en": "Growth, integration, or market access"
+      }
+    },
+    {
+      "key": "commercial_frame",
+      "type": "entry",
+      "label": {
+        "de": "Kommerzieller Rahmen",
+        "en": "Commercial Frame"
+      },
+      "default": {
+        "de": "Revenue-Share, Budget, Laufzeit",
+        "en": "Revenue share, budget, duration"
+      }
+    },
+    {
+      "key": "desired_outcome",
+      "type": "entry",
+      "label": {
+        "de": "Gewuenschtes Ergebnis",
+        "en": "Desired Outcome"
+      },
+      "default": {
+        "de": "Konkreter Vorschlag mit naechstem Verhandlungsschritt",
+        "en": "Concrete proposal with next negotiation step"
+      }
+    }
+  ],
+  "prompts": {
+    "par_1": {
+      "de": "Erstelle eine Antwort fuer eine Kooperationsanfrage.",
+      "en": "Create a response for a partnership inquiry."
+    },
+    "par_2": {
+      "de": "Partnertyp: {partner_type}. Profil: {partner_profile}.",
+      "en": "Partner type: {partner_type}. Profile: {partner_profile}."
+    },
+    "par_3": {
+      "de": "Ziel: {cooperation_goal}. Rahmen: {commercial_frame}.",
+      "en": "Goal: {cooperation_goal}. Frame: {commercial_frame}."
+    },
+    "par_4": {
+      "de": "Erwartetes Ergebnis: {desired_outcome}.",
+      "en": "Expected result: {desired_outcome}."
+    },
+    "par_5": {
+      "de": "Formuliere wirtschaftlich klar, verbindlich und beidseitig vorteilhaft.",
+      "en": "Write commercially clear, committed, and mutually beneficial."
+    }
+  }
+}
