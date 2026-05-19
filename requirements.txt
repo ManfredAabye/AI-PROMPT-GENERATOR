@@ -1,0 +1,6 @@
+# Runtime dependency for UniversalPromptManager
+# Tkinter is part of standard Python on Windows/macOS installers.
+ttkbootstrap>=1.10.1
+
+# Build dependency (optional, only needed for EXE packaging)
+pyinstaller>=6.0

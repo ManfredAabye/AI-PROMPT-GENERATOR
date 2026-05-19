@@ -339,6 +339,12 @@ class UniversalPromptManager:
 
     def get_category_display_name(self, internal_key):
         """Liefert den sichtbaren Kategorienamen aus category JSON mit Fallback auf upmlanguages."""
+        translation_key = self.category_key_map.get(internal_key)
+        if translation_key:
+            translated_name = self.tr(translation_key)
+            if isinstance(translated_name, str) and translated_name != translation_key and translated_name.strip():
+                return translated_name
+
         category_id = self.categories.get(internal_key)
         if category_id:
             definition = self.load_category_definition(category_id)
@@ -347,7 +353,6 @@ class UniversalPromptManager:
                 if isinstance(category_name, str) and category_name.strip():
                     return category_name
 
-        translation_key = self.category_key_map.get(internal_key)
         if translation_key:
             return self.tr(translation_key)
         return internal_key
@@ -582,9 +587,9 @@ class UniversalPromptManager:
                 var = tk.StringVar(value=field_config.get("default", ""))
                 widget = ttk.Combobox(self.input_frame, textvariable=var, 
                                      values=field_config.get("options", []), width=37)
-                if field_name == "task_type":
+                if widget is not None and field_name == "task_type":
                     widget.bind('<<ComboboxSelected>>', self.on_task_type_change)
-                if field_name == "preset_profile":
+                if widget is not None and field_name == "preset_profile":
                     widget.bind('<<ComboboxSelected>>', self.on_3d_preset_profile_change)
                 
             elif field_type == "text":
