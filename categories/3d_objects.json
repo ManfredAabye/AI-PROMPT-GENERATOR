@@ -1,0 +1,368 @@
+{
+  "category_name": {
+    "de": "3D-Objekte",
+    "en": "3D Objects",
+    "fr": "Objets 3D",
+    "es": "Objetos 3D"
+  },
+  "fields": [
+    {
+      "key": "object_name",
+      "type": "entry",
+      "label": {
+        "de": "Objektname",
+        "en": "Object Name",
+        "fr": "Nom de l'objet",
+        "es": "Nombre del objeto"
+      },
+      "default": {
+        "de": "RedCube",
+        "en": "RedCube",
+        "fr": "RedCube",
+        "es": "RedCube"
+      }
+    },
+    {
+      "key": "shape",
+      "type": "combobox",
+      "label": {
+        "de": "Form",
+        "en": "Shape",
+        "fr": "Forme",
+        "es": "Forma"
+      },
+      "options": {
+        "de": ["Wuerfel", "Kugel", "Zylinder", "Kegel", "Low-Poly benutzerdefiniert"],
+        "en": ["Cube", "Sphere", "Cylinder", "Cone", "Low-poly custom"],
+        "fr": ["Cube", "Sphere", "Cylindre", "Cone", "Low-poly personnalise"],
+        "es": ["Cubo", "Esfera", "Cilindro", "Cono", "Low-poly personalizado"]
+      },
+      "default": {
+        "de": "Wuerfel",
+        "en": "Cube",
+        "fr": "Cube",
+        "es": "Cubo"
+      }
+    },
+    {
+      "key": "dimensions",
+      "type": "entry",
+      "label": {
+        "de": "Abmessungen",
+        "en": "Dimensions",
+        "fr": "Dimensions",
+        "es": "Dimensiones"
+      },
+      "default": {
+        "de": "Kantenlaenge 2, zentriert bei 0,0,0",
+        "en": "Edge length 2, centered at 0,0,0",
+        "fr": "Arete 2, centre a 0,0,0",
+        "es": "Arista 2, centrado en 0,0,0"
+      }
+    },
+    {
+      "key": "mesh_quality",
+      "type": "combobox",
+      "label": {
+        "de": "Mesh-Qualitaet",
+        "en": "Mesh Quality",
+        "fr": "Qualite du maillage",
+        "es": "Calidad de malla"
+      },
+      "options": {
+        "de": ["Low-Poly", "Mittel", "Hoch", "32x32 Segmente"],
+        "en": ["Low-poly", "Medium", "High", "32x32 segments"],
+        "fr": ["Low-poly", "Moyen", "Eleve", "32x32 segments"],
+        "es": ["Low-poly", "Media", "Alta", "32x32 segmentos"]
+      },
+      "default": {
+        "de": "Low-Poly",
+        "en": "Low-poly",
+        "fr": "Low-poly",
+        "es": "Low-poly"
+      }
+    },
+    {
+      "key": "preset_profile",
+      "type": "combobox",
+      "label": {
+        "de": "Preset-Profil",
+        "en": "Preset Profile",
+        "fr": "Profil predefini",
+        "es": "Perfil predefinido"
+      },
+      "options": {
+        "de": ["Standard", "Game-Asset Low-Poly", "CAD-Clean", "Multi-Material Demo"],
+        "en": ["Standard", "Game-asset low-poly", "CAD-clean", "Multi-material demo"],
+        "fr": ["Standard", "Asset jeu low-poly", "CAD propre", "Demo multi-materiaux"],
+        "es": ["Estandar", "Asset de juego low-poly", "CAD limpio", "Demo multi-material"]
+      },
+      "default": {
+        "de": "Standard",
+        "en": "Standard",
+        "fr": "Standard",
+        "es": "Estandar"
+      }
+    },
+    {
+      "key": "material_mode",
+      "type": "combobox",
+      "label": {
+        "de": "Materialmodus",
+        "en": "Material Mode",
+        "fr": "Mode de materiau",
+        "es": "Modo de material"
+      },
+      "options": {
+        "de": ["Ein Material", "Mehrere Materialien"],
+        "en": ["Single material", "Multiple materials"],
+        "fr": ["Materiau unique", "Materiaux multiples"],
+        "es": ["Material unico", "Multiples materiales"]
+      },
+      "default": {
+        "de": "Ein Material",
+        "en": "Single material",
+        "fr": "Materiau unique",
+        "es": "Material unico"
+      }
+    },
+    {
+      "key": "color_spec",
+      "type": "entry",
+      "label": {
+        "de": "Farbe / Kd",
+        "en": "Color / Kd",
+        "fr": "Couleur / Kd",
+        "es": "Color / Kd"
+      },
+      "default": {
+        "de": "0.9 0.2 0.2",
+        "en": "0.9 0.2 0.2",
+        "fr": "0.9 0.2 0.2",
+        "es": "0.9 0.2 0.2"
+      }
+    },
+    {
+      "key": "surface_spec",
+      "type": "entry",
+      "label": {
+        "de": "Ka/Ks/Ns",
+        "en": "Ka/Ks/Ns",
+        "fr": "Ka/Ks/Ns",
+        "es": "Ka/Ks/Ns"
+      },
+      "default": {
+        "de": "Ka 0.2 0.05 0.05, Ks 0.5 0.5 0.5, Ns 50",
+        "en": "Ka 0.2 0.05 0.05, Ks 0.5 0.5 0.5, Ns 50",
+        "fr": "Ka 0.2 0.05 0.05, Ks 0.5 0.5 0.5, Ns 50",
+        "es": "Ka 0.2 0.05 0.05, Ks 0.5 0.5 0.5, Ns 50"
+      }
+    },
+    {
+      "key": "include_opacity",
+      "type": "combobox",
+      "label": {
+        "de": "Deckkraft d",
+        "en": "Opacity d",
+        "fr": "Opacite d",
+        "es": "Opacidad d"
+      },
+      "options": {
+        "de": ["Ja", "Nein"],
+        "en": ["Yes", "No"],
+        "fr": ["Oui", "Non"],
+        "es": ["Si", "No"]
+      },
+      "default": {
+        "de": "Ja",
+        "en": "Yes",
+        "fr": "Oui",
+        "es": "Si"
+      }
+    },
+    {
+      "key": "face_mode",
+      "type": "combobox",
+      "label": {
+        "de": "Flaechenmodus",
+        "en": "Face Mode",
+        "fr": "Mode des faces",
+        "es": "Modo de caras"
+      },
+      "options": {
+        "de": ["Dreiecke", "Quads + Triangulierung"],
+        "en": ["Triangles", "Quads + triangulation"],
+        "fr": ["Triangles", "Quads + triangulation"],
+        "es": ["Triangulos", "Quads + triangulacion"]
+      },
+      "default": {
+        "de": "Dreiecke",
+        "en": "Triangles",
+        "fr": "Triangles",
+        "es": "Triangulos"
+      }
+    },
+    {
+      "key": "include_uv",
+      "type": "combobox",
+      "label": {
+        "de": "UV-Koordinaten (vt)",
+        "en": "UV Coordinates (vt)",
+        "fr": "Coordonnees UV (vt)",
+        "es": "Coordenadas UV (vt)"
+      },
+      "options": {
+        "de": ["Ja", "Nein"],
+        "en": ["Yes", "No"],
+        "fr": ["Oui", "Non"],
+        "es": ["Si", "No"]
+      },
+      "default": {
+        "de": "Nein",
+        "en": "No",
+        "fr": "Non",
+        "es": "No"
+      }
+    },
+    {
+      "key": "include_normals",
+      "type": "combobox",
+      "label": {
+        "de": "Normalen (vn)",
+        "en": "Normals (vn)",
+        "fr": "Normales (vn)",
+        "es": "Normales (vn)"
+      },
+      "options": {
+        "de": ["Ja", "Nein"],
+        "en": ["Yes", "No"],
+        "fr": ["Oui", "Non"],
+        "es": ["Si", "No"]
+      },
+      "default": {
+        "de": "Nein",
+        "en": "No",
+        "fr": "Non",
+        "es": "No"
+      }
+    },
+    {
+      "key": "separator_mode",
+      "type": "combobox",
+      "label": {
+        "de": "Ausgabe-Trennung",
+        "en": "Output Separator",
+        "fr": "Separateur de sortie",
+        "es": "Separador de salida"
+      },
+      "options": {
+        "de": ["Dateien nacheinander", "---obj--- und ---mtl---"],
+        "en": ["Files sequentially", "---obj--- and ---mtl---"],
+        "fr": ["Fichiers consecutifs", "---obj--- et ---mtl---"],
+        "es": ["Archivos consecutivos", "---obj--- y ---mtl---"]
+      },
+      "default": {
+        "de": "---obj--- und ---mtl---",
+        "en": "---obj--- and ---mtl---",
+        "fr": "---obj--- et ---mtl---",
+        "es": "---obj--- y ---mtl---"
+      }
+    },
+    {
+      "key": "extra_rules",
+      "type": "text",
+      "label": {
+        "de": "Zusatzregeln",
+        "en": "Extra Rules",
+        "fr": "Regles supplementaires",
+        "es": "Reglas adicionales"
+      },
+      "default": {
+        "de": "Keine Erklaerungen, nur Dateiinhalte. Flächen-Indices 1-basiert und im gueltigen Bereich. Keine negativen oder Null-Indizes.",
+        "en": "No explanations, only file contents. Face indices must be 1-based and within valid range. No negative or zero indices.",
+        "fr": "Aucune explication, uniquement le contenu des fichiers. Indices de faces en base 1 et dans une plage valide. Aucun indice negatif ou zero.",
+        "es": "Sin explicaciones, solo contenido de archivos. Los indices de caras deben ser base 1 y estar en rango valido. Sin indices negativos o cero."
+      }
+    }
+  ],
+  "prompts": {
+    "obj_1": {
+      "de": "Erstelle eine valide OBJ-Datei mit zugehoeriger MTL-Datei fuer ein 3D-Objekt.",
+      "en": "Create a valid OBJ file with a matching MTL file for a 3D object.",
+      "fr": "Cree un fichier OBJ valide avec un fichier MTL associe pour un objet 3D.",
+      "es": "Crea un archivo OBJ valido con un archivo MTL asociado para un objeto 3D."
+    },
+    "obj_2": {
+      "de": "Objekt: {object_name}. Form: {shape}. Abmessungen: {dimensions}. Mesh: {mesh_quality}.",
+      "en": "Object: {object_name}. Shape: {shape}. Dimensions: {dimensions}. Mesh: {mesh_quality}.",
+      "fr": "Objet : {object_name}. Forme : {shape}. Dimensions : {dimensions}. Maillage : {mesh_quality}.",
+      "es": "Objeto: {object_name}. Forma: {shape}. Dimensiones: {dimensions}. Malla: {mesh_quality}."
+    },
+    "obj_3": {
+      "de": "Format: Wavefront OBJ (ASCII), Rechte-Hand-System, Y=oben, Zentrum bei 0,0,0, konsistente Einheit.",
+      "en": "Format: Wavefront OBJ (ASCII), right-handed system, Y-up, centered at 0,0,0, consistent unit.",
+      "fr": "Format : Wavefront OBJ (ASCII), systeme droitier, Y vers le haut, centre en 0,0,0, unite coherente.",
+      "es": "Formato: Wavefront OBJ (ASCII), sistema de mano derecha, Y arriba, centrado en 0,0,0, unidad consistente."
+    },
+    "obj_4": {
+      "de": "OBJ muss enthalten: mtllib [dateiname].mtl als erste Zeile nach Kommentaren, o [objektname], usemtl [materialname] vor Flaechen, v x y z, f als 1-basierte Vertex-Indizes ({face_mode}).",
+      "en": "OBJ must contain: mtllib [filename].mtl as first line after comments, o [objectname], usemtl [materialname] before faces, v x y z, f as 1-based vertex indices ({face_mode}).",
+      "fr": "OBJ doit contenir : mtllib [nomfichier].mtl en premiere ligne apres commentaires, o [nomobjet], usemtl [nommateriau] avant les faces, v x y z, f en indices de sommets base 1 ({face_mode}).",
+      "es": "OBJ debe contener: mtllib [nombrearchivo].mtl como primera linea tras comentarios, o [nombreobjeto], usemtl [nombrematerial] antes de caras, v x y z, f con indices de vertices base 1 ({face_mode})."
+    },
+    "obj_5": {
+      "de": "MTL muss enthalten: newmtl [materialname], Kd {color_spec}, Ka/Ks/Ns: {surface_spec}, d optional gemaess Deckkraft-Einstellung ({include_opacity}).",
+      "en": "MTL must contain: newmtl [materialname], Kd {color_spec}, Ka/Ks/Ns: {surface_spec}, optional d based on opacity setting ({include_opacity}).",
+      "fr": "MTL doit contenir : newmtl [nommateriau], Kd {color_spec}, Ka/Ks/Ns : {surface_spec}, d optionnel selon l'opacite ({include_opacity}).",
+      "es": "MTL debe contener: newmtl [nombrematerial], Kd {color_spec}, Ka/Ks/Ns: {surface_spec}, d opcional segun opacidad ({include_opacity})."
+    },
+    "obj_6": {
+      "de": "Wenn Form=Wuerfel: verwende exakt 8 Vertices und 12 Dreiecksflaechen (2 pro Seite).",
+      "en": "If shape=Cube: use exactly 8 vertices and 12 triangle faces (2 per side).",
+      "fr": "Si forme=Cube : utiliser exactement 8 sommets et 12 faces triangulees (2 par cote).",
+      "es": "Si forma=Cubo: usa exactamente 8 vertices y 12 caras triangulares (2 por lado)."
+    },
+    "obj_7": {
+      "de": "Ausgabeformat: Erste Datei [name].obj (vollstaendiger Inhalt), zweite Datei [name].mtl (vollstaendiger Inhalt), Trennung: {separator_mode}.",
+      "en": "Output format: First file [name].obj (full content), second file [name].mtl (full content), separator: {separator_mode}.",
+      "fr": "Format de sortie : premier fichier [name].obj (contenu complet), deuxieme fichier [name].mtl (contenu complet), separateur : {separator_mode}.",
+      "es": "Formato de salida: primer archivo [name].obj (contenido completo), segundo archivo [name].mtl (contenido completo), separador: {separator_mode}."
+    },
+    "obj_8": {
+      "de": "Materialmodus: {material_mode}. Bei mehreren Materialien usemtl vor jeder Flaechengruppe und mehrere newmtl-Bloecke nutzen.",
+      "en": "Material mode: {material_mode}. For multiple materials, place usemtl before each face group and use multiple newmtl blocks.",
+      "fr": "Mode de materiau : {material_mode}. Pour plusieurs materiaux, placer usemtl avant chaque groupe de faces et utiliser plusieurs blocs newmtl.",
+      "es": "Modo de material: {material_mode}. Para multiples materiales, coloca usemtl antes de cada grupo de caras y usa varios bloques newmtl."
+    },
+    "obj_9": {
+      "de": "Zusatzregeln: {extra_rules}",
+      "en": "Extra rules: {extra_rules}",
+      "fr": "Regles supplementaires : {extra_rules}",
+      "es": "Reglas adicionales: {extra_rules}"
+    },
+    "obj_10": {
+      "de": "Preset-Profil: {preset_profile}. Leite daraus Prioritaeten ab: Game-Asset Low-Poly => unter 100 Dreiecke; CAD-Clean => praezise Kanten, saubere Gruppen; Multi-Material Demo => klar getrennte Materialgruppen.",
+      "en": "Preset profile: {preset_profile}. Derive priorities from it: game-asset low-poly => under 100 triangles; CAD-clean => precise edges and clean groups; multi-material demo => clearly separated material groups.",
+      "fr": "Profil predefini : {preset_profile}. En deduire les priorites : asset jeu low-poly => moins de 100 triangles ; CAD propre => aretes precises et groupes propres ; demo multi-materiaux => groupes de materiaux clairement separes.",
+      "es": "Perfil predefinido: {preset_profile}. Deriva prioridades: asset de juego low-poly => menos de 100 triangulos; CAD limpio => aristas precisas y grupos limpios; demo multi-material => grupos de material claramente separados."
+    },
+    "obj_11": {
+      "de": "Optionale Geometriedaten: UV aktiv={include_uv}, Normalen aktiv={include_normals}. Wenn aktiviert, erzeuge vt bzw. vn konsistent und referenziere sie korrekt in f-Eintraegen.",
+      "en": "Optional geometry data: UV enabled={include_uv}, normals enabled={include_normals}. If enabled, generate vt and vn consistently and reference them correctly in f entries.",
+      "fr": "Donnees geometriques optionnelles : UV active={include_uv}, normales actives={include_normals}. Si activees, generer vt et vn de facon coherente et les referencer correctement dans les entrees f.",
+      "es": "Datos geometricos opcionales: UV activo={include_uv}, normales activas={include_normals}. Si estan activos, genera vt y vn de forma consistente y referencialos correctamente en las entradas f."
+    },
+    "obj_12": {
+      "de": "Strikte Validierung: Jede in f verwendete Vertex-ID muss zwischen 1 und Anzahl v liegen. Bei vt/vn entsprechend gleiche Regel. Keine leeren Gruppen, keine unreferenzierten Materialien.",
+      "en": "Strict validation: Every vertex index used in f must be between 1 and the number of v lines. Apply the same rule for vt/vn when present. No empty groups and no unreferenced materials.",
+      "fr": "Validation stricte : chaque indice de sommet utilise dans f doit etre compris entre 1 et le nombre de lignes v. Appliquer la meme regle a vt/vn si presents. Pas de groupes vides ni de materiaux non references.",
+      "es": "Validacion estricta: cada indice de vertice usado en f debe estar entre 1 y el numero de lineas v. Aplica la misma regla para vt/vn cuando existan. Sin grupos vacios ni materiales sin referencia."
+    },
+    "obj_13": {
+      "de": "Formspezifische Checks: Wuerfel=8 Vertices und 12 Dreiecksflaechen; Kugel=bei 32x32 Segmenten mindestens 900 Vertices; Zylinder/Kegel mit geschlossenen Deckflaechen sofern nicht explizit offen angefordert.",
+      "en": "Shape-specific checks: cube=8 vertices and 12 triangle faces; sphere=at least 900 vertices when 32x32 segments are requested; cylinder/cone with closed caps unless explicitly requested open.",
+      "fr": "Controles specifiques a la forme : cube=8 sommets et 12 faces triangulaires ; sphere=au moins 900 sommets si 32x32 segments sont demandes ; cylindre/cone avec bases fermees sauf demande explicite d'ouverture.",
+      "es": "Comprobaciones por forma: cubo=8 vertices y 12 caras triangulares; esfera=al menos 900 vertices cuando se solicitan 32x32 segmentos; cilindro/cono con tapas cerradas salvo solicitud explicita de abierto."
+    }
+  }
+}

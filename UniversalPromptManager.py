@@ -68,6 +68,7 @@ class UniversalPromptManager:
             "SEO / Blog / Content": "cat_seo_content",
             "Social Media": "cat_social_media",
             "Sourcecode": "cat_sourcecode",
+            "3D-Objekte": "cat_3d_objects",
             "Sourcecode Planning-Style": "cat_sourcecode_planning_style",
             "Sourcecode Planning-Style Light": "cat_sourcecode_planning_style_light",
             "UX/UI Konzept": "cat_ux_ui",
@@ -109,6 +110,7 @@ class UniversalPromptManager:
             "SEO / Blog / Content": "seo_content",
             "Social Media": "social_media",
             "Sourcecode": "sourcecode",
+            "3D-Objekte": "3d_objects",
             "Sourcecode Planning-Style": "sourcecode_planning_style",
             "Sourcecode Planning-Style Light": "sourcecode_planning_style_light",
             "UX/UI Konzept": "ux_ui",
@@ -582,6 +584,8 @@ class UniversalPromptManager:
                                      values=field_config.get("options", []), width=37)
                 if field_name == "task_type":
                     widget.bind('<<ComboboxSelected>>', self.on_task_type_change)
+                if field_name == "preset_profile":
+                    widget.bind('<<ComboboxSelected>>', self.on_3d_preset_profile_change)
                 
             elif field_type == "text":
                 var = tk.StringVar(value=field_config.get("default", ""))
@@ -628,6 +632,7 @@ class UniversalPromptManager:
             row += 1
 
         self.apply_task_type_presets(category_id)
+        self.apply_3d_object_presets(category_id)
 
     def set_field_value(self, field_name, value):
         """Setzt einen Feldwert fuer Entry/Combobox/Text basierend auf Feldtyp."""
@@ -738,6 +743,93 @@ class UniversalPromptManager:
         """Reagiert auf Task-Typ-Wechsel in Planning-Kategorien."""
         category_id = self.categories.get(self.current_category, "custom")
         self.apply_task_type_presets(category_id)
+
+    def get_3d_preset_values(self, preset_profile):
+        """Liefert vordefinierte Feldwerte fuer 3D-Objekt-Profile."""
+        profile_key = str(preset_profile).strip().lower()
+
+        aliases = {
+            "standard": "standard",
+            "estandar": "standard",
+            "game-asset low-poly": "game_asset_low_poly",
+            "game-asset low poly": "game_asset_low_poly",
+            "asset jeu low-poly": "game_asset_low_poly",
+            "asset de juego low-poly": "game_asset_low_poly",
+            "cad-clean": "cad_clean",
+            "cad clean": "cad_clean",
+            "cad propre": "cad_clean",
+            "cad limpio": "cad_clean",
+            "multi-material demo": "multi_material_demo",
+            "demo multi-materiaux": "multi_material_demo",
+            "demo multi-material": "multi_material_demo",
+        }
+
+        normalized = aliases.get(profile_key, "standard")
+
+        presets = {
+            "standard": {
+                "mesh_quality": {"de": "Low-Poly", "en": "Low-poly", "fr": "Low-poly", "es": "Low-poly"},
+                "face_mode": {"de": "Dreiecke", "en": "Triangles", "fr": "Triangles", "es": "Triangulos"},
+                "include_uv": {"de": "Nein", "en": "No", "fr": "Non", "es": "No"},
+                "include_normals": {"de": "Nein", "en": "No", "fr": "Non", "es": "No"},
+                "material_mode": {"de": "Ein Material", "en": "Single material", "fr": "Materiau unique", "es": "Material unico"}
+            },
+            "game_asset_low_poly": {
+                "mesh_quality": {"de": "Low-Poly", "en": "Low-poly", "fr": "Low-poly", "es": "Low-poly"},
+                "face_mode": {"de": "Dreiecke", "en": "Triangles", "fr": "Triangles", "es": "Triangulos"},
+                "include_uv": {"de": "Nein", "en": "No", "fr": "Non", "es": "No"},
+                "include_normals": {"de": "Nein", "en": "No", "fr": "Non", "es": "No"},
+                "material_mode": {"de": "Ein Material", "en": "Single material", "fr": "Materiau unique", "es": "Material unico"}
+            },
+            "cad_clean": {
+                "mesh_quality": {"de": "Hoch", "en": "High", "fr": "Eleve", "es": "Alta"},
+                "face_mode": {"de": "Quads + Triangulierung", "en": "Quads + triangulation", "fr": "Quads + triangulation", "es": "Quads + triangulacion"},
+                "include_uv": {"de": "Nein", "en": "No", "fr": "Non", "es": "No"},
+                "include_normals": {"de": "Ja", "en": "Yes", "fr": "Oui", "es": "Si"},
+                "material_mode": {"de": "Ein Material", "en": "Single material", "fr": "Materiau unique", "es": "Material unico"}
+            },
+            "multi_material_demo": {
+                "mesh_quality": {"de": "Mittel", "en": "Medium", "fr": "Moyen", "es": "Media"},
+                "face_mode": {"de": "Dreiecke", "en": "Triangles", "fr": "Triangles", "es": "Triangulos"},
+                "include_uv": {"de": "Ja", "en": "Yes", "fr": "Oui", "es": "Si"},
+                "include_normals": {"de": "Ja", "en": "Yes", "fr": "Oui", "es": "Si"},
+                "material_mode": {"de": "Mehrere Materialien", "en": "Multiple materials", "fr": "Materiaux multiples", "es": "Multiples materiales"}
+            },
+        }
+
+        selected = presets.get(normalized, presets["standard"])
+        resolved = {}
+        for field_name, translations in selected.items():
+            resolved[field_name] = self.resolve_localized_value(translations)
+        return resolved
+
+    def apply_3d_object_presets(self, category_id):
+        """Setzt profilabhaengige Defaults fuer die 3D-Kategorie ohne manuelle Werte zu verlieren."""
+        if category_id != "3d_objects":
+            return
+        if "preset_profile" not in self.input_fields:
+            return
+
+        preset_profile = self.get_field_value("preset_profile")
+        preset_values = self.get_3d_preset_values(preset_profile)
+        if not preset_values:
+            return
+
+        category_auto_values = self.last_auto_field_values.setdefault(self.current_category, {})
+        for field_name, new_value in preset_values.items():
+            if field_name not in self.input_fields:
+                continue
+
+            current_value = str(self.get_field_value(field_name) or "")
+            last_auto_value = str(category_auto_values.get(field_name, ""))
+            if not current_value.strip() or current_value == last_auto_value:
+                self.set_field_value(field_name, new_value)
+                category_auto_values[field_name] = new_value
+
+    def on_3d_preset_profile_change(self, event=None):
+        """Reagiert auf Profilwechsel in der 3D-Kategorie."""
+        category_id = self.categories.get(self.current_category, "custom")
+        self.apply_3d_object_presets(category_id)
 
     def resolve_localized_value(self, value):
         """Liefert einen sprachabhängigen Wert mit Fallback auf Deutsch."""

@@ -2,15 +2,15 @@
   "field_values": {
     "Architektur": {
       "style": "modern",
-      "material": "Putz",
-      "color": "weiss",
-      "lighting": "Tageslicht",
-      "details": "Vordach, Hausnummer, Briefkasten, Fensterlaeden",
-      "quality": "4K fotorealistisch",
-      "building_type": "Einfamilienhaus, Villa, Stadthaus oder Mehrfamilienhaus",
-      "environment_context": "Stadt, Vorort, Hanglage, Waldnaehe, Wasserlage oder Nachbarschaft",
-      "camera_perspective": "Dreiviertelansicht",
-      "landscaping": "Garten, Einfahrt, Wege, Bepflanzung, Zaun oder Pool"
+      "material": "Plaster",
+      "color": "white",
+      "lighting": "Daylight",
+      "details": "Canopy, house number, mailbox, shutters",
+      "quality": "4K photorealistic",
+      "building_type": "Single-family home, villa, townhouse or apartment building",
+      "environment_context": "City, suburb, hillside, forest edge, waterfront or neighborhood context",
+      "camera_perspective": "Three-quarter view",
+      "landscaping": "Garden, driveway, paths, planting, fence or pool"
     },
     "Sourcecode": {
       "language": "Python",
@@ -132,9 +132,25 @@
       "framework": "Kein spezielles Framework",
       "output_mode": "VSCode Copilot-Prompt",
       "requirements": "Klarer Scope, kurze TODO-Liste, schneller Start"
+    },
+    "3D-Objekte": {
+      "object_name": "Duck",
+      "shape": "Low-poly personnalise",
+      "dimensions": "Arete 2, centre a 0,0,0",
+      "mesh_quality": "Low-poly",
+      "preset_profile": "Asset jeu low-poly",
+      "material_mode": "Materiau unique",
+      "color_spec": "0.9 0.2 0.2",
+      "surface_spec": "Ka 0.2 0.05 0.05, Ks 0.5 0.5 0.5, Ns 50",
+      "include_opacity": "Oui",
+      "face_mode": "Triangles",
+      "include_uv": "Oui",
+      "include_normals": "Non",
+      "separator_mode": "---obj--- et ---mtl---",
+      "extra_rules": "Aucune explication, uniquement le contenu des fichiers. Indices de faces en base 1 et dans une plage valide. Aucun indice negatif ou zero."
     }
   },
-  "current_language": "de",
-  "current_category": "Sourcecode Planning-Style Light",
+  "current_language": "en",
+  "current_category": "Architektur",
   "window_geometry": "3840x2120+-12+-12"
 }
