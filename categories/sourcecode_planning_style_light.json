@@ -1,0 +1,184 @@
+{
+  "category_name": {
+    "de": "Sourcecode Planning-Style Light",
+    "en": "Source Code Planning Style Light",
+    "fr": "Style de planification du code source leger",
+    "es": "Estilo de planificacion de codigo fuente ligero"
+  },
+  "fields": [
+    {
+      "key": "language",
+      "type": "combobox",
+      "label": {
+        "de": "Programmiersprache",
+        "en": "Programming Language",
+        "fr": "Langage de programmation",
+        "es": "Lenguaje de programacion"
+      },
+      "options": {
+        "de": ["Python", "JavaScript", "TypeScript", "Java", "C#", "Go", "Rust", "PHP"],
+        "en": ["Python", "JavaScript", "TypeScript", "Java", "C#", "Go", "Rust", "PHP"],
+        "fr": ["Python", "JavaScript", "TypeScript", "Java", "C#", "Go", "Rust", "PHP"],
+        "es": ["Python", "JavaScript", "TypeScript", "Java", "C#", "Go", "Rust", "PHP"]
+      },
+      "default": {
+        "de": "Python",
+        "en": "Python",
+        "fr": "Python",
+        "es": "Python"
+      }
+    },
+    {
+      "key": "task",
+      "type": "text",
+      "label": {
+        "de": "Aufgabe",
+        "en": "Task",
+        "fr": "Tache",
+        "es": "Tarea"
+      },
+      "default": {
+        "de": "Erstelle einen kompakten Implementierungsplan fuer eine neue Funktion",
+        "en": "Create a compact implementation plan for a new feature",
+        "fr": "Creer un plan d'implementation compact pour une nouvelle fonctionnalite",
+        "es": "Crear un plan de implementacion compacto para una nueva funcionalidad"
+      }
+    },
+    {
+      "key": "task_type",
+      "type": "combobox",
+      "label": {
+        "de": "Task-Typ",
+        "en": "Task Type",
+        "fr": "Type de tache",
+        "es": "Tipo de tarea"
+      },
+      "options": {
+        "de": ["Feature-Entwicklung", "Refactoring", "Re-Engineering", "Rewrite", "Bugfix"],
+        "en": ["Feature development", "Refactoring", "Re-Engineering", "Rewrite", "Bugfix"],
+        "fr": ["Developpement de fonctionnalite", "Refactoring", "Re-Engineering", "Rewrite", "Correction de bug"],
+        "es": ["Desarrollo de funcionalidades", "Refactorizacion", "Re-Engineering", "Rewrite", "Correccion de errores"]
+      },
+      "default": {
+        "de": "Feature-Entwicklung",
+        "en": "Feature development",
+        "fr": "Developpement de fonctionnalite",
+        "es": "Desarrollo de funcionalidades"
+      }
+    },
+    {
+      "key": "complexity",
+      "type": "combobox",
+      "label": {
+        "de": "Komplexitaet",
+        "en": "Complexity",
+        "fr": "Complexite",
+        "es": "Complejidad"
+      },
+      "options": {
+        "de": ["Einfach", "Mittel"],
+        "en": ["Simple", "Medium"],
+        "fr": ["Simple", "Moyen"],
+        "es": ["Simple", "Media"]
+      },
+      "default": {
+        "de": "Mittel",
+        "en": "Medium",
+        "fr": "Moyen",
+        "es": "Media"
+      }
+    },
+    {
+      "key": "framework",
+      "type": "combobox",
+      "label": {
+        "de": "Framework",
+        "en": "Framework",
+        "fr": "Framework",
+        "es": "Framework"
+      },
+      "options": {
+        "de": ["Kein spezielles Framework", "FastAPI", "Django", "React", "Next.js", "ASP.NET Core", ".NET Framework", ".NET Framework 6.0", ".NET Framework 8.0", ".NET Framework 10.0"],
+        "en": ["No specific framework", "FastAPI", "Django", "React", "Next.js", "ASP.NET Core", ".NET Framework", ".NET Framework 6.0", ".NET Framework 8.0", ".NET Framework 10.0"],
+        "fr": ["Aucun framework specifique", "FastAPI", "Django", "React", "Next.js", "ASP.NET Core", ".NET Framework", ".NET Framework 6.0", ".NET Framework 8.0", ".NET Framework 10.0"],
+        "es": ["Sin framework especifico", "FastAPI", "Django", "React", "Next.js", "ASP.NET Core", ".NET Framework", ".NET Framework 6.0", ".NET Framework 8.0", ".NET Framework 10.0"]
+      },
+      "default": {
+        "de": "Kein spezielles Framework",
+        "en": "No specific framework",
+        "fr": "Aucun framework specifique",
+        "es": "Sin framework especifico"
+      }
+    },
+    {
+      "key": "output_mode",
+      "type": "combobox",
+      "label": {
+        "de": "Ausgabeziel",
+        "en": "Output Target",
+        "fr": "Cible de sortie",
+        "es": "Objetivo de salida"
+      },
+      "options": {
+        "de": ["VSCode Copilot-Prompt", "Generischer LLM-Prompt", "Cursor-Regeln", "Claude Code-Prompt", "Windsurf-Prompt", "OpenAI-System-Prompt"],
+        "en": ["VSCode Copilot prompt", "Generic LLM prompt", "Cursor rules", "Claude Code prompt", "Windsurf prompt", "OpenAI system prompt"],
+        "fr": ["Prompt VSCode Copilot", "Prompt LLM generique", "Regles Cursor", "Prompt Claude Code", "Prompt Windsurf", "Prompt systeme OpenAI"],
+        "es": ["Prompt de VSCode Copilot", "Prompt LLM generico", "Reglas de Cursor", "Prompt de Claude Code", "Prompt de Windsurf", "Prompt de sistema OpenAI"]
+      },
+      "default": {
+        "de": "VSCode Copilot-Prompt",
+        "en": "VSCode Copilot prompt",
+        "fr": "Prompt VSCode Copilot",
+        "es": "Prompt de VSCode Copilot"
+      }
+    },
+    {
+      "key": "requirements",
+      "type": "text",
+      "label": {
+        "de": "Anforderungen",
+        "en": "Requirements",
+        "fr": "Exigences",
+        "es": "Requisitos"
+      },
+      "default": {
+        "de": "Klarer Scope, kurze TODO-Liste, schneller Start",
+        "en": "Clear scope, short TODO list, quick start",
+        "fr": "Perimetre clair, liste TODO courte, demarrage rapide",
+        "es": "Alcance claro, lista TODO corta, inicio rapido"
+      }
+    }
+  ],
+  "prompts": {
+    "light_1": {
+      "de": "Du bist ein pragmatischer Light-Planungs-Agent fuer Sourcecode in {language}.",
+      "en": "You are a pragmatic light planning agent for {language} source code.",
+      "fr": "Tu es un agent pragmatique de planification legere pour le code source en {language}.",
+      "es": "Eres un agente pragmatico de planificacion ligera para codigo fuente en {language}."
+    },
+    "light_2": {
+      "de": "Task: {task}. Typ: {task_type}. Komplexitaet: {complexity}.",
+      "en": "Task: {task}. Type: {task_type}. Complexity: {complexity}.",
+      "fr": "Tache : {task}. Type : {task_type}. Complexite : {complexity}.",
+      "es": "Tarea: {task}. Tipo: {task_type}. Complejidad: {complexity}."
+    },
+    "light_3": {
+      "de": "Rahmen: Framework {framework}. Ausgabeziel: {output_mode}. Anforderungen: {requirements}.",
+      "en": "Context: Framework {framework}. Output target: {output_mode}. Requirements: {requirements}.",
+      "fr": "Contexte : Framework {framework}. Cible de sortie : {output_mode}. Exigences : {requirements}.",
+      "es": "Contexto: Framework {framework}. Objetivo de salida: {output_mode}. Requisitos: {requirements}."
+    },
+    "light_4": {
+      "de": "Liefere kompakt in genau 4 Bloecken: 1) Mini-Analyse (max 3 Punkte), 2) TODO-Liste (3-6 Schritte), 3) Risiken/Annahmen (max 3 Punkte), 4) Naechster Implementierungsschritt.",
+      "en": "Respond compactly in exactly 4 blocks: 1) Mini analysis (max 3 bullets), 2) TODO list (3-6 steps), 3) Risks/assumptions (max 3 bullets), 4) Next implementation step.",
+      "fr": "Repondre de facon compacte en exactement 4 blocs : 1) Mini analyse (max 3 points), 2) Liste TODO (3-6 etapes), 3) Risques/hypotheses (max 3 points), 4) Prochaine etape d'implementation.",
+      "es": "Responde de forma compacta en exactamente 4 bloques: 1) Mini analisis (max 3 puntos), 2) Lista TODO (3-6 pasos), 3) Riesgos/supuestos (max 3 puntos), 4) Siguiente paso de implementacion."
+    },
+    "light_5": {
+      "de": "Task-Typ Fokus: Bei Re-Engineering nenne zuerst Legacy-Risiken + Kompatibilitaetsplan. Bei Rewrite nenne zuerst Zielarchitektur + inkrementellen Cutover-Plan.",
+      "en": "Task-type focus: For Re-Engineering, first list legacy risks + compatibility plan. For Rewrite, first list target architecture + incremental cutover plan.",
+      "fr": "Focus type de tache : pour Re-Engineering, citer d'abord les risques legacy + le plan de compatibilite. Pour Rewrite, citer d'abord l'architecture cible + le plan de bascule incremental.",
+      "es": "Enfoque por tipo de tarea: para Re-Engineering, primero enumera riesgos legacy + plan de compatibilidad. Para Rewrite, primero enumera arquitectura objetivo + plan de transicion incremental."
+    }
+  }
+}

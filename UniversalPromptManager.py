@@ -5,6 +5,8 @@ from ttkbootstrap.constants import PRIMARY, SECONDARY, SUCCESS, DANGER, INFO, WA
 import json
 import os
 import datetime
+from strategy_selector import StrategySelector
+from reasoning_engine import ReasoningEngine
 
 
 def resource_path(relative_path):
@@ -66,6 +68,8 @@ class UniversalPromptManager:
             "SEO / Blog / Content": "cat_seo_content",
             "Social Media": "cat_social_media",
             "Sourcecode": "cat_sourcecode",
+            "Sourcecode Planning-Style": "cat_sourcecode_planning_style",
+            "Sourcecode Planning-Style Light": "cat_sourcecode_planning_style_light",
             "UX/UI Konzept": "cat_ux_ui",
         }
         self.category_display_to_internal = {}
@@ -105,6 +109,8 @@ class UniversalPromptManager:
             "SEO / Blog / Content": "seo_content",
             "Social Media": "social_media",
             "Sourcecode": "sourcecode",
+            "Sourcecode Planning-Style": "sourcecode_planning_style",
+            "Sourcecode Planning-Style Light": "sourcecode_planning_style_light",
             "UX/UI Konzept": "ux_ui",
         }
 
@@ -131,6 +137,7 @@ class UniversalPromptManager:
 
         self.categories_dir = "categories"
         self.category_cache = {}
+        self.last_auto_field_values = {}
         
         # Aktuelle Kategorie
         self.current_category = "Architektur"
@@ -141,6 +148,11 @@ class UniversalPromptManager:
         # Template-System
         self.templates_file = "prompt_templates.json"
         self.templates = self.load_templates()
+
+        # Planungsstrategie-Engine
+        strategies_base_dir = resource_path("strategies")
+        self.strategy_selector = StrategySelector()
+        self.reasoning_engine = ReasoningEngine(strategies_base_dir)
         
         # GUI aufbauen
         self.setup_gui()
@@ -417,7 +429,7 @@ class UniversalPromptManager:
         
         self.category_var = tk.StringVar()
         self.category_combo = ttk.Combobox(top_frame, textvariable=self.category_var,
-                                          values=[], width=22, bootstyle=PRIMARY)
+                                          values=[], width=33, bootstyle=PRIMARY)
         self.category_combo.pack(side='left', padx=(0, 20))
         self.category_combo.bind('<<ComboboxSelected>>', self.on_category_change)
         
@@ -528,6 +540,10 @@ class UniversalPromptManager:
         self.input_fields.clear()
         self.field_vars.clear()
         
+        # Spalten konfigurieren für dynamisches Wachstum
+        self.input_frame.columnconfigure(0, weight=0)  # Label-Spalte: minimale Breite
+        self.input_frame.columnconfigure(1, weight=1)  # Input-Spalte: wächst mit Rahmen
+        
         # Neue Felder erstellen
         category_id = self.categories.get(self.current_category, "custom")
         fields = self.get_category_fields(category_id)
@@ -564,6 +580,8 @@ class UniversalPromptManager:
                 var = tk.StringVar(value=field_config.get("default", ""))
                 widget = ttk.Combobox(self.input_frame, textvariable=var, 
                                      values=field_config.get("options", []), width=37)
+                if field_name == "task_type":
+                    widget.bind('<<ComboboxSelected>>', self.on_task_type_change)
                 
             elif field_type == "text":
                 var = tk.StringVar(value=field_config.get("default", ""))
@@ -608,6 +626,118 @@ class UniversalPromptManager:
                 self.field_vars[field_name] = var
             
             row += 1
+
+        self.apply_task_type_presets(category_id)
+
+    def set_field_value(self, field_name, value):
+        """Setzt einen Feldwert fuer Entry/Combobox/Text basierend auf Feldtyp."""
+        field_info = self.input_fields.get(field_name)
+        if not field_info:
+            return
+
+        if field_info["type"] == "text":
+            widget = field_info["widget"]
+            widget.delete('1.0', tk.END)
+            widget.insert('1.0', value)
+            var = self.field_vars.get(field_name)
+            if var:
+                var.set(value)
+            return
+
+        var = self.field_vars.get(field_name)
+        if var:
+            var.set(value)
+
+    def get_task_type_preset_values(self, category_id, task_type):
+        """Liefert vordefinierte Hinweistexte je Task-Typ fuer Planning-Kategorien."""
+        task_type_key = str(task_type).strip().lower()
+
+        full_presets = {
+            "re-engineering": {
+                "requirements": {
+                    "de": "Ist-System aufnehmen, Abhaengigkeiten kartieren, technische Schulden priorisieren, Migrationspfad mit Kompatibilitaet planen.",
+                    "en": "Capture the current system, map dependencies, prioritize technical debt, and plan a migration path with compatibility.",
+                    "fr": "Cartographier le systeme existant, les dependances et la dette technique, puis planifier une migration avec compatibilite.",
+                    "es": "Mapear el sistema actual, dependencias y deuda tecnica, y planificar una migracion con compatibilidad."
+                },
+                "constraints": {
+                    "de": "Rueckwaertskompatibilitaet, schrittweise Migration, Monitoring pro Meilenstein, minimales Ausfallrisiko.",
+                    "en": "Backward compatibility, incremental migration, milestone monitoring, and minimal downtime risk.",
+                    "fr": "Compatibilite descendante, migration incrementale, monitoring par jalon, risque de panne minimal.",
+                    "es": "Compatibilidad hacia atras, migracion incremental, monitoreo por hito y riesgo minimo de caida."
+                }
+            },
+            "rewrite": {
+                "requirements": {
+                    "de": "Zielarchitektur und Schnittstellen einfrieren, Exit-Kriterien pro Meilenstein definieren, inkrementellen Cutover-Plan erstellen.",
+                    "en": "Freeze target architecture and interfaces, define exit criteria per milestone, and build an incremental cutover plan.",
+                    "fr": "Figer l'architecture cible et les interfaces, definir des criteres de sortie par jalon et un plan de bascule incremental.",
+                    "es": "Congelar arquitectura objetivo e interfaces, definir criterios de salida por hito y crear un plan de transicion incremental."
+                },
+                "constraints": {
+                    "de": "Paralleler Betrieb Alt/Neu wo noetig, Rollback-Strategie, Test-Gates vor jedem Cutover.",
+                    "en": "Parallel legacy/new operation where needed, rollback strategy, and test gates before each cutover.",
+                    "fr": "Execution parallele ancien/nouveau si necessaire, strategie de rollback, gates de test avant chaque bascule.",
+                    "es": "Operacion paralela legado/nuevo cuando sea necesario, estrategia de rollback y puertas de prueba antes de cada transicion."
+                }
+            }
+        }
+
+        light_presets = {
+            "re-engineering": {
+                "requirements": {
+                    "de": "Legacy-Risiken, Kompatibilitaet und schrittweiser Migrationsplan priorisieren.",
+                    "en": "Prioritize legacy risks, compatibility, and an incremental migration plan.",
+                    "fr": "Prioriser les risques legacy, la compatibilite et un plan de migration incremental.",
+                    "es": "Priorizar riesgos legacy, compatibilidad y un plan de migracion incremental."
+                }
+            },
+            "rewrite": {
+                "requirements": {
+                    "de": "Zielarchitektur, Exit-Kriterien und inkrementellen Cutover-Plan zuerst festlegen.",
+                    "en": "Define target architecture, exit criteria, and incremental cutover plan first.",
+                    "fr": "Definir d'abord l'architecture cible, les criteres de sortie et le plan de bascule incremental.",
+                    "es": "Definir primero arquitectura objetivo, criterios de salida y plan de transicion incremental."
+                }
+            }
+        }
+
+        selected_presets = full_presets if category_id == "sourcecode_planning_style" else light_presets
+        preset = selected_presets.get(task_type_key, {})
+
+        resolved = {}
+        for field_name, translations in preset.items():
+            if isinstance(translations, dict):
+                resolved[field_name] = self.resolve_localized_value(translations)
+        return resolved
+
+    def apply_task_type_presets(self, category_id):
+        """Setzt task-typspezifische Defaults, ohne bereits manuell geaenderte Texte zu ueberschreiben."""
+        if category_id not in {"sourcecode_planning_style", "sourcecode_planning_style_light"}:
+            return
+        if "task_type" not in self.input_fields:
+            return
+
+        task_type = self.get_field_value("task_type")
+        preset_values = self.get_task_type_preset_values(category_id, task_type)
+        if not preset_values:
+            return
+
+        category_auto_values = self.last_auto_field_values.setdefault(self.current_category, {})
+        for field_name, new_value in preset_values.items():
+            if field_name not in self.input_fields:
+                continue
+
+            current_value = str(self.get_field_value(field_name) or "")
+            last_auto_value = str(category_auto_values.get(field_name, ""))
+            if not current_value.strip() or current_value == last_auto_value:
+                self.set_field_value(field_name, new_value)
+                category_auto_values[field_name] = new_value
+
+    def on_task_type_change(self, event=None):
+        """Reagiert auf Task-Typ-Wechsel in Planning-Kategorien."""
+        category_id = self.categories.get(self.current_category, "custom")
+        self.apply_task_type_presets(category_id)
 
     def resolve_localized_value(self, value):
         """Liefert einen sprachabhängigen Wert mit Fallback auf Deutsch."""
@@ -1276,8 +1406,25 @@ class UniversalPromptManager:
             )
             if prompt_text and prompt_text.strip():
                 lines.append(prompt_text)
-        
-        return "\n".join(lines)
+
+        base_prompt = "\n".join(lines)
+        return self.apply_reasoning_strategy_injection(base_prompt, category_id, field_values)
+
+    def apply_reasoning_strategy_injection(self, base_prompt, category_id, field_values):
+        """Injiziert Planungsstrategien für Planning-Kategorien in den generierten Prompt."""
+        if not isinstance(base_prompt, str) or not base_prompt.strip():
+            return base_prompt
+
+        planning_categories = {"sourcecode_planning_style", "sourcecode_planning_style_light"}
+        if category_id not in planning_categories:
+            return base_prompt
+
+        selection = self.strategy_selector.select_strategies(category_id, field_values)
+        return self.reasoning_engine.inject_strategies(
+            base_prompt=base_prompt,
+            strategy_selection=selection,
+            language_code=self.current_language,
+        )
     
     def generate_architecture_prompt(self):
         """Generiert Architektur-Prompt"""
@@ -1663,6 +1810,72 @@ class UniversalPromptManager:
             self.root.clipboard_append(prompt)
             self.status_var.set(self.tr("status_prompt_copied"))
             messagebox.showinfo(self.tr("msg_success_title"), self.tr("msg_copied"))
+
+    def get_output_mode_key(self):
+        """Ermittelt den normierten Exportmodus aus dem Feld output_mode."""
+        if "output_mode" not in self.input_fields:
+            return "generic"
+
+        raw_value = str(self.get_field_value("output_mode") or "").strip().lower()
+        if not raw_value:
+            return "generic"
+
+        if "cursor" in raw_value:
+            return "cursor"
+        if "windsurf" in raw_value:
+            return "windsurf"
+        if "claude" in raw_value:
+            return "claude"
+        if "openai" in raw_value:
+            return "openai"
+        if "copilot" in raw_value or "vscode" in raw_value:
+            return "vscode"
+        if "llm" in raw_value or "gener" in raw_value:
+            return "generic"
+        return "generic"
+
+    def format_prompt_for_output_mode(self, prompt_text, output_mode_key):
+        """Formatiert den Prompt je nach Exportziel in der aktuellen Sprache."""
+        if not prompt_text.strip() or output_mode_key == "generic":
+            return prompt_text
+
+        language = self.current_language if self.current_language in {"de", "en", "fr", "es"} else "de"
+
+        intro_by_mode = {
+            "de": {
+                "vscode": "VSCode Copilot Prompt\n\nSystemrolle: Du bist ein fokussierter Coding-Agent.\nArbeite schrittweise, halte eine laufende TODO-Liste und validiere Annahmen.\n\nPrompt:\n",
+                "cursor": "Cursor Rules\n\n- Arbeite in kleinen, verifizierbaren Schritten.\n- Aktualisiere TODO-Status nach jedem Meilenstein.\n- Begruende Architekturentscheidungen knapp.\n\nTask Prompt:\n",
+                "claude": "Claude Code Prompt\n\nDu agierst als erfahrener Planungs- und Implementierungsagent.\nNutze Discovery, Alignment, Design, Refinement und Verifizierung.\n\nAufgabe:\n",
+                "windsurf": "Windsurf Prompt\n\nModus: Agentic Coding mit kontinuierlicher Fortschrittsverfolgung.\nFuehre TODO-Pflege und Risiko-Checks nach jedem Schritt durch.\n\nInput:\n",
+                "openai": "OpenAI System Prompt\n\nRole: Senior planning and implementation agent.\nRules: Keep active TODO tracking, milestone reviews, and assumption validation.\n\nUser prompt:\n",
+            },
+            "en": {
+                "vscode": "VSCode Copilot Prompt\n\nSystem role: You are a focused coding agent.\nWork step-by-step, maintain a running TODO list, and validate assumptions.\n\nPrompt:\n",
+                "cursor": "Cursor Rules\n\n- Work in small, verifiable steps.\n- Update TODO status after each milestone.\n- Keep architecture rationales concise.\n\nTask Prompt:\n",
+                "claude": "Claude Code Prompt\n\nYou act as an experienced planning and implementation agent.\nUse discovery, alignment, design, refinement, and verification.\n\nTask:\n",
+                "windsurf": "Windsurf Prompt\n\nMode: agentic coding with continuous progress tracking.\nMaintain TODO updates and risk checks after each step.\n\nInput:\n",
+                "openai": "OpenAI System Prompt\n\nRole: Senior planning and implementation agent.\nRules: Keep active TODO tracking, milestone reviews, and assumption validation.\n\nUser prompt:\n",
+            },
+            "fr": {
+                "vscode": "Prompt VSCode Copilot\n\nRole systeme : tu es un agent de codage focalise.\nTravaille etape par etape, maintiens une liste TODO continue et valide les hypotheses.\n\nPrompt :\n",
+                "cursor": "Regles Cursor\n\n- Travaille en petites etapes verifiables.\n- Mets a jour le statut TODO apres chaque jalon.\n- Garde des justifications d'architecture concises.\n\nPrompt de tache :\n",
+                "claude": "Prompt Claude Code\n\nTu agis comme un agent experimente de planification et d'implementation.\nUtilise discovery, alignment, design, refinement et verification.\n\nTache :\n",
+                "windsurf": "Prompt Windsurf\n\nMode : codage agentique avec suivi continu des progres.\nMaintiens la TODO et les controles de risque apres chaque etape.\n\nEntree :\n",
+                "openai": "Prompt Systeme OpenAI\n\nRole : agent senior de planification et d'implementation.\nRegles : suivi TODO actif, revues de jalons et validation des hypotheses.\n\nPrompt utilisateur :\n",
+            },
+            "es": {
+                "vscode": "Prompt de VSCode Copilot\n\nRol del sistema: eres un agente de codigo enfocado.\nTrabaja paso a paso, manten una lista TODO continua y valida supuestos.\n\nPrompt:\n",
+                "cursor": "Reglas de Cursor\n\n- Trabaja en pasos pequenos y verificables.\n- Actualiza el estado TODO tras cada hito.\n- Manten breves las justificaciones de arquitectura.\n\nPrompt de tarea:\n",
+                "claude": "Prompt de Claude Code\n\nActuas como un agente experto de planificacion e implementacion.\nUsa discovery, alignment, design, refinement y verificacion.\n\nTarea:\n",
+                "windsurf": "Prompt de Windsurf\n\nModo: codificacion agentica con seguimiento continuo del progreso.\nMantiene actualizaciones TODO y revisiones de riesgo tras cada paso.\n\nEntrada:\n",
+                "openai": "Prompt de sistema OpenAI\n\nRol: agente senior de planificacion e implementacion.\nReglas: seguimiento TODO activo, revisiones por hitos y validacion de supuestos.\n\nPrompt del usuario:\n",
+            },
+        }
+
+        intro = intro_by_mode.get(language, intro_by_mode["de"]).get(output_mode_key)
+        if not intro:
+            return prompt_text
+        return intro + prompt_text
     
     def export_prompt(self):
         """Exportiert den Prompt als Datei"""
@@ -1670,6 +1883,9 @@ class UniversalPromptManager:
         if not prompt.strip():
             messagebox.showwarning(self.tr("msg_warning_title"), self.tr("msg_no_export"))
             return
+
+        output_mode_key = self.get_output_mode_key()
+        exported_prompt = self.format_prompt_for_output_mode(prompt, output_mode_key)
         
         filename = filedialog.asksaveasfilename(
             defaultextension=".txt",
@@ -1686,8 +1902,10 @@ class UniversalPromptManager:
                 # Als JSON mit Metadaten exportieren
                 data = {
                     "category": self.current_category,
+                    "output_mode": output_mode_key,
                     "generated": datetime.datetime.now().isoformat(),
-                    "prompt": prompt,
+                    "prompt": exported_prompt,
+                    "base_prompt": prompt,
                     "fields": {
                         field: self.get_field_value(field) 
                         for field in self.input_fields
@@ -1698,7 +1916,7 @@ class UniversalPromptManager:
             else:
                 # Als einfachen Text exportieren
                 with open(filename, 'w', encoding='utf-8') as f:
-                    f.write(prompt)
+                    f.write(exported_prompt)
             
             self.status_var.set(self.tr("status_prompt_exported", filename=os.path.basename(filename)))
             messagebox.showinfo(self.tr("msg_success_title"), self.tr("msg_exported", filename=filename))

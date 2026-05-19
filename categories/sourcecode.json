@@ -70,10 +70,10 @@
         "es": "Framework"
       },
       "options": {
-        "de": ["Kein spezielles Framework", "Standard Library", "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter", "Django", "Flask", "FastAPI", "React", "Vue", "Angular", "Next.js", "Nuxt", "Node.js", "Express", "NestJS", "Laravel", "Symfony", "CodeIgniter", "WordPress", "Spring Boot", "ASP.NET Core", "Ruby on Rails"],
-        "en": ["No specific framework", "Standard Library", "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter", "Django", "Flask", "FastAPI", "React", "Vue", "Angular", "Next.js", "Nuxt", "Node.js", "Express", "NestJS", "Laravel", "Symfony", "CodeIgniter", "WordPress", "Spring Boot", "ASP.NET Core", "Ruby on Rails"],
-        "fr": ["Aucun framework specifique", "Standard Library", "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter", "Django", "Flask", "FastAPI", "React", "Vue", "Angular", "Next.js", "Nuxt", "Node.js", "Express", "NestJS", "Laravel", "Symfony", "CodeIgniter", "WordPress", "Spring Boot", "ASP.NET Core", "Ruby on Rails"],
-        "es": ["Sin framework especifico", "Standard Library", "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter", "Django", "Flask", "FastAPI", "React", "Vue", "Angular", "Next.js", "Nuxt", "Node.js", "Express", "NestJS", "Laravel", "Symfony", "CodeIgniter", "WordPress", "Spring Boot", "ASP.NET Core", "Ruby on Rails"]
+        "de": ["Kein spezielles Framework", "Standard Library", "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter", "Django", "Flask", "FastAPI", "React", "Vue", "Angular", "Next.js", "Nuxt", "Node.js", "Express", "NestJS", "Laravel", "Symfony", "CodeIgniter", "WordPress", "Spring Boot", "ASP.NET Core", ".NET Framework", ".NET 6.0", ".NET Framework 8.0", ".NET 10.0", "Ruby on Rails"],
+        "en": ["No specific framework", "Standard Library", "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter", "Django", "Flask", "FastAPI", "React", "Vue", "Angular", "Next.js", "Nuxt", "Node.js", "Express", "NestJS", "Laravel", "Symfony", "CodeIgniter", "WordPress", "Spring Boot", "ASP.NET Core", ".NET Framework", ".NET 6.0", ".NET Framework 8.0", ".NET 10.0", "Ruby on Rails"],
+        "fr": ["Aucun framework specifique", "Standard Library", "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter", "Django", "Flask", "FastAPI", "React", "Vue", "Angular", "Next.js", "Nuxt", "Node.js", "Express", "NestJS", "Laravel", "Symfony", "CodeIgniter", "WordPress", "Spring Boot", "ASP.NET Core", ".NET Framework", ".NET 6.0", ".NET Framework 8.0", ".NET 10.0", "Ruby on Rails"],
+        "es": ["Sin framework especifico", "Standard Library", "Tkinter", "ttkbootstrap", "Tkinter + ttkbootstrap", "PySide6", "CustomTkinter", "Django", "Flask", "FastAPI", "React", "Vue", "Angular", "Next.js", "Nuxt", "Node.js", "Express", "NestJS", "Laravel", "Symfony", "CodeIgniter", "WordPress", "Spring Boot", "ASP.NET Core", ".NET Framework", ".NET 6.0", ".NET Framework 8.0", ".NET 10.0", "Ruby on Rails"]
       },
       "default": {
         "de": "Kein spezielles Framework",
@@ -136,10 +136,10 @@
         "es": "Runtime/Version"
       },
       "default": {
-        "de": "Aktuelle stabile Version",
-        "en": "Current stable version",
-        "fr": "Version stable actuelle",
-        "es": "Version estable actual"
+        "de": "Aktuelle stabile Version (z. B. .NET 6.0, .NET Framework 8.0, .NET 10.0)",
+        "en": "Current stable version (e.g. .NET 6.0, .NET Framework 8.0, .NET 10.0)",
+        "fr": "Version stable actuelle (ex. .NET 6.0, .NET Framework 8.0, .NET 10.0)",
+        "es": "Version estable actual (ej. .NET 6.0, .NET Framework 8.0, .NET 10.0)"
       }
     },
     {

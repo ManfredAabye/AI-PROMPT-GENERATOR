@@ -1,0 +1,370 @@
+{
+  "category_name": {
+    "de": "Sourcecode Planning-Style",
+    "en": "Source Code Planning Style",
+    "fr": "Style de planification du code source",
+    "es": "Estilo de planificacion de codigo fuente"
+  },
+  "fields": [
+    {
+      "key": "language",
+      "type": "combobox",
+      "label": {
+        "de": "Programmiersprache",
+        "en": "Programming Language",
+        "fr": "Langage de programmation",
+        "es": "Lenguaje de programacion"
+      },
+      "options": {
+        "de": ["Python", "JavaScript", "TypeScript", "Java", "C#", "Go", "Rust", "PHP"],
+        "en": ["Python", "JavaScript", "TypeScript", "Java", "C#", "Go", "Rust", "PHP"],
+        "fr": ["Python", "JavaScript", "TypeScript", "Java", "C#", "Go", "Rust", "PHP"],
+        "es": ["Python", "JavaScript", "TypeScript", "Java", "C#", "Go", "Rust", "PHP"]
+      },
+      "default": {
+        "de": "Python",
+        "en": "Python",
+        "fr": "Python",
+        "es": "Python"
+      }
+    },
+    {
+      "key": "task",
+      "type": "text",
+      "label": {
+        "de": "Aufgabe",
+        "en": "Task",
+        "fr": "Tache",
+        "es": "Tarea"
+      },
+      "default": {
+        "de": "Erstelle eine skalierbare Microservice-Architektur",
+        "en": "Create a scalable microservice architecture",
+        "fr": "Creer une architecture microservices evolutive",
+        "es": "Crear una arquitectura de microservicios escalable"
+      }
+    },
+    {
+      "key": "task_type",
+      "type": "combobox",
+      "label": {
+        "de": "Task-Typ",
+        "en": "Task Type",
+        "fr": "Type de tache",
+        "es": "Tipo de tarea"
+      },
+      "options": {
+        "de": ["Feature-Entwicklung", "Refactoring", "Re-Engineering", "Rewrite", "Bugfix", "Architektur", "Migration"],
+        "en": ["Feature development", "Refactoring", "Re-Engineering", "Rewrite", "Bugfix", "Architecture", "Migration"],
+        "fr": ["Developpement de fonctionnalite", "Refactoring", "Re-Engineering", "Rewrite", "Correction de bug", "Architecture", "Migration"],
+        "es": ["Desarrollo de funcionalidades", "Refactorizacion", "Re-Engineering", "Rewrite", "Correccion de errores", "Arquitectura", "Migracion"]
+      },
+      "default": {
+        "de": "Architektur",
+        "en": "Architecture",
+        "fr": "Architecture",
+        "es": "Arquitectura"
+      }
+    },
+    {
+      "key": "complexity",
+      "type": "combobox",
+      "label": {
+        "de": "Komplexitaet",
+        "en": "Complexity",
+        "fr": "Complexite",
+        "es": "Complejidad"
+      },
+      "options": {
+        "de": ["Einfach", "Mittel", "Komplex", "Sehr komplex"],
+        "en": ["Simple", "Medium", "Complex", "Very complex"],
+        "fr": ["Simple", "Moyen", "Complexe", "Tres complexe"],
+        "es": ["Simple", "Media", "Compleja", "Muy compleja"]
+      },
+      "default": {
+        "de": "Komplex",
+        "en": "Complex",
+        "fr": "Complexe",
+        "es": "Compleja"
+      }
+    },
+    {
+      "key": "planning_depth",
+      "type": "combobox",
+      "label": {
+        "de": "Planungstiefe",
+        "en": "Planning Depth",
+        "fr": "Profondeur de planification",
+        "es": "Profundidad de planificacion"
+      },
+      "options": {
+        "de": ["Leicht", "Mittel", "Tief"],
+        "en": ["Light", "Medium", "Deep"],
+        "fr": ["Legere", "Moyenne", "Profonde"],
+        "es": ["Ligera", "Media", "Profunda"]
+      },
+      "default": {
+        "de": "Tief",
+        "en": "Deep",
+        "fr": "Profonde",
+        "es": "Profunda"
+      }
+    },
+    {
+      "key": "planning_mode",
+      "type": "combobox",
+      "label": {
+        "de": "Planungsmodus",
+        "en": "Planning Mode",
+        "fr": "Mode de planification",
+        "es": "Modo de planificacion"
+      },
+      "options": {
+        "de": ["planning-agent", "architect-agent", "implementation-planner", "refinement-agent", "enterprise-coding-agent"],
+        "en": ["planning-agent", "architect-agent", "implementation-planner", "refinement-agent", "enterprise-coding-agent"],
+        "fr": ["planning-agent", "architect-agent", "implementation-planner", "refinement-agent", "enterprise-coding-agent"],
+        "es": ["planning-agent", "architect-agent", "implementation-planner", "refinement-agent", "enterprise-coding-agent"]
+      },
+      "default": {
+        "de": "planning-agent",
+        "en": "planning-agent",
+        "fr": "planning-agent",
+        "es": "planning-agent"
+      }
+    },
+    {
+      "key": "framework",
+      "type": "combobox",
+      "label": {
+        "de": "Framework",
+        "en": "Framework",
+        "fr": "Framework",
+        "es": "Framework"
+      },
+      "options": {
+        "de": ["Kein spezielles Framework", "FastAPI", "Django", "React", "Next.js", "Spring Boot", "ASP.NET Core", ".NET Framework", ".NET Framework 6.0", ".NET Framework 8.0", ".NET Framework 10.0"],
+        "en": ["No specific framework", "FastAPI", "Django", "React", "Next.js", "Spring Boot", "ASP.NET Core", ".NET Framework", ".NET Framework 6.0", ".NET Framework 8.0", ".NET Framework 10.0"],
+        "fr": ["Aucun framework specifique", "FastAPI", "Django", "React", "Next.js", "Spring Boot", "ASP.NET Core", ".NET Framework", ".NET Framework 6.0", ".NET Framework 8.0", ".NET Framework 10.0"],
+        "es": ["Sin framework especifico", "FastAPI", "Django", "React", "Next.js", "Spring Boot", "ASP.NET Core", ".NET Framework", ".NET Framework 6.0", ".NET Framework 8.0", ".NET Framework 10.0"]
+      },
+      "default": {
+        "de": "Kein spezielles Framework",
+        "en": "No specific framework",
+        "fr": "Aucun framework specifique",
+        "es": "Sin framework especifico"
+      }
+    },
+    {
+      "key": "constraints",
+      "type": "text",
+      "label": {
+        "de": "Rahmenbedingungen",
+        "en": "Constraints",
+        "fr": "Contraintes",
+        "es": "Restricciones"
+      },
+      "default": {
+        "de": "Token-Budget beachten, wartbar, testbar, deployment-faehig",
+        "en": "Respect token budget, maintainable, testable, deployment-ready",
+        "fr": "Respecter le budget de tokens, maintenable, testable, pret au deploiement",
+        "es": "Respetar presupuesto de tokens, mantenible, testeable, listo para despliegue"
+      }
+    },
+    {
+      "key": "target_platform",
+      "type": "combobox",
+      "label": {
+        "de": "Zielplattform",
+        "en": "Target Platform",
+        "fr": "Plateforme cible",
+        "es": "Plataforma objetivo"
+      },
+      "options": {
+        "de": ["Desktop", "Web", "Mobile", "CLI", "Backend/API"],
+        "en": ["Desktop", "Web", "Mobile", "CLI", "Backend/API"],
+        "fr": ["Desktop", "Web", "Mobile", "CLI", "Backend/API"],
+        "es": ["Desktop", "Web", "Mobile", "CLI", "Backend/API"]
+      },
+      "default": {
+        "de": "Backend/API",
+        "en": "Backend/API",
+        "fr": "Backend/API",
+        "es": "Backend/API"
+      }
+    },
+    {
+      "key": "output_mode",
+      "type": "combobox",
+      "label": {
+        "de": "Ausgabeziel",
+        "en": "Output Target",
+        "fr": "Cible de sortie",
+        "es": "Objetivo de salida"
+      },
+      "options": {
+        "de": ["Generischer LLM-Prompt", "VSCode Copilot-Prompt", "Cursor-Regeln", "Claude Code-Prompt", "Windsurf-Prompt", "OpenAI-System-Prompt"],
+        "en": ["Generic LLM prompt", "VSCode Copilot prompt", "Cursor rules", "Claude Code prompt", "Windsurf prompt", "OpenAI system prompt"],
+        "fr": ["Prompt LLM generique", "Prompt VSCode Copilot", "Regles Cursor", "Prompt Claude Code", "Prompt Windsurf", "Prompt systeme OpenAI"],
+        "es": ["Prompt LLM generico", "Prompt de VSCode Copilot", "Reglas de Cursor", "Prompt de Claude Code", "Prompt de Windsurf", "Prompt de sistema OpenAI"]
+      },
+      "default": {
+        "de": "VSCode Copilot-Prompt",
+        "en": "VSCode Copilot prompt",
+        "fr": "Prompt VSCode Copilot",
+        "es": "Prompt de VSCode Copilot"
+      }
+    },
+    {
+      "key": "todo_tracking",
+      "type": "combobox",
+      "label": {
+        "de": "Laufende TODO-Liste erzwingen",
+        "en": "Enforce running TODO list",
+        "fr": "Imposer une liste TODO continue",
+        "es": "Forzar lista TODO continua"
+      },
+      "options": {
+        "de": ["Ja", "Nein"],
+        "en": ["Yes", "No"],
+        "fr": ["Oui", "Non"],
+        "es": ["Si", "No"]
+      },
+      "default": {
+        "de": "Ja",
+        "en": "Yes",
+        "fr": "Oui",
+        "es": "Si"
+      }
+    },
+    {
+      "key": "verification_layer",
+      "type": "combobox",
+      "label": {
+        "de": "Verifizierungsschicht aktivieren",
+        "en": "Enable verification layer",
+        "fr": "Activer la couche de verification",
+        "es": "Activar capa de verificacion"
+      },
+      "options": {
+        "de": ["Ja", "Nein"],
+        "en": ["Yes", "No"],
+        "fr": ["Oui", "Non"],
+        "es": ["Si", "No"]
+      },
+      "default": {
+        "de": "Ja",
+        "en": "Yes",
+        "fr": "Oui",
+        "es": "Si"
+      }
+    },
+    {
+      "key": "requirements",
+      "type": "text",
+      "label": {
+        "de": "Anforderungen",
+        "en": "Requirements",
+        "fr": "Exigences",
+        "es": "Requisitos"
+      },
+      "default": {
+        "de": "Schrittzerlegung, Meilensteinplanung, Risikoanalyse, Selbstueberpruefung",
+        "en": "Step decomposition, milestone planning, risk analysis, self-review",
+        "fr": "Decoupage en etapes, planification des jalons, analyse des risques, auto-revision",
+        "es": "Descomposicion por pasos, planificacion de hitos, analisis de riesgos, autoevaluacion"
+      }
+    }
+  ],
+  "prompts": {
+    "plan_1": {
+      "de": "Du bist ein erfahrener Planungs-Agent fuer Sourcecode-Aufgaben in {language}.",
+      "en": "You are an experienced planning agent for {language} source code tasks.",
+      "fr": "Tu es un agent de planification experimente pour les taches de code source en {language}.",
+      "es": "Eres un agente de planificacion experto para tareas de codigo fuente en {language}."
+    },
+    "plan_2": {
+      "de": "Aktiver Modus: {planning_mode}. Task-Typ: {task_type}. Komplexitaet: {complexity}. Planungstiefe: {planning_depth}.",
+      "en": "Active mode: {planning_mode}. Task type: {task_type}. Complexity: {complexity}. Planning depth: {planning_depth}.",
+      "fr": "Mode actif : {planning_mode}. Type de tache : {task_type}. Complexite : {complexity}. Profondeur de planification : {planning_depth}.",
+      "es": "Modo activo: {planning_mode}. Tipo de tarea: {task_type}. Complejidad: {complexity}. Profundidad de planificacion: {planning_depth}."
+    },
+    "plan_3": {
+      "de": "Aufgabe: {task}.",
+      "en": "Task: {task}.",
+      "fr": "Tache : {task}.",
+      "es": "Tarea: {task}."
+    },
+    "plan_4": {
+      "de": "Anforderungen: {requirements}.",
+      "en": "Requirements: {requirements}.",
+      "fr": "Exigences : {requirements}.",
+      "es": "Requisitos: {requirements}."
+    },
+    "plan_5": {
+      "de": "Framework: {framework}. Zielplattform: {target_platform}. Ausgabeziel: {output_mode}.",
+      "en": "Framework: {framework}. Target platform: {target_platform}. Output target: {output_mode}.",
+      "fr": "Framework : {framework}. Plateforme cible : {target_platform}. Cible de sortie : {output_mode}.",
+      "es": "Framework: {framework}. Plataforma objetivo: {target_platform}. Objetivo de salida: {output_mode}."
+    },
+    "plan_6": {
+      "de": "Rahmenbedingungen: {constraints}.",
+      "en": "Constraints: {constraints}.",
+      "fr": "Contraintes : {constraints}.",
+      "es": "Restricciones: {constraints}."
+    },
+    "plan_7": {
+      "de": "PHASE 1 - ENTDECKUNG: Analysiere Problemraum, Annahmen und Abhaengigkeiten.",
+      "en": "PHASE 1 - DISCOVERY: Analyze problem space, assumptions, and dependencies.",
+      "fr": "PHASE 1 - DECOUVERTE : Analyser l'espace probleme, les hypotheses et les dependances.",
+      "es": "FASE 1 - DESCUBRIMIENTO: Analiza el espacio del problema, supuestos y dependencias."
+    },
+    "plan_8": {
+      "de": "PHASE 2 - ABSTIMMUNG: Lege Ziele, Akzeptanzkriterien und Scope fest.",
+      "en": "PHASE 2 - ALIGNMENT: Define goals, acceptance criteria, and scope.",
+      "fr": "PHASE 2 - ALIGNEMENT : Definir objectifs, criteres d'acceptation et perimetre.",
+      "es": "FASE 2 - ALINEACION: Define objetivos, criterios de aceptacion y alcance."
+    },
+    "plan_9": {
+      "de": "PHASE 3 - ENTWURF: Erstelle Schrittzerlegung, Architekturentwurf und Meilensteine.",
+      "en": "PHASE 3 - DESIGN: Create step decomposition, architecture design, and milestones.",
+      "fr": "PHASE 3 - CONCEPTION : Creer decomposition en etapes, conception d'architecture et jalons.",
+      "es": "FASE 3 - DISENO: Crea descomposicion por pasos, diseno de arquitectura e hitos."
+    },
+    "plan_10": {
+      "de": "PHASE 4 - VERFEINERUNG: Verifiziere Risiken, Randfaelle und priorisierte Umsetzung.",
+      "en": "PHASE 4 - REFINEMENT: Verify risks, edge cases, and prioritized implementation.",
+      "fr": "PHASE 4 - RAFFINEMENT : Verifier les risques, les cas limites et l'implementation priorisee.",
+      "es": "FASE 4 - REFINAMIENTO: Verifica riesgos, casos limite e implementacion priorizada."
+    },
+    "plan_11": {
+      "de": "TODO-Fuehrung: {todo_tracking}. Halte eine laufende TODO-Liste, aktualisiere erledigte Schritte und markiere Blockaden.",
+      "en": "TODO tracking: {todo_tracking}. Maintain a running TODO list, update completed steps, and mark blockers.",
+      "fr": "Suivi TODO : {todo_tracking}. Maintenir une liste TODO continue, mettre a jour les etapes terminees et marquer les blocages.",
+      "es": "Seguimiento TODO: {todo_tracking}. Mantener una lista TODO continua, actualizar pasos completados y marcar bloqueos."
+    },
+    "plan_12": {
+      "de": "Verifizierungsschicht: {verification_layer}. Pruefe Konsistenz, Realisierbarkeit und Halluzinationsrisiko nach jedem Meilenstein.",
+      "en": "Verification layer: {verification_layer}. Check consistency, feasibility, and hallucination risk after each milestone.",
+      "fr": "Couche de verification : {verification_layer}. Verifier la coherence, la faisabilite et le risque d'hallucination apres chaque jalon.",
+      "es": "Capa de verificacion: {verification_layer}. Revisa consistencia, viabilidad y riesgo de alucinacion tras cada hito."
+    },
+    "plan_13": {
+      "de": "Ausgabeformat (streng): 1) Laufende TODO-Liste mit Status [not-started|in-progress|completed], 2) PHASE 1 - ENTDECKUNG, 3) PHASE 2 - ABSTIMMUNG, 4) PHASE 3 - ENTWURF, 5) PHASE 4 - VERFEINERUNG, 6) Risiken/Annahmen/Offene Fragen, 7) Naechste konkrete Implementierungsschritte.",
+      "en": "Output format (strict): 1) Running TODO list with status [not-started|in-progress|completed], 2) PHASE 1 - DISCOVERY, 3) PHASE 2 - ALIGNMENT, 4) PHASE 3 - DESIGN, 5) PHASE 4 - REFINEMENT, 6) Risks/assumptions/open questions, 7) Next concrete implementation steps.",
+      "fr": "Format de sortie (strict) : 1) Liste TODO continue avec statut [not-started|in-progress|completed], 2) PHASE 1 - DECOUVERTE, 3) PHASE 2 - ALIGNEMENT, 4) PHASE 3 - CONCEPTION, 5) PHASE 4 - RAFFINEMENT, 6) Risques/hypotheses/questions ouvertes, 7) Prochaines etapes concretes d'implementation.",
+      "es": "Formato de salida (estricto): 1) Lista TODO continua con estado [not-started|in-progress|completed], 2) FASE 1 - DESCUBRIMIENTO, 3) FASE 2 - ALINEACION, 4) FASE 3 - DISENO, 5) FASE 4 - REFINAMIENTO, 6) Riesgos/supuestos/preguntas abiertas, 7) Siguientes pasos concretos de implementacion."
+    },
+    "plan_14": {
+      "de": "Fuehre nach jedem Meilenstein eine kurze Selbstpruefung durch und aktualisiere die TODO-Liste sofort.",
+      "en": "After each milestone, run a short self-review and update the TODO list immediately.",
+      "fr": "Apres chaque jalon, effectuer une courte auto-revision et mettre a jour immediatement la liste TODO.",
+      "es": "Despues de cada hito, realiza una autoevaluacion breve y actualiza de inmediato la lista TODO."
+    },
+    "plan_15": {
+      "de": "Spezialfall nach Task-Typ: Bei Re-Engineering zuerst Ist-System analysieren (Abhaengigkeiten, Risiken, technische Schulden), dann Migrationspfad mit Kompatibilitaetsstrategie planen. Bei Rewrite zuerst Zielarchitektur und Schnittstellen einfrieren, danach inkrementelle Ablosung mit klaren Exit-Kriterien pro Meilenstein definieren.",
+      "en": "Task-type specialization: For Re-Engineering, first analyze the existing system (dependencies, risks, technical debt), then plan a migration path with compatibility strategy. For Rewrite, first freeze target architecture and interfaces, then define incremental replacement with clear exit criteria per milestone.",
+      "fr": "Specialisation selon le type de tache : pour Re-Engineering, analyser d'abord le systeme existant (dependances, risques, dette technique), puis planifier un chemin de migration avec strategie de compatibilite. Pour Rewrite, figer d'abord l'architecture cible et les interfaces, puis definir un remplacement incremental avec criteres de sortie clairs par jalon.",
+      "es": "Especializacion por tipo de tarea: para Re-Engineering, primero analiza el sistema actual (dependencias, riesgos, deuda tecnica), luego planifica una ruta de migracion con estrategia de compatibilidad. Para Rewrite, primero congela la arquitectura objetivo y las interfaces, luego define un reemplazo incremental con criterios de salida claros por hito."
+    }
+  }
+}

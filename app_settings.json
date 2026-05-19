@@ -108,9 +108,33 @@
       "incident_details": "Zeitpunkt, Quelle, Auswirkungen, Nachweise",
       "regulatory_context": "DSGVO, interne Richtlinien, Fristen",
       "desired_outcome": "Rechtssichere und nachvollziehbare Antwort"
+    },
+    "Sourcecode Planning-Style": {
+      "language": "C#",
+      "task": "Build a scalable microservice architecture for OpenSimulator from opensimulator.org https://github.com/opensim/opensim.git",
+      "task_type": "Re-Engineering",
+      "complexity": "Komplex",
+      "planning_depth": "Tief",
+      "planning_mode": "architect-agent",
+      "framework": ".NET Framework 10.0",
+      "constraints": "Token-Budget beachten, wartbar, testbar, deployment-faehig",
+      "target_platform": "Backend/API",
+      "output_mode": "VSCode Copilot-Prompt",
+      "todo_tracking": "Ja",
+      "verification_layer": "Ja",
+      "requirements": "Schrittzerlegung, Meilensteinplanung, Risikoanalyse, Selbstueberpruefung"
+    },
+    "Sourcecode Planning-Style Light": {
+      "language": "Python",
+      "task": "Erstelle einen kompakten Implementierungsplan fuer eine neue Funktion",
+      "task_type": "Feature-Entwicklung",
+      "complexity": "Mittel",
+      "framework": "Kein spezielles Framework",
+      "output_mode": "VSCode Copilot-Prompt",
+      "requirements": "Klarer Scope, kurze TODO-Liste, schneller Start"
     }
   },
   "current_language": "de",
-  "current_category": "Datenschutz und Sicherheit",
-  "window_geometry": "1580x1865+176+176"
+  "current_category": "Sourcecode Planning-Style Light",
+  "window_geometry": "3840x2120+-12+-12"
 }
